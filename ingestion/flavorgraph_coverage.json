@@ -1,0 +1,426 @@
+{
+  "matched": [
+    {
+      "spiceId": "warm.baking.cinnamon",
+      "spiceName": "Cinnamon",
+      "flavorGraphNode": "cinnamon",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.baking.nutmeg",
+      "spiceName": "Nutmeg",
+      "flavorGraphNode": "nutmeg",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.baking.allspice",
+      "spiceName": "Allspice",
+      "flavorGraphNode": "allspice",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.baking.mace",
+      "spiceName": "Mace",
+      "flavorGraphNode": "mace",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.woody.clove",
+      "spiceName": "Clove",
+      "flavorGraphNode": "clove",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.woody.star-anise",
+      "spiceName": "Star Anise",
+      "flavorGraphNode": "star_anise",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.woody.cardamom",
+      "spiceName": "Cardamom",
+      "flavorGraphNode": "cardamom",
+      "approximate": false
+    },
+    {
+      "spiceId": "warm.woody.cassia",
+      "spiceName": "Cassia",
+      "flavorGraphNode": "cassia",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.pepper.black-pepper",
+      "spiceName": "Black Pepper",
+      "flavorGraphNode": "black_pepper",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.pepper.white-pepper",
+      "spiceName": "White Pepper",
+      "flavorGraphNode": "white_pepper",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.chili.cayenne",
+      "spiceName": "Cayenne",
+      "flavorGraphNode": "cayenne",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.chili.red-pepper-flakes",
+      "spiceName": "Red Pepper Flakes",
+      "flavorGraphNode": "red_pepper_flakes",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.chili.chipotle",
+      "spiceName": "Chipotle",
+      "flavorGraphNode": "chipotle_pepper",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.chili.gochugaru",
+      "spiceName": "Gochugaru",
+      "flavorGraphNode": "red_pepper_powder",
+      "approximate": true
+    },
+    {
+      "spiceId": "hot-pungent.sharp.mustard-seed",
+      "spiceName": "Mustard Seed",
+      "flavorGraphNode": "yellow_mustard_seeds",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.sharp.horseradish",
+      "spiceName": "Horseradish",
+      "flavorGraphNode": "horseradish",
+      "approximate": false
+    },
+    {
+      "spiceId": "hot-pungent.sharp.wasabi",
+      "spiceName": "Wasabi",
+      "flavorGraphNode": "wasabi",
+      "approximate": false
+    },
+    {
+      "spiceId": "sweet.vanilla-adjacent.vanilla",
+      "spiceName": "Vanilla",
+      "flavorGraphNode": "vanilla",
+      "approximate": false
+    },
+    {
+      "spiceId": "sweet.aromatic-sweet.fennel-seed",
+      "spiceName": "Fennel Seed",
+      "flavorGraphNode": "fennel_seed",
+      "approximate": false
+    },
+    {
+      "spiceId": "sweet.aromatic-sweet.anise-seed",
+      "spiceName": "Anise Seed",
+      "flavorGraphNode": "anise_seed",
+      "approximate": false
+    },
+    {
+      "spiceId": "sweet.aromatic-sweet.fenugreek",
+      "spiceName": "Fenugreek",
+      "flavorGraphNode": "fenugreek_leaves",
+      "approximate": true
+    },
+    {
+      "spiceId": "earthy.root.turmeric",
+      "spiceName": "Turmeric",
+      "flavorGraphNode": "turmeric",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.root.ginger",
+      "spiceName": "Ginger",
+      "flavorGraphNode": "ginger",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.root.galangal",
+      "spiceName": "Galangal",
+      "flavorGraphNode": "galangal",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.seed.cumin",
+      "spiceName": "Cumin",
+      "flavorGraphNode": "cumin",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.seed.coriander",
+      "spiceName": "Coriander Seed",
+      "flavorGraphNode": "coriander_seed",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.seed.caraway",
+      "spiceName": "Caraway",
+      "flavorGraphNode": "caraway_seed",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.seed.celery-seed",
+      "spiceName": "Celery Seed",
+      "flavorGraphNode": "celery_seed",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.smoky.smoked-paprika",
+      "spiceName": "Smoked Paprika",
+      "flavorGraphNode": "smoked_paprika",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.smoky.sumac",
+      "spiceName": "Sumac",
+      "flavorGraphNode": "sumac",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.mediterranean.oregano",
+      "spiceName": "Oregano",
+      "flavorGraphNode": "oregano",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.mediterranean.thyme",
+      "spiceName": "Thyme",
+      "flavorGraphNode": "thyme",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.mediterranean.rosemary",
+      "spiceName": "Rosemary",
+      "flavorGraphNode": "rosemary",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.mediterranean.marjoram",
+      "spiceName": "Marjoram",
+      "flavorGraphNode": "marjoram",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.mediterranean.sage",
+      "spiceName": "Sage",
+      "flavorGraphNode": "sage",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.asian.lemongrass",
+      "spiceName": "Lemongrass",
+      "flavorGraphNode": "lemongrass",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.asian.thai-basil",
+      "spiceName": "Thai Basil",
+      "flavorGraphNode": "thai_basil",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.asian.kaffir-lime-leaf",
+      "spiceName": "Kaffir Lime Leaf",
+      "flavorGraphNode": "kaffir_lime_leaves",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.asian.shiso",
+      "spiceName": "Shiso",
+      "flavorGraphNode": "shiso",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.basil",
+      "spiceName": "Basil",
+      "flavorGraphNode": "basil",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.parsley",
+      "spiceName": "Parsley",
+      "flavorGraphNode": "parsley",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.cilantro",
+      "spiceName": "Cilantro",
+      "flavorGraphNode": "cilantro",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.dill",
+      "spiceName": "Dill",
+      "flavorGraphNode": "dill",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.bay-leaf",
+      "spiceName": "Bay Leaf",
+      "flavorGraphNode": "bay_leaf",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.tarragon",
+      "spiceName": "Tarragon",
+      "flavorGraphNode": "tarragon",
+      "approximate": false
+    },
+    {
+      "spiceId": "floral.rose-family.rose-water",
+      "spiceName": "Rose Water",
+      "flavorGraphNode": "rose_water",
+      "approximate": false
+    },
+    {
+      "spiceId": "floral.rose-family.saffron",
+      "spiceName": "Saffron",
+      "flavorGraphNode": "saffron",
+      "approximate": false
+    },
+    {
+      "spiceId": "floral.delicate.lavender",
+      "spiceName": "Lavender",
+      "flavorGraphNode": "lavender",
+      "approximate": false
+    },
+    {
+      "spiceId": "floral.delicate.elderflower",
+      "spiceName": "Elderflower",
+      "flavorGraphNode": "elderflower_liqueur",
+      "approximate": true
+    },
+    {
+      "spiceId": "citrus-bright.peel.lemon-zest",
+      "spiceName": "Lemon Zest",
+      "flavorGraphNode": "lemon_zest",
+      "approximate": false
+    },
+    {
+      "spiceId": "citrus-bright.peel.orange-zest",
+      "spiceName": "Orange Zest",
+      "flavorGraphNode": "orange_zest",
+      "approximate": false
+    },
+    {
+      "spiceId": "citrus-bright.peel.lime-zest",
+      "spiceName": "Lime Zest",
+      "flavorGraphNode": "lime_zest",
+      "approximate": false
+    },
+    {
+      "spiceId": "citrus-bright.peel.yuzu",
+      "spiceName": "Yuzu",
+      "flavorGraphNode": "yuzu",
+      "approximate": false
+    },
+    {
+      "spiceId": "citrus-bright.tart.amchur",
+      "spiceName": "Amchur",
+      "flavorGraphNode": "amchur",
+      "approximate": false
+    },
+    {
+      "spiceId": "citrus-bright.tart.tamarind",
+      "spiceName": "Tamarind",
+      "flavorGraphNode": "tamarind_paste",
+      "approximate": true
+    },
+    {
+      "spiceId": "citrus-bright.tart.dried-lime",
+      "spiceName": "Dried Lime",
+      "flavorGraphNode": "dried_limes",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.allium.garlic",
+      "spiceName": "Garlic Powder",
+      "flavorGraphNode": "garlic_powder",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.allium.onion-powder",
+      "spiceName": "Onion Powder",
+      "flavorGraphNode": "onion_powder",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.allium.chive",
+      "spiceName": "Chive",
+      "flavorGraphNode": "chive",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.fermented.dried-mushroom",
+      "spiceName": "Dried Mushroom",
+      "flavorGraphNode": "dried_mushrooms",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.fermented.nutritional-yeast",
+      "spiceName": "Nutritional Yeast",
+      "flavorGraphNode": "nutritional_yeast",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.fermented.black-garlic",
+      "spiceName": "Black Garlic",
+      "flavorGraphNode": "garlic",
+      "approximate": true
+    },
+    {
+      "spiceId": "umami-savory.salty.sesame-seed",
+      "spiceName": "Sesame Seed",
+      "flavorGraphNode": "sesame",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.salty.poppy-seed",
+      "spiceName": "Poppy Seed",
+      "flavorGraphNode": "poppy_seed",
+      "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.salty.nigella-seed",
+      "spiceName": "Nigella Seed",
+      "flavorGraphNode": "nigella_seeds",
+      "approximate": false
+    }
+  ],
+  "unmatched": [
+    {
+      "spiceId": "hot-pungent.pepper.sichuan-pepper",
+      "spiceName": "Sichuan Pepper"
+    },
+    {
+      "spiceId": "hot-pungent.pepper.long-pepper",
+      "spiceName": "Long Pepper"
+    },
+    {
+      "spiceId": "hot-pungent.chili.aleppo",
+      "spiceName": "Aleppo Pepper"
+    },
+    {
+      "spiceId": "sweet.vanilla-adjacent.tonka-bean",
+      "spiceName": "Tonka Bean"
+    },
+    {
+      "spiceId": "sweet.aromatic-sweet.mahlab",
+      "spiceName": "Mahlab"
+    },
+    {
+      "spiceId": "floral.rose-family.hibiscus",
+      "spiceName": "Hibiscus"
+    },
+    {
+      "spiceId": "floral.delicate.chamomile",
+      "spiceName": "Chamomile"
+    }
+  ],
+  "matchedCount": 65,
+  "totalSpices": 72
+}

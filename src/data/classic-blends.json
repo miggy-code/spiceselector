@@ -1,0 +1,184 @@
+[
+  {
+    "id": "garam-masala",
+    "name": "Garam Masala",
+    "origin": "India",
+    "description": "Warming blend of cinnamon, cardamom, clove, and black pepper used to finish curries and rice dishes.",
+    "spiceIds": [
+      "warm.baking.cinnamon",
+      "warm.woody.cardamom",
+      "warm.woody.clove",
+      "earthy.seed.cumin",
+      "earthy.seed.coriander",
+      "hot-pungent.pepper.black-pepper",
+      "warm.baking.nutmeg",
+      "warm.baking.mace",
+      "herbal.leafy.bay-leaf"
+    ]
+  },
+  {
+    "id": "chai-masala",
+    "name": "Chai Masala",
+    "origin": "India",
+    "description": "Aromatic tea spice blend balancing cardamom, ginger, and black pepper with floral star anise.",
+    "spiceIds": [
+      "warm.woody.cardamom",
+      "warm.baking.cinnamon",
+      "warm.woody.clove",
+      "earthy.root.ginger",
+      "hot-pungent.pepper.black-pepper",
+      "warm.woody.star-anise",
+      "sweet.aromatic-sweet.fennel-seed"
+    ]
+  },
+  {
+    "id": "chinese-five-spice",
+    "name": "Chinese Five-Spice",
+    "origin": "China",
+    "description": "Five-element harmony of star anise, cassia, clove, Sichuan pepper, and fennel seed.",
+    "spiceIds": [
+      "warm.woody.star-anise",
+      "warm.woody.clove",
+      "warm.woody.cassia",
+      "hot-pungent.pepper.sichuan-pepper",
+      "sweet.aromatic-sweet.fennel-seed"
+    ]
+  },
+  {
+    "id": "zaatar",
+    "name": "Za'atar",
+    "origin": "Levant",
+    "description": "Earthy herb blend of thyme, oregano, and sumac with sesame seed — common on flatbread and dips.",
+    "spiceIds": [
+      "herbal.mediterranean.thyme",
+      "herbal.mediterranean.oregano",
+      "herbal.mediterranean.marjoram",
+      "earthy.smoky.sumac",
+      "umami-savory.salty.sesame-seed"
+    ]
+  },
+  {
+    "id": "herbes-de-provence",
+    "name": "Herbes de Provence",
+    "origin": "France",
+    "description": "Sun-dried southern French herb blend with lavender, thyme, rosemary, and tarragon.",
+    "spiceIds": [
+      "herbal.mediterranean.thyme",
+      "herbal.mediterranean.rosemary",
+      "herbal.mediterranean.oregano",
+      "herbal.mediterranean.marjoram",
+      "floral.delicate.lavender",
+      "herbal.leafy.basil",
+      "herbal.leafy.tarragon",
+      "sweet.aromatic-sweet.fennel-seed"
+    ]
+  },
+  {
+    "id": "quatre-epices",
+    "name": "Quatre Épices",
+    "origin": "France",
+    "description": "Four-spice French classic — black pepper, clove, nutmeg, and ginger — used in charcuterie and stews.",
+    "spiceIds": [
+      "hot-pungent.pepper.black-pepper",
+      "warm.woody.clove",
+      "warm.baking.nutmeg",
+      "earthy.root.ginger"
+    ]
+  },
+  {
+    "id": "pumpkin-pie-spice",
+    "name": "Pumpkin Pie Spice",
+    "origin": "USA",
+    "description": "Cinnamon-forward baking blend with ginger, nutmeg, allspice, and clove for autumn desserts.",
+    "spiceIds": [
+      "warm.baking.cinnamon",
+      "earthy.root.ginger",
+      "warm.baking.nutmeg",
+      "warm.baking.allspice",
+      "warm.woody.clove"
+    ]
+  },
+  {
+    "id": "baharat",
+    "name": "Baharat",
+    "origin": "Middle East",
+    "description": "All-purpose Middle Eastern spice mix combining warm whole spices with allspice and black pepper.",
+    "spiceIds": [
+      "hot-pungent.pepper.black-pepper",
+      "earthy.seed.coriander",
+      "earthy.seed.cumin",
+      "warm.baking.cinnamon",
+      "warm.woody.clove",
+      "warm.baking.nutmeg",
+      "warm.woody.cardamom",
+      "warm.baking.allspice"
+    ]
+  },
+  {
+    "id": "ras-el-hanout",
+    "name": "Ras el Hanout",
+    "origin": "Morocco",
+    "description": "Complex Moroccan blend (core subset) of cumin, coriander, cinnamon, ginger, turmeric, and more.",
+    "spiceIds": [
+      "earthy.seed.cumin",
+      "earthy.seed.coriander",
+      "warm.baking.cinnamon",
+      "earthy.root.ginger",
+      "earthy.root.turmeric",
+      "warm.woody.cardamom",
+      "hot-pungent.pepper.black-pepper",
+      "warm.woody.clove",
+      "warm.baking.allspice",
+      "warm.baking.nutmeg"
+    ]
+  },
+  {
+    "id": "berbere",
+    "name": "Berbere",
+    "origin": "Ethiopia",
+    "description": "Bold Ethiopian spice blend anchored by cayenne and coriander, with fenugreek's maple bitterness.",
+    "spiceIds": [
+      "hot-pungent.chili.cayenne",
+      "earthy.seed.coriander",
+      "sweet.aromatic-sweet.fenugreek",
+      "hot-pungent.pepper.black-pepper",
+      "warm.woody.cardamom",
+      "earthy.root.ginger",
+      "warm.baking.cinnamon",
+      "warm.baking.allspice",
+      "warm.woody.clove",
+      "earthy.root.turmeric"
+    ]
+  },
+  {
+    "id": "italian-seasoning",
+    "name": "Italian Seasoning",
+    "origin": "Italy",
+    "description": "Classic Mediterranean herb mix of oregano, basil, thyme, rosemary, sage, and marjoram.",
+    "spiceIds": [
+      "herbal.mediterranean.oregano",
+      "herbal.leafy.basil",
+      "herbal.mediterranean.thyme",
+      "herbal.mediterranean.rosemary",
+      "herbal.mediterranean.sage",
+      "herbal.mediterranean.marjoram"
+    ]
+  },
+  {
+    "id": "pickling-spice",
+    "name": "Pickling Spice",
+    "origin": "Various",
+    "description": "Whole-spice brine blend of mustard seed, allspice, coriander, and bay leaf for pickles and brines.",
+    "spiceIds": [
+      "hot-pungent.sharp.mustard-seed",
+      "hot-pungent.pepper.black-pepper",
+      "earthy.seed.coriander",
+      "warm.baking.allspice",
+      "warm.woody.clove",
+      "herbal.leafy.bay-leaf",
+      "earthy.root.ginger",
+      "hot-pungent.chili.red-pepper-flakes",
+      "warm.baking.cinnamon"
+    ]
+  }
+]

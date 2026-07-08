@@ -1,0 +1,678 @@
+[
+  {
+    "spiceId": "warm.baking.cinnamon",
+    "pairsWith": [
+      { "spiceId": "warm.baking.nutmeg", "affinity": "classic", "note": "Classic baking duo", "cuisines": ["American", "European"] },
+      { "spiceId": "warm.baking.allspice", "affinity": "classic", "note": "Warm baking trio member", "cuisines": ["Caribbean", "American"] },
+      { "spiceId": "warm.woody.clove", "affinity": "classic", "note": "Warming spice blend essential", "cuisines": ["Indian", "Middle Eastern"] },
+      { "spiceId": "warm.woody.cardamom", "affinity": "classic", "note": "Chai and masala staple", "cuisines": ["Indian", "Scandinavian"] },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic", "note": "Gingerbread foundation", "cuisines": ["Global"] },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "classic", "note": "Dessert essential pairing" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "surprising", "note": "Sweet-heat contrast" },
+      { "spiceId": "citrus-bright.peel.orange-zest", "affinity": "complementary", "note": "Warm citrus harmony" }
+    ]
+  },
+  {
+    "spiceId": "warm.baking.nutmeg",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic", "note": "Classic baking duo" },
+      { "spiceId": "warm.baking.mace", "affinity": "classic", "note": "Same fruit, different layers" },
+      { "spiceId": "warm.baking.allspice", "affinity": "classic", "note": "Pumpkin spice trio" },
+      { "spiceId": "warm.woody.clove", "affinity": "classic", "note": "Warming blend essential" },
+      { "spiceId": "herbal.leafy.bay-leaf", "affinity": "complementary", "note": "Béchamel classics" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "complementary", "note": "Savory cream sauces" }
+    ]
+  },
+  {
+    "spiceId": "warm.baking.allspice",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic" },
+      { "spiceId": "warm.baking.nutmeg", "affinity": "classic" },
+      { "spiceId": "warm.woody.clove", "affinity": "classic", "note": "Allspice mimics this blend" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary", "note": "Jerk seasoning base", "cuisines": ["Caribbean"] },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "warm.baking.mace",
+    "pairsWith": [
+      { "spiceId": "warm.baking.nutmeg", "affinity": "classic" },
+      { "spiceId": "warm.woody.cardamom", "affinity": "complementary" },
+      { "spiceId": "sweet.aromatic-sweet.fennel-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "warm.woody.clove",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic", "note": "Garam masala core" },
+      { "spiceId": "warm.woody.star-anise", "affinity": "classic", "note": "Chinese five-spice duo", "cuisines": ["Chinese"] },
+      { "spiceId": "warm.woody.cardamom", "affinity": "classic", "note": "Chai spice trio" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "classic" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Garam masala base", "cuisines": ["Indian"] },
+      { "spiceId": "herbal.leafy.bay-leaf", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "warm.woody.star-anise",
+    "pairsWith": [
+      { "spiceId": "warm.woody.clove", "affinity": "classic", "note": "Five-spice blend" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic", "note": "Five-spice blend" },
+      { "spiceId": "sweet.aromatic-sweet.fennel-seed", "affinity": "classic", "note": "Shared anise compound" },
+      { "spiceId": "hot-pungent.pepper.sichuan-pepper", "affinity": "classic", "note": "Five-spice essential", "cuisines": ["Chinese"] },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary", "note": "Pho aromatics", "cuisines": ["Vietnamese"] }
+    ]
+  },
+  {
+    "spiceId": "warm.woody.cardamom",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic", "note": "Chai and masala" },
+      { "spiceId": "warm.woody.clove", "affinity": "classic" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Curry powder base", "cuisines": ["Indian"] },
+      { "spiceId": "earthy.seed.coriander", "affinity": "classic", "note": "Garam masala trio" },
+      { "spiceId": "floral.rose-family.saffron", "affinity": "complementary", "note": "Persian rice pilaf", "cuisines": ["Persian", "Indian"] },
+      { "spiceId": "floral.rose-family.rose-water", "affinity": "complementary", "note": "Middle Eastern sweets" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "surprising", "note": "Scandinavian baking" }
+    ]
+  },
+  {
+    "spiceId": "warm.woody.cassia",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic", "note": "Stronger cinnamon variant" },
+      { "spiceId": "warm.woody.star-anise", "affinity": "classic" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.pepper.black-pepper",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Universal savory base" },
+      { "spiceId": "earthy.seed.coriander", "affinity": "classic", "note": "Balanced warmth" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic", "note": "Foundational seasoning" },
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic", "note": "Enhances curcumin absorption" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary", "note": "Brightening contrast" },
+      { "spiceId": "warm.woody.clove", "affinity": "classic" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.pepper.white-pepper",
+    "pairsWith": [
+      { "spiceId": "earthy.root.ginger", "affinity": "classic", "note": "Hot and sour soup base", "cuisines": ["Chinese"] },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "warm.baking.nutmeg", "affinity": "complementary", "note": "White sauce seasoning" },
+      { "spiceId": "umami-savory.fermented.dried-mushroom", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.pepper.sichuan-pepper",
+    "pairsWith": [
+      { "spiceId": "warm.woody.star-anise", "affinity": "classic", "note": "Five-spice blend" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "classic", "note": "Mala numbing-hot combo", "cuisines": ["Chinese"] },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.pepper.long-pepper",
+    "pairsWith": [
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary", "note": "Shared warmth" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.chili.cayenne",
+    "pairsWith": [
+      { "spiceId": "earthy.smoky.smoked-paprika", "affinity": "classic", "note": "Smoky-hot balance" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Chili powder base", "cuisines": ["Mexican"] },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "citrus-bright.peel.lime-zest", "affinity": "complementary", "note": "Heat meets acid" },
+      { "spiceId": "sweet.aromatic-sweet.fenugreek", "affinity": "surprising", "note": "Ethiopian berbere", "cuisines": ["Ethiopian"] }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.chili.chipotle",
+    "pairsWith": [
+      { "spiceId": "earthy.smoky.smoked-paprika", "affinity": "classic", "note": "Double smoke" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Tex-Mex essential" },
+      { "spiceId": "earthy.seed.coriander", "affinity": "complementary" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "surprising", "note": "Mole complexity", "cuisines": ["Mexican"] },
+      { "spiceId": "citrus-bright.peel.lime-zest", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.chili.gochugaru",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic", "note": "Kimchi base", "cuisines": ["Korean"] },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "classic", "note": "Korean pantry staple" },
+      { "spiceId": "umami-savory.allium.onion-powder", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.chili.aleppo",
+    "pairsWith": [
+      { "spiceId": "earthy.smoky.sumac", "affinity": "classic", "note": "Middle Eastern duo", "cuisines": ["Turkish", "Syrian"] },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "complementary" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.chili.red-pepper-flakes",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic", "note": "Aglio e olio base", "cuisines": ["Italian"] },
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "classic" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" },
+      { "spiceId": "herbal.leafy.basil", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.sharp.mustard-seed",
+    "pairsWith": [
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic", "note": "Indian tadka base", "cuisines": ["Indian"] },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.dill", "affinity": "complementary", "note": "Pickling spice" },
+      { "spiceId": "sweet.aromatic-sweet.fenugreek", "affinity": "complementary", "note": "Panch phoron blend", "cuisines": ["Bengali"] }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.sharp.horseradish",
+    "pairsWith": [
+      { "spiceId": "hot-pungent.sharp.mustard-seed", "affinity": "classic", "note": "Shared isothiocyanates" },
+      { "spiceId": "herbal.leafy.dill", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "hot-pungent.sharp.wasabi",
+    "pairsWith": [
+      { "spiceId": "earthy.root.ginger", "affinity": "classic", "note": "Japanese condiment pair", "cuisines": ["Japanese"] },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.yuzu", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "sweet.vanilla-adjacent.vanilla",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic", "note": "Dessert foundation" },
+      { "spiceId": "warm.baking.nutmeg", "affinity": "classic" },
+      { "spiceId": "warm.woody.cardamom", "affinity": "complementary", "note": "Exotic desserts" },
+      { "spiceId": "floral.delicate.lavender", "affinity": "complementary", "note": "French pastry pairing" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "surprising", "note": "Modern pastry trend" }
+    ]
+  },
+  {
+    "spiceId": "sweet.vanilla-adjacent.tonka-bean",
+    "pairsWith": [
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "classic", "note": "Enhanced vanilla profile" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary" },
+      { "spiceId": "floral.delicate.lavender", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "sweet.aromatic-sweet.fennel-seed",
+    "pairsWith": [
+      { "spiceId": "warm.woody.star-anise", "affinity": "classic", "note": "Shared anethole compound" },
+      { "spiceId": "sweet.aromatic-sweet.anise-seed", "affinity": "classic" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Indian spice blend" },
+      { "spiceId": "earthy.seed.coriander", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "complementary", "note": "Italian sausage seasoning" }
+    ]
+  },
+  {
+    "spiceId": "sweet.aromatic-sweet.anise-seed",
+    "pairsWith": [
+      { "spiceId": "sweet.aromatic-sweet.fennel-seed", "affinity": "classic" },
+      { "spiceId": "warm.woody.star-anise", "affinity": "classic" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "sweet.aromatic-sweet.fenugreek",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Curry powder essential", "cuisines": ["Indian"] },
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic" },
+      { "spiceId": "earthy.seed.coriander", "affinity": "classic" },
+      { "spiceId": "hot-pungent.sharp.mustard-seed", "affinity": "complementary", "note": "Panch phoron" },
+      { "spiceId": "hot-pungent.chili.cayenne", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "sweet.aromatic-sweet.mahlab",
+    "pairsWith": [
+      { "spiceId": "floral.rose-family.rose-water", "affinity": "classic", "note": "Middle Eastern pastry", "cuisines": ["Lebanese", "Turkish"] },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.root.turmeric",
+    "pairsWith": [
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "classic", "note": "Piperine enhances curcumin" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Curry powder base" },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic", "note": "Golden milk trio" },
+      { "spiceId": "earthy.seed.coriander", "affinity": "classic" },
+      { "spiceId": "sweet.aromatic-sweet.fenugreek", "affinity": "classic" },
+      { "spiceId": "hot-pungent.sharp.mustard-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.root.ginger",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic", "note": "Asian aromatics base", "cuisines": ["Chinese", "Japanese", "Thai"] },
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic" },
+      { "spiceId": "herbal.asian.lemongrass", "affinity": "classic", "note": "Thai curry paste", "cuisines": ["Thai"] },
+      { "spiceId": "hot-pungent.pepper.sichuan-pepper", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lime-zest", "affinity": "complementary" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.root.galangal",
+    "pairsWith": [
+      { "spiceId": "herbal.asian.lemongrass", "affinity": "classic", "note": "Tom kha base", "cuisines": ["Thai"] },
+      { "spiceId": "herbal.asian.kaffir-lime-leaf", "affinity": "classic", "note": "Thai curry trinity" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.seed.cumin",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.coriander", "affinity": "classic", "note": "Global spice duo" },
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic" },
+      { "spiceId": "hot-pungent.chili.cayenne", "affinity": "classic", "note": "Chili powder trio" },
+      { "spiceId": "warm.woody.cardamom", "affinity": "classic", "note": "Garam masala" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "earthy.smoky.smoked-paprika", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lime-zest", "affinity": "complementary", "note": "Mexican cuisine staple" }
+    ]
+  },
+  {
+    "spiceId": "earthy.seed.coriander",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic" },
+      { "spiceId": "warm.woody.cardamom", "affinity": "classic" },
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary", "note": "Shared citrus notes" },
+      { "spiceId": "sweet.aromatic-sweet.fennel-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.seed.caraway",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Related seeds" },
+      { "spiceId": "herbal.leafy.dill", "affinity": "classic", "note": "Central European pairing", "cuisines": ["German", "Austrian"] },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.seed.celery-seed",
+    "pairsWith": [
+      { "spiceId": "hot-pungent.sharp.mustard-seed", "affinity": "classic", "note": "Pickling spice" },
+      { "spiceId": "herbal.leafy.dill", "affinity": "complementary" },
+      { "spiceId": "umami-savory.allium.onion-powder", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.smoky.smoked-paprika",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Spanish and Mexican staple" },
+      { "spiceId": "hot-pungent.chili.cayenne", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.chili.chipotle", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "earthy.smoky.sumac",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "classic", "note": "Za'atar blend", "cuisines": ["Lebanese", "Palestinian"] },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "classic", "note": "Za'atar essential" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic", "note": "Za'atar herb" },
+      { "spiceId": "hot-pungent.chili.aleppo", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary", "note": "Shared tartness" }
+    ]
+  },
+  {
+    "spiceId": "herbal.mediterranean.oregano",
+    "pairsWith": [
+      { "spiceId": "herbal.leafy.basil", "affinity": "classic", "note": "Italian herb duo" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic", "note": "Herbes de Provence" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "classic", "note": "Pizza seasoning" },
+      { "spiceId": "earthy.smoky.sumac", "affinity": "classic", "note": "Za'atar" }
+    ]
+  },
+  {
+    "spiceId": "herbal.mediterranean.thyme",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.rosemary", "affinity": "classic", "note": "Herbes de Provence" },
+      { "spiceId": "herbal.leafy.bay-leaf", "affinity": "classic", "note": "Bouquet garni" },
+      { "spiceId": "herbal.leafy.parsley", "affinity": "classic", "note": "Bouquet garni" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.mediterranean.rosemary",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic", "note": "Roast foundation" },
+      { "spiceId": "herbal.mediterranean.sage", "affinity": "classic" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" },
+      { "spiceId": "floral.delicate.lavender", "affinity": "surprising", "note": "Herbes de Provence" }
+    ]
+  },
+  {
+    "spiceId": "herbal.mediterranean.marjoram",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "classic", "note": "Milder oregano cousin" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.basil", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.mediterranean.sage",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.rosemary", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic" },
+      { "spiceId": "warm.baking.nutmeg", "affinity": "complementary", "note": "Brown butter sage" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" }
+    ]
+  },
+  {
+    "spiceId": "herbal.asian.lemongrass",
+    "pairsWith": [
+      { "spiceId": "earthy.root.galangal", "affinity": "classic", "note": "Thai trinity" },
+      { "spiceId": "herbal.asian.kaffir-lime-leaf", "affinity": "classic" },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.cilantro", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.asian.thai-basil",
+    "pairsWith": [
+      { "spiceId": "earthy.root.ginger", "affinity": "classic" },
+      { "spiceId": "herbal.asian.lemongrass", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.cilantro", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.asian.kaffir-lime-leaf",
+    "pairsWith": [
+      { "spiceId": "herbal.asian.lemongrass", "affinity": "classic" },
+      { "spiceId": "earthy.root.galangal", "affinity": "classic" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" },
+      { "spiceId": "herbal.leafy.cilantro", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.asian.shiso",
+    "pairsWith": [
+      { "spiceId": "earthy.root.ginger", "affinity": "classic", "cuisines": ["Japanese"] },
+      { "spiceId": "hot-pungent.sharp.wasabi", "affinity": "complementary" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.leafy.basil",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "hot-pungent.chili.red-pepper-flakes", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" },
+      { "spiceId": "herbal.leafy.parsley", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.leafy.parsley",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "classic", "note": "Gremolata", "cuisines": ["Italian"] },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.cilantro", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.leafy.cilantro",
+    "pairsWith": [
+      { "spiceId": "citrus-bright.peel.lime-zest", "affinity": "classic", "note": "Mexican and Thai staple" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "hot-pungent.chili.cayenne", "affinity": "complementary" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.leafy.dill",
+    "pairsWith": [
+      { "spiceId": "herbal.leafy.parsley", "affinity": "classic" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.sharp.mustard-seed", "affinity": "complementary" },
+      { "spiceId": "earthy.seed.caraway", "affinity": "classic" }
+    ]
+  },
+  {
+    "spiceId": "herbal.leafy.bay-leaf",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic", "note": "Bouquet garni" },
+      { "spiceId": "herbal.leafy.parsley", "affinity": "classic" },
+      { "spiceId": "warm.woody.clove", "affinity": "complementary" },
+      { "spiceId": "warm.baking.nutmeg", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "herbal.leafy.tarragon",
+    "pairsWith": [
+      { "spiceId": "herbal.leafy.parsley", "affinity": "classic", "note": "Fines herbes", "cuisines": ["French"] },
+      { "spiceId": "herbal.leafy.cilantro", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.sharp.mustard-seed", "affinity": "complementary", "note": "Béarnaise base" }
+    ]
+  },
+  {
+    "spiceId": "floral.rose-family.rose-water",
+    "pairsWith": [
+      { "spiceId": "warm.woody.cardamom", "affinity": "classic", "note": "Persian and Indian sweets" },
+      { "spiceId": "floral.rose-family.saffron", "affinity": "classic" },
+      { "spiceId": "sweet.aromatic-sweet.mahlab", "affinity": "classic" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "floral.rose-family.saffron",
+    "pairsWith": [
+      { "spiceId": "warm.woody.cardamom", "affinity": "classic", "note": "Biryani and pilaf", "cuisines": ["Indian", "Persian"] },
+      { "spiceId": "floral.rose-family.rose-water", "affinity": "classic" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "surprising", "note": "Saffron cream desserts" }
+    ]
+  },
+  {
+    "spiceId": "floral.rose-family.hibiscus",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary", "note": "Agua de jamaica" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lime-zest", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "floral.delicate.lavender",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.rosemary", "affinity": "classic", "note": "Herbes de Provence" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary", "note": "French pastry" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "floral.delicate.chamomile",
+    "pairsWith": [
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary" },
+      { "spiceId": "floral.delicate.lavender", "affinity": "complementary" },
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "floral.delicate.elderflower",
+    "pairsWith": [
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "classic" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary" },
+      { "spiceId": "earthy.root.ginger", "affinity": "surprising" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.peel.lemon-zest",
+    "pairsWith": [
+      { "spiceId": "herbal.leafy.parsley", "affinity": "classic", "note": "Gremolata" },
+      { "spiceId": "herbal.leafy.dill", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "complementary" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.peel.orange-zest",
+    "pairsWith": [
+      { "spiceId": "warm.baking.cinnamon", "affinity": "classic" },
+      { "spiceId": "warm.woody.clove", "affinity": "classic", "note": "Mulled wine" },
+      { "spiceId": "warm.woody.star-anise", "affinity": "complementary" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary" },
+      { "spiceId": "floral.rose-family.saffron", "affinity": "surprising" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.peel.lime-zest",
+    "pairsWith": [
+      { "spiceId": "herbal.leafy.cilantro", "affinity": "classic" },
+      { "spiceId": "hot-pungent.chili.cayenne", "affinity": "classic", "note": "Mexican heat+acid" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" },
+      { "spiceId": "herbal.asian.lemongrass", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.peel.yuzu",
+    "pairsWith": [
+      { "spiceId": "hot-pungent.sharp.wasabi", "affinity": "complementary", "cuisines": ["Japanese"] },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" },
+      { "spiceId": "herbal.asian.shiso", "affinity": "surprising" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.tart.amchur",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Chaat masala", "cuisines": ["Indian"] },
+      { "spiceId": "earthy.seed.coriander", "affinity": "classic" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.tart.tamarind",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "cuisines": ["Indian", "Thai"] },
+      { "spiceId": "hot-pungent.chili.cayenne", "affinity": "classic", "note": "Sweet-sour-hot balance" },
+      { "spiceId": "earthy.root.ginger", "affinity": "complementary" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "citrus-bright.tart.dried-lime",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Persian stew essential", "cuisines": ["Persian", "Iraqi"] },
+      { "spiceId": "earthy.root.turmeric", "affinity": "classic" },
+      { "spiceId": "warm.baking.cinnamon", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.allium.garlic",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.onion-powder", "affinity": "classic", "note": "Universal savory base" },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.oregano", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.rosemary", "affinity": "classic" },
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.allium.onion-powder",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "earthy.smoky.smoked-paprika", "affinity": "complementary" },
+      { "spiceId": "herbal.leafy.parsley", "affinity": "complementary" },
+      { "spiceId": "earthy.seed.celery-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.allium.chive",
+    "pairsWith": [
+      { "spiceId": "herbal.leafy.parsley", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.dill", "affinity": "classic" },
+      { "spiceId": "herbal.leafy.tarragon", "affinity": "complementary", "note": "Fines herbes" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.fermented.dried-mushroom",
+    "pairsWith": [
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "herbal.mediterranean.rosemary", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.fermented.nutritional-yeast",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "umami-savory.allium.onion-powder", "affinity": "classic" },
+      { "spiceId": "earthy.smoky.smoked-paprika", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.fermented.black-garlic",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic", "note": "Layered garlic depth" },
+      { "spiceId": "umami-savory.fermented.dried-mushroom", "affinity": "complementary", "note": "Umami stack" },
+      { "spiceId": "herbal.mediterranean.thyme", "affinity": "complementary" },
+      { "spiceId": "hot-pungent.pepper.black-pepper", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.salty.sesame-seed",
+    "pairsWith": [
+      { "spiceId": "umami-savory.allium.garlic", "affinity": "classic" },
+      { "spiceId": "earthy.root.ginger", "affinity": "classic" },
+      { "spiceId": "hot-pungent.chili.gochugaru", "affinity": "classic" },
+      { "spiceId": "earthy.smoky.sumac", "affinity": "classic", "note": "Za'atar" },
+      { "spiceId": "umami-savory.salty.nigella-seed", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.salty.poppy-seed",
+    "pairsWith": [
+      { "spiceId": "citrus-bright.peel.lemon-zest", "affinity": "classic", "note": "Poppy seed cake" },
+      { "spiceId": "sweet.vanilla-adjacent.vanilla", "affinity": "complementary" },
+      { "spiceId": "warm.baking.nutmeg", "affinity": "complementary" }
+    ]
+  },
+  {
+    "spiceId": "umami-savory.salty.nigella-seed",
+    "pairsWith": [
+      { "spiceId": "earthy.seed.cumin", "affinity": "classic", "note": "Panch phoron", "cuisines": ["Bengali", "Indian"] },
+      { "spiceId": "sweet.aromatic-sweet.fenugreek", "affinity": "classic", "note": "Panch phoron" },
+      { "spiceId": "umami-savory.salty.sesame-seed", "affinity": "complementary" }
+    ]
+  }
+]

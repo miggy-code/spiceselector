@@ -1,0 +1,275 @@
+{
+  "id": "root",
+  "name": "Flavor Wheel",
+  "level": "root",
+  "children": [
+    {
+      "id": "warm",
+      "name": "Warm",
+      "level": "family",
+      "children": [
+        {
+          "id": "warm.baking",
+          "name": "Baking Spice",
+          "level": "subcategory",
+          "children": [
+            { "id": "warm.baking.cinnamon", "name": "Cinnamon", "level": "spice", "description": "Sweet, warm bark spice used worldwide" },
+            { "id": "warm.baking.nutmeg", "name": "Nutmeg", "level": "spice", "description": "Warm, nutty, slightly sweet seed" },
+            { "id": "warm.baking.allspice", "name": "Allspice", "level": "spice", "description": "Combines clove, cinnamon, and nutmeg flavors" },
+            { "id": "warm.baking.mace", "name": "Mace", "level": "spice", "description": "Delicate outer covering of nutmeg" }
+          ]
+        },
+        {
+          "id": "warm.woody",
+          "name": "Woody",
+          "level": "subcategory",
+          "children": [
+            { "id": "warm.woody.clove", "name": "Clove", "level": "spice", "description": "Intense, warm aromatic flower bud" },
+            { "id": "warm.woody.star-anise", "name": "Star Anise", "level": "spice", "description": "Licorice-flavored star-shaped pod" },
+            { "id": "warm.woody.cardamom", "name": "Cardamom", "level": "spice", "description": "Complex, floral-citrusy warm pod" },
+            { "id": "warm.woody.cassia", "name": "Cassia", "level": "spice", "description": "Bold, spicy cousin of cinnamon" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hot-pungent",
+      "name": "Hot & Pungent",
+      "level": "family",
+      "children": [
+        {
+          "id": "hot-pungent.pepper",
+          "name": "Pepper",
+          "level": "subcategory",
+          "children": [
+            { "id": "hot-pungent.pepper.black-pepper", "name": "Black Pepper", "level": "spice", "description": "Universal pungent spice with piney notes" },
+            { "id": "hot-pungent.pepper.white-pepper", "name": "White Pepper", "level": "spice", "description": "Milder, earthy fermented peppercorn" },
+            { "id": "hot-pungent.pepper.sichuan-pepper", "name": "Sichuan Pepper", "level": "spice", "description": "Numbing, tingling citrusy husk" },
+            { "id": "hot-pungent.pepper.long-pepper", "name": "Long Pepper", "level": "spice", "description": "Sweet-hot pepper with cinnamon notes" }
+          ]
+        },
+        {
+          "id": "hot-pungent.chili",
+          "name": "Chili",
+          "level": "subcategory",
+          "children": [
+            { "id": "hot-pungent.chili.cayenne", "name": "Cayenne", "level": "spice", "description": "Sharp, clean heat" },
+            { "id": "hot-pungent.chili.red-pepper-flakes", "name": "Red Pepper Flakes", "level": "spice", "description": "Crushed dried chili with seeds" },
+            { "id": "hot-pungent.chili.chipotle", "name": "Chipotle", "level": "spice", "description": "Smoked jalapeño with deep heat" },
+            { "id": "hot-pungent.chili.gochugaru", "name": "Gochugaru", "level": "spice", "description": "Korean chili flakes, fruity and vibrant" },
+            { "id": "hot-pungent.chili.aleppo", "name": "Aleppo Pepper", "level": "spice", "description": "Mild, fruity, oily Middle Eastern chili" }
+          ]
+        },
+        {
+          "id": "hot-pungent.sharp",
+          "name": "Sharp & Biting",
+          "level": "subcategory",
+          "children": [
+            { "id": "hot-pungent.sharp.mustard-seed", "name": "Mustard Seed", "level": "spice", "description": "Pungent seed with horseradish-like bite" },
+            { "id": "hot-pungent.sharp.horseradish", "name": "Horseradish", "level": "spice", "description": "Sinus-clearing sharp root" },
+            { "id": "hot-pungent.sharp.wasabi", "name": "Wasabi", "level": "spice", "description": "Japanese root with intense nasal heat" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sweet",
+      "name": "Sweet",
+      "level": "family",
+      "children": [
+        {
+          "id": "sweet.vanilla-adjacent",
+          "name": "Vanilla-Adjacent",
+          "level": "subcategory",
+          "children": [
+            { "id": "sweet.vanilla-adjacent.vanilla", "name": "Vanilla", "level": "spice", "description": "Rich, creamy aromatic bean" },
+            { "id": "sweet.vanilla-adjacent.tonka-bean", "name": "Tonka Bean", "level": "spice", "description": "Vanilla-like with almond and cherry notes" }
+          ]
+        },
+        {
+          "id": "sweet.aromatic-sweet",
+          "name": "Aromatic Sweet",
+          "level": "subcategory",
+          "children": [
+            { "id": "sweet.aromatic-sweet.fennel-seed", "name": "Fennel Seed", "level": "spice", "description": "Sweet licorice-flavored seed" },
+            { "id": "sweet.aromatic-sweet.anise-seed", "name": "Anise Seed", "level": "spice", "description": "Intensely sweet licorice flavor" },
+            { "id": "sweet.aromatic-sweet.fenugreek", "name": "Fenugreek", "level": "spice", "description": "Maple-like sweetness with bitter edge" },
+            { "id": "sweet.aromatic-sweet.mahlab", "name": "Mahlab", "level": "spice", "description": "Cherry-almond flavored ground pit" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earthy",
+      "name": "Earthy",
+      "level": "family",
+      "children": [
+        {
+          "id": "earthy.root",
+          "name": "Root & Rhizome",
+          "level": "subcategory",
+          "children": [
+            { "id": "earthy.root.turmeric", "name": "Turmeric", "level": "spice", "description": "Golden, earthy, mildly bitter rhizome" },
+            { "id": "earthy.root.ginger", "name": "Ginger", "level": "spice", "description": "Warm, zesty, pungent rhizome" },
+            { "id": "earthy.root.galangal", "name": "Galangal", "level": "spice", "description": "Pine-citrus flavored ginger cousin" }
+          ]
+        },
+        {
+          "id": "earthy.seed",
+          "name": "Earthy Seed",
+          "level": "subcategory",
+          "children": [
+            { "id": "earthy.seed.cumin", "name": "Cumin", "level": "spice", "description": "Warm, earthy, essential to many cuisines" },
+            { "id": "earthy.seed.coriander", "name": "Coriander Seed", "level": "spice", "description": "Citrusy, floral dried seed" },
+            { "id": "earthy.seed.caraway", "name": "Caraway", "level": "spice", "description": "Anise-like earthy seed" },
+            { "id": "earthy.seed.celery-seed", "name": "Celery Seed", "level": "spice", "description": "Concentrated herbal celery flavor" }
+          ]
+        },
+        {
+          "id": "earthy.smoky",
+          "name": "Smoky",
+          "level": "subcategory",
+          "children": [
+            { "id": "earthy.smoky.smoked-paprika", "name": "Smoked Paprika", "level": "spice", "description": "Sweet-smoky dried pepper" },
+            { "id": "earthy.smoky.sumac", "name": "Sumac", "level": "spice", "description": "Tart, fruity, wine-red berry" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "herbal",
+      "name": "Herbal",
+      "level": "family",
+      "children": [
+        {
+          "id": "herbal.mediterranean",
+          "name": "Mediterranean",
+          "level": "subcategory",
+          "children": [
+            { "id": "herbal.mediterranean.oregano", "name": "Oregano", "level": "spice", "description": "Robust, peppery herb of Italian cuisine" },
+            { "id": "herbal.mediterranean.thyme", "name": "Thyme", "level": "spice", "description": "Subtle, earthy, lemony herb" },
+            { "id": "herbal.mediterranean.rosemary", "name": "Rosemary", "level": "spice", "description": "Pine-like, assertive woody herb" },
+            { "id": "herbal.mediterranean.marjoram", "name": "Marjoram", "level": "spice", "description": "Delicate, sweet oregano cousin" },
+            { "id": "herbal.mediterranean.sage", "name": "Sage", "level": "spice", "description": "Savory, slightly peppery, musty herb" }
+          ]
+        },
+        {
+          "id": "herbal.asian",
+          "name": "Asian Herb",
+          "level": "subcategory",
+          "children": [
+            { "id": "herbal.asian.lemongrass", "name": "Lemongrass", "level": "spice", "description": "Bright, citrusy tropical stalk" },
+            { "id": "herbal.asian.thai-basil", "name": "Thai Basil", "level": "spice", "description": "Anise-scented, sturdy basil variety" },
+            { "id": "herbal.asian.kaffir-lime-leaf", "name": "Kaffir Lime Leaf", "level": "spice", "description": "Intensely citrusy, floral leaf" },
+            { "id": "herbal.asian.shiso", "name": "Shiso", "level": "spice", "description": "Minty, basil-like Japanese herb" }
+          ]
+        },
+        {
+          "id": "herbal.leafy",
+          "name": "Leafy & Fresh",
+          "level": "subcategory",
+          "children": [
+            { "id": "herbal.leafy.basil", "name": "Basil", "level": "spice", "description": "Sweet, peppery, classic Italian herb" },
+            { "id": "herbal.leafy.parsley", "name": "Parsley", "level": "spice", "description": "Clean, fresh, mildly bitter green" },
+            { "id": "herbal.leafy.cilantro", "name": "Cilantro", "level": "spice", "description": "Bright, citrusy, polarizing herb" },
+            { "id": "herbal.leafy.dill", "name": "Dill", "level": "spice", "description": "Feathery herb with anise and grass notes" },
+            { "id": "herbal.leafy.bay-leaf", "name": "Bay Leaf", "level": "spice", "description": "Subtle, herbal background seasoning" },
+            { "id": "herbal.leafy.tarragon", "name": "Tarragon", "level": "spice", "description": "Anise-flavored French herb" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "floral",
+      "name": "Floral",
+      "level": "family",
+      "children": [
+        {
+          "id": "floral.rose-family",
+          "name": "Rose Family",
+          "level": "subcategory",
+          "children": [
+            { "id": "floral.rose-family.rose-water", "name": "Rose Water", "level": "spice", "description": "Delicate, perfumed distilled rose" },
+            { "id": "floral.rose-family.saffron", "name": "Saffron", "level": "spice", "description": "Floral, honey-like, earthy precious spice" },
+            { "id": "floral.rose-family.hibiscus", "name": "Hibiscus", "level": "spice", "description": "Tart, cranberry-like floral" }
+          ]
+        },
+        {
+          "id": "floral.delicate",
+          "name": "Delicate & Fragrant",
+          "level": "subcategory",
+          "children": [
+            { "id": "floral.delicate.lavender", "name": "Lavender", "level": "spice", "description": "Perfumed, floral with camphor notes" },
+            { "id": "floral.delicate.chamomile", "name": "Chamomile", "level": "spice", "description": "Apple-like, calming dried flower" },
+            { "id": "floral.delicate.elderflower", "name": "Elderflower", "level": "spice", "description": "Muscat-like, delicate, honeyed floral" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "citrus-bright",
+      "name": "Citrus & Bright",
+      "level": "family",
+      "children": [
+        {
+          "id": "citrus-bright.peel",
+          "name": "Citrus Peel",
+          "level": "subcategory",
+          "children": [
+            { "id": "citrus-bright.peel.lemon-zest", "name": "Lemon Zest", "level": "spice", "description": "Bright, tangy citrus oil" },
+            { "id": "citrus-bright.peel.orange-zest", "name": "Orange Zest", "level": "spice", "description": "Sweet, fragrant citrus peel" },
+            { "id": "citrus-bright.peel.lime-zest", "name": "Lime Zest", "level": "spice", "description": "Sharp, tropical citrus" },
+            { "id": "citrus-bright.peel.yuzu", "name": "Yuzu", "level": "spice", "description": "Tart Japanese citrus with floral notes" }
+          ]
+        },
+        {
+          "id": "citrus-bright.tart",
+          "name": "Tart & Acidic",
+          "level": "subcategory",
+          "children": [
+            { "id": "citrus-bright.tart.amchur", "name": "Amchur", "level": "spice", "description": "Dried mango powder, sour and fruity" },
+            { "id": "citrus-bright.tart.tamarind", "name": "Tamarind", "level": "spice", "description": "Sweet-sour tropical fruit paste" },
+            { "id": "citrus-bright.tart.dried-lime", "name": "Dried Lime", "level": "spice", "description": "Intensely sour, fermented citrus" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umami-savory",
+      "name": "Umami & Savory",
+      "level": "family",
+      "children": [
+        {
+          "id": "umami-savory.allium",
+          "name": "Allium",
+          "level": "subcategory",
+          "children": [
+            { "id": "umami-savory.allium.garlic", "name": "Garlic Powder", "level": "spice", "description": "Pungent, savory dried allium" },
+            { "id": "umami-savory.allium.onion-powder", "name": "Onion Powder", "level": "spice", "description": "Sweet, savory dried onion" },
+            { "id": "umami-savory.allium.chive", "name": "Chive", "level": "spice", "description": "Mild, grassy onion flavor" }
+          ]
+        },
+        {
+          "id": "umami-savory.fermented",
+          "name": "Fermented & Dried",
+          "level": "subcategory",
+          "children": [
+            { "id": "umami-savory.fermented.dried-mushroom", "name": "Dried Mushroom", "level": "spice", "description": "Deep umami, earthy dried fungi" },
+            { "id": "umami-savory.fermented.nutritional-yeast", "name": "Nutritional Yeast", "level": "spice", "description": "Cheesy, nutty inactive yeast flakes" },
+            { "id": "umami-savory.fermented.black-garlic", "name": "Black Garlic", "level": "spice", "description": "Sweet, fermented, molasses-like garlic" }
+          ]
+        },
+        {
+          "id": "umami-savory.salty",
+          "name": "Salty & Mineral",
+          "level": "subcategory",
+          "children": [
+            { "id": "umami-savory.salty.sesame-seed", "name": "Sesame Seed", "level": "spice", "description": "Nutty, oil-rich seed" },
+            { "id": "umami-savory.salty.poppy-seed", "name": "Poppy Seed", "level": "spice", "description": "Mild, nutty, crunchy seed" },
+            { "id": "umami-savory.salty.nigella-seed", "name": "Nigella Seed", "level": "spice", "description": "Oniony, peppery black seed" }
+          ]
+        }
+      ]
+    }
+  ]
+}

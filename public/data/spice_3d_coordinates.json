@@ -1,0 +1,483 @@
+[
+  {
+    "id": "allspice",
+    "name": "Allspice",
+    "family": "sweet",
+    "x": -1.537,
+    "y": -1.014,
+    "z": 4.289,
+    "top_compounds": [
+      "17alpha-ethynylestradiol",
+      "Eugenol",
+      "Methyleugenol"
+    ]
+  },
+  {
+    "id": "coriander",
+    "name": "Coriander",
+    "family": "fatty",
+    "x": -0.693,
+    "y": 0.296,
+    "z": -2.778,
+    "top_compounds": [
+      "Sugars",
+      "C18:1, n-9",
+      "Oleic acid"
+    ]
+  },
+  {
+    "id": "tarragon",
+    "name": "Tarragon",
+    "family": "sweet",
+    "x": -0.496,
+    "y": 8.329,
+    "z": -1.876,
+    "top_compounds": [
+      "Retinol",
+      "Potassium",
+      "Calcium"
+    ]
+  },
+  {
+    "id": "nutmeg",
+    "name": "Nutmeg",
+    "family": "fatty",
+    "x": -0.068,
+    "y": -2.314,
+    "z": -0.59,
+    "top_compounds": [
+      "Starch",
+      "Sugars",
+      "17alpha-ethynylestradiol"
+    ]
+  },
+  {
+    "id": "poppy-seed",
+    "name": "Poppy seed",
+    "family": "faint",
+    "x": 5.856,
+    "y": 1.587,
+    "z": -0.383,
+    "top_compounds": [
+      "(Z,Z)-9,12-Octadecadienoic acid",
+      "Rubber, natural-smoked sheet and latex solids (hevea brasiliensis)",
+      "Oleic acid"
+    ]
+  },
+  {
+    "id": "vanilla",
+    "name": "Vanilla",
+    "family": "alcoholic",
+    "x": -2.275,
+    "y": -7.628,
+    "z": 1.451,
+    "top_compounds": [
+      "Ethanol",
+      "Sugars",
+      "Potassium"
+    ]
+  },
+  {
+    "id": "saffron",
+    "name": "Saffron",
+    "family": "bitter",
+    "x": -1.405,
+    "y": 3.263,
+    "z": 3.344,
+    "top_compounds": [
+      "Starch",
+      "Nitrogen",
+      "alpha-Crocin"
+    ]
+  },
+  {
+    "id": "bay-leaf",
+    "name": "Bay leaf",
+    "family": "sweet",
+    "x": -3.688,
+    "y": 2.596,
+    "z": -1.632,
+    "top_compounds": [
+      "Retinol",
+      "17alpha-ethynylestradiol",
+      "Costunolide"
+    ]
+  },
+  {
+    "id": "cloves",
+    "name": "Cloves",
+    "family": "woody",
+    "x": 3.016,
+    "y": 2.615,
+    "z": 4.344,
+    "top_compounds": [
+      "Eugenol",
+      "beta-Caryophyllene",
+      "17alpha-ethynylestradiol"
+    ]
+  },
+  {
+    "id": "caraway",
+    "name": "Caraway",
+    "family": "odorless",
+    "x": 3.676,
+    "y": -3.026,
+    "z": 2.855,
+    "top_compounds": [
+      "Starch",
+      "(Z,Z)-9,12-Octadecadienoic acid",
+      "Petroselinic acid"
+    ]
+  },
+  {
+    "id": "oregano",
+    "name": "Oregano",
+    "family": "odorless",
+    "x": -0.68,
+    "y": -4.917,
+    "z": 1.104,
+    "top_compounds": [
+      "Chinese tannin",
+      "Sugars",
+      "D-Glucose"
+    ]
+  },
+  {
+    "id": "onion-powder",
+    "name": "Onion powder",
+    "family": "odorless",
+    "x": -3.486,
+    "y": -2.866,
+    "z": 4.262,
+    "top_compounds": [
+      "beta-D-Glucopyranose",
+      "Sucrose",
+      "D-Fructose"
+    ]
+  },
+  {
+    "id": "fennel-seed",
+    "name": "Fennel seed",
+    "family": "faint",
+    "x": 3.273,
+    "y": -5.025,
+    "z": -5.312,
+    "top_compounds": [
+      "C18:1, n-9",
+      "Oleic acid",
+      "Sucrose"
+    ]
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary",
+    "family": "odorless",
+    "x": 0.2,
+    "y": 3.843,
+    "z": 0.04,
+    "top_compounds": [
+      "Rosmarinic acid",
+      "Ursolic acid",
+      "Retinol"
+    ]
+  },
+  {
+    "id": "celery-seed",
+    "name": "Celery seed",
+    "family": "herb",
+    "x": 5.052,
+    "y": 4.174,
+    "z": -4.058,
+    "top_compounds": [
+      "Sugars",
+      "beta-Selinene",
+      "Oleic acid"
+    ]
+  },
+  {
+    "id": "white-pepper",
+    "name": "White pepper",
+    "family": "odorless",
+    "x": -4.265,
+    "y": -3.207,
+    "z": -0.509,
+    "top_compounds": [
+      "Starch",
+      "Piperine",
+      "17alpha-ethynylestradiol"
+    ]
+  },
+  {
+    "id": "cardamom",
+    "name": "Cardamom",
+    "family": "fatty",
+    "x": -5.44,
+    "y": 3.745,
+    "z": 1.812,
+    "top_compounds": [
+      "Starch",
+      "17alpha-ethynylestradiol",
+      "Oleic acid"
+    ]
+  },
+  {
+    "id": "mustard-seeds",
+    "name": "Mustard seeds",
+    "family": "odorless",
+    "x": 3.645,
+    "y": -2.599,
+    "z": -2.761,
+    "top_compounds": [
+      "Erucic acid",
+      "Sugars",
+      "Oleic acid"
+    ]
+  },
+  {
+    "id": "lemongrass",
+    "name": "Lemongrass",
+    "family": "odorless",
+    "x": -7.708,
+    "y": 1.294,
+    "z": 0.872,
+    "top_compounds": [
+      "Potassium",
+      "Calcium",
+      "17alpha-ethynylestradiol"
+    ]
+  },
+  {
+    "id": "thai-basil",
+    "name": "Thai basil",
+    "family": "odorless",
+    "x": 10.0,
+    "y": 3.769,
+    "z": -3.302,
+    "top_compounds": [
+      "Retinol",
+      "Potassium",
+      "L-Aspartic acid"
+    ]
+  },
+  {
+    "id": "marjoram",
+    "name": "Marjoram",
+    "family": "fatty",
+    "x": 2.128,
+    "y": -7.233,
+    "z": 2.967,
+    "top_compounds": [
+      "Retinol",
+      "Sugars",
+      "Rosmarinic acid"
+    ]
+  },
+  {
+    "id": "hibiscus",
+    "name": "Hibiscus",
+    "family": "odorless",
+    "x": 0.296,
+    "y": 2.273,
+    "z": 7.884,
+    "top_compounds": [
+      "Cellulose",
+      "Starch",
+      "Malic acid"
+    ]
+  },
+  {
+    "id": "cumin",
+    "name": "Cumin",
+    "family": "odorless",
+    "x": -0.942,
+    "y": -3.533,
+    "z": -6.846,
+    "top_compounds": [
+      "Sugars",
+      "Sucrose",
+      "D-Glucose"
+    ]
+  },
+  {
+    "id": "garlic-powder",
+    "name": "Garlic powder",
+    "family": "odorless",
+    "x": 5.628,
+    "y": 0.187,
+    "z": -7.999,
+    "top_compounds": [
+      "L-Glutamic acid",
+      "Arginine",
+      "Nitrogen"
+    ]
+  },
+  {
+    "id": "amchur",
+    "name": "Amchur",
+    "family": "odorless",
+    "x": -4.436,
+    "y": -5.408,
+    "z": 6.293,
+    "top_compounds": [
+      "Starch",
+      "Sugars",
+      "Chinese tannin"
+    ]
+  },
+  {
+    "id": "anise-seed",
+    "name": "Anise seed",
+    "family": "sweet",
+    "x": -5.333,
+    "y": 7.541,
+    "z": 0.997,
+    "top_compounds": [
+      "1-Methoxy-4-(2-propenyl)benzene",
+      "Petroselinic acid",
+      "Oleic acid"
+    ]
+  },
+  {
+    "id": "turmeric",
+    "name": "Turmeric",
+    "family": "herb",
+    "x": 8.934,
+    "y": -2.362,
+    "z": 3.656,
+    "top_compounds": [
+      "Starch",
+      "beta-D-Glucopyranose",
+      "alpha-Curcumene"
+    ]
+  },
+  {
+    "id": "fenugreek",
+    "name": "Fenugreek",
+    "family": "odorless",
+    "x": -6.683,
+    "y": -1.213,
+    "z": -2.956,
+    "top_compounds": [
+      "Lignin",
+      "L-Glutamic acid",
+      "L-Aspartic acid"
+    ]
+  },
+  {
+    "id": "rose",
+    "name": "Rose",
+    "family": "odorless",
+    "x": 7.295,
+    "y": -1.606,
+    "z": -2.896,
+    "top_compounds": [
+      "Petroselinic acid",
+      "Retinol",
+      "Sucrose"
+    ]
+  },
+  {
+    "id": "tamarind",
+    "name": "Tamarind",
+    "family": "very mild",
+    "x": -6.625,
+    "y": -5.557,
+    "z": 3.419,
+    "top_compounds": [
+      "Sugars",
+      "beta-D-Glucopyranose",
+      "Tartaric acid"
+    ]
+  },
+  {
+    "id": "smoked-paprika",
+    "name": "Smoked paprika",
+    "family": "odorless",
+    "x": -1.856,
+    "y": -5.901,
+    "z": -4.085,
+    "top_compounds": [
+      "Glutamic acid",
+      "L-Aspartic acid",
+      "Retinol"
+    ]
+  },
+  {
+    "id": "cinnamon",
+    "name": "Cinnamon",
+    "family": "odorless",
+    "x": -0.986,
+    "y": 7.214,
+    "z": 6.214,
+    "top_compounds": [
+      "Starch",
+      "Starch, pregelatinized",
+      "17alpha-ethynylestradiol"
+    ]
+  },
+  {
+    "id": "dill",
+    "name": "Dill",
+    "family": "odorless",
+    "x": 6.8,
+    "y": 8.036,
+    "z": 2.754,
+    "top_compounds": [
+      "Resin",
+      "Starch",
+      "Rubber, natural-smoked sheet and latex solids (hevea brasiliensis)"
+    ]
+  },
+  {
+    "id": "star-anise",
+    "name": "Star anise",
+    "family": "sweet",
+    "x": -6.381,
+    "y": 3.526,
+    "z": -4.431,
+    "top_compounds": [
+      "17alpha-ethynylestradiol",
+      "Anethole",
+      "1-Methoxy-4-(2-propenyl)benzene"
+    ]
+  },
+  {
+    "id": "thyme",
+    "name": "Thyme",
+    "family": "woody",
+    "x": 0.026,
+    "y": 6.223,
+    "z": -6.813,
+    "top_compounds": [
+      "Chinese tannin",
+      "Retinol",
+      "Rosmarinic acid"
+    ]
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "family": "odorless",
+    "x": -7.214,
+    "y": 0.78,
+    "z": 4.792,
+    "top_compounds": [
+      "Starch",
+      "17alpha-ethynylestradiol",
+      "Sugars"
+    ]
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "family": "fatty",
+    "x": 6.374,
+    "y": -5.88,
+    "z": -4.121,
+    "top_compounds": [
+      "Cholesterol",
+      "Retinol",
+      "C18:1, n-9"
+    ]
+  }
+]

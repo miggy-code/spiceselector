@@ -1,0 +1,442 @@
+{
+  "earthy.seed.cumin": {
+    "warmth": 70,
+    "brightness": 25,
+    "earthiness": 95,
+    "florality": 10,
+    "heat": 8,
+    "intensity": 85
+  },
+  "hot-pungent.chili.aleppo": {
+    "warmth": 65,
+    "brightness": 58,
+    "earthiness": 42,
+    "florality": 10,
+    "heat": 30,
+    "intensity": 60
+  },
+  "warm.baking.allspice": {
+    "warmth": 85,
+    "brightness": 45,
+    "earthiness": 50,
+    "florality": 10,
+    "heat": 18,
+    "intensity": 80
+  },
+  "citrus-bright.tart.amchur": {
+    "warmth": 20,
+    "brightness": 90,
+    "earthiness": 45,
+    "florality": 30,
+    "heat": 2,
+    "intensity": 70
+  },
+  "sweet.aromatic-sweet.anise-seed": {
+    "warmth": 75,
+    "brightness": 45,
+    "earthiness": 25,
+    "florality": 15,
+    "heat": 0,
+    "intensity": 70
+  },
+  "herbal.leafy.basil": {
+    "warmth": 20,
+    "brightness": 85,
+    "earthiness": 40,
+    "florality": 30,
+    "heat": 2,
+    "intensity": 70
+  },
+  "herbal.leafy.bay-leaf": {
+    "warmth": 35,
+    "brightness": 60,
+    "earthiness": 45,
+    "florality": 30,
+    "heat": 5,
+    "intensity": 55
+  },
+  "hot-pungent.pepper.black-pepper": {
+    "warmth": 60,
+    "brightness": 70,
+    "earthiness": 75,
+    "florality": 5,
+    "heat": 45,
+    "intensity": 80
+  },
+  "earthy.seed.caraway": {
+    "warmth": 55,
+    "brightness": 40,
+    "earthiness": 70,
+    "florality": 25,
+    "heat": 5,
+    "intensity": 65
+  },
+  "warm.woody.cardamom": {
+    "warmth": 85,
+    "brightness": 70,
+    "earthiness": 45,
+    "florality": 65,
+    "heat": 10,
+    "intensity": 80
+  },
+  "warm.woody.cassia": {
+    "warmth": 90,
+    "brightness": 30,
+    "earthiness": 65,
+    "florality": 10,
+    "heat": 5,
+    "intensity": 85
+  },
+  "hot-pungent.chili.cayenne": {
+    "warmth": 45,
+    "brightness": 30,
+    "earthiness": 50,
+    "florality": 5,
+    "heat": 75,
+    "intensity": 70
+  },
+  "earthy.seed.celery-seed": {
+    "warmth": 45,
+    "brightness": 38,
+    "earthiness": 70,
+    "florality": 20,
+    "heat": 0,
+    "intensity": 60
+  },
+  "floral.delicate.chamomile": {
+    "warmth": 40,
+    "brightness": 30,
+    "earthiness": 25,
+    "florality": 90,
+    "heat": 0,
+    "intensity": 45
+  },
+  "hot-pungent.chili.red-pepper-flakes": {
+    "warmth": 70,
+    "brightness": 40,
+    "earthiness": 80,
+    "florality": 15,
+    "heat": 50,
+    "intensity": 75
+  },
+  "hot-pungent.chili.chipotle": {
+    "warmth": 85,
+    "brightness": 25,
+    "earthiness": 90,
+    "florality": 5,
+    "heat": 60,
+    "intensity": 80
+  },
+  "warm.baking.cinnamon": {
+    "warmth": 90,
+    "brightness": 45,
+    "earthiness": 30,
+    "florality": 25,
+    "heat": 5,
+    "intensity": 85
+  },
+  "warm.woody.clove": {
+    "warmth": 90,
+    "brightness": 25,
+    "earthiness": 50,
+    "florality": 30,
+    "heat": 10,
+    "intensity": 85
+  },
+  "earthy.seed.coriander": {
+    "warmth": 65,
+    "brightness": 70,
+    "earthiness": 75,
+    "florality": 45,
+    "heat": 5,
+    "intensity": 70
+  },
+  "herbal.leafy.dill": {
+    "warmth": 18,
+    "brightness": 80,
+    "earthiness": 35,
+    "florality": 25,
+    "heat": 0,
+    "intensity": 65
+  },
+  "sweet.aromatic-sweet.fennel-seed": {
+    "warmth": 70,
+    "brightness": 60,
+    "earthiness": 25,
+    "florality": 10,
+    "heat": 2,
+    "intensity": 75
+  },
+  "sweet.aromatic-sweet.fenugreek": {
+    "warmth": 75,
+    "brightness": 25,
+    "earthiness": 50,
+    "florality": 5,
+    "heat": 2,
+    "intensity": 65
+  },
+  "earthy.root.galangal": {
+    "warmth": 65,
+    "brightness": 75,
+    "earthiness": 55,
+    "florality": 20,
+    "heat": 30,
+    "intensity": 70
+  },
+  "umami-savory.allium.garlic": {
+    "warmth": 60,
+    "brightness": 10,
+    "earthiness": 80,
+    "florality": 5,
+    "heat": 10,
+    "intensity": 90
+  },
+  "earthy.root.ginger": {
+    "warmth": 85,
+    "brightness": 70,
+    "earthiness": 50,
+    "florality": 20,
+    "heat": 65,
+    "intensity": 80
+  },
+  "hot-pungent.chili.gochugaru": {
+    "warmth": 65,
+    "brightness": 50,
+    "earthiness": 40,
+    "florality": 10,
+    "heat": 55,
+    "intensity": 60
+  },
+  "floral.rose-family.hibiscus": {
+    "warmth": 10,
+    "brightness": 90,
+    "earthiness": 20,
+    "florality": 75,
+    "heat": 0,
+    "intensity": 70
+  },
+  "floral.delicate.lavender": {
+    "warmth": 45,
+    "brightness": 50,
+    "earthiness": 30,
+    "florality": 85,
+    "heat": 2,
+    "intensity": 70
+  },
+  "herbal.asian.lemongrass": {
+    "warmth": 10,
+    "brightness": 90,
+    "earthiness": 40,
+    "florality": 30,
+    "heat": 2,
+    "intensity": 75
+  },
+  "hot-pungent.pepper.long-pepper": {
+    "warmth": 85,
+    "brightness": 30,
+    "earthiness": 55,
+    "florality": 20,
+    "heat": 65,
+    "intensity": 80
+  },
+  "warm.baking.mace": {
+    "warmth": 70,
+    "brightness": 30,
+    "earthiness": 45,
+    "florality": 25,
+    "heat": 5,
+    "intensity": 60
+  },
+  "herbal.mediterranean.marjoram": {
+    "warmth": 45,
+    "brightness": 65,
+    "earthiness": 40,
+    "florality": 60,
+    "heat": 3,
+    "intensity": 55
+  },
+  "hot-pungent.sharp.mustard-seed": {
+    "warmth": 65,
+    "brightness": 50,
+    "earthiness": 55,
+    "florality": 5,
+    "heat": 60,
+    "intensity": 70
+  },
+  "umami-savory.salty.nigella-seed": {
+    "warmth": 60,
+    "brightness": 20,
+    "earthiness": 70,
+    "florality": 5,
+    "heat": 15,
+    "intensity": 75
+  },
+  "warm.baking.nutmeg": {
+    "warmth": 85,
+    "brightness": 40,
+    "earthiness": 65,
+    "florality": 30,
+    "heat": 5,
+    "intensity": 70
+  },
+  "umami-savory.allium.onion-powder": {
+    "warmth": 45,
+    "brightness": 10,
+    "earthiness": 70,
+    "florality": 5,
+    "heat": 0,
+    "intensity": 85
+  },
+  "herbal.mediterranean.oregano": {
+    "warmth": 75,
+    "brightness": 50,
+    "earthiness": 65,
+    "florality": 15,
+    "heat": 20,
+    "intensity": 80
+  },
+  "earthy.smoky.smoked-paprika": {
+    "warmth": 78,
+    "brightness": 35,
+    "earthiness": 92,
+    "florality": 10,
+    "heat": 15,
+    "intensity": 80
+  },
+  "umami-savory.salty.poppy-seed": {
+    "warmth": 55,
+    "brightness": 20,
+    "earthiness": 70,
+    "florality": 10,
+    "heat": 0,
+    "intensity": 60
+  },
+  "floral.rose-family.rose-water": {
+    "warmth": 45,
+    "brightness": 60,
+    "earthiness": 20,
+    "florality": 95,
+    "heat": 0,
+    "intensity": 70
+  },
+  "herbal.mediterranean.rosemary": {
+    "warmth": 65,
+    "brightness": 70,
+    "earthiness": 40,
+    "florality": 20,
+    "heat": 5,
+    "intensity": 80
+  },
+  "floral.rose-family.saffron": {
+    "warmth": 40,
+    "brightness": 75,
+    "earthiness": 30,
+    "florality": 90,
+    "heat": 0,
+    "intensity": 70
+  },
+  "herbal.mediterranean.sage": {
+    "warmth": 65,
+    "brightness": 20,
+    "earthiness": 70,
+    "florality": 10,
+    "heat": 5,
+    "intensity": 75
+  },
+  "umami-savory.salty.sesame-seed": {
+    "warmth": 65,
+    "brightness": 25,
+    "earthiness": 55,
+    "florality": 10,
+    "heat": 0,
+    "intensity": 70
+  },
+  "hot-pungent.pepper.sichuan-pepper": {
+    "warmth": 65,
+    "brightness": 75,
+    "earthiness": 30,
+    "florality": 25,
+    "heat": 45,
+    "intensity": 85
+  },
+  "warm.woody.star-anise": {
+    "warmth": 85,
+    "brightness": 45,
+    "earthiness": 30,
+    "florality": 20,
+    "heat": 5,
+    "intensity": 80
+  },
+  "earthy.smoky.sumac": {
+    "warmth": 20,
+    "brightness": 90,
+    "earthiness": 65,
+    "florality": 15,
+    "heat": 0,
+    "intensity": 70
+  },
+  "citrus-bright.tart.tamarind": {
+    "warmth": 15,
+    "brightness": 90,
+    "earthiness": 45,
+    "florality": 10,
+    "heat": 0,
+    "intensity": 70
+  },
+  "herbal.leafy.tarragon": {
+    "warmth": 45,
+    "brightness": 70,
+    "earthiness": 20,
+    "florality": 30,
+    "heat": 5,
+    "intensity": 65
+  },
+  "herbal.asian.thai-basil": {
+    "warmth": 65,
+    "brightness": 70,
+    "earthiness": 30,
+    "florality": 45,
+    "heat": 10,
+    "intensity": 75
+  },
+  "herbal.mediterranean.thyme": {
+    "warmth": 65,
+    "brightness": 40,
+    "earthiness": 70,
+    "florality": 20,
+    "heat": 5,
+    "intensity": 70
+  },
+  "sweet.vanilla-adjacent.tonka-bean": {
+    "warmth": 85,
+    "brightness": 20,
+    "earthiness": 45,
+    "florality": 30,
+    "heat": 2,
+    "intensity": 70
+  },
+  "earthy.root.turmeric": {
+    "warmth": 65,
+    "brightness": 35,
+    "earthiness": 80,
+    "florality": 18,
+    "heat": 5,
+    "intensity": 70
+  },
+  "sweet.vanilla-adjacent.vanilla": {
+    "warmth": 85,
+    "brightness": 30,
+    "earthiness": 20,
+    "florality": 55,
+    "heat": 0,
+    "intensity": 75
+  },
+  "hot-pungent.pepper.white-pepper": {
+    "warmth": 65,
+    "brightness": 30,
+    "earthiness": 70,
+    "florality": 10,
+    "heat": 18,
+    "intensity": 70
+  }
+}
