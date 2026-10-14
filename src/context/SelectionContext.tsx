@@ -5,11 +5,13 @@ import {
   useContext,
   useState,
   useCallback,
+  useMemo,
   type ReactNode,
 } from "react";
 
 interface SelectionState {
   selectedSpiceIds: Set<string>;
+  /** Map slug id hovered in any view (map, atlas, or panel row), for cross-highlighting. */
   hoveredSpiceId: string | null;
 }
 
@@ -55,17 +57,20 @@ export function SelectionProvider({ children }: { children: ReactNode }) {
     setHoveredSpiceId(id);
   }, []);
 
+  const value = useMemo(
+    () => ({
+      selectedSpiceIds,
+      hoveredSpiceId,
+      toggleSpice,
+      selectSpices,
+      clearSelection,
+      setHovered,
+    }),
+    [selectedSpiceIds, hoveredSpiceId, toggleSpice, selectSpices, clearSelection, setHovered]
+  );
+
   return (
-    <SelectionContext.Provider
-      value={{
-        selectedSpiceIds,
-        hoveredSpiceId,
-        toggleSpice,
-        selectSpices,
-        clearSelection,
-        setHovered,
-      }}
-    >
+    <SelectionContext.Provider value={value}>
       {children}
     </SelectionContext.Provider>
   );

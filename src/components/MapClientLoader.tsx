@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import React, { useState, useMemo, useEffect, useSyncExternalStore, useRef } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import NavDrawer from '@/components/NavDrawer';
 import SubstitutionView from '@/components/SubstitutionView';
 import MapPairingPanel from '@/components/pairing/MapPairingPanel';
@@ -154,8 +154,6 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
   const pairingCollapsed = collapsedPref ?? (isMobile && selectedSpiceIds.size === 0);
   const setPairingCollapsed = setCollapsedPref;
 
-  const showHint = !transitioning && currentView === '3d-map' && selectedSpiceIds.size === 0;
-
   function changeView(view: View) {
     if (view === currentView) return;
     cancelAnimationFrame(animation.current);
@@ -303,24 +301,10 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
             className="absolute bottom-4 left-4 z-30 flex items-center gap-2 rounded-md border border-rule-strong bg-board-raised px-3 py-1.5 text-small text-chalk max-md:bottom-auto max-md:top-3"
             title="Clear cuisine lens"
           >
-            Showing {filteredData.length} spices used in {cuisineFilter} cooking
+            {cuisineFilter} · {filteredData.length}
             <span aria-hidden className="text-chalk-3">✕</span>
           </button>
         )}
-
-        <AnimatePresence>
-          {showHint && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { delay: 0.8, duration: 0.6 } }}
-              exit={{ opacity: 0, transition: { duration: 0.2 } }}
-              className="pointer-events-none absolute bottom-5 z-20 -translate-x-1/2 text-center font-display text-lead text-chalk-2 max-md:hidden"
-              style={{ left: `calc((100% - ${panelInsets.right}px) / 2)` }}
-            >
-              Choose a spice to see what it pairs with
-            </motion.p>
-          )}
-        </AnimatePresence>
 
         {currentView !== 'substitutions' && (
           <MapPairingPanel

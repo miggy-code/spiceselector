@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useSelection } from '@/context/SelectionContext';
 import { useRack } from '@/context/RackContext';
 import { dishesByCategory, getDish, getDishSpiceRanking } from '@/lib/dish-affinity';
-import { Section, Swatch, Meter, SmallButton } from './ui';
+import { Section, Swatch, Meter, AddButton, useSpiceHover } from './ui';
 
 interface DishSectionProps {
   /** taxonomy dot-id → map slug. */
@@ -21,6 +21,7 @@ interface DishSectionProps {
 export default function DishSection({ tidToSlug, selectedTids }: DishSectionProps) {
   const { toggleSpice } = useSelection();
   const { rackIds, rackOnly } = useRack();
+  const { hoverProps, setHovered } = useSpiceHover();
   const [dishId, setDishId] = useState<string>('');
 
   const categories = useMemo(() => dishesByCategory(), []);
@@ -41,17 +42,14 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
   const dish = dishId ? getDish(dishId) : undefined;
 
   return (
-    <Section
-      title="Cooking something?"
-      description="Pick your main ingredient and see which spices cooks reach for most."
-    >
-        <select
+    <Section title="Cooking something?">
+      <select
         value={dishId}
         onChange={(e) => setDishId(e.target.value)}
         aria-label="Pick a main ingredient"
-        className="h-10 w-full cursor-pointer rounded-lg px-3 text-body font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.16)] outline-none transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]"
+        className="h-9 w-full cursor-pointer rounded-lg px-3 text-body font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.16)] outline-none transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]"
       >
-        <option value="">Pick an ingredient</option>
+        <option value="">Main ingredient</option>
         {categories.map(([category, dishes]) => (
           <optgroup key={category} label={category}>
             {dishes.map((d) => (
@@ -71,18 +69,14 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-            <p className="text-small text-chalk-2">
-              Best spices for <span className="text-chalk">{dish.name.toLowerCase()}</span>
-              {rackOnly ? ' from your rack' : ''}, learned from about a million recipes.
-            </p>
             {ranking.length === 0 ? (
               <p className="mt-2 text-small text-chalk-3">
                 {rackOnly
-                  ? 'Nothing in your rack scores for this. Turn off “Only suggest what I have” in Filters to see them all.'
+                  ? "None on your shelf. Turn off 'Only what I have' in Filters."
                   : 'No scored spices for this ingredient.'}
               </p>
             ) : (
-              <ul className="mt-2 divide-y divide-rule">
+              <ul className="mt-1 divide-y divide-rule" title={`Spices most used with ${dish.name.toLowerCase()} across about a million recipes`}>
                 {ranking.map((r, i) => {
                   const slug = tidToSlug.get(r.spiceId)!;
                   return (
@@ -91,15 +85,14 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
                       initial={{ opacity: 0, x: -6 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.04 }}
-                      className="flex items-center gap-2.5 py-2"
+                      className="flex items-center gap-2.5 py-1.5"
+                      {...hoverProps(slug)}
                     >
                       <Swatch tid={r.spiceId} size={14} />
-                      <span className="w-24 truncate text-body text-chalk">{r.spiceName}</span>
+                      <span className="w-24 shrink-0 truncate text-body text-chalk">{r.spiceName}</span>
                       <Meter value={r.relative} className="flex-1" />
                       <span className="w-8 text-right text-small text-chalk-2">{r.score.toFixed(2)}</span>
-                      <SmallButton onClick={() => toggleSpice(slug)} className="shrink-0">
-                        Add
-                      </SmallButton>
+                      <AddButton label={`Add ${r.spiceName}`} onClick={() => { setHovered(null); toggleSpice(slug); }} />
                     </motion.li>
                   );
                 })}

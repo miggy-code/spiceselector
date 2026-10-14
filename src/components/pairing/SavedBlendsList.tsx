@@ -30,27 +30,23 @@ export default function SavedBlendsList({ slugFamilies }: SavedBlendsListProps) 
 
   return (
     <Section
-      title="Your saved blends"
-      description="Load a blend to put it back on the map."
+      title="Saved blends"
       aside={<span className="text-small text-chalk-3">{blends.length}</span>}
     >
       <ul className="divide-y divide-rule">
         {blends.map((b) => {
           const validSlugs = b.slugs.filter((s) => slugFamilies.has(s));
           return (
-            <li key={b.id} className="flex items-center gap-2 py-2.5 first:pt-0 last:pb-0">
+            <li key={b.id} className="flex items-center gap-2 py-2 first:pt-0 last:pb-0">
               <div className="min-w-0 flex-1">
                 <span className="block truncate font-display text-lead leading-tight text-chalk">{b.name}</span>
-                <span className="mt-1.5 flex items-center gap-1">
+                <span className="mt-1 flex items-center gap-1">
                   {validSlugs.slice(0, 8).map((s) => (
                     <Swatch key={s} color={spiceColor(s, undefined, slugFamilies.get(s))} size={12} />
                   ))}
-                  <span className="ml-1 text-small text-chalk-3">
-                    {validSlugs.length} {validSlugs.length === 1 ? 'spice' : 'spices'}
-                  </span>
                 </span>
               </div>
-              <SmallButton onClick={() => selectSpices(validSlugs)} title="Load onto the map">
+              <SmallButton onClick={() => selectSpices(validSlugs)} title="Put this blend back on the map">
                 Load
               </SmallButton>
               <SmallButton onClick={() => share(b.id, b.name, validSlugs)}>

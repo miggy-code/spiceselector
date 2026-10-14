@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useMemo, useEffect } from 'react';
+import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Html, Line, ContactShadows, Environment, Lightformer } from '@react-three/drei';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
@@ -20,7 +20,7 @@ export interface MapMorph {
   targets: Map<string, { x: number; y: number; radius: number; opacity: number }>;
 }
 
-const EDGE_TOP_N = 6;
+const ARC_MAX = 8; // partners drawn across the whole selection
 const R = 5.5; // half-size of the flavor box in world units
 const FLOOR = -R;
 
@@ -68,6 +68,7 @@ function measuredAroma(slug: string, name: string): string[] {
 // ─── Scene dressing ─────────────────────────────────────────────────────────
 
 function Plate({ children, tone = 'quiet' }: { children: React.ReactNode; tone?: 'quiet' | 'strong' | 'selected' }) {
+  const size = tone === 'quiet' ? 'text-[11.5px]' : 'text-[13px]';
   const toneClass =
     tone === 'selected'
       ? 'bg-chalk text-board font-semibold'
@@ -75,7 +76,7 @@ function Plate({ children, tone = 'quiet' }: { children: React.ReactNode; tone?:
         ? 'bg-board-raised text-chalk font-medium ring-1 ring-white/20'
         : 'bg-board/90 text-chalk-2 ring-1 ring-white/10';
   return (
-    <span className={`inline-block whitespace-nowrap rounded-[5px] px-1.5 py-[3px] text-[13px] leading-none shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${toneClass}`}>
+    <span className={`inline-block whitespace-nowrap rounded-[5px] px-1.5 py-[3px] leading-none shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${size} ${toneClass}`}>
       {children}
     </span>
   );
@@ -156,14 +157,19 @@ interface SpiceDotProps {
   color: string;
   state: DotState;
   labelVisible: boolean;
+  /** Vertical px offset from the culler: 0 sits below the sphere, negative lifts it above. */
+  labelShift: number;
   isLabelCandidate: boolean;
+  /** Hover look: pointer on this sphere, or its row hovered in the panel. */
   hovered: boolean;
+  /** The hover card is open for this sphere, so its label steps aside. */
+  cardOpen: boolean;
   onHover: (id: string | null) => void;
   onSelect: (id: string) => void;
 }
 
 const SpiceDot = React.memo(function SpiceDot({
-  morph, spice, delay, target, radius, color, state, labelVisible, isLabelCandidate, hovered, onHover, onSelect,
+  morph, spice, delay, target, radius, color, state, labelVisible, labelShift, isLabelCandidate, hovered, cardOpen, onHover, onSelect,
 }: SpiceDotProps) {
   const group = useRef<THREE.Group>(null);
   const body = useRef<THREE.Mesh>(null);
@@ -178,6 +184,7 @@ const SpiceDot = React.memo(function SpiceDot({
   const { camera, size } = useThree();
   const flat = useMemo(() => new THREE.Vector3(), []);
   const labelRef = useRef<HTMLSpanElement>(null);
+  const labelOn = (labelVisible || hovered) && !cardOpen;
   const wasMorphing = useRef(false);
   // R3F resets its clock when a suspended canvas resumes. Keep intro age here.
   const introTime = useRef(0);
@@ -227,7 +234,7 @@ const SpiceDot = React.memo(function SpiceDot({
     }
 
     const targetOpacity = THREE.MathUtils.lerp(state === 'dimmed' ? 0.14 : 1, destination?.opacity ?? 0, p);
-    if (labelRef.current) labelRef.current.style.opacity = String((labelVisible && !hovered ? 1 : 0) * (1 - Math.min(1, p * 4)));
+    if (labelRef.current) labelRef.current.style.opacity = String((labelOn ? 1 : 0) * (1 - Math.min(1, p * 4)));
     m.opacity = morphing || restoring ? targetOpacity : THREE.MathUtils.lerp(m.opacity, targetOpacity, damp(dt, 8));
     m.depthWrite = m.opacity > 0.5;
     const glow = hovered ? 0.32 : state === 'selected' ? 0.18 : dark ? 0.1 : 0.02;
@@ -302,14 +309,14 @@ const SpiceDot = React.memo(function SpiceDot({
         <meshBasicMaterial ref={ringMaterial} color={THEME.chalk} transparent opacity={0} depthWrite={false} />
       </mesh>
 
-      {isLabelCandidate && (
+      {(isLabelCandidate || hovered) && (
         <Html position={[0, -radius - 0.32, 0]} center zIndexRange={[40, 21]} className="pointer-events-none select-none">
           <span
             ref={labelRef}
             className="block transition-[opacity,transform] duration-300 ease-out"
-            style={{ opacity: labelVisible && !hovered ? 1 : 0, transform: `translateY(${labelVisible ? 0 : 4}px)` }}
+            style={{ opacity: labelOn ? 1 : 0, transform: `translateY(${labelShift + (labelOn ? 0 : 4)}px)` }}
           >
-            <Plate tone={state === 'selected' ? 'selected' : state === 'partner' ? 'strong' : 'quiet'}>{spice.name}</Plate>
+            <Plate tone={state === 'selected' ? 'selected' : state === 'partner' || hovered ? 'strong' : 'quiet'}>{spice.name}</Plate>
           </span>
         </Html>
       )}
@@ -318,22 +325,22 @@ const SpiceDot = React.memo(function SpiceDot({
   );
 });
 
-const CARD_AXES: { key: FlavorDim; label: string }[] = [
-  { key: 'warmth', label: 'Warm' },
-  { key: 'brightness', label: 'Bright' },
-  { key: 'earthiness', label: 'Earthy' },
-  { key: 'florality', label: 'Floral' },
-  { key: 'heat', label: 'Heat' },
+const CARD_AXES: { key: FlavorDim; letter: string; label: string }[] = [
+  { key: 'warmth', letter: 'W', label: 'Warmth' },
+  { key: 'brightness', letter: 'B', label: 'Brightness' },
+  { key: 'earthiness', letter: 'E', label: 'Earthiness' },
+  { key: 'florality', letter: 'F', label: 'Florality' },
+  { key: 'heat', letter: 'H', label: 'Heat' },
 ];
 
-function SpiceCard({ spice, color, selected }: { spice: SpiceProfile; color: string; selected: boolean }) {
+function SpiceCard({ spice, color }: { spice: SpiceProfile; color: string }) {
   const notes = measuredAroma(spice.id, spice.name);
   const barColor = luminance(color) < 0.05 ? THEME.chalk2 : color;
   return (
-    <div className="rise-in w-[272px] rounded-xl bg-board-raised p-4 text-left shadow-[0_24px_48px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(243,239,232,0.14)]">
-      <div className="flex items-center gap-3">
+    <div className="rise-in w-[220px] rounded-xl bg-board-raised p-3 text-left shadow-[0_24px_48px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(243,239,232,0.14)]">
+      <div className="flex items-center gap-2.5">
         <span
-          className="h-9 w-9 shrink-0 rounded-full"
+          className="h-7 w-7 shrink-0 rounded-full"
           style={{
             backgroundColor: color,
             backgroundImage: 'radial-gradient(circle at 35% 30%, rgba(255,255,255,0.35), transparent 55%)',
@@ -341,34 +348,24 @@ function SpiceCard({ spice, color, selected }: { spice: SpiceProfile; color: str
           }}
         />
         <div className="min-w-0">
-          <p className="font-display text-[22px] leading-tight text-chalk">{spice.name}</p>
-          <p className="text-small text-chalk-2">
+          <p className="truncate font-display text-[19px] leading-tight text-chalk">{spice.name}</p>
+          <p className="truncate text-micro text-chalk-2">
             {familyLabel(spice.family)}
             {spice.origin ? `, ${spice.origin.split(',')[0].trim()}` : ''}
           </p>
         </div>
       </div>
-      {spice.description && <p className="mt-3 line-clamp-3 text-small leading-relaxed text-chalk-2">{spice.description}</p>}
-      {notes.length > 0 && (
-        <p className="mt-2.5 text-small text-chalk-2">
-          <span className="text-chalk-3">Measured aroma </span>
-          <span className="text-chalk">{notes.join(', ')}</span>
-        </p>
-      )}
-      <dl className="mt-3 grid gap-1.5">
-        {CARD_AXES.map(({ key, label }) => (
-          <div key={key} className="grid grid-cols-[52px_1fr_26px] items-center gap-2.5">
-            <dt className="text-micro text-chalk-3">{label}</dt>
-            <dd className="h-1.5 overflow-hidden rounded-full bg-board-high">
-              <span className="block h-full rounded-full" style={{ width: `${spice[key]}%`, backgroundColor: barColor }} />
+      {notes.length > 0 && <p className="mt-2 truncate text-micro text-chalk">{notes.join(' · ')}</p>}
+      <dl className="mt-2.5 grid grid-cols-5 gap-2">
+        {CARD_AXES.map(({ key, letter, label }) => (
+          <div key={key} title={`${label} ${spice[key]}`} className="flex flex-col items-center gap-1">
+            <dd className="flex h-7 w-full items-end overflow-hidden rounded-[3px] bg-board-high">
+              <span className="block w-full" style={{ height: `${spice[key]}%`, backgroundColor: barColor }} />
             </dd>
-            <dd className="text-right text-micro text-chalk-2">{spice[key]}</dd>
+            <dt className="text-micro leading-none text-chalk-3">{letter}</dt>
           </div>
         ))}
       </dl>
-      <p className="mt-3.5 border-t border-rule pt-2.5 text-small font-medium text-chalk">
-        {selected ? 'Click to remove from your blend' : 'Click to see what it pairs with'}
-      </p>
     </div>
   );
 }
@@ -402,7 +399,7 @@ function EvidenceArc({ edge, morph }: { edge: Edge; morph?: React.RefObject<MapM
     const curve = new THREE.QuadraticBezierCurve3(a, mid, b);
     return { points: curve.getPoints(40).map((p) => [p.x, p.y, p.z] as [number, number, number]), length: curve.getLength() };
   }, [edge.from, edge.to]);
-  const opacity = 0.9 - edge.rank * 0.1;
+  const opacity = 0.9 - edge.rank * 0.07;
 
   useFrame((_, dt) => {
     const line = ref.current;
@@ -418,7 +415,7 @@ function EvidenceArc({ edge, morph }: { edge: Edge; morph?: React.RefObject<MapM
       ref={ref as never}
       points={points}
       color={edge.color}
-      lineWidth={2.6 - edge.rank * 0.28}
+      lineWidth={2.6 - edge.rank * 0.22}
       transparent
       opacity={0}
       dashed
@@ -447,30 +444,32 @@ function usePartners(
       if (tid) tidById.set(n.id, tid);
       posById.set(n.id, n.target);
     }
-    const seen = new Set<string>();
-    for (const selId of selectedSpiceIds) {
-      const selTid = tidById.get(selId);
-      const selPos = posById.get(selId);
-      if (!selTid || !selPos) continue;
-      const ranked: { id: string; score: number }[] = [];
-      for (const n of nodes) {
-        if (n.id === selId) continue;
-        const tid = tidById.get(n.id);
-        if (!tid || tid === selTid) continue;
-        const score = getAffinity(selTid, tid);
-        if (score !== null) ranked.push({ id: n.id, score });
+    // Rank every other spice by its summed affinity to the whole selection, so the arcs show the blend's best additions.
+    const picked = [...selectedSpiceIds].filter((id) => tidById.has(id) && posById.has(id));
+    const ranked: { id: string; score: number; from: string }[] = [];
+    for (const n of nodes) {
+      const tid = tidById.get(n.id);
+      if (!tid || selectedSpiceIds.has(n.id)) continue;
+      let score = 0;
+      let best = -1;
+      let from = '';
+      for (const selId of picked) {
+        const selTid = tidById.get(selId)!;
+        if (selTid === tid) continue;
+        const a = getAffinity(selTid, tid);
+        if (a === null) continue;
+        score += a;
+        if (a > best) { best = a; from = selId; }
       }
-      // Rank locally: almost every pair clears a fixed cutoff, so only the top few carry meaning.
-      ranked.sort((a, b) => b.score - a.score);
-      ranked.slice(0, EDGE_TOP_N).forEach(({ id }, rank) => {
-        if (!selectedSpiceIds.has(id)) partners.add(id);
-        const key = selId < id ? `${selId}|${id}` : `${id}|${selId}`;
-        if (seen.has(key)) return;
-        seen.add(key);
-        const to = posById.get(id);
-        if (to) edges.push({ key: `${selId}>${id}>${to.join(',')}`, from: selPos, to, rank, color: colorById.get(selId) ?? THEME.chalk });
-      });
+      if (from) ranked.push({ id: n.id, score, from });
     }
+    ranked.sort((a, b) => b.score - a.score);
+    ranked.slice(0, ARC_MAX).forEach(({ id, from }, rank) => {
+      partners.add(id);
+      const to = posById.get(id);
+      const fromPos = posById.get(from);
+      if (to && fromPos) edges.push({ key: `${from}>${id}>${to.join(',')}`, from: fromPos, to, rank, color: colorById.get(from) ?? THEME.chalk });
+    });
     return { partners, edges };
   }, [nodes, selectedSpiceIds]);
 }
@@ -565,6 +564,8 @@ interface LabelCandidate {
   id: string;
   name: string;
   priority: number;
+  /** Quiet plates are smaller, so they take less room. */
+  quiet: boolean;
   anchor: [number, number, number];
 }
 
@@ -581,10 +582,10 @@ function LabelCuller({
 }: {
   candidates: LabelCandidate[];
   spheres: { id: string; center: [number, number, number]; radius: number; occludes: boolean }[];
-  onChange: (ids: Set<string>) => void;
+  onChange: (labels: Map<string, number>) => void;
 }) {
   const { camera, size } = useThree();
-  const shown = useRef<Set<string>>(new Set());
+  const shown = useRef<Map<string, number>>(new Map());
   const streak = useRef<Map<string, number>>(new Map());
   const timer = useRef(1);
   const age = useRef(0);
@@ -606,48 +607,70 @@ function LabelCuller({
       const e = toScreen(edge.project(camera));
       return { id: sp.id, x: c.x, y: c.y, r: Math.hypot(e.x - c.x, e.y - c.y), depth, occludes: sp.occludes };
     });
-    const depthOf = new Map(disks.map((d) => [d.id, d.depth]));
+    const diskOf = new Map(disks.map((d) => [d.id, d]));
 
     const ordered = [...candidates].sort((a, b) => b.priority - a.priority);
     const boxes: { x0: number; x1: number; y0: number; y1: number }[] = [];
-    const want = new Set<string>();
+    const want = new Map<string, number>();
     for (const c of ordered) {
       v.set(...c.anchor).project(camera);
       if (v.z > 1) continue;
       const { x, y } = toScreen(v);
-      const half = (c.name.length * 7.4) / 2 + 9;
-      const box = { x0: x - half, x1: x + half, y0: y - 12, y1: y + 12 };
-      // Stay on screen and clear of the arrange control in the top-left corner.
-      if (box.x0 < 8 || box.x1 > size.width - 8 || box.y0 < 8) continue;
-      if (box.x0 < (size.width < 768 ? 340 : 270) && box.y0 < (size.width < 768 ? 64 : 230)) continue;
-      const myDepth = depthOf.get(c.id) ?? 0;
-      // Hidden only when the label's centre sits inside a clearly nearer, visible sphere.
-      const covered = disks.some((d) => d.occludes && d.id !== c.id && d.depth < myDepth - 0.4 && Math.hypot(d.x - x, d.y - y) < d.r * 0.85);
-      if (covered) continue;
-      if (boxes.some((b) => box.x0 < b.x1 && box.x1 > b.x0 && box.y0 < b.y1 && box.y1 > b.y0)) continue;
-      boxes.push(box);
-      want.add(c.id);
+      const half = (c.name.length * (c.quiet ? 6.4 : 7.4)) / 2 + 9;
+      const tall = c.quiet ? 10 : 12;
+      const own = diskOf.get(c.id);
+      const myDepth = own?.depth ?? 0;
+      // Selected spices always keep a label; everyone else gives way.
+      const pinned = c.priority >= 1000;
+      // Try below the sphere first, then lifted above it, then one row lower.
+      const shifts = [0, -Math.round(2 * (own?.r ?? 0) + 2 * tall + 6), 2 * tall + 4];
+      let placed: { shift: number; box: { x0: number; x1: number; y0: number; y1: number } } | null = null;
+      for (const shift of shifts) {
+        const cy = y + shift;
+        const box = { x0: x - half, x1: x + half, y0: cy - tall, y1: cy + tall };
+        // Stay on screen and clear of the arrange chip in the top-left corner.
+        if (box.x0 < 8 || box.x1 > size.width - 8 || box.y0 < 8) continue;
+        if (box.x0 < 330 && box.y0 < 60) continue;
+        // Hidden only when the label's centre sits inside a clearly nearer, visible sphere.
+        const covered = !pinned && disks.some((d) => d.occludes && d.id !== c.id && d.depth < myDepth - 0.4 && Math.hypot(d.x - x, d.y - cy) < d.r * 0.85);
+        if (covered) continue;
+        if (boxes.some((b) => box.x0 < b.x1 && box.x1 > b.x0 && box.y0 < b.y1 && box.y1 > b.y0)) continue;
+        placed = { shift, box };
+        break;
+      }
+      if (!placed && pinned) {
+        const box = { x0: x - half, x1: x + half, y0: y - tall, y1: y + tall };
+        placed = { shift: 0, box };
+      }
+      if (!placed) continue;
+      boxes.push(placed.box);
+      want.set(c.id, placed.shift);
     }
 
     // Hysteresis: flip a label only after two checks agree.
     let changed = false;
-    const ids = new Set([...want, ...shown.current]);
+    const ids = new Set([...want.keys(), ...shown.current.keys()]);
     for (const id of ids) {
       const isShown = shown.current.has(id);
       const wants = want.has(id) && candidates.some((c) => c.id === id);
-      if (isShown === wants) { streak.current.delete(id); continue; }
+      if (isShown === wants) {
+        streak.current.delete(id);
+        // Already shown: follow a move above/below straight away.
+        if (wants && shown.current.get(id) !== want.get(id)) { shown.current.set(id, want.get(id)!); changed = true; }
+        continue;
+      }
       const n = (streak.current.get(id) ?? 0) + 1;
       // Selected and partner labels (priority ≥ 500) react immediately.
       const urgent = (candidates.find((c) => c.id === id)?.priority ?? 0) >= 500 && wants;
       if (n >= 2 || urgent || !candidates.some((c) => c.id === id)) {
-        if (wants) shown.current.add(id); else shown.current.delete(id);
+        if (wants) shown.current.set(id, want.get(id)!); else shown.current.delete(id);
         streak.current.delete(id);
         changed = true;
       } else {
         streak.current.set(id, n);
       }
     }
-    if (changed) onChange(new Set(shown.current));
+    if (changed) onChange(new Map(shown.current));
   });
   return null;
 }
@@ -682,17 +705,26 @@ interface FlavorMapProps {
 }
 
 export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 }, morph, active = true, transitioning = false }: FlavorMapProps) {
-  const [hovered, setHovered] = useState<string | null>(null);
+  // Pointer hover drives the card; the shared id also lights the sphere when a panel row is hovered.
+  const [hovered, setHoveredLocal] = useState<string | null>(null);
   const [xDim, setXDim] = useState<FlavorDim>('warmth');
   const [yDim, setYDim] = useState<FlavorDim>('brightness');
   const [zDim, setZDim] = useState<FlavorDim>('earthiness');
   const [axesOpen, setAxesOpen] = useState(false);
   const [touched, setTouched] = useState(false);
-  const [labelled, setLabelled] = useState<Set<string>>(new Set());
+  const [labelled, setLabelled] = useState<Map<string, number>>(new Map());
   const [pointer, setPointer] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
   const hoveredSpice = hovered ? data.find((s) => s.id === hovered) ?? null : null;
   const controls = useRef<OrbitControlsImpl | null>(null);
-  const { selectedSpiceIds, toggleSpice } = useSelection();
+  const axesRef = useRef<HTMLDivElement>(null);
+  const { selectedSpiceIds, toggleSpice, hoveredSpiceId, setHovered } = useSelection();
+  const onHover = useCallback(
+    (id: string | null) => {
+      setHoveredLocal(id);
+      setHovered(id);
+    },
+    [setHovered]
+  );
   const hasSelection = selectedSpiceIds.size > 0;
 
   const label = (d: FlavorDim) => DIMS.find((x) => x.key === d)!.label;
@@ -729,17 +761,44 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
   }, [hasSelection, nodes, selectedSpiceIds, partners]);
 
   const labelCandidates = useMemo<LabelCandidate[]>(() => {
-    const pool = hasSelection
-      ? nodes.filter((n) => selectedSpiceIds.has(n.id) || partners.has(n.id))
-      : [...nodes].sort((a, b) => b.spice.commonality - a.spice.commonality).slice(0, 26);
+    // Selection: only the chosen spheres and their partners. Otherwise every sphere competes, bigger and more common first.
+    const pool = hasSelection ? nodes.filter((n) => selectedSpiceIds.has(n.id) || partners.has(n.id)) : nodes;
     return pool.map((n) => ({
       id: n.id,
       name: n.name,
-      priority: (selectedSpiceIds.has(n.id) ? 1000 : partners.has(n.id) ? 500 : 0) + n.spice.commonality,
+      priority: (selectedSpiceIds.has(n.id) ? 1000 : partners.has(n.id) ? 500 : 0) + n.spice.commonality + n.spice.intensity * 0.5,
+      quiet: !hasSelection,
       anchor: [n.target[0], n.target[1] - n.radius - 0.32, n.target[2]],
     }));
   }, [nodes, hasSelection, selectedSpiceIds, partners]);
+  const cullSpheres = useMemo(
+    () =>
+      nodes.map((n) => ({
+        id: n.id,
+        center: n.target,
+        radius: n.radius,
+        // Faded spheres don't hide labels.
+        occludes: !hasSelection || selectedSpiceIds.has(n.id) || partners.has(n.id),
+      })),
+    [nodes, hasSelection, selectedSpiceIds, partners]
+  );
   const candidateIds = useMemo(() => new Set(labelCandidates.map((c) => c.id)), [labelCandidates]);
+
+  useEffect(() => {
+    if (!axesOpen) return;
+    const onDown = (e: PointerEvent) => {
+      if (!axesRef.current?.contains(e.target as Node)) setAxesOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setAxesOpen(false);
+    };
+    document.addEventListener('pointerdown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [axesOpen]);
 
   function chooseAxis(axis: 'x' | 'y' | 'z', value: FlavorDim) {
     const current = { x: xDim, y: yDim, z: zDim };
@@ -769,7 +828,7 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
         camera={{ position: [15, 10, 21], fov: 40 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.05 }}
-        onPointerMissed={() => setHovered(null)}
+        onPointerMissed={() => setHoveredLocal(null)}
       >
         <fog attach="fog" args={[THEME.board, 22, 46]} />
         <ambientLight intensity={0.25} />
@@ -802,8 +861,10 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
               state={state}
               isLabelCandidate={candidateIds.has(spice.id)}
               labelVisible={!transitioning && labelled.has(spice.id)}
-              hovered={hovered === spice.id}
-              onHover={setHovered}
+              labelShift={labelled.get(spice.id) ?? 0}
+              hovered={hovered === spice.id || hoveredSpiceId === spice.id}
+              cardOpen={hovered === spice.id}
+              onHover={onHover}
               onSelect={toggleSpice}
             />
           );
@@ -811,13 +872,7 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
 
         <LabelCuller
           candidates={labelCandidates}
-          spheres={nodes.map((n) => ({
-            id: n.id,
-            center: n.target,
-            radius: n.radius,
-            // Faded spheres don't hide labels.
-            occludes: !hasSelection || selectedSpiceIds.has(n.id) || partners.has(n.id),
-          }))}
+          spheres={cullSpheres}
           onChange={setLabelled}
         />
         <OrbitControls
@@ -841,7 +896,7 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
         <div
           className="pointer-events-none absolute z-[60]"
           style={{
-            left: pointer.x + 300 > pointer.w - panelInsets.right ? pointer.x - 290 : pointer.x + 18,
+            left: pointer.x + 250 > pointer.w - panelInsets.right ? pointer.x - 238 : pointer.x + 18,
             ...(pointer.y > pointer.h / 2 ? { bottom: pointer.h - pointer.y + 14 } : { top: pointer.y + 14 }),
           }}
         >
@@ -849,26 +904,26 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
             key={hoveredSpice.id}
             spice={hoveredSpice}
             color={spiceColor(hoveredSpice.id, hoveredSpice.name, hoveredSpice.family)}
-            selected={selectedSpiceIds.has(hoveredSpice.id)}
           />
         </div>
       )}
 
-      {/* Arrange-by control */}
-      <div className="absolute left-4 top-4 z-10" style={{ opacity: transitioning ? 0 : 1, transition: 'opacity 120ms' }}>
+      {/* Arrange-by chip: opens the three axis pickers */}
+      <div ref={axesRef} className="absolute left-4 top-4 z-50" style={{ opacity: transitioning ? 0 : 1, transition: 'opacity 120ms' }}>
         <button
           type="button"
           onClick={() => setAxesOpen((v) => !v)}
           aria-expanded={axesOpen}
-          className="flex h-10 items-center gap-2 rounded-lg bg-board-raised/95 px-3.5 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14),0_8px_24px_rgba(0,0,0,0.3)] md:hidden"
+          title="Choose what the three axes show"
+          className="flex h-9 items-center gap-2 rounded-full bg-board-raised/95 pl-3.5 pr-3 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14),0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3),0_8px_24px_rgba(0,0,0,0.3)]"
         >
-          Arrange by {label(xDim).toLowerCase()}, {label(yDim).toLowerCase()}, {label(zDim).toLowerCase()}
+          {label(xDim)} × {label(yDim)} × {label(zDim)}
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden className={`text-chalk-2 transition-transform ${axesOpen ? 'rotate-180' : ''}`}>
+            <path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
-        <div
-          className={`${axesOpen ? 'mt-2 block' : 'hidden'} rise-in rounded-xl bg-board-raised/95 p-4 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.12),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur md:block`}
-        >
-          <p className="mb-3 font-display text-lead text-chalk">Arrange the board</p>
-          <div className="grid gap-2">
+        {axesOpen && (
+          <div className="rise-in mt-2 grid gap-2 rounded-xl bg-board-raised/95 p-3 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.12),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur">
             {axisRows.map(({ axis, name, value }) => (
               <label key={axis} className="grid grid-cols-[56px_1fr] items-center gap-3 text-small text-chalk-2">
                 {name}
@@ -884,16 +939,8 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
               </label>
             ))}
           </div>
-        </div>
+        )}
       </div>
-
-      {/* What the marks mean */}
-      <p
-        className="pointer-events-none absolute left-4 z-10 max-w-[260px] text-small leading-relaxed text-chalk-2 max-md:hidden"
-        style={{ bottom: 20 + panelInsets.bottom }}
-      >
-        {hasSelection ? 'Arcs reach from each chosen spice to its six strongest recipe partners, tinted by where they start.' : ''}
-      </p>
     </div>
   );
 }

@@ -7,9 +7,12 @@ import { THEME } from '@/lib/theme';
 import { useSelection } from '@/context/SelectionContext';
 import { getAffinity } from '@/lib/pairing-engine';
 import { toTaxonomyId } from '@/lib/spice-id-map';
+import { SpiceLabel, aromaWords, labelSize, placeLabels, type LabelItem, type LabelTone } from './FlavorAtlas';
 
 const EDGE_TOP_N = 6;
 const EDGE_MIN_SCORE = 0.5;
+/** Most partner lines drawn at once; every partner dot is still marked. */
+const MAX_LINES = 10;
 
 interface SpiceData {
   id: string;
@@ -89,10 +92,9 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
   const plotRef = useRef<HTMLDivElement>(null);
   const [xAxis, setXAxis] = useState<AxisKey>('warmth');
   const [yAxis, setYAxis] = useState<AxisKey>('brightness');
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [showEdges, setShowEdges] = useState(true);
   const [plotSize, setPlotSize] = useState({ width: 720, height: 440 });
-  const { selectedSpiceIds, toggleSpice, setHovered } = useSelection();
+  const { selectedSpiceIds, toggleSpice, hoveredSpiceId: hoveredId, setHovered } = useSelection();
 
   useEffect(() => {
     const element = plotRef.current;
@@ -132,17 +134,27 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
         seen.add(key); edges.push({ source, ...partner }); connectedIds.add(partner.target);
       }
     }
-    return { edges, connectedIds };
+    edges.sort((a, b) => b.score - a.score);
+    return { edges: edges.slice(0, MAX_LINES), connectedIds };
   }, [positioned, selectedSpiceIds, showEdges]);
+  const toneOf = (id: string): LabelTone => (selectedSpiceIds.has(id) ? 'selected' : connectedIds.has(id) ? 'partner' : selectedSpiceIds.size ? 'dim' : 'quiet');
+  // Laid out without hover, so labels hold still while the pointer moves.
   const labels = useMemo(() => {
-    if (selectedSpiceIds.size || hoveredId) return positioned.filter((spice) => selectedSpiceIds.has(spice.id) || spice.id === hoveredId);
-    return [...positioned].sort((a, b) => ((b.commonality ?? 0) + (b.intensity ?? 0)) - ((a.commonality ?? 0) + (a.intensity ?? 0))).slice(0, 7);
-  }, [positioned, selectedSpiceIds, hoveredId]);
+    const rank = (id: string) => (selectedSpiceIds.has(id) ? 0 : connectedIds.has(id) ? 1 : 2);
+    const items: LabelItem[] = [...positioned]
+      .sort((a, b) => rank(a.id) - rank(b.id) || (b.commonality ?? 0) - (a.commonality ?? 0) || a.name.localeCompare(b.name))
+      .map((spice) => {
+        const tone: LabelTone = rank(spice.id) === 0 ? 'selected' : rank(spice.id) === 1 ? 'partner' : 'quiet';
+        return { id: spice.id, x: spice.x, y: spice.y, r: radius(spice.intensity, geometry), ...labelSize(spice.name, tone), force: tone !== 'quiet' };
+      });
+    const dots = positioned.map((spice) => ({ id: spice.id, x: spice.x, y: spice.y, r: radius(spice.intensity, geometry) }));
+    return placeLabels(items, dots, { x0: geometry.left + 2, y0: geometry.top + 2, x1: geometry.left + geometry.plotWidth - 2, y1: geometry.top + geometry.plotHeight - 2 });
+  }, [positioned, selectedSpiceIds, connectedIds, geometry]);
 
   const x = axisFor(xAxis); const y = axisFor(yAxis); const hoverSpice = hoveredId ? byId.get(hoveredId) : undefined; const hasSelection = selectedSpiceIds.size > 0;
   function select(spice: SpiceData) { toggleSpice(spice.id); }
-  function startHover(id: string) { setHoveredId(id); setHovered(id); }
-  function endHover() { setHoveredId(null); setHovered(null); }
+  function startHover(id: string) { setHovered(id); }
+  function endHover() { setHovered(null); }
   function chooseXAxis(axis: AxisKey) { if (axis === yAxis) setYAxis(xAxis); setXAxis(axis); }
   function chooseYAxis(axis: AxisKey) { if (axis === xAxis) setXAxis(yAxis); setYAxis(axis); }
 
@@ -157,18 +169,18 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
           <select value={yAxis} onChange={(event) => chooseYAxis(event.target.value as AxisKey)} className="h-9 cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14)] outline-none hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]">
             {AXES.map((axis) => <option key={axis.key} value={axis.key}>{axis.label}</option>)}
           </select></label>
-        <button type="button" role="switch" onClick={() => setShowEdges((value) => !value)} aria-checked={showEdges} className="flex h-9 items-center gap-2.5 rounded-md px-1 text-small font-medium text-chalk-2 hover:text-chalk">Show recipe partners<span aria-hidden className={`flex h-5 w-9 rounded-full p-0.5 transition-colors duration-200 ${showEdges ? 'bg-chalk' : 'bg-board-high shadow-[inset_0_0_0_1px_rgba(243,239,232,0.2)]'}`}><span className={`block h-4 w-4 rounded-full transition-transform duration-200 ${showEdges ? 'translate-x-4 bg-board' : 'bg-chalk-3'}`} /></span></button>
+        <button type="button" role="switch" onClick={() => setShowEdges((value) => !value)} aria-checked={showEdges} className="flex h-9 items-center gap-2.5 rounded-md px-1 text-small font-medium text-chalk-2 hover:text-chalk">Recipe partners<span aria-hidden className={`flex h-5 w-9 rounded-full p-0.5 transition-colors duration-200 ${showEdges ? 'bg-chalk' : 'bg-board-high shadow-[inset_0_0_0_1px_rgba(243,239,232,0.2)]'}`}><span className={`block h-4 w-4 rounded-full transition-transform duration-200 ${showEdges ? 'translate-x-4 bg-board' : 'bg-chalk-3'}`} /></span></button>
       </div>
       <div ref={plotRef} className="min-h-0 flex-1 py-2">
         {positioned.length ? <svg className="block h-full w-full select-none" viewBox={`0 0 ${geometry.width} ${geometry.height}`} role="img" aria-labelledby="axis-map-title axis-map-description">
-          <title id="axis-map-title">Spices plotted by {x.label.toLowerCase()} and {y.label.toLowerCase()}</title><desc id="axis-map-description">Each dot is a spice in its own color. Location represents two flavor qualities; size represents intensity. Chalk lines show recipe partners after selecting a spice.</desc>
+          <title id="axis-map-title">Spices plotted by {x.label.toLowerCase()} and {y.label.toLowerCase()}</title><desc id="axis-map-description">Each dot is a spice. Location shows two flavor qualities; size shows intensity. Lines join selected spices to recipe partners.</desc>
           <defs>
             <filter id="axes-shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.45" /></filter>
             <radialGradient id="axes-sheen" cx="35%" cy="30%" r="65%"><stop offset="0" stopColor="#fff" stopOpacity="0.32" /><stop offset="0.55" stopColor="#fff" stopOpacity="0" /></radialGradient>
           </defs>
           <rect x={geometry.left} y={geometry.top} width={geometry.plotWidth} height={geometry.plotHeight} rx="6" fill={THEME.boardDeep} fillOpacity=".5" />
-          {ticks.map((tick) => <g key={tick} aria-hidden="true"><line x1={scaleX(tick, geometry)} x2={scaleX(tick, geometry)} y1={geometry.top} y2={geometry.top + geometry.plotHeight} stroke={THEME.chalk} strokeOpacity={tick === 0 || tick === 100 ? 0.18 : 0.06} /><line x1={geometry.left} x2={geometry.left + geometry.plotWidth} y1={scaleY(tick, geometry)} y2={scaleY(tick, geometry)} stroke={THEME.chalk} strokeOpacity={tick === 0 || tick === 100 ? 0.18 : 0.06} /><text x={scaleX(tick, geometry)} y={geometry.top + geometry.plotHeight + 21} textAnchor="middle" fill={THEME.chalk3} fontSize="12.5">{tick}</text><text x={geometry.left - 12} y={scaleY(tick, geometry) + 4} textAnchor="end" fill={THEME.chalk3} fontSize="12.5">{tick}</text></g>)}
-          <text x={geometry.left} y={geometry.top - 12} fill={THEME.chalk2} fontSize="13.5" fontWeight="500">More {y.label.toLowerCase()}</text><text x={geometry.left + geometry.plotWidth} y={geometry.top + geometry.plotHeight + 42} textAnchor="end" fill={THEME.chalk2} fontSize="13.5" fontWeight="500">More {x.label.toLowerCase()}</text>
+          {ticks.map((tick) => <g key={tick} aria-hidden="true"><line x1={scaleX(tick, geometry)} x2={scaleX(tick, geometry)} y1={geometry.top} y2={geometry.top + geometry.plotHeight} stroke={THEME.chalk} strokeOpacity={tick === 0 || tick === 100 ? 0.18 : 0.06} /><line x1={geometry.left} x2={geometry.left + geometry.plotWidth} y1={scaleY(tick, geometry)} y2={scaleY(tick, geometry)} stroke={THEME.chalk} strokeOpacity={tick === 0 || tick === 100 ? 0.18 : 0.06} />{tick % 50 === 0 && <><text x={scaleX(tick, geometry)} y={geometry.top + geometry.plotHeight + 21} textAnchor="middle" fill={THEME.chalk3} fontSize="12">{tick}</text><text x={geometry.left - 12} y={scaleY(tick, geometry) + 4} textAnchor="end" fill={THEME.chalk3} fontSize="12">{tick}</text></>}</g>)}
+          <text x={geometry.left} y={geometry.top - 12} fill={THEME.chalk2} fontSize="12.5" fontWeight="500">More {y.label.toLowerCase()}</text><text x={geometry.left + geometry.plotWidth} y={geometry.top + geometry.plotHeight + 42} textAnchor="end" fill={THEME.chalk2} fontSize="12.5" fontWeight="500">More {x.label.toLowerCase()}</text>
           <g key={edges.map((e) => e.source + e.target).join('|') + xAxis + yAxis} className="atlas-edges">
             {edges.map((edge) => { const source = byId.get(edge.source); const target = byId.get(edge.target); if (!source || !target) return null; const t = (edge.score - EDGE_MIN_SCORE) / (1 - EDGE_MIN_SCORE); return <line key={`${edge.source}-${edge.target}`} x1={source.x} y1={source.y} x2={target.x} y2={target.y} stroke={THEME.chalk} strokeOpacity={0.3 + t * 0.6} strokeWidth={1 + t * 2.4} strokeLinecap="round" />; })}
           </g>
@@ -178,7 +190,7 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
             return (
               <g key={spice.id} data-spice-id={spice.id} role="button" tabIndex={0} aria-label={`${spice.name}, ${familyLabel(spice.family)}. ${x.label} ${spice[xAxis]}, ${y.label} ${spice[yAxis]}. ${selected ? 'Selected' : 'Press Enter to select.'}`} aria-pressed={selected} className="atlas-node cursor-pointer outline-none" style={{ transform: `translate(${spice.x}px, ${spice.y}px)`, opacity: dimmed ? 0.28 : 1, transition: 'transform 700ms var(--ease-out-soft), opacity 300ms ease' }} onClick={() => select(spice)} onPointerEnter={() => startHover(spice.id)} onPointerLeave={endHover} onFocus={() => startHover(spice.id)} onBlur={endHover} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(spice); } }}>
                 <circle r={r + 8} fill="transparent" />
-                <circle className="atlas-ring" r={r + 4.5} fill="none" stroke={THEME.chalk} strokeWidth={selected ? 2.2 : 1.2} style={{ opacity: selected ? 0.95 : connected ? 0.45 : 0 }} />
+                <circle className="atlas-ring" r={r + 4.5} fill="none" stroke={THEME.chalk} strokeWidth={selected ? 2.2 : 1.2} style={{ opacity: selected ? 0.95 : connected ? 0.5 : 0 }} />
                 <g className="atlas-dot" filter="url(#axes-shadow)">
                   <circle r={r} fill={color} stroke={luminance(color) < 0.05 ? 'rgba(243,239,232,0.5)' : 'rgba(0,0,0,0.25)'} strokeWidth="1" />
                   <circle r={r} fill="url(#axes-sheen)" />
@@ -186,14 +198,29 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
               </g>
             );
           })}
-          {labels.map((spice) => { const rightAligned = spice.x > geometry.left + geometry.plotWidth * 0.78; const r = radius(spice.intensity, geometry); const sel = selectedSpiceIds.has(spice.id); const w = spice.name.length * 7.3 + 14; const lx = rightAligned ? -r - 8 - w : r + 8; return (
-            <g key={`label-${spice.id}`} pointerEvents="none" className="atlas-label" style={{ transform: `translate(${spice.x}px, ${spice.y}px)` }}>
-              <rect x={lx} y={-10} width={w} height={20} rx={5} fill={sel ? THEME.chalk : THEME.boardRaised} stroke={sel ? 'none' : 'rgba(243,239,232,0.14)'} />
-              <text x={lx + w / 2} y={4.5} textAnchor="middle" fill={sel ? THEME.board : spice.id === hoveredId ? THEME.chalk : THEME.chalk2} fontSize="13" fontWeight={sel ? 600 : 500}>{spice.name}</text>
-            </g>); })}
-        </svg> : <div className="grid h-full min-h-[260px] place-items-center p-8 text-center"><div><p className="font-display text-title text-chalk-2">No spices match.</p><p className="mt-1 text-body text-chalk-3">Clear the cuisine or heat filter to bring them back.</p></div></div>}
+          {positioned.map((spice) => {
+            const at = labels.get(spice.id);
+            if (!at || spice.id === hoveredId) return null;
+            const tone = toneOf(spice.id);
+            return <SpiceLabel key={`label-${spice.id}`} name={spice.name} x={at.x} y={at.y} tone={tone} {...labelSize(spice.name, tone === 'dim' ? 'quiet' : tone)} />;
+          })}
+          {/* The hovered spice, wherever the pointer came from, is raised above everything else. */}
+          {hoverSpice && (() => {
+            const r = radius(hoverSpice.intensity, geometry); const tone: LabelTone = selectedSpiceIds.has(hoverSpice.id) ? 'selected' : 'hover'; const size = labelSize(hoverSpice.name, tone);
+            const at = labels.get(hoverSpice.id) ?? { x: Math.max(geometry.left + size.w / 2, Math.min(geometry.left + geometry.plotWidth - size.w / 2, hoverSpice.x)), y: Math.min(geometry.top + geometry.plotHeight - size.h / 2, hoverSpice.y + r + 4 + size.h / 2) };
+            return (
+              <g pointerEvents="none">
+                <g transform={`translate(${hoverSpice.x} ${hoverSpice.y})`}>
+                  <circle r={r + 4.5} fill="none" stroke={THEME.chalk} strokeWidth={1.8} opacity={0.9} />
+                  <circle r={r * 1.12} fill={spiceColor(hoverSpice.id, hoverSpice.name, hoverSpice.family)} stroke="rgba(243,239,232,0.6)" strokeWidth="1" />
+                </g>
+                <SpiceLabel name={hoverSpice.name} x={at.x} y={at.y} tone={tone} {...size} />
+              </g>
+            );
+          })()}
+        </svg> : <div className="grid h-full min-h-[260px] place-items-center p-8 text-center"><div><p className="font-display text-title text-chalk-2">No spices match.</p></div></div>}
       </div>
-      <div className="min-h-[44px] shrink-0 border-t border-rule pt-2.5 text-small leading-snug text-chalk-3">{hoverSpice ? <p><span className="font-display text-lead text-chalk">{hoverSpice.name}</span><span className="ml-2">{x.label.toLowerCase()} {hoverSpice[xAxis]}, {y.label.toLowerCase()} {hoverSpice[yAxis]}</span></p> : <p>Position shows two flavor qualities on a 0 to 100 scale, and dot size shows intensity.{hasSelection && showEdges ? ` Chalk lines join your spices to their ${edges.length} strongest recipe partners.` : ''}</p>}</div>
+      <div className="min-h-8 shrink-0 truncate border-t border-rule pt-2 text-small leading-snug text-chalk-3">{hoverSpice && <p className="truncate"><span className="font-display text-lead text-chalk">{hoverSpice.name}</span><span className="ml-2">{[familyLabel(hoverSpice.family), `${x.label.toLowerCase()} ${hoverSpice[xAxis]}`, `${y.label.toLowerCase()} ${hoverSpice[yAxis]}`, ...aromaWords(hoverSpice, 2)].join(' · ')}</span></p>}</div>
     </section>
   );
 }

@@ -169,8 +169,7 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
       >
         <div className="border-b border-rule px-4 pb-3 pt-4">
           <h2 className="font-display text-title leading-tight text-chalk">Substitutes</h2>
-          <p className="mb-3 mt-0.5 text-small text-chalk-3">Out of a spice? Pick it to see what can stand in.</p>
-          <div className="relative">
+          <div className="relative mt-3">
             <svg
               className="absolute left-2.5 top-1/2 -translate-y-1/2 text-chalk-3"
               width="13" height="13" viewBox="0 0 24 24" fill="none"
@@ -280,9 +279,9 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
             <div className="flex-1 overflow-y-auto py-6 md:px-[max(2rem,calc((100%-46rem)/2))] max-md:px-4">
               {visibleCandidates.length > 0 ? (
                 <>
-                  <p className="mb-2 max-w-none text-small text-chalk-3">
-                    {visibleCandidates.length} {visibleCandidates.length === 1 ? 'substitute' : 'substitutes'}, best evidence first
-                    {rackOnly ? ', from your rack only' : ''}
+                  <p className="mb-2 max-w-none text-small text-chalk-3" title="Ranked by combined evidence score, best first">
+                    {visibleCandidates.length} {visibleCandidates.length === 1 ? 'substitute' : 'substitutes'}
+                    {rackOnly ? ', from your rack' : ''}
                   </p>
                   <ul className="max-w-none divide-y divide-rule">
                     {visibleCandidates.map((sub, i) => {
@@ -316,7 +315,12 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
 
                           <div className="mt-2.5 flex items-center gap-3">
                             <Meter value={sub.score} className="w-[240px] max-w-[55%]" />
-                            <span className="text-small font-medium text-chalk">{sub.score.toFixed(2)}</span>
+                            <span
+                              className="text-small font-medium text-chalk"
+                              title="Blends flavor profile, shared chemistry, family closeness and recipe affinity"
+                            >
+                              {sub.score.toFixed(2)}
+                            </span>
                             <span className="text-small text-chalk-2">{similarityLabel(sub.score)}</span>
                           </div>
 
@@ -394,15 +398,11 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
                       );
                     })}
                   </ul>
-                  <p className="mt-4 max-w-none text-small text-chalk-3">
-                    Each score blends the five-axis flavor profile, shared aroma chemistry (FlavorDB2, FooDB and USDA Dr. Duke&apos;s),
-                    family closeness, and recipe affinity from FlavorGraph (Park et al. 2021).
-                  </p>
                 </>
               ) : (
                 <p className="text-body text-chalk-2">
                   {rackOnly && candidates.length > 0
-                    ? 'No substitutes in your rack. Turn off “Only suggest what I have” in Filters, or mark more spices as owned in the list.'
+                    ? 'No substitutes in your rack. Turn off “Only suggest what I have” in Filters.'
                     : 'No substitution data available for this spice.'}
                 </p>
               )}
@@ -411,9 +411,7 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
         ) : (
           <div className="flex flex-1 flex-col items-center justify-center px-12 text-center">
             <p className="font-display text-title text-chalk">Pick a spice</p>
-            <p className="mt-2 max-w-xs text-body text-chalk-2">
-              Choose any spice from the list to see its closest substitutes, ranked by flavor profile, shared chemistry and recipe evidence.
-            </p>
+            <p className="mt-2 text-body text-chalk-2">Choose one from the list.</p>
           </div>
         )}
       </div>

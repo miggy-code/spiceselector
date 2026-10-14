@@ -2,90 +2,77 @@
 
 import type { RankedPairing } from "@/lib/pairing-engine";
 import { spiceName } from "@/lib/spice-list";
-import { Meter } from "./ui";
-
-const traditionSentence: Record<string, string> = {
-  classic: "A classic pairing in at least one cuisine.",
-  complementary: "Complementary: different characters that support each other.",
-  surprising: "Surprising: uncommon, but it works.",
-};
+import { Meter, AFFINITY_WORDS } from "./ui";
 
 /** Kept for existing callers: a chalk meter for a 0–1 score. */
 export function ScoreBar({ score }: { score: number }) {
   return <Meter value={score} className="flex-1" />;
 }
 
+const ROW = "grid grid-cols-[4.5rem_1fr_2rem] items-center gap-2";
+
 /**
- * The three kinds of evidence behind a suggestion, shown side by side rather
- * than folded into one number. Rendered inline under the suggestion so it is
- * never clipped by the panel's scroll area.
+ * The three kinds of evidence behind a suggestion, in three tight lines.
+ * Rendered inline under the row so it is never clipped by the scroll area.
  */
 export default function WhyDetails({ pairing }: { pairing: RankedPairing }) {
   const overlap = pairing.compoundOverlap;
-  const words = overlap?.flavordb2?.sharedFlavorWords ?? [];
+  const words = Array.from(
+    new Set([
+      ...(overlap?.flavordb2?.sharedFlavorWords ?? []),
+      ...(overlap?.shared.flatMap((c) => c.flavors) ?? []),
+    ])
+  ).slice(0, 4);
+  const details = pairing.affinityDetails;
 
   return (
-    <div className="rise-in mt-1 pr-1">
-      <p className="text-small text-chalk-3">
-        Overall {pairing.blendedScore.toFixed(2)}, from three independent kinds of evidence.
-      </p>
-
-      <div className="mt-3">
-        <p className="text-body font-medium text-chalk">Recipes</p>
-        {pairing.affinityDetails.length > 0 ? (
-          <>
-            <div className="mt-1.5 grid gap-1.5">
-              {pairing.affinityDetails.map((d) => (
-                <div key={d.spiceId} className="grid grid-cols-[minmax(0,118px)_1fr_32px] items-center gap-2">
-                  <span className="text-small leading-tight text-chalk-2">with {spiceName(d.spiceId)}</span>
-                  <Meter value={d.score} />
-                  <span className="text-right text-small text-chalk-2">{d.score.toFixed(2)}</span>
-                </div>
-              ))}
+    <div className="rise-in grid gap-1.5 pr-1 text-small">
+      {details.length === 0 ? (
+        <div className={ROW}>
+          <span className="text-chalk-2" title="How often they meet in about a million recipes (FlavorGraph)">Recipes</span>
+          <span className="col-span-2 text-chalk-3">no data</span>
+        </div>
+      ) : details.length === 1 ? (
+        <div className={ROW}>
+          <span className="text-chalk-2" title="How often they meet in about a million recipes (FlavorGraph)">Recipes</span>
+          <Meter value={details[0].score} />
+          <span className="text-right text-chalk-2">{details[0].score.toFixed(2)}</span>
+        </div>
+      ) : (
+        <div className="grid gap-1">
+          <span className="text-chalk-2" title="How often they meet in about a million recipes (FlavorGraph)">Recipes</span>
+          {details.map((d) => (
+            <div key={d.spiceId} className={ROW}>
+              <span className="truncate pl-2 text-chalk-3">{spiceName(d.spiceId)}</span>
+              <Meter value={d.score} />
+              <span className="text-right text-chalk-2">{d.score.toFixed(2)}</span>
             </div>
-            <p className="mt-1 text-micro text-chalk-3">How closely they travel together across about a million recipes.</p>
-          </>
-        ) : (
-          <p className="mt-1 text-small text-chalk-3">No recipe data for this pair.</p>
-        )}
-      </div>
+          ))}
+        </div>
+      )}
 
-      <div className="mt-3 border-t border-rule pt-3">
-        <p className="text-body font-medium text-chalk">Chemistry</p>
-        {overlap ? (
-          <>
-            <div className="mt-1.5 grid grid-cols-[minmax(0,118px)_1fr_32px] items-center gap-2">
-              <span className="text-small text-chalk-2">shared aroma</span>
+      <div>
+        <div className={ROW}>
+          <span className="text-chalk-2" title="Shared aroma molecules (FlavorDB2, FooDB, USDA)">Chemistry</span>
+          {overlap ? (
+            <>
               <Meter value={overlap.compoundScore} />
-              <span className="text-right text-small text-chalk-2">{overlap.compoundScore.toFixed(2)}</span>
-            </div>
-            {words.length > 0 && (
-              <p className="mt-2 text-small leading-snug text-chalk-2">Both carry {formatList(words.slice(0, 6))} notes.</p>
-            )}
-            {overlap.sharedAromaCount > 0 && (
-              <p className="mt-1 text-small leading-snug text-chalk-3">
-                {overlap.sharedAromaCount} shared aroma compound{overlap.sharedAromaCount !== 1 ? "s" : ""}
-                {overlap.shared.length > 0 ? `, including ${formatList(overlap.shared.slice(0, 3).map((c) => c.name))}` : ""}.
-              </p>
-            )}
-          </>
-        ) : (
-          <p className="mt-1 text-small text-chalk-3">No chemistry data for this pair.</p>
-        )}
+              <span className="text-right text-chalk-2">{overlap.compoundScore.toFixed(2)}</span>
+            </>
+          ) : (
+            <span className="col-span-2 text-chalk-3">no data</span>
+          )}
+        </div>
+        {words.length > 0 && <p className="mt-0.5 pl-[calc(4.5rem+0.5rem)] text-micro text-chalk-3">{words.join(", ")}</p>}
       </div>
 
-      <div className="mt-3 border-t border-rule pt-3">
-        <p className="text-body font-medium text-chalk">Tradition</p>
-        <p className="mt-1 text-small leading-snug text-chalk-2">
-          {traditionSentence[pairing.affinity]}
-          {pairing.note ? ` ${pairing.note}` : ""}
-        </p>
+      <div className="flex items-baseline gap-2" title="Curated cookbook label">
+        <span className="w-[4.5rem] shrink-0 text-chalk-2">Tradition</span>
+        <span className="min-w-0 text-chalk-2">
+          <span className="text-chalk">{AFFINITY_WORDS[pairing.affinity]}</span>
+          {pairing.note ? `. ${pairing.note}` : ""}
+        </span>
       </div>
     </div>
   );
-}
-
-function formatList(items: string[]): string {
-  if (items.length <= 1) return items.join("");
-  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
 }

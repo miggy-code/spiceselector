@@ -13,7 +13,7 @@ import {
   type BlendAxis,
 } from '@/lib/blend-analyzer';
 import { encodeBlendUrl } from '@/lib/blend-url';
-import { Section, Swatch, Meter, SmallButton } from './ui';
+import { Swatch, Meter, SmallButton, useSpiceHover } from './ui';
 
 const ROLE_WORDS: Record<string, string> = {
   base: 'base',
@@ -36,6 +36,7 @@ function cohesionVerdict(score: number): { label: string } {
 }
 
 const RADAR_SIZE = 190;
+const RADAR_SCALE = 0.75;
 const RADAR_R = 62;
 const CX = RADAR_SIZE / 2;
 const CY = RADAR_SIZE / 2 + 4;
@@ -66,10 +67,11 @@ interface BlendSectionProps {
 
 /**
  * Blend Builder: the combined flavor shape of the selection (radar), how well
- * it hangs together (cohesion), and what would balance it (gap suggestions).
+ * it hangs together (cohesion), a starting ratio, and what would balance it.
  */
 export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionProps) {
   const { toggleSpice } = useSelection();
+  const { hoverProps, setHovered } = useSpiceHover();
   const { saveBlend } = useSavedBlends();
   const [naming, setNaming] = useState(false);
   const [blendName, setBlendName] = useState('');
@@ -120,15 +122,12 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
   const verdict = cohesion ? cohesionVerdict(cohesion.score) : null;
 
   return (
-    <Section
-      title="Your blend"
-      description="The shape of the flavors you have picked, how well they hang together, and what would round them out."
-    >
+    <section className="px-5 py-4" aria-label="Your blend">
       <div className="flex items-center gap-3">
         {/* Radar */}
         <svg
-          width={RADAR_SIZE * 0.85}
-          height={RADAR_SIZE * 0.85}
+          width={RADAR_SIZE * RADAR_SCALE}
+          height={RADAR_SIZE * RADAR_SCALE}
           viewBox={`0 0 ${RADAR_SIZE} ${RADAR_SIZE}`}
           className="shrink-0"
           role="img"
@@ -158,7 +157,7 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fill="#8f8b84"
-                  fontSize={11}
+                  fontSize={12}
                 >
                   {AXIS_LABELS[axis]}
                 </text>
@@ -184,58 +183,54 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
         </svg>
 
         {/* Cohesion */}
-        <div className="min-w-0 flex-1">
+        <div
+          className="min-w-0 flex-1"
+          title={
+            cohesion
+              ? `How well these spices pair with one another, averaged over ${cohesion.scoredPairCount} pair${cohesion.scoredPairCount !== 1 ? 's' : ''}.` +
+                (profile.coveredCount < profile.totalCount ? ` The shape covers ${profile.coveredCount} of ${profile.totalCount} spices.` : '')
+              : undefined
+          }
+        >
           {cohesion && verdict && (
             <>
               <p className="text-small text-chalk-2">Cohesion</p>
+              <p className="font-display text-lead leading-tight text-chalk">{verdict.label}</p>
               <div className="mt-1.5 flex items-center gap-2">
                 <Meter value={cohesion.score} className="flex-1" />
                 <span className="text-small text-chalk-2">{cohesion.score.toFixed(2)}</span>
               </div>
-              <p className="mt-1 text-body text-chalk">{verdict.label}</p>
-              <p className="mt-0.5 text-small leading-snug text-chalk-3">
-                How well these spices pair with one another, averaged over {cohesion.scoredPairCount} pair
-                {cohesion.scoredPairCount !== 1 ? 's' : ''}.
-              </p>
             </>
-          )}
-          {profile.coveredCount < profile.totalCount && (
-            <p className="mt-1.5 text-small text-chalk-3">
-              The shape covers {profile.coveredCount} of {profile.totalCount} spices.
-            </p>
           )}
         </div>
       </div>
 
       {/* Suggested ratio */}
       {ratios.length > 0 && (
-        <div className="mt-4">
+        <div className="mt-3">
           <p className="text-small text-chalk-2">
-            Suggested start, {ratios.every((r) => r.parts === ratios[0].parts) ? 'equal parts' : 'weighted by punch'}
+            Start with {ratios.every((r) => r.parts === ratios[0].parts) ? 'equal parts' : 'parts by punch'}
           </p>
-          <ul className="mt-1.5 grid gap-1">
+          <ul className="mt-1.5 grid grid-cols-2 gap-x-4 gap-y-1">
             {ratios.map((r) => (
               <li
                 key={r.spiceId}
-                className="flex items-center gap-2 text-body text-chalk"
-                title={r.estimated ? 'No intensity data, so medium punch is assumed.' : undefined}
+                className="flex min-w-0 items-center gap-2 text-small text-chalk"
+                title={`${ROLE_WORDS[r.role]}${r.estimated ? '. No intensity data, so medium punch is assumed.' : ''}`}
+                {...hoverProps(tidToSlug.get(r.spiceId))}
               >
                 <Swatch tid={r.spiceId} size={12} />
-                <span className="w-4 text-right text-chalk-2">{r.parts}</span>
+                <span className="w-3 shrink-0 text-right text-chalk-2">{r.parts}</span>
                 <span className="truncate">{r.spiceName}</span>
                 {r.estimated && <span className="text-chalk-3">*</span>}
-                <span className="ml-auto text-small text-chalk-3">{ROLE_WORDS[r.role]}</span>
               </li>
             ))}
           </ul>
-          {ratios.some((r) => r.estimated) && (
-            <p className="mt-1 text-small text-chalk-3">* No intensity data, so medium punch is assumed.</p>
-          )}
         </div>
       )}
 
       {/* Save / share */}
-      <div className="mt-4 flex items-center gap-2">
+      <div className="mt-3 flex items-center gap-2">
         {naming ? (
           <form
             onSubmit={(e) => {
@@ -272,29 +267,35 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
 
       {/* Gap suggestions */}
       {gap && gap.suggestions.length > 0 && (
-        <div className="mt-4">
-          <p className="text-small leading-snug text-chalk-2">
-            This blend is low on {AXIS_LABELS[gap.axis].toLowerCase()} ({Math.round(gap.value)} out of 100). These would balance it:
-          </p>
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {gap.suggestions.map((s) => {
-              const slug = tidToSlug.get(s.spiceId);
-              return (
-                <SmallButton
-                  key={s.spiceId}
-                  disabled={!slug}
-                  onClick={() => slug && toggleSpice(slug)}
-                  title={`${AXIS_LABELS[gap.axis]} ${Math.round(s.axisValue)} out of 100, fit ${s.fit.toFixed(2)}`}
-                  className="gap-1.5 disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <Swatch tid={s.spiceId} size={10} />
-                  Add {s.spiceName}
-                </SmallButton>
-              );
-            })}
-          </div>
+        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+          <span
+            className="text-small text-chalk-2"
+            title={`${AXIS_LABELS[gap.axis]} scores ${Math.round(gap.value)} out of 100. These would balance it.`}
+          >
+            Low on {AXIS_LABELS[gap.axis].toLowerCase()}:
+          </span>
+          {gap.suggestions.map((s) => {
+            const slug = tidToSlug.get(s.spiceId);
+            return (
+              <SmallButton
+                key={s.spiceId}
+                disabled={!slug}
+                onClick={() => {
+                  if (!slug) return;
+                  setHovered(null);
+                  toggleSpice(slug);
+                }}
+                title={`Add ${s.spiceName}. ${AXIS_LABELS[gap.axis]} ${Math.round(s.axisValue)} out of 100, fit ${s.fit.toFixed(2)}`}
+                className="h-7 gap-1.5 px-2.5 disabled:cursor-not-allowed disabled:opacity-40"
+                {...hoverProps(slug)}
+              >
+                <Swatch tid={s.spiceId} size={10} />
+                {s.spiceName}
+              </SmallButton>
+            );
+          })}
         </div>
       )}
-    </Section>
+    </section>
   );
 }

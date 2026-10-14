@@ -97,6 +97,7 @@ export default function NavDrawer({
                 return (
                   <label
                     key={level}
+                    title={detail}
                     className="flex cursor-pointer items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-board-high"
                   >
                     <input
@@ -111,7 +112,6 @@ export default function NavDrawer({
                       ))}
                     </span>
                     <span className={`text-body ${active ? 'text-chalk' : 'text-chalk-3'}`}>{label}</span>
-                    <span className="ml-auto text-small text-chalk-3">{detail}</span>
                   </label>
                 );
               })}
@@ -119,8 +119,7 @@ export default function NavDrawer({
           </section>
 
           <section>
-            <h3 className="mb-1 text-body font-medium text-chalk">Cuisine</h3>
-            <p className="mb-3 text-small text-chalk-3">Keep only the spices a cuisine uses.</p>
+            <h3 className="mb-3 text-body font-medium text-chalk">Cuisine</h3>
             <div className="flex flex-wrap gap-1.5">
               <Chip active={cuisineFilter === null} onClick={() => onCuisineChange(null)}>
                 Any cuisine
@@ -136,9 +135,7 @@ export default function NavDrawer({
           <section>
             <h3 className="mb-1 text-body font-medium text-chalk">My rack</h3>
             <p className="mb-3 text-small text-chalk-3">
-              {rackIds.size === 0
-                ? 'Mark the spices you own in Substitutes, then limit suggestions to them.'
-                : `${rackIds.size} spice${rackIds.size !== 1 ? 's' : ''} marked as on your shelf.`}
+              {rackIds.size === 0 ? 'Mark owned spices in Substitutes.' : `${rackIds.size} on your shelf.`}
             </p>
             <button
               onClick={() => setRackOnly(!rackOnly)}
@@ -161,8 +158,8 @@ export default function NavDrawer({
               <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden className="transition-transform group-open:rotate-180"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </summary>
             <p className="mt-1.5 pb-1">
-              Pairing evidence from FlavorGraph (Park et al. 2021), FlavorDB2 (Garg et al. 2018), FooDB, the USDA Dr.
-              Duke&apos;s Phytochemical Database and CulinaryDB. Flavor profiles are model-generated and curated.
+              Recipes: FlavorGraph (Park et al. 2021), CulinaryDB. Chemistry: FlavorDB2 (Garg et al. 2018), FooDB, USDA
+              Dr. Duke&apos;s. Tradition: curated labels. Flavor profiles are model-generated and curated.
             </p>
           </details>
         </footer>

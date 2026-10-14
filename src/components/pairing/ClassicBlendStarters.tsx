@@ -30,14 +30,10 @@ export default function ClassicBlendStarters({ tidToSlug }: ClassicBlendStarters
               <button
                 type="button"
                 onClick={() => selectSpices(onMapSlugs)}
-                className="flex w-full items-center gap-3 rounded-md px-2 py-2 text-left transition-colors hover:bg-board-high"
+                className="flex w-full items-center gap-3 rounded-md px-2 py-1.5 text-left transition-colors hover:bg-board-high"
+                title={`${blend.origin}, ${blend.spiceIds.length} spices`}
               >
-                <div className="min-w-0 flex-1">
-                  <p className="font-display text-lead leading-tight text-chalk">{blend.name}</p>
-                  <p className="text-small text-chalk-3">
-                    {blend.origin}, {blend.spiceIds.length} spices
-                  </p>
-                </div>
+                <p className="min-w-0 flex-1 truncate font-display text-lead leading-tight text-chalk">{blend.name}</p>
                 <SwatchStack tids={blend.spiceIds} max={7} size={16} />
               </button>
             </li>

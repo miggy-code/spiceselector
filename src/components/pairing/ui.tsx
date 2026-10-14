@@ -7,6 +7,7 @@
  */
 import type { ReactNode } from 'react';
 import { spiceColorForTid, luminance } from '@/lib/spice-colors';
+import { useSelection } from '@/context/SelectionContext';
 
 export function Section({
   title,
@@ -22,12 +23,12 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section className={`border-t border-rule px-5 py-5 ${className}`}>
-      <div className="mb-3 flex items-center justify-between gap-3">
+    <section className={`border-t border-rule px-5 py-4 ${className}`}>
+      <div className="mb-2.5 flex items-center justify-between gap-3">
         <h3 className="font-display text-lead leading-tight text-chalk">{title}</h3>
         {aside}
       </div>
-      {description && <div className="-mt-1 mb-3.5 text-small leading-relaxed text-chalk-2">{description}</div>}
+      {description && <div className="-mt-1 mb-3 text-small leading-relaxed text-chalk-2">{description}</div>}
       {children}
     </section>
   );
@@ -120,3 +121,30 @@ export const AFFINITY_WORDS: Record<string, string> = {
   complementary: 'Complementary',
   surprising: 'Surprising',
 };
+
+/**
+ * Hover sync with the map views: spread `hoverProps(slug)` on a spice row or
+ * chip, and read `hoveredSpiceId` to light up rows hovered on the map.
+ * Both are map slug ids, not taxonomy ids.
+ */
+export function useSpiceHover() {
+  const { hoveredSpiceId, setHovered } = useSelection();
+  const hoverProps = (slug: string | undefined) =>
+    slug ? { onMouseEnter: () => setHovered(slug), onMouseLeave: () => setHovered(null) } : {};
+  return { hoveredSpiceId, setHovered, hoverProps };
+}
+
+/** Round "+" button that adds a spice to the blend. */
+export function AddButton({ label, onClick, className = '' }: { label: string; onClick: () => void; className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      title={label}
+      className={`grid h-7 w-7 shrink-0 place-items-center rounded-full bg-board-high text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.16)] transition-[background-color,transform,box-shadow] duration-150 hover:bg-chalk hover:text-board active:scale-90 ${className}`}
+    >
+      <svg width="11" height="11" viewBox="0 0 12 12" aria-hidden><path d="M6 1.5v9M1.5 6h9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /></svg>
+    </button>
+  );
+}
