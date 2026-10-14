@@ -213,7 +213,7 @@ export default function MapPairingPanel({ data, onFindSubstitutes, onLayoutChang
                         title={`Out of ${selectedList[0].name}? See what can replace it`}
                         className="text-small text-chalk-3 underline-offset-2 hover:text-chalk hover:underline"
                       >
-                        Substitutes →
+                        Find a substitute →
                       </button>
                     )}
                     <button type="button" onClick={clearSelection} className="text-small text-chalk-3 underline-offset-2 hover:text-chalk hover:underline">

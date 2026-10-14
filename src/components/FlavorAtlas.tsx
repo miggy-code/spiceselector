@@ -79,27 +79,27 @@ const GAP = 4;
 
 export function labelSize(name: string, tone: LabelTone) {
   const pill = tone === 'selected' || tone === 'partner' || tone === 'hover';
-  return { w: Math.ceil(name.length * CHAR_W) + (pill ? 12 : 6), h: pill ? 18 : 16 };
+  return { w: Math.ceil(name.length * CHAR_W) + 12, h: pill ? 18 : 16 };
 }
 
-export function SpiceLabel({ name, x, y, w, h, tone }: { name: string; x: number; y: number; w: number; h: number; tone: LabelTone }) {
+export function SpiceLabel({ name, x, y, w, h, tone, color }: { name: string; x: number; y: number; w: number; h: number; tone: LabelTone; color?: string }) {
   const pill = tone === 'selected' || tone === 'partner' || tone === 'hover';
   return (
     <g className="atlas-label" pointerEvents="none" style={{ transform: `translate(${x}px, ${y}px)` }}>
-      {pill && (
+      {(pill || color) && (
         <rect
           x={-w / 2} y={-h / 2} width={w} height={h} rx={5}
-          fill={tone === 'selected' ? THEME.chalk : tone === 'hover' ? THEME.boardHigh : THEME.board}
-          fillOpacity={tone === 'partner' ? 0.88 : 1}
-          stroke={tone === 'selected' ? 'none' : THEME.chalk}
-          strokeOpacity={tone === 'hover' ? 0.55 : 0.7}
+          fill={tone === 'selected' ? THEME.chalk : color ?? (tone === 'hover' ? THEME.boardHigh : THEME.board)}
+          fillOpacity={tone === 'selected' ? 1 : color ? (tone === 'dim' ? 0.09 : 0.2) : tone === 'partner' ? 0.88 : 1}
+          stroke={tone === 'selected' ? 'none' : color ?? THEME.chalk}
+          strokeOpacity={tone === 'hover' ? 0.85 : color ? (tone === 'dim' ? 0.3 : 0.72) : 0.7}
         />
       )}
       <text
         y={0.5} textAnchor="middle" dominantBaseline="central" fontSize={LABEL_FONT}
         fontWeight={tone === 'selected' || tone === 'hover' ? 600 : 500}
         fill={tone === 'selected' ? THEME.board : tone === 'dim' ? THEME.chalk3 : tone === 'quiet' ? THEME.chalk2 : THEME.chalk}
-        {...(pill ? {} : { stroke: THEME.board, strokeWidth: 3, strokeLinejoin: 'round' as const, paintOrder: 'stroke' })}
+        {...(pill || color ? {} : { stroke: THEME.board, strokeWidth: 3, strokeLinejoin: 'round' as const, paintOrder: 'stroke' })}
       >{name}</text>
     </g>
   );
@@ -450,7 +450,7 @@ export default function FlavorAtlas({ data, pairingFocus }: { data: SpiceProfile
               const at = labels.get(p.spice.id);
               if (!at || p.spice.id === hovered?.spice.id) return null;
               const tone = toneOf(p.spice.id);
-              return <SpiceLabel key={`label-${p.spice.id}`} name={p.spice.name} x={at.x} y={at.y} tone={tone} {...labelSize(p.spice.name, tone === 'dim' ? 'quiet' : tone)} />;
+              return <SpiceLabel key={`label-${p.spice.id}`} name={p.spice.name} x={at.x} y={at.y} tone={tone} color={spiceColor(p.spice.id, p.spice.name, p.spice.family)} {...labelSize(p.spice.name, tone === 'dim' ? 'quiet' : tone)} />;
             })}
             {/* The hovered spice, wherever the pointer came from, is raised above everything else. */}
             {hovered && !hovered.hidden && hoverLabel && (
@@ -459,7 +459,7 @@ export default function FlavorAtlas({ data, pairingFocus }: { data: SpiceProfile
                   <circle r={hovered.r + 5} fill="none" stroke={THEME.chalk} strokeWidth={1.8} opacity={0.9} />
                   <circle r={hovered.r * 1.12} fill={spiceColor(hovered.spice.id, hovered.spice.name, hovered.spice.family)} stroke="rgba(243,239,232,0.6)" strokeWidth="1" />
                 </g>
-                <SpiceLabel name={hovered.spice.name} x={hoverLabel.x} y={hoverLabel.y} w={hoverLabel.w} h={hoverLabel.h} tone={hoverLabel.tone} />
+                <SpiceLabel name={hovered.spice.name} x={hoverLabel.x} y={hoverLabel.y} w={hoverLabel.w} h={hoverLabel.h} tone={hoverLabel.tone} color={spiceColor(hovered.spice.id, hovered.spice.name, hovered.spice.family)} />
               </g>
             )}
           </svg>

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { familyLabel } from '@/lib/colors';
 import { spiceColor, luminance } from '@/lib/spice-colors';
 import { THEME } from '@/lib/theme';
+import { FLAVOR_DIM_COLORS } from '@/lib/flavor-dim-colors';
 import { useSelection } from '@/context/SelectionContext';
 import { getAffinity } from '@/lib/pairing-engine';
 import { toTaxonomyId } from '@/lib/spice-id-map';
@@ -161,12 +162,12 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
   return (
     <section className="relative flex h-full min-h-0 w-full flex-col overflow-hidden px-4 pb-3 pt-2 text-chalk md:px-6">
       <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-2 text-small text-chalk-2">
-        <label className="flex items-center gap-2">Across
-          <select value={xAxis} onChange={(event) => chooseXAxis(event.target.value as AxisKey)} className="h-9 cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14)] outline-none hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]">
+        <label className="flex items-center gap-2"><span className="flex items-center gap-1.5"><i className="h-2 w-2 rounded-full" style={{ backgroundColor: FLAVOR_DIM_COLORS[xAxis] }} />Across</span>
+          <select value={xAxis} onChange={(event) => chooseXAxis(event.target.value as AxisKey)} style={{ boxShadow: `inset 0 0 0 1px ${FLAVOR_DIM_COLORS[xAxis]}88` }} className="h-9 cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk outline-none hover:brightness-110">
             {AXES.map((axis) => <option key={axis.key} value={axis.key}>{axis.label}</option>)}
           </select></label>
-        <label className="flex items-center gap-2">Up
-          <select value={yAxis} onChange={(event) => chooseYAxis(event.target.value as AxisKey)} className="h-9 cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14)] outline-none hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]">
+        <label className="flex items-center gap-2"><span className="flex items-center gap-1.5"><i className="h-2 w-2 rounded-full" style={{ backgroundColor: FLAVOR_DIM_COLORS[yAxis] }} />Up</span>
+          <select value={yAxis} onChange={(event) => chooseYAxis(event.target.value as AxisKey)} style={{ boxShadow: `inset 0 0 0 1px ${FLAVOR_DIM_COLORS[yAxis]}88` }} className="h-9 cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk outline-none hover:brightness-110">
             {AXES.map((axis) => <option key={axis.key} value={axis.key}>{axis.label}</option>)}
           </select></label>
         <button type="button" role="switch" onClick={() => setShowEdges((value) => !value)} aria-checked={showEdges} className="flex h-9 items-center gap-2.5 rounded-md px-1 text-small font-medium text-chalk-2 hover:text-chalk">Recipe partners<span aria-hidden className={`flex h-5 w-9 rounded-full p-0.5 transition-colors duration-200 ${showEdges ? 'bg-chalk' : 'bg-board-high shadow-[inset_0_0_0_1px_rgba(243,239,232,0.2)]'}`}><span className={`block h-4 w-4 rounded-full transition-transform duration-200 ${showEdges ? 'translate-x-4 bg-board' : 'bg-chalk-3'}`} /></span></button>
@@ -180,7 +181,7 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
           </defs>
           <rect x={geometry.left} y={geometry.top} width={geometry.plotWidth} height={geometry.plotHeight} rx="6" fill={THEME.boardDeep} fillOpacity=".5" />
           {ticks.map((tick) => <g key={tick} aria-hidden="true"><line x1={scaleX(tick, geometry)} x2={scaleX(tick, geometry)} y1={geometry.top} y2={geometry.top + geometry.plotHeight} stroke={THEME.chalk} strokeOpacity={tick === 0 || tick === 100 ? 0.18 : 0.06} /><line x1={geometry.left} x2={geometry.left + geometry.plotWidth} y1={scaleY(tick, geometry)} y2={scaleY(tick, geometry)} stroke={THEME.chalk} strokeOpacity={tick === 0 || tick === 100 ? 0.18 : 0.06} />{tick % 50 === 0 && <><text x={scaleX(tick, geometry)} y={geometry.top + geometry.plotHeight + 21} textAnchor="middle" fill={THEME.chalk3} fontSize="12">{tick}</text><text x={geometry.left - 12} y={scaleY(tick, geometry) + 4} textAnchor="end" fill={THEME.chalk3} fontSize="12">{tick}</text></>}</g>)}
-          <text x={geometry.left} y={geometry.top - 12} fill={THEME.chalk2} fontSize="12.5" fontWeight="500">More {y.label.toLowerCase()}</text><text x={geometry.left + geometry.plotWidth} y={geometry.top + geometry.plotHeight + 42} textAnchor="end" fill={THEME.chalk2} fontSize="12.5" fontWeight="500">More {x.label.toLowerCase()}</text>
+          <text x={geometry.left} y={geometry.top - 12} fill={FLAVOR_DIM_COLORS[yAxis]} fontSize="12.5" fontWeight="600">More {y.label.toLowerCase()} ↑</text><text x={geometry.left + geometry.plotWidth} y={geometry.top + geometry.plotHeight + 42} textAnchor="end" fill={FLAVOR_DIM_COLORS[xAxis]} fontSize="12.5" fontWeight="600">More {x.label.toLowerCase()} →</text>
           <g key={edges.map((e) => e.source + e.target).join('|') + xAxis + yAxis} className="atlas-edges">
             {edges.map((edge) => { const source = byId.get(edge.source); const target = byId.get(edge.target); if (!source || !target) return null; const t = (edge.score - EDGE_MIN_SCORE) / (1 - EDGE_MIN_SCORE); return <line key={`${edge.source}-${edge.target}`} x1={source.x} y1={source.y} x2={target.x} y2={target.y} stroke={THEME.chalk} strokeOpacity={0.3 + t * 0.6} strokeWidth={1 + t * 2.4} strokeLinecap="round" />; })}
           </g>
@@ -202,7 +203,7 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
             const at = labels.get(spice.id);
             if (!at || spice.id === hoveredId) return null;
             const tone = toneOf(spice.id);
-            return <SpiceLabel key={`label-${spice.id}`} name={spice.name} x={at.x} y={at.y} tone={tone} {...labelSize(spice.name, tone === 'dim' ? 'quiet' : tone)} />;
+            return <SpiceLabel key={`label-${spice.id}`} name={spice.name} x={at.x} y={at.y} tone={tone} color={spiceColor(spice.id, spice.name, spice.family)} {...labelSize(spice.name, tone === 'dim' ? 'quiet' : tone)} />;
           })}
           {/* The hovered spice, wherever the pointer came from, is raised above everything else. */}
           {hoverSpice && (() => {
@@ -214,7 +215,7 @@ export default function FlavorMap2D({ data }: FlavorMap2DProps) {
                   <circle r={r + 4.5} fill="none" stroke={THEME.chalk} strokeWidth={1.8} opacity={0.9} />
                   <circle r={r * 1.12} fill={spiceColor(hoverSpice.id, hoverSpice.name, hoverSpice.family)} stroke="rgba(243,239,232,0.6)" strokeWidth="1" />
                 </g>
-                <SpiceLabel name={hoverSpice.name} x={at.x} y={at.y} tone={tone} {...size} />
+                <SpiceLabel name={hoverSpice.name} x={at.x} y={at.y} tone={tone} color={spiceColor(hoverSpice.id, hoverSpice.name, hoverSpice.family)} {...size} />
               </g>
             );
           })()}

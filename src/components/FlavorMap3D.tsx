@@ -11,6 +11,7 @@ import { useSelection } from '@/context/SelectionContext';
 import { getAffinity } from '@/lib/pairing-engine';
 import { toTaxonomyId } from '@/lib/spice-id-map';
 import { THEME } from '@/lib/theme';
+import { FLAVOR_DIM_COLORS, type FlavorDimension } from '@/lib/flavor-dim-colors';
 import aromaData from '@/data/aroma-fingerprints.json';
 import type { SpiceProfile } from '@/types/spice';
 
@@ -67,7 +68,7 @@ function measuredAroma(slug: string, name: string): string[] {
 
 // ─── Scene dressing ─────────────────────────────────────────────────────────
 
-function Plate({ children, tone = 'quiet' }: { children: React.ReactNode; tone?: 'quiet' | 'strong' | 'selected' }) {
+function Plate({ children, tone = 'quiet', color }: { children: React.ReactNode; tone?: 'quiet' | 'strong' | 'selected'; color?: string }) {
   const size = tone === 'quiet' ? 'text-[11.5px]' : 'text-[13px]';
   const toneClass =
     tone === 'selected'
@@ -76,18 +77,21 @@ function Plate({ children, tone = 'quiet' }: { children: React.ReactNode; tone?:
         ? 'bg-board-raised text-chalk font-medium ring-1 ring-white/20'
         : 'bg-board/90 text-chalk-2 ring-1 ring-white/10';
   return (
-    <span className={`inline-block whitespace-nowrap rounded-[5px] px-1.5 py-[3px] leading-none shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${size} ${toneClass}`}>
+    <span
+      className={`inline-block whitespace-nowrap rounded-[5px] border px-1.5 py-[3px] leading-none shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${size} ${toneClass}`}
+      style={tone === 'selected' || !color ? undefined : { borderColor: `${color}b8`, backgroundColor: `color-mix(in srgb, ${color} 22%, #24282c)` }}
+    >
       {children}
     </span>
   );
 }
 
-const AxisGuides = ({ xLabel, yLabel, zLabel, quiet, hideLabels }: { xLabel: string; yLabel: string; zLabel: string; quiet: boolean; hideLabels: boolean }) => {
+const AxisGuides = ({ xLabel, yLabel, zLabel, xDim, yDim, zDim, quiet, hideLabels }: { xLabel: string; yLabel: string; zLabel: string; xDim: FlavorDimension; yDim: FlavorDimension; zDim: FlavorDimension; quiet: boolean; hideLabels: boolean }) => {
   const portrait = useThree((s) => s.size.width / s.size.height < 0.85);
-  const axes: { points: [number, number, number][]; tip: [number, number, number]; label: string }[] = [
-    { points: [[-R, FLOOR, -R], [R, FLOOR, -R]], tip: [R + 0.2, FLOOR, -R], label: xLabel },
-    { points: [[-R, FLOOR, -R], [-R, R, -R]], tip: [-R, R + 0.45, -R], label: yLabel },
-    { points: [[-R, FLOOR, -R], [-R, FLOOR, R]], tip: [-R, FLOOR, R + 0.2], label: zLabel },
+  const axes: { points: [number, number, number][]; tip: [number, number, number]; label: string; dim: FlavorDimension }[] = [
+    { points: [[-R, FLOOR, -R], [R, FLOOR, -R]], tip: [R + 0.2, FLOOR, -R], label: xLabel, dim: xDim },
+    { points: [[-R, FLOOR, -R], [-R, R, -R]], tip: [-R, R + 0.45, -R], label: yLabel, dim: yDim },
+    { points: [[-R, FLOOR, -R], [-R, FLOOR, R]], tip: [-R, FLOOR, R + 0.2], label: zLabel, dim: zDim },
   ];
   const grid = useMemo(() => {
     const g = new THREE.GridHelper(R * 2, 10, THEME.chalk, THEME.chalk);
@@ -99,13 +103,13 @@ const AxisGuides = ({ xLabel, yLabel, zLabel, quiet, hideLabels }: { xLabel: str
   }, []);
   return (
     <group>
-      {axes.map(({ points, tip, label }, i) => (
-        <group key={label}>
-          <Line points={points} color={THEME.chalk} lineWidth={1.4} transparent opacity={quiet ? 0.16 : 0.4} />
+      {axes.map(({ points, tip, label, dim }, i) => (
+        <group key={`${dim}-${label}`}>
+          <Line points={points} color={FLAVOR_DIM_COLORS[dim]} lineWidth={1.8} transparent opacity={quiet ? 0.2 : 0.62} />
           {!hideLabels && !(portrait && i !== 1) && (
             <Html position={tip} center zIndexRange={[20, 10]} className="pointer-events-none select-none">
               <span className="block transition-opacity duration-300" style={{ opacity: quiet ? 0.45 : 1 }}>
-                <Plate>More {label.toLowerCase()}</Plate>
+                <Plate tone="strong" color={FLAVOR_DIM_COLORS[dim]}>More {label.toLowerCase()}</Plate>
               </span>
             </Html>
           )}
@@ -316,7 +320,7 @@ const SpiceDot = React.memo(function SpiceDot({
             className="block transition-[opacity,transform] duration-300 ease-out"
             style={{ opacity: labelOn ? 1 : 0, transform: `translateY(${labelShift + (labelOn ? 0 : 4)}px)` }}
           >
-            <Plate tone={state === 'selected' ? 'selected' : state === 'partner' || hovered ? 'strong' : 'quiet'}>{spice.name}</Plate>
+            <Plate tone={state === 'selected' ? 'selected' : state === 'partner' || hovered ? 'strong' : 'quiet'} color={color}>{spice.name}</Plate>
           </span>
         </Html>
       )}
@@ -837,7 +841,7 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
         <Framing right={panelInsets.right} bottom={panelInsets.bottom} />
 
         <MorphGuides morph={morph}>
-        <AxisGuides xLabel={label(xDim)} yLabel={label(yDim)} zLabel={label(zDim)} quiet={hasSelection} hideLabels={transitioning} />
+        <AxisGuides xLabel={label(xDim)} yLabel={label(yDim)} zLabel={label(zDim)} xDim={xDim} yDim={yDim} zDim={zDim} quiet={hasSelection} hideLabels={transitioning} />
         <ContactShadows position={[0, FLOOR + 0.01, 0]} scale={R * 2.4} resolution={512} blur={2.2} opacity={0.4} far={3.5} color="#0b0d0f" />
 
         {edges.map((e) => (
@@ -917,7 +921,11 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
           title="Choose what the three axes show"
           className="flex h-9 items-center gap-2 rounded-full bg-board-raised/95 pl-3.5 pr-3 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14),0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3),0_8px_24px_rgba(0,0,0,0.3)]"
         >
-          {label(xDim)} × {label(yDim)} × {label(zDim)}
+          <span style={{ color: FLAVOR_DIM_COLORS[xDim] }}>{label(xDim)}</span>
+          <span className="text-chalk-3">×</span>
+          <span style={{ color: FLAVOR_DIM_COLORS[yDim] }}>{label(yDim)}</span>
+          <span className="text-chalk-3">×</span>
+          <span style={{ color: FLAVOR_DIM_COLORS[zDim] }}>{label(zDim)}</span>
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden className={`text-chalk-2 transition-transform ${axesOpen ? 'rotate-180' : ''}`}>
             <path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -926,11 +934,12 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
           <div className="rise-in mt-2 grid gap-2 rounded-xl bg-board-raised/95 p-3 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.12),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur">
             {axisRows.map(({ axis, name, value }) => (
               <label key={axis} className="grid grid-cols-[56px_1fr] items-center gap-3 text-small text-chalk-2">
-                {name}
+                <span className="flex items-center gap-1.5"><i className="h-2 w-2 rounded-full" style={{ backgroundColor: FLAVOR_DIM_COLORS[value] }} />{name}</span>
                 <select
                   value={value}
                   onChange={(e) => chooseAxis(axis, e.target.value as FlavorDim)}
-                  className="h-9 min-w-[132px] cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14)] outline-none transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]"
+                  style={{ boxShadow: `inset 0 0 0 1px ${FLAVOR_DIM_COLORS[value]}88` }}
+                  className="h-9 min-w-[132px] cursor-pointer rounded-md bg-board-high px-2.5 text-small font-medium text-chalk outline-none transition-shadow hover:brightness-110"
                 >
                   {DIMS.map((d) => (
                     <option key={d.key} value={d.key}>{d.label}</option>

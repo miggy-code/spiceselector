@@ -58,7 +58,7 @@ const FlavorExplorer2D = dynamic(() => import('@/components/FlavorExplorer2D'), 
   loading: () => <ViewLoading label="Drawing the atlas…" />,
 });
 
-export type View = '3d-map' | '2d-map' | 'substitutions';
+export type View = '3d-map' | '2d-map';
 export type HeatLevel = 'mild' | 'medium' | 'hot' | 'extreme';
 
 const ALL_HEAT_LEVELS: HeatLevel[] = ['mild', 'medium', 'hot', 'extreme'];
@@ -66,7 +66,6 @@ const ALL_HEAT_LEVELS: HeatLevel[] = ['mild', 'medium', 'hot', 'extreme'];
 const VIEWS: { id: View; label: string }[] = [
   { id: '3d-map', label: 'Map' },
   { id: '2d-map', label: 'Atlas' },
-  { id: 'substitutions', label: 'Substitutes' },
 ];
 
 interface MapClientLoaderProps {
@@ -101,6 +100,7 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
   const [filtersOpen, setFiltersOpen] = useState(false);
   // Set when the pairing panel hands a spice off to the Substitution Finder.
   const [substitutionFocus, setSubstitutionFocus] = useState<string | null>(null);
+  const [substitutionsOpen, setSubstitutionsOpen] = useState(false);
   const { selectedSpiceIds, selectSpices } = useSelection();
 
   // Shared-blend links (?b=cinnamon~cumin): select the blend on first load.
@@ -155,11 +155,11 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
   const setPairingCollapsed = setCollapsedPref;
 
   function changeView(view: View) {
+    setSubstitutionsOpen(false);
     if (view === currentView) return;
     cancelAnimationFrame(animation.current);
-    const spatialSwitch = view !== 'substitutions' && currentView !== 'substitutions';
     const stage = mapLayer.current?.getBoundingClientRect();
-    if (spatialSwitch && stage && atlasLayer.current) {
+    if (stage && atlasLayer.current) {
       if (!morph.current.active) {
         morph.current.targets = captureAtlasTargets(atlasLayer.current, stage);
       }
@@ -274,7 +274,7 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
           className={`absolute inset-0 ${transitioning ? 'map-morphing' : ''}`}
           aria-hidden={currentView !== '3d-map' || transitioning}
           inert={currentView !== '3d-map' || transitioning}
-          style={{ visibility: currentView !== 'substitutions' ? 'visible' : 'hidden', opacity: 1 }}
+          style={{ visibility: 'visible', opacity: 1 }}
         >
           <FlavorMap3D data={filteredData} panelInsets={panelInsets} morph={morph} active={currentView === '3d-map'} transitioning={transitioning} />
         </div>
@@ -287,14 +287,24 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
         >
           <FlavorExplorer2D data={filteredData} panelInsets={panelInsets} cuisine={cuisineFilter} />
         </div>
-        {currentView === 'substitutions' && (
-          <motion.div className="absolute inset-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <SubstitutionView data={data} initialFocusId={substitutionFocus} onViewInMap={() => changeView('3d-map')} />
+        {substitutionsOpen && (
+          <motion.div className="absolute inset-0 z-30 bg-board" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <div className="h-full pt-12">
+              <SubstitutionView data={data} initialFocusId={substitutionFocus} onViewInMap={() => { setSubstitutionsOpen(false); changeView('3d-map'); }} />
+            </div>
+            <button
+              type="button"
+              onClick={() => setSubstitutionsOpen(false)}
+              className="absolute right-4 top-2 z-10 rounded-md border border-rule-strong bg-board-high px-3 py-1.5 text-small text-chalk-2 hover:text-chalk"
+              aria-label="Close substitutes and return to the map"
+            >
+              Return to {currentView === '3d-map' ? 'Map' : 'Atlas'}
+            </button>
           </motion.div>
         )}
 
         {/* Active lens — a quiet, dismissible statement of what is hidden */}
-        {cuisineFilter && currentView !== 'substitutions' && (
+        {cuisineFilter && !substitutionsOpen && (
           <button
             type="button"
             onClick={() => setCuisineFilter(null)}
@@ -306,7 +316,7 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
           </button>
         )}
 
-        {currentView !== 'substitutions' && (
+        {!substitutionsOpen && (
           <MapPairingPanel
             data={data}
             collapsed={pairingCollapsed}
@@ -315,7 +325,7 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
             onLayoutChange={setPanelInsets}
             onFindSubstitutes={(slug) => {
               setSubstitutionFocus(slug);
-              changeView('substitutions');
+              setSubstitutionsOpen(true);
             }}
           />
         )}
