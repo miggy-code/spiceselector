@@ -1,68 +1,182 @@
 @import "tailwindcss";
 
-/* Enable class-based dark mode (`.dark` ancestor), on top of Tailwind v4's
-   default media strategy. The Flavor Map app is always-dark and opts in via a
-   `.dark` wrapper so `dark:` variants render consistently. */
+/* Class-based dark variant: the app is always on the dark slate board and
+   opts in via a `.dark` wrapper so `dark:` variants render consistently. */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * Spice-on-slate design tokens.
+ * The ground is a chef's slate board; spices carry their own true color;
+ * evidence is drawn in chalk. No brand accent — the spices are the color.
+ */
+@theme {
+  --color-board: #24282c;        /* ground: slate */
+  --color-board-raised: #2d3237; /* panels */
+  --color-board-high: #383e44;   /* inputs, hover */
+  --color-board-deep: #1d2024;   /* wells, canvas edges */
+  --color-chalk: #f3efe8;        /* primary text, selection, evidence lines — 11:1 on panels */
+  --color-chalk-2: #d6d1c8;      /* secondary text — 8.5:1 */
+  --color-chalk-3: #aca79e;      /* tertiary text — ≥4.5:1 on every surface */
+  --color-rule: rgb(243 239 232 / 0.13);
+  --color-rule-strong: rgb(243 239 232 / 0.26);
+
+  --font-display: var(--font-young-serif), Georgia, serif;
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale — minor third from a 15px body; nothing interactive below 13px */
+  --text-micro: 12.5px;
+  --text-small: 13.5px;
+  --text-body: 15px;
+  --text-lead: 17px;
+  --text-title: 21px;
+  --text-heading: 28px;
+  --text-display: 38px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-board);
+  --foreground: var(--color-chalk);
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* the app is a fixed-viewport tool; panels scroll internally */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.45;
 }
 
-/* Scrollbar styling */
+::selection {
+  background: rgb(239 235 228 / 0.25);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-chalk);
+  outline-offset: 2px;
+}
+
+/* Scrollbars: thin chalk */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(239 235 228 / 0.18) transparent;
+}
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
+  background: rgb(239 235 228 / 0.18);
   border-radius: 3px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #404040;
+/* Native selects on the slate */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--color-board-high);
+  color: var(--color-chalk);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5l3 3 3-3' fill='none' stroke='%23d6d1c8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 32px !important;
 }
-
-/* Flavor Map affinity edges — gentle pulse to read as "living" connections */
-@keyframes affinity-pulse {
-  0%,
-  100% {
-    opacity: 0.85;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.affinity-edge {
-  animation: affinity-pulse 2.8s ease-in-out infinite;
+select option {
+  background: var(--color-board-raised);
+  color: var(--color-chalk);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .affinity-edge {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Numbers that line up in columns */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Gentle reveal for content that answers a user action */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise-in {
+  animation: rise-in 420ms var(--ease-out-soft) both;
+}
+
+/* Atlas: marks travel between layouts, then the lines fade in */
+.atlas-node,
+.atlas-label {
+  transition: transform 620ms var(--ease-out-soft), opacity 220ms ease;
+}
+.atlas-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 180ms var(--ease-out-soft);
+}
+.atlas-node:hover .atlas-dot,
+.atlas-node:focus-within .atlas-dot {
+  transform: scale(1.18);
+}
+.atlas-dot circle {
+  transition: r 620ms var(--ease-out-soft);
+}
+.atlas-ring {
+  transition: opacity 220ms ease;
+}
+@keyframes edges-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.atlas-edges {
+  animation: edges-in 280ms ease 420ms both;
+}
+
+/* The slate board: fine mineral grain plus a soft vignette, so the ground reads as stone, not flat gray. */
+.slate {
+  background-color: var(--color-board);
+  background-image:
+    radial-gradient(120% 90% at 50% 40%, rgb(255 255 255 / 0.035), transparent 60%),
+    radial-gradient(140% 120% at 50% 50%, transparent 55%, rgb(0 0 0 / 0.28) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.94 0 0 0 0 0.91 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%, 240px 240px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-node, .atlas-label, .atlas-dot, .atlas-dot circle, .atlas-ring {
+    transition: none !important;
+  }
+  .atlas-edges {
     animation: none;
   }
+}
+
+/* DOM labels yield to the geometry while the camera rotates into the atlas. */
+.map-morphing .pointer-events-none {
+  opacity: 0 !important;
+  transition: opacity 120ms ease;
 }

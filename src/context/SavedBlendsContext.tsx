@@ -3,11 +3,11 @@
 import {
   createContext,
   useContext,
-  useState,
-  useEffect,
+  useSyncExternalStore,
   useCallback,
   type ReactNode,
 } from "react";
+import { createLocalStore } from "@/lib/local-store";
 
 /**
  * Saved blends, persisted in localStorage (map slug ids) — the Blend
@@ -31,22 +31,27 @@ interface SavedBlendsState {
 
 const SavedBlendsContext = createContext<SavedBlendsState | null>(null);
 
-function persist(blends: SavedBlend[]) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(blends));
-  } catch {}
-}
+const NO_BLENDS: SavedBlend[] = [];
+
+const blendsStore = createLocalStore<SavedBlend[]>(
+  STORAGE_KEY,
+  NO_BLENDS,
+  (raw) => {
+    const blends: unknown = JSON.parse(raw);
+    if (!Array.isArray(blends)) throw new Error("corrupt blends");
+    return blends as SavedBlend[];
+  },
+  (blends) => JSON.stringify(blends)
+);
 
 export function SavedBlendsProvider({ children }: { children: ReactNode }) {
-  // Hydrate after mount so server and client render identical initial markup.
-  const [blends, setBlends] = useState<SavedBlend[]>([]);
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) setBlends(JSON.parse(stored) as SavedBlend[]);
-    } catch {}
-  }, []);
+  // Server render + first hydration pass see no blends; stored blends swap in
+  // on the client (see createLocalStore), so markup matches.
+  const blends = useSyncExternalStore(
+    blendsStore.subscribe,
+    blendsStore.getSnapshot,
+    blendsStore.getServerSnapshot
+  );
 
   const saveBlend = useCallback((name: string, slugs: string[]) => {
     const blend: SavedBlend = {
@@ -55,20 +60,12 @@ export function SavedBlendsProvider({ children }: { children: ReactNode }) {
       slugs,
       createdAt: Date.now(),
     };
-    setBlends((prev) => {
-      const next = [blend, ...prev];
-      persist(next);
-      return next;
-    });
+    blendsStore.update((prev) => [blend, ...prev]);
     return blend;
   }, []);
 
   const deleteBlend = useCallback((id: string) => {
-    setBlends((prev) => {
-      const next = prev.filter((b) => b.id !== id);
-      persist(next);
-      return next;
-    });
+    blendsStore.update((prev) => prev.filter((b) => b.id !== id));
   }, []);
 
   return (

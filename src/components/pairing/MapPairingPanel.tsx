@@ -1,20 +1,21 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSelection } from '@/context/SelectionContext';
 import { getCuratedPairings, type RankedPairing } from '@/lib/pairing-engine';
 import { findBridges, findWeakestPair, type BridgeCandidate } from '@/lib/bridge-finder';
 import { spiceName } from '@/lib/spice-list';
 import { toTaxonomyId } from '@/lib/spice-id-map';
-import { FAMILY_COLORS } from '@/lib/colors';
-import WhyPopover, { ScoreBar } from './WhyPopover';
+import { spiceColor } from '@/lib/spice-colors';
+import WhyDetails from './WhyPopover';
 import SurpriseSection from './SurpriseSection';
 import BlendSection from './BlendSection';
 import DishSection from './DishSection';
 import SavedBlendsList from './SavedBlendsList';
 import ClassicBlendHint from './ClassicBlendHint';
 import ClassicBlendStarters from './ClassicBlendStarters';
+import { Section, Swatch, Meter, SmallButton, AFFINITY_WORDS } from './ui';
 import { useRack } from '@/context/RackContext';
 
 interface MapSpice {
@@ -25,31 +26,54 @@ interface MapSpice {
 
 interface MapPairingPanelProps {
   data: MapSpice[];
+  collapsed: boolean;
+  onCollapsedChange: (collapsed: boolean) => void;
+  collapseOnMobile?: boolean;
+  onLayoutChange?: (insets: { right: number; bottom: number }) => void;
   /** Open the Substitution Finder focused on this spice (slug id). */
   onFindSubstitutes?: (slug: string) => void;
 }
 
-const affinityBadge: Record<string, { label: string; className: string }> = {
-  classic: { label: 'Classic', className: 'bg-amber-500/15 text-amber-300 border-amber-500/25' },
-  complementary: { label: 'Complementary', className: 'bg-sky-500/15 text-sky-300 border-sky-500/25' },
-  surprising: { label: 'Surprising', className: 'bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/25' },
-};
+const SUGGESTIONS_SHOWN = 8;
 
-function familyColorForTid(tid: string): string {
-  return FAMILY_COLORS[tid.split('.')[0]] ?? '#22d3ee';
+/** Thresholds for calling a signal "strong" — each is roughly its top quartile. */
+function strongSignals(p: RankedPairing) {
+  return {
+    recipes: p.affinityScore !== null && p.affinityScore >= 0.7,
+    chemistry: p.compoundOverlap !== null && p.compoundOverlap.compoundScore >= 0.66,
+    tradition: p.affinity === 'classic',
+  };
 }
 
-/**
- * Unified pairing panel that overlays the Flavor Map. Translates the map's slug
- * selection to taxonomy ids, runs the pairing engine, and lets the user click a
- * suggestion to add it back to the map selection — closing the explore loop.
- */
-export default function MapPairingPanel({ data, onFindSubstitutes }: MapPairingPanelProps) {
+export default function MapPairingPanel({ data, onFindSubstitutes, onLayoutChange, collapsed, onCollapsedChange, collapseOnMobile }: MapPairingPanelProps) {
   const { selectedSpiceIds, toggleSpice, clearSelection } = useSelection();
   const { rackIds, rackOnly } = useRack();
-  const [collapsed, setCollapsed] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
 
-  // Bidirectional slug <-> taxonomy-id maps derived from the plotted spices.
+  useEffect(() => {
+    if (!collapseOnMobile) return;
+    const media = window.matchMedia('(max-width: 767px)');
+    const handleChange = (event: MediaQueryListEvent) => { if (event.matches) onCollapsedChange(true); };
+    media.addEventListener('change', handleChange);
+    return () => media.removeEventListener('change', handleChange);
+  }, [collapseOnMobile, onCollapsedChange]);
+
+  useEffect(() => {
+    const element = panelRef.current;
+    if (!element || !onLayoutChange) return;
+    const reportSize = () => {
+      const { width, height } = element.getBoundingClientRect();
+      onLayoutChange(window.matchMedia('(min-width: 768px)').matches
+        ? { right: Math.ceil(width), bottom: 0 }
+        : { right: 0, bottom: Math.ceil(height) });
+    };
+    const observer = new ResizeObserver(reportSize);
+    observer.observe(element);
+    window.addEventListener('resize', reportSize);
+    reportSize();
+    return () => { observer.disconnect(); window.removeEventListener('resize', reportSize); };
+  }, [onLayoutChange]);
+
   const { slugToTid, tidToSlug, slugToSpice } = useMemo(() => {
     const slugToTid = new Map<string, string>();
     const tidToSlug = new Map<string, string>();
@@ -74,12 +98,8 @@ export default function MapPairingPanel({ data, onFindSubstitutes }: MapPairingP
     return set;
   }, [selectedSpiceIds, slugToTid]);
 
-  const allSuggestions = useMemo(
-    () => getCuratedPairings(selectedTaxonomyIds),
-    [selectedTaxonomyIds]
-  );
+  const allSuggestions = useMemo(() => getCuratedPairings(selectedTaxonomyIds), [selectedTaxonomyIds]);
 
-  // "Only my rack": keep suggestions the user can actually cook with tonight.
   const suggestions = useMemo(() => {
     if (!rackOnly) return allSuggestions;
     return allSuggestions.filter((p) => {
@@ -89,8 +109,6 @@ export default function MapPairingPanel({ data, onFindSubstitutes }: MapPairingP
   }, [allSuggestions, rackOnly, rackIds, tidToSlug]);
   const rackHiddenCount = allSuggestions.length - suggestions.length;
 
-  // Bridge finder (Step 6): when the blend has a weak link, surface the spices
-  // that connect its two ends.
   const bridge = useMemo(() => {
     const ids = Array.from(selectedTaxonomyIds);
     if (ids.length < 2) return null;
@@ -107,6 +125,7 @@ export default function MapPairingPanel({ data, onFindSubstitutes }: MapPairingP
   );
 
   const hasSelection = selectedSpiceIds.size > 0;
+  const blendTids = Array.from(selectedTaxonomyIds);
 
   const slugFamilies = useMemo(() => {
     const map = new Map<string, string>();
@@ -114,286 +133,271 @@ export default function MapPairingPanel({ data, onFindSubstitutes }: MapPairingP
     return map;
   }, [data]);
 
-  function addSuggestion(p: RankedPairing) {
-    const slug = tidToSlug.get(p.spiceId);
-    if (slug) toggleSpice(slug);
-  }
-
   return (
-    <div className="dark pointer-events-none absolute top-0 right-0 h-full z-20 flex items-stretch max-md:inset-x-0 max-md:top-auto max-md:bottom-0 max-md:h-auto max-md:flex-col max-md:items-stretch">
-      {/* Collapse handle — desktop: left-side tab; mobile: centered top grab-bar */}
+    <div
+      ref={panelRef}
+      className="pointer-events-none absolute right-0 top-0 z-20 flex h-full items-stretch max-md:inset-x-0 max-md:bottom-0 max-md:top-auto max-md:h-auto max-md:flex-col"
+    >
+      {/* Collapse handle — desktop: tab on the panel edge; mobile: sheet grab bar */}
       <button
         type="button"
-        onClick={() => setCollapsed((v) => !v)}
-        className="pointer-events-auto self-center -mr-px rounded-l-lg border border-white/10 border-r-0 bg-neutral-900/80 backdrop-blur px-1.5 py-4 text-white/50 hover:text-cyan-300 hover:bg-neutral-800/80 transition-colors max-md:self-auto max-md:mr-0 max-md:w-full max-md:py-2.5 max-md:flex max-md:justify-center max-md:items-center max-md:rounded-none max-md:rounded-t-2xl max-md:border-x-0 max-md:border-t max-md:border-b-0"
+        onClick={() => onCollapsedChange(!collapsed)}
+        className="pointer-events-auto -mr-px grid h-14 w-7 place-items-center self-center rounded-l-lg border border-r-0 border-rule bg-board-raised text-chalk-2 shadow-[-6px_0_16px_rgba(0,0,0,0.25)] transition-colors hover:text-chalk max-md:mr-0 max-md:flex max-md:w-full max-md:items-center max-md:justify-center max-md:gap-3 max-md:self-auto max-md:rounded-none max-md:rounded-t-xl max-md:border-x-0 max-md:border-b-0 max-md:border-t max-md:py-2"
         aria-label={collapsed ? 'Show pairings' : 'Hide pairings'}
+        aria-expanded={!collapsed}
       >
-        <span className="hidden md:block text-xs">{collapsed ? '‹' : '›'}</span>
-        <span className="md:hidden">
-          <span className="block w-10 h-1 rounded-full bg-white/30" />
-        </span>
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden className={`hidden transition-transform duration-200 md:block ${collapsed ? 'rotate-180' : ''}`}><path d="M4.5 2.5L8 6l-3.5 3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <span className="block h-1 w-10 rounded-full bg-chalk-3 md:hidden" aria-hidden />
+        {collapsed && (
+          <span className="text-small text-chalk-2 md:hidden">
+            {hasSelection ? `Pairings for ${selectedList.map((s) => s.name).join(', ')}` : 'Pairings'}
+          </span>
+        )}
       </button>
 
+      {!collapsed && hasSelection && (
+        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-t from-black/45 via-black/15 to-transparent md:hidden" />
+      )}
       <AnimatePresence initial={false}>
         {!collapsed && (
           <motion.aside
-            initial={{ x: 40, opacity: 0 }}
+            initial={{ x: 24, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 40, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 320, damping: 34 }}
-            className="pointer-events-auto w-[340px] h-full flex flex-col border-l border-white/10 bg-neutral-950/85 backdrop-blur-xl shadow-2xl max-md:w-full max-md:h-auto max-md:max-h-[55vh] max-md:border-l-0 max-md:border-t"
+            exit={{ x: 24, opacity: 0 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
+            className="pointer-events-auto flex h-full w-[360px] flex-col border-l border-rule bg-board-raised max-md:h-[52vh] max-md:w-full max-md:border-l-0"
+            aria-label="Pairings"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-white/8">
-              <div>
-                <h2 className="text-sm font-semibold text-white tracking-wide flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
-                  Pairing Lab
+            {/* Header + selection */}
+            <div className="shrink-0 px-5 pb-4 pt-5">
+              <div className="flex items-baseline justify-between">
+                <h2 className="font-display text-heading leading-none text-chalk">
+                  {hasSelection ? 'Pairs well with' : 'Pairings'}
                 </h2>
-                <p className="text-[11px] text-white/40 mt-0.5">Evidence-backed spice matches</p>
+                {hasSelection && (
+                  <button type="button" onClick={clearSelection} className="text-small text-chalk-3 underline-offset-2 hover:text-chalk hover:underline">
+                    Clear
+                  </button>
+                )}
               </div>
-              {hasSelection && (
-                <button
-                  type="button"
-                  onClick={clearSelection}
-                  className="text-[11px] text-white/45 hover:text-white/80 transition-colors"
-                >
-                  Clear
-                </button>
-              )}
-            </div>
-
-            {/* Selected chips */}
-            {hasSelection && (
-              <div className="px-4 py-3 border-b border-white/8">
-                <p className="text-[10px] uppercase tracking-widest text-white/35 mb-2">
-                  Selected · {selectedList.length}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
+              {hasSelection ? (
+                <div className="mt-3 flex flex-wrap gap-1.5">
                   {selectedList.map((s) => (
                     <button
                       key={s.id}
                       type="button"
                       onClick={() => toggleSpice(s.id)}
-                      className="group flex items-center gap-1.5 pl-2 pr-1.5 py-1 rounded-full bg-white/6 border border-white/10 hover:border-white/25 transition-colors"
+                      className="rise-in group flex h-9 items-center gap-2 rounded-full bg-board pl-1.5 pr-3 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.16)] transition-[box-shadow,background-color] duration-150 hover:bg-board-high hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]"
+                      title={`Remove ${s.name}`}
                     >
-                      <span
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: FAMILY_COLORS[s.family] ?? '#888' }}
-                      />
-                      <span className="text-[11px] text-white/85">{s.name}</span>
-                      <span className="text-white/30 group-hover:text-white/70 text-[13px] leading-none">×</span>
+                      <Swatch color={spiceColor(s.id, s.name, s.family)} size={24} />
+                      <span className="text-body text-chalk">{s.name}</span>
+                      <span aria-hidden className="text-small text-chalk-3 group-hover:text-chalk">✕</span>
                     </button>
                   ))}
                 </div>
-                {onFindSubstitutes && selectedList.length === 1 && (
-                  <button
-                    type="button"
-                    onClick={() => onFindSubstitutes(selectedList[0].id)}
-                    className="mt-2 text-[11px] text-white/40 hover:text-cyan-300 transition-colors flex items-center gap-1"
-                  >
-                    <span aria-hidden>⇄</span> Out of {selectedList[0].name}? Find substitutes
-                  </button>
-                )}
-              </div>
-            )}
-
-            {/* Blend Builder: radar + cohesion + gap suggestions */}
-            {selectedTaxonomyIds.size >= 2 && (
-              <BlendSection selectedTids={Array.from(selectedTaxonomyIds)} tidToSlug={tidToSlug} />
-            )}
-
-            {/* Classic blend constellations */}
-            {selectedTaxonomyIds.size >= 2 && (
-              <ClassicBlendHint selectedTids={Array.from(selectedTaxonomyIds)} tidToSlug={tidToSlug} />
-            )}
-
-            {/* Dish anchoring: "what goes on salmon?" */}
-            <DishSection tidToSlug={tidToSlug} selectedTids={selectedTaxonomyIds} />
-
-            {/* Surprise generator (Step 7) */}
-            <SurpriseSection tidToSlug={tidToSlug} selectedTaxonomyIds={selectedTaxonomyIds} />
-
-            {/* Bridge finder */}
-            {bridge && (
-              <div className="px-4 py-3 border-b border-white/8 bg-fuchsia-500/[0.04]">
-                <p className="text-[10px] uppercase tracking-widest text-fuchsia-300/70 mb-1.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-400 shadow-[0_0_8px_rgba(232,121,249,0.9)]" />
-                  Bridge the gap
-                </p>
-                <p className="text-[11px] text-white/55 mb-2">
-                  <span className="text-white/85">{spiceName(bridge.a)}</span>
-                  {' × '}
-                  <span className="text-white/85">{spiceName(bridge.b)}</span>{' '}
-                  {bridge.direct
-                    ? `is your weakest link (${bridge.direct.score.toFixed(2)})`
-                    : 'have no pairing evidence'}
-                  {' — these connect them:'}
-                </p>
-                <ul className="space-y-1.5">
-                  {bridge.bridges.map((c: BridgeCandidate) => {
-                    const slug = tidToSlug.get(c.spiceId);
-                    return (
-                      <li
-                        key={c.spiceId}
-                        className="rounded-xl border border-fuchsia-400/20 bg-white/[0.03] p-2.5"
-                      >
-                        <div className="flex items-start gap-2.5">
-                          <span
-                            className="w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0"
-                            style={{ backgroundColor: familyColorForTid(c.spiceId) }}
-                          />
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm font-medium text-white/90">{c.spiceName}</span>
-                              {c.gain > 0 && (
-                                <span className="text-[10px] px-1.5 py-0.5 rounded-full border font-medium bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/25">
-                                  +{c.gain.toFixed(2)}
-                                </span>
-                              )}
-                            </div>
-                            <div className="flex items-center gap-2 mt-1.5">
-                              <ScoreBar score={c.bridgeScore} />
-                              <span className="text-[10px] tabular-nums text-fuchsia-300">
-                                {c.bridgeScore.toFixed(2)}
-                              </span>
-                            </div>
-                            <p className="text-[10px] text-white/40 mt-0.5">
-                              {c.legs[0].evidence.score.toFixed(2)} ↔ {c.legs[0].spiceName}
-                              {' · '}
-                              {c.legs[1].evidence.score.toFixed(2)} ↔ {c.legs[1].spiceName}
-                            </p>
-                          </div>
-                          {slug ? (
-                            <button
-                              type="button"
-                              onClick={() => toggleSpice(slug)}
-                              className="flex-shrink-0 text-[10px] px-2 py-0.5 rounded-full bg-fuchsia-500/15 border border-fuchsia-400/30 text-fuchsia-200 hover:bg-fuchsia-500/25 hover:shadow-[0_0_10px_rgba(232,121,249,0.35)] transition-all"
-                            >
-                              + add
-                            </button>
-                          ) : (
-                            <span className="flex-shrink-0 text-[9px] text-white/25" title="Not plotted on this map">
-                              off-map
-                            </span>
-                          )}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            )}
-
-            {/* Suggestions */}
-            <div className="flex-1 overflow-y-auto px-4 py-3">
-              {!hasSelection ? (
-                <>
-                <SavedBlendsList slugFamilies={slugFamilies} />
-                <ClassicBlendStarters tidToSlug={tidToSlug} />
-                <div className="flex flex-col items-center justify-center text-center gap-2 px-2 py-8">
-                  <div className="w-10 h-10 rounded-full border border-cyan-400/30 flex items-center justify-center text-cyan-300/70">
-                    ✦
-                  </div>
-                  <p className="text-sm text-white/60">Pick a spice on the map</p>
-                  <p className="text-[11px] text-white/35">
-                    We&apos;ll surface its strongest pairings — with the science behind each score.
-                  </p>
-                  <p className="text-[11px] text-amber-300/50 mt-1">
-                    Not sure where to start? Roll a surprise above.
-                  </p>
-                </div>
-                </>
-              ) : suggestions.length === 0 ? (
-                <p className="text-[12px] text-white/45 text-center py-8">
-                  {rackOnly && rackHiddenCount > 0
-                    ? `All ${rackHiddenCount} suggestions are outside your rack — turn off “only my rack” in the menu to see them.`
-                    : 'No curated pairings for this selection yet.'}
-                </p>
               ) : (
-                <>
-                  <p className="text-[10px] uppercase tracking-widest text-white/35 mb-2">
-                    {suggestions.length} suggestion{suggestions.length !== 1 ? 's' : ''}
-                    {rackOnly && rackHiddenCount > 0 && (
-                      <span className="normal-case tracking-normal text-white/25">
-                        {' '}· {rackHiddenCount} outside your rack hidden
-                      </span>
-                    )}
-                  </p>
-                  <ul className="space-y-1.5">
-                    {suggestions.map((p, i) => {
-                      const slug = tidToSlug.get(p.spiceId);
-                      const onMap = !!slug;
-                      const badge = affinityBadge[p.affinity];
-                      return (
-                        <li
-                          key={p.spiceId}
-                          className={`rounded-xl border p-2.5 transition-colors ${
-                            i === 0
-                              ? 'border-cyan-400/30 bg-cyan-500/[0.06]'
-                              : 'border-white/8 bg-white/[0.03] hover:bg-white/[0.06]'
-                          }`}
-                        >
-                          <div className="flex items-start gap-2.5">
-                            <span
-                              className="w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0"
-                              style={{ backgroundColor: familyColorForTid(p.spiceId) }}
-                            />
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-2 flex-wrap">
-                                <span className="text-sm font-medium text-white/90">{p.spiceName}</span>
-                                <span className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium ${badge.className}`}>
-                                  {badge.label}
-                                </span>
-                                {p.matchCount > 1 && (
-                                  <span className="text-[10px] text-white/35">{p.matchCount} matches</span>
-                                )}
-                              </div>
-                              <div className="flex items-center gap-2 mt-1.5">
-                                <ScoreBar score={p.blendedScore} />
-                                <span className="text-[10px] tabular-nums text-cyan-300">
-                                  {p.blendedScore.toFixed(2)}
-                                </span>
-                              </div>
-                              {p.compoundOverlap && p.compoundOverlap.sharedAromaCount > 0 && (
-                                <p className="text-[10px] text-emerald-400 mt-0.5">
-                                  shares {p.compoundOverlap.sharedAromaCount} aroma compound
-                                  {p.compoundOverlap.sharedAromaCount !== 1 ? 's' : ''}
-                                </p>
-                              )}
-                              {p.note && <p className="text-[11px] text-white/50 mt-0.5">{p.note}</p>}
-                            </div>
-                            <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
-                              <WhyPopover pairing={p} />
-                              {onMap ? (
-                                <button
-                                  type="button"
-                                  onClick={() => addSuggestion(p)}
-                                  className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-200 hover:bg-cyan-500/25 hover:shadow-[0_0_10px_rgba(34,211,238,0.35)] transition-all"
-                                >
-                                  + add
-                                </button>
-                              ) : (
-                                <span className="text-[9px] text-white/25" title="Not plotted on this map">
-                                  off-map
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </>
+                <p className="mt-2 text-body leading-snug text-chalk-2">
+                  Choose a spice on the map, or start from a blend below. Every suggestion shows its evidence: recipes, chemistry and tradition.
+                </p>
+              )}
+              {onFindSubstitutes && selectedList.length === 1 && (
+                <button
+                  type="button"
+                  onClick={() => onFindSubstitutes(selectedList[0].id)}
+                  className="mt-2.5 text-small text-chalk-3 underline-offset-2 hover:text-chalk hover:underline"
+                >
+                  Out of {selectedList[0].name}? See what can replace it
+                </button>
               )}
             </div>
 
-            <p className="px-4 py-2 text-[9px] text-white/25 border-t border-white/8">
-              Scores from FlavorGraph (Park et al. 2021) + Ahn et al. (2011)
-            </p>
+            {/* One scroll container for everything below the header */}
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+              {!hasSelection ? (
+                <>
+                  <ClassicBlendStarters tidToSlug={tidToSlug} />
+                  <SavedBlendsList slugFamilies={slugFamilies} />
+                  <DishSection tidToSlug={tidToSlug} selectedTids={selectedTaxonomyIds} />
+                  <SurpriseSection tidToSlug={tidToSlug} selectedTaxonomyIds={selectedTaxonomyIds} />
+                </>
+              ) : (
+                <>
+                  <Suggestions
+                    suggestions={suggestions}
+                    rackOnly={rackOnly}
+                    rackHiddenCount={rackHiddenCount}
+                    tidToSlug={tidToSlug}
+                    onAdd={(slug) => toggleSpice(slug)}
+                  />
+
+                  {blendTids.length >= 2 && <BlendSection selectedTids={blendTids} tidToSlug={tidToSlug} />}
+
+                  {bridge && (
+                    <Section
+                      title="Bridge the weakest link"
+                      description={
+                        <>
+                          {spiceName(bridge.a)} and {spiceName(bridge.b)}{' '}
+                          {bridge.direct ? `score only ${bridge.direct.score.toFixed(2)} together.` : 'have no shared evidence.'} These connect both.
+                        </>
+                      }
+                    >
+                      <ul className="grid gap-2">
+                        {bridge.bridges.map((c: BridgeCandidate) => {
+                          const slug = tidToSlug.get(c.spiceId);
+                          return (
+                            <li key={c.spiceId} className="flex items-center gap-3">
+                              <Swatch tid={c.spiceId} size={16} />
+                              <div className="min-w-0 flex-1">
+                                <p className="text-body text-chalk">
+                                  {c.spiceName}
+                                  {c.gain > 0 && <span className="ml-2 text-small text-chalk-3">+{c.gain.toFixed(2)} over direct</span>}
+                                </p>
+                                <p className="text-small text-chalk-3">
+                                  {c.legs[0].evidence.score.toFixed(2)} with {c.legs[0].spiceName}, {c.legs[1].evidence.score.toFixed(2)} with {c.legs[1].spiceName}
+                                </p>
+                              </div>
+                              {slug ? (
+                                <SmallButton onClick={() => toggleSpice(slug)}>Add</SmallButton>
+                              ) : (
+                                <span className="text-small text-chalk-3" title="Not plotted on this map">Not on map</span>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </Section>
+                  )}
+
+                  {blendTids.length >= 2 && <ClassicBlendHint selectedTids={blendTids} tidToSlug={tidToSlug} />}
+                  <DishSection tidToSlug={tidToSlug} selectedTids={selectedTaxonomyIds} />
+                  <SurpriseSection tidToSlug={tidToSlug} selectedTaxonomyIds={selectedTaxonomyIds} />
+                </>
+              )}
+              <p className="border-t border-rule px-5 pb-8 pt-4 text-micro leading-relaxed text-chalk-3">
+                Recipes: FlavorGraph (Park et al. 2021). Chemistry: FlavorDB2, FooDB, USDA Dr. Duke&apos;s. Tradition: curated labels.
+              </p>
+            </div>
           </motion.aside>
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+function Suggestions({
+  suggestions,
+  rackOnly,
+  rackHiddenCount,
+  tidToSlug,
+  onAdd,
+}: {
+  suggestions: RankedPairing[];
+  rackOnly: boolean;
+  rackHiddenCount: number;
+  tidToSlug: Map<string, string>;
+  onAdd: (slug: string) => void;
+}) {
+  const [openWhy, setOpenWhy] = useState<string | null>(null);
+  if (suggestions.length === 0) {
+    return (
+      <p className="px-5 pb-5 text-body text-chalk-2">
+        {rackOnly && rackHiddenCount > 0
+          ? `All ${rackHiddenCount} suggestions are spices you haven't marked as owned. Turn off "Only suggest what I have" in Filters to see them.`
+          : 'No curated pairings for this selection yet.'}
+      </p>
+    );
+  }
+  const shown = suggestions.slice(0, SUGGESTIONS_SHOWN);
+  return (
+    <section className="px-5 pb-5" aria-label="Suggested pairings">
+      <div className="mb-1 grid grid-cols-[1fr_46px_46px_32px] gap-x-3 border-b border-rule pb-2 text-micro text-chalk-2 [&>span:nth-child(n+2)]:text-right">
+        <span>
+          {suggestions.length} suggestion{suggestions.length !== 1 ? 's' : ''}
+          {rackOnly && rackHiddenCount > 0 ? `, ${rackHiddenCount} not on your shelf` : ''}
+        </span>
+        <span title="FlavorGraph: how often they meet in ~1M recipes">Recipes</span>
+        <span title="Shared aroma molecules (FlavorDB2, FooDB, USDA)">Chemistry</span>
+        <span />
+      </div>
+      <ul key={shown.map((p) => p.spiceId).join("|")} className="">
+        {shown.map((p, i) => {
+          const slug = tidToSlug.get(p.spiceId);
+          const strong = strongSignals(p);
+          const agree = Number(strong.recipes) + Number(strong.chemistry) + Number(strong.tradition);
+          return (
+            <li
+              key={p.spiceId}
+              className={`rise-in -mx-2 my-1 rounded-xl px-2 py-0.5 transition-colors duration-200 ${openWhy === p.spiceId ? 'bg-board-high/60 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.1)]' : ''}`}
+              style={{ animationDelay: `${i * 45}ms` }}
+            >
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setOpenWhy(openWhy === p.spiceId ? null : p.spiceId)}
+                  aria-expanded={openWhy === p.spiceId}
+                  title="Show the evidence"
+                  className={`-ml-2 grid min-w-0 flex-1 grid-cols-[1fr_46px_46px] items-center gap-x-3 rounded-lg px-2 py-2 text-left transition-colors duration-150 ${
+                    openWhy === p.spiceId ? '' : 'hover:bg-board-high/70'
+                  }`}
+                >
+                  <span className="flex min-w-0 items-center gap-2.5">
+                    <Swatch tid={p.spiceId} size={22} />
+                    <span className="min-w-0">
+                      <span className="flex items-center gap-1.5">
+                        <span className="truncate text-body font-medium text-chalk">{p.spiceName}</span>
+                        <svg
+                          width="10" height="10" viewBox="0 0 10 10" aria-hidden
+                          className={`shrink-0 text-chalk-3 transition-transform duration-200 ${openWhy === p.spiceId ? 'rotate-180' : ''}`}
+                        >
+                          <path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                      <span className="block text-micro leading-snug text-chalk-2">
+                        {AFFINITY_WORDS[p.affinity]}
+                        {p.matchCount > 1 ? `, ${p.matchCount} of yours` : ''}
+                      </span>
+                      {agree === 3 && <span className="block text-micro font-medium leading-snug text-chalk">Strong on all three</span>}
+                    </span>
+                  </span>
+                  <EvidenceCell value={p.affinityScore} strong={strong.recipes} />
+                  <EvidenceCell value={p.compoundOverlap?.compoundScore ?? null} strong={strong.chemistry} />
+                </button>
+                {slug ? (
+                  <button
+                    type="button"
+                    onClick={() => onAdd(slug)}
+                    aria-label={`Add ${p.spiceName} to your blend`}
+                    title={`Add ${p.spiceName} to your blend`}
+                    className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-board-high text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.16)] transition-[background-color,transform,box-shadow] duration-150 hover:bg-chalk hover:text-board active:scale-90"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden><path d="M6 1.5v9M1.5 6h9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /></svg>
+                  </button>
+                ) : (
+                  <span className="grid h-8 w-8 shrink-0 place-items-center text-micro text-chalk-3" title="Not on the map yet">–</span>
+                )}
+              </div>
+              {openWhy === p.spiceId && <div className="pb-3 pl-[34px]"><WhyDetails pairing={p} /></div>}
+            </li>
+          );
+        })}
+      </ul>
+      {suggestions.length > SUGGESTIONS_SHOWN && (
+        <p className="pt-2 text-small text-chalk-3">
+          {suggestions.length - SUGGESTIONS_SHOWN} more with weaker evidence. Add a spice to refine the list.
+        </p>
+      )}
+    </section>
+  );
+}
+
+function EvidenceCell({ value, strong }: { value: number | null; strong: boolean }) {
+  if (value === null) return <span className="text-right text-small text-chalk-3" title="No data for this pair">—</span>;
+  return (
+    <span className="grid gap-1 text-right" title={value.toFixed(2)}>
+      <span className={`text-small ${strong ? 'font-semibold text-chalk' : 'text-chalk-2'}`}>{value.toFixed(2)}</span>
+      <Meter value={value} muted={!strong} />
+    </span>
   );
 }

@@ -1,3 +1,4 @@
+import { spiceName } from "./spice-list";
 import type {
   CompoundOverlap,
   PairingEntry,
@@ -27,7 +28,7 @@ for (const { a, b, score } of pairingScoresData as PairScore[]) {
   affinityMap.set(pairKey(a, b), score);
 }
 
-// Compound overlap (Ahn/USDA layer), keyed by unordered spice-id pair
+// Compound overlap (FooDB/USDA + FlavorDB2 layers), keyed by unordered spice-id pair
 interface CompoundPair extends CompoundOverlap {
   a: string;
   b: string;
@@ -82,13 +83,15 @@ export function getCompoundOverlap(a: string, b: string): CompoundOverlap | null
   return compoundMap.get(pairKey(a, b)) ?? null;
 }
 
-// Jaccard values top out well below 1; normalize against a plausible ceiling so
-// compound overlap contributes on the same 0–1 scale as FlavorGraph affinity.
-const JACCARD_CEILING = 0.4;
-
-function compoundScore(overlap: CompoundOverlap | null): number | null {
+/**
+ * The compound signal (0–1) for a pair, or null when absent. It is the
+ * ingestion-time mean of percentile ranks across the chemistry sources
+ * (FooDB/USDA Jaccard, FlavorDB2 IDF-cosine), so both land on the same 0–1
+ * scale as FlavorGraph affinity.
+ */
+export function compoundScore(overlap: CompoundOverlap | null): number | null {
   if (!overlap) return null;
-  return Math.min(1, overlap.jaccard / JACCARD_CEILING);
+  return overlap.compoundScore;
 }
 
 export interface AffinityDetail {
@@ -122,7 +125,8 @@ export function getAffinityDetails(
 
 /**
  * Compound overlaps between one spice and each of the given spices, sorted by
- * shared aroma-compound count (best-first). Pairs without overlap are omitted.
+ * compound score, then shared aroma-compound count (best-first). Pairs
+ * without overlap are omitted.
  */
 export function getCompoundDetails(
   spiceId: string,
@@ -135,7 +139,9 @@ export function getCompoundDetails(
     if (overlap) details.push({ spiceId: otherId, overlap });
   }
   return details.sort(
-    (a, b) => b.overlap.sharedAromaCount - a.overlap.sharedAromaCount
+    (a, b) =>
+      b.overlap.compoundScore - a.overlap.compoundScore ||
+      b.overlap.sharedAromaCount - a.overlap.sharedAromaCount
   );
 }
 
@@ -282,8 +288,7 @@ export function getCuratedPairings(
 
 /**
  * Assemble a RankedPairing for one suggested spice, gathering both evidence
- * layers against the spices it matched. Exported so AI-mode suggestions can
- * reuse the exact same scoring.
+ * layers against the spices it matched.
  */
 export function buildRankedPairing(
   link: PairingLink,
@@ -320,41 +325,5 @@ export function buildRankedPairing(
  * e.g. "warm.baking.cinnamon" -> "Cinnamon"
  */
 function spiceNameFromId(id: string): string {
-  const parts = id.split(".");
-  const last = parts[parts.length - 1];
-  return last
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-/**
- * Get pairings for a single spice (for detail card).
- */
-export function getPairingsForSpice(spiceId: string): PairingLink[] {
-  return pairingMap.get(spiceId) ?? [];
-}
-
-export interface ScoredPairingLink extends PairingLink {
-  affinityScore: number | null;
-  compoundOverlap: CompoundOverlap | null;
-}
-
-/**
- * Pairings for a single spice with FlavorGraph affinity and compound overlap
- * attached, sorted score-first (unscored pairs keep curated order at the end).
- */
-export function getScoredPairingsForSpice(spiceId: string): ScoredPairingLink[] {
-  return getPairingsForSpice(spiceId)
-    .map((link) => ({
-      ...link,
-      affinityScore: getAffinity(spiceId, link.spiceId),
-      compoundOverlap: getCompoundOverlap(spiceId, link.spiceId),
-    }))
-    .sort((a, b) => {
-      if (a.affinityScore === null && b.affinityScore === null) return 0;
-      if (a.affinityScore === null) return 1;
-      if (b.affinityScore === null) return -1;
-      return b.affinityScore - a.affinityScore;
-    });
+  return spiceName(id);
 }

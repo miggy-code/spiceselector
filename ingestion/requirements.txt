@@ -1,5 +1,15 @@
+# Core pipeline
 requests
 beautifulsoup4
 google-genai
-supabase
+pydantic
 python-dotenv
+numpy
+scipy  # descriptive axis/fingerprint audit
+
+# generate_coords.py (optional / legacy)
+pandas
+scikit-learn
+umap-learn
+
+# compute_compound_overlap.py (legacy, Supabase-era) also needs: supabase

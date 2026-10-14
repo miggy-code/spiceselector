@@ -1,0 +1,637 @@
+{
+  "method": "Reference layer only. Existing heat coordinates remain LLM estimates. Odor spicy/phenolic is not pungency. No cross-mechanism total ranking or invented Scoville values.",
+  "sourcesAre": "Cited facts and findings; no additional bulk dataset integrated.",
+  "spices": {
+    "warm.baking.cinnamon": {
+      "name": "Cinnamon",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.baking.nutmeg": {
+      "name": "Nutmeg",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.baking.allspice": {
+      "name": "Allspice",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.baking.mace": {
+      "name": "Mace",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.woody.clove": {
+      "name": "Clove",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.woody.star-anise": {
+      "name": "Star Anise",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.woody.cardamom": {
+      "name": "Cardamom",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "warm.woody.cassia": {
+      "name": "Cassia",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "hot-pungent.pepper.black-pepper": {
+      "name": "Black Pepper",
+      "scovilleRange": null,
+      "pungencyClass": "piperine-biting",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10296967/"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; no defensible universal product SHU or total rank relative to hydrated mustard and ginger."
+    },
+    "hot-pungent.pepper.white-pepper": {
+      "name": "White Pepper",
+      "scovilleRange": null,
+      "pungencyClass": "piperine-biting",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10296967/"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; no defensible universal product SHU or total rank relative to hydrated mustard and ginger."
+    },
+    "hot-pungent.pepper.sichuan-pepper": {
+      "name": "Sichuan Pepper",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "hot-pungent.pepper.long-pepper": {
+      "name": "Long Pepper",
+      "scovilleRange": null,
+      "pungencyClass": "piperine-biting",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10296967/"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; no defensible universal product SHU or total rank relative to hydrated mustard and ginger."
+    },
+    "hot-pungent.chili.cayenne": {
+      "name": "Cayenne",
+      "scovilleRange": {
+        "min": 30000,
+        "max": 50000,
+        "unit": "SHU"
+      },
+      "pungencyClass": "capsaicinoid-hot",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://bernalilloextension.nmsu.edu/documents/redchile-part3.pdf",
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": false,
+      "note": "Published typical range, not a measurement of this product. NMSU cultivar trials also report cayenne types below this typical range."
+    },
+    "hot-pungent.chili.red-pepper-flakes": {
+      "name": "Red Pepper Flakes",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.chili.chipotle": {
+      "name": "Chipotle",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.chili.gochugaru": {
+      "name": "Gochugaru",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.chili.aleppo": {
+      "name": "Aleppo Pepper",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.sharp.mustard-seed": {
+      "name": "Mustard Seed",
+      "scovilleRange": null,
+      "pungencyClass": "isothiocyanate-sharp",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://doi.org/10.1038/nature02282"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; preparation/species and myrosinase activation determine intensity. Does not imply capsaicin-equivalent heat."
+    },
+    "hot-pungent.sharp.horseradish": {
+      "name": "Horseradish",
+      "scovilleRange": null,
+      "pungencyClass": "isothiocyanate-sharp",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://doi.org/10.1038/nature02282"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; preparation/species and myrosinase activation determine intensity. Does not imply capsaicin-equivalent heat."
+    },
+    "hot-pungent.sharp.wasabi": {
+      "name": "Wasabi",
+      "scovilleRange": null,
+      "pungencyClass": "isothiocyanate-sharp",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://doi.org/10.1038/nature02282"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; preparation/species and myrosinase activation determine intensity. Does not imply capsaicin-equivalent heat."
+    },
+    "sweet.vanilla-adjacent.vanilla": {
+      "name": "Vanilla",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "sweet.vanilla-adjacent.tonka-bean": {
+      "name": "Tonka Bean",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "sweet.aromatic-sweet.fennel-seed": {
+      "name": "Fennel Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "sweet.aromatic-sweet.anise-seed": {
+      "name": "Anise Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "sweet.aromatic-sweet.fenugreek": {
+      "name": "Fenugreek",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "sweet.aromatic-sweet.mahlab": {
+      "name": "Mahlab",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.root.turmeric": {
+      "name": "Turmeric",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.root.ginger": {
+      "name": "Ginger",
+      "scovilleRange": null,
+      "pungencyClass": "gingerol-shogaol-warming",
+      "sourceQuality": "exact",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10296967/"
+      ],
+      "missing": false,
+      "note": "Mechanism evidence; drying changes gingerol/shogaol composition. Pure-compound potency is not whole-ingredient potency."
+    },
+    "earthy.root.galangal": {
+      "name": "Galangal",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.seed.cumin": {
+      "name": "Cumin",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.seed.coriander": {
+      "name": "Coriander Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.seed.caraway": {
+      "name": "Caraway",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.seed.celery-seed": {
+      "name": "Celery Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.smoky.smoked-paprika": {
+      "name": "Smoked Paprika",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "earthy.smoky.sumac": {
+      "name": "Sumac",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.smoky.paprika": {
+      "name": "Paprika",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "herbal.mediterranean.oregano": {
+      "name": "Oregano",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.mediterranean.thyme": {
+      "name": "Thyme",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.mediterranean.rosemary": {
+      "name": "Rosemary",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.mediterranean.marjoram": {
+      "name": "Marjoram",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.mediterranean.sage": {
+      "name": "Sage",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.asian.lemongrass": {
+      "name": "Lemongrass",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.asian.thai-basil": {
+      "name": "Thai Basil",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.asian.kaffir-lime-leaf": {
+      "name": "Kaffir Lime Leaf",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.asian.shiso": {
+      "name": "Shiso",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.basil": {
+      "name": "Basil",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.parsley": {
+      "name": "Parsley",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.cilantro": {
+      "name": "Cilantro",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.dill": {
+      "name": "Dill",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.bay-leaf": {
+      "name": "Bay Leaf",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.tarragon": {
+      "name": "Tarragon",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "floral.rose-family.rose-water": {
+      "name": "Rose Water",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "floral.rose-family.saffron": {
+      "name": "Saffron",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "floral.rose-family.hibiscus": {
+      "name": "Hibiscus",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "floral.delicate.lavender": {
+      "name": "Lavender",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "floral.delicate.chamomile": {
+      "name": "Chamomile",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "floral.delicate.elderflower": {
+      "name": "Elderflower",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.peel.lemon-zest": {
+      "name": "Lemon Zest",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.peel.orange-zest": {
+      "name": "Orange Zest",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.peel.lime-zest": {
+      "name": "Lime Zest",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.peel.yuzu": {
+      "name": "Yuzu",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.tart.amchur": {
+      "name": "Amchur",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.tart.tamarind": {
+      "name": "Tamarind",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "citrus-bright.tart.dried-lime": {
+      "name": "Dried Lime",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.allium.garlic": {
+      "name": "Garlic Powder",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.allium.onion-powder": {
+      "name": "Onion Powder",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.allium.chive": {
+      "name": "Chive",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.fermented.dried-mushroom": {
+      "name": "Dried Mushroom",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.fermented.nutritional-yeast": {
+      "name": "Nutritional Yeast",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.fermented.black-garlic": {
+      "name": "Black Garlic",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.salty.sesame-seed": {
+      "name": "Sesame Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.salty.poppy-seed": {
+      "name": "Poppy Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.salty.nigella-seed": {
+      "name": "Nigella Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    }
+  }
+}

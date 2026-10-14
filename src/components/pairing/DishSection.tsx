@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useSelection } from '@/context/SelectionContext';
 import { useRack } from '@/context/RackContext';
 import { dishesByCategory, getDish, getDishSpiceRanking } from '@/lib/dish-affinity';
-import { FAMILY_COLORS } from '@/lib/colors';
+import { Section, Swatch, Meter, SmallButton } from './ui';
 
 interface DishSectionProps {
   /** taxonomy dot-id → map slug. */
@@ -41,31 +41,27 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
   const dish = dishId ? getDish(dishId) : undefined;
 
   return (
-    <div className="px-4 py-3 border-b border-white/8 bg-lime-400/[0.03]">
-      <div className="flex items-center justify-between gap-2">
-        <p className="text-[10px] uppercase tracking-widest text-lime-300/70 flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-lime-400 shadow-[0_0_8px_rgba(163,230,53,0.9)]" />
-          Cooking something?
-        </p>
+    <Section
+      title="Cooking something?"
+      description="Pick your main ingredient and see which spices cooks reach for most."
+    >
         <select
-          value={dishId}
-          onChange={(e) => setDishId(e.target.value)}
-          aria-label="Pick a base ingredient"
-          className="text-[11px] bg-neutral-900 border border-white/15 rounded-lg px-2 py-1 text-white/80 focus:outline-none focus:border-lime-400/50 max-w-[150px]"
-        >
-          <option value="">Pick a base…</option>
-          {categories.map(([category, dishes]) => (
-            <optgroup key={category} label={category}>
-              {dishes.map((d) => (
-                <option key={d.id} value={d.id}>
-                  {d.name}
-                </option>
-              ))}
-            </optgroup>
-          ))}
-        </select>
-      </div>
-
+        value={dishId}
+        onChange={(e) => setDishId(e.target.value)}
+        aria-label="Pick a main ingredient"
+        className="h-10 w-full cursor-pointer rounded-lg px-3 text-body font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.16)] outline-none transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3)]"
+      >
+        <option value="">Pick an ingredient</option>
+        {categories.map(([category, dishes]) => (
+          <optgroup key={category} label={category}>
+            {dishes.map((d) => (
+              <option key={d.id} value={d.id}>
+                {d.name}
+              </option>
+            ))}
+          </optgroup>
+        ))}
+      </select>
       <AnimatePresence initial={false}>
         {dish && (
           <motion.div
@@ -75,18 +71,18 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-            <p className="text-[11px] text-white/50 mt-2">
-              Best spices for <span className="text-white/85">{dish.name.toLowerCase()}</span>
-              {rackOnly ? ' from your rack' : ''}, learned from ~1M recipes:
+            <p className="text-small text-chalk-2">
+              Best spices for <span className="text-chalk">{dish.name.toLowerCase()}</span>
+              {rackOnly ? ' from your rack' : ''}, learned from about a million recipes.
             </p>
             {ranking.length === 0 ? (
-              <p className="text-[11px] text-white/35 mt-1.5">
+              <p className="mt-2 text-small text-chalk-3">
                 {rackOnly
-                  ? 'Nothing in your rack scores for this — turn off “only my rack” to see all.'
-                  : 'No scored spices for this base.'}
+                  ? 'Nothing in your rack scores for this. Turn off “Only suggest what I have” in Filters to see them all.'
+                  : 'No scored spices for this ingredient.'}
               </p>
             ) : (
-              <ul className="mt-1.5 space-y-1">
+              <ul className="mt-2 divide-y divide-rule">
                 {ranking.map((r, i) => {
                   const slug = tidToSlug.get(r.spiceId)!;
                   return (
@@ -95,29 +91,15 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
                       initial={{ opacity: 0, x: -6 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.04 }}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2.5 py-2"
                     >
-                      <span
-                        className="w-2 h-2 rounded-full flex-shrink-0"
-                        style={{ backgroundColor: FAMILY_COLORS[r.spiceId.split('.')[0]] ?? '#888' }}
-                      />
-                      <span className="text-[12px] text-white/85 w-24 truncate">{r.spiceName}</span>
-                      <div className="h-1 flex-1 rounded-full bg-white/8 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-lime-400 to-emerald-400 shadow-[0_0_5px_rgba(163,230,53,0.6)]"
-                          style={{ width: `${Math.round(r.relative * 100)}%` }}
-                        />
-                      </div>
-                      <span className="text-[10px] tabular-nums text-lime-300 w-8 text-right">
-                        {r.score.toFixed(2)}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => toggleSpice(slug)}
-                        className="text-[10px] px-1.5 py-0.5 rounded-full bg-lime-500/15 border border-lime-400/30 text-lime-200 hover:bg-lime-500/25 transition-all flex-shrink-0"
-                      >
-                        + add
-                      </button>
+                      <Swatch tid={r.spiceId} size={14} />
+                      <span className="w-24 truncate text-body text-chalk">{r.spiceName}</span>
+                      <Meter value={r.relative} className="flex-1" />
+                      <span className="w-8 text-right text-small text-chalk-2">{r.score.toFixed(2)}</span>
+                      <SmallButton onClick={() => toggleSpice(slug)} className="shrink-0">
+                        Add
+                      </SmallButton>
                     </motion.li>
                   );
                 })}
@@ -126,6 +108,6 @@ export default function DishSection({ tidToSlug, selectedTids }: DishSectionProp
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </Section>
   );
 }

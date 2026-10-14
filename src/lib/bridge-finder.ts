@@ -88,7 +88,7 @@ export function findBridges(
     const bridgeScore = Math.min(evidenceA.score, evidenceB.score);
     candidates.push({
       spiceId: spice.id,
-      spiceName: spice.name,
+      spiceName: spiceName(spice.id),
       bridgeScore,
       gain: bridgeScore - directScore,
       legs: [

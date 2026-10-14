@@ -1,0 +1,728 @@
+{
+  "usableSpiceCount": 47,
+  "distinctUsableEntities": 44,
+  "totalSpices": 73,
+  "minMolecules": 30,
+  "pairCount": 866,
+  "sameEntityPairsExcluded": 3,
+  "approxPairsSkippedFoodbUsdaHasSignal": 208,
+  "zeroScorePairsDropped": 4,
+  "newlyCovered": [
+    "Horseradish",
+    "Wasabi",
+    "Parsley",
+    "Lemon Zest",
+    "Orange Zest",
+    "Lime Zest",
+    "Dried Lime",
+    "Chive",
+    "Dried Mushroom",
+    "Black Garlic"
+  ],
+  "spices": [
+    {
+      "spice": "Cinnamon",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 330,
+      "entityName": "Cinnamon",
+      "quality": "exact",
+      "molecules": 183,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Nutmeg",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 336,
+      "entityName": "Nutmeg",
+      "quality": "exact",
+      "molecules": 170,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Allspice",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 375,
+      "entityName": "Allspice",
+      "quality": "exact",
+      "molecules": 166,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Mace",
+      "status": "excluded",
+      "reason": "thin entry (21 molecules)",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Clove",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 331,
+      "entityName": "Clove",
+      "quality": "exact",
+      "molecules": 177,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Star Anise",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 325,
+      "entityName": "Star Anise",
+      "quality": "exact",
+      "molecules": 150,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Cardamom",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 327,
+      "entityName": "Cardamom",
+      "quality": "exact",
+      "molecules": 173,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Cassia",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 328,
+      "entityName": "Cassia",
+      "quality": "exact",
+      "molecules": 145,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Black Pepper",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 339,
+      "entityName": "Pepper",
+      "quality": "exact",
+      "molecules": 223,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "White Pepper",
+      "status": "excluded",
+      "reason": "thin entry (18 molecules)",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Sichuan Pepper",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Long Pepper",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Cayenne",
+      "status": "excluded",
+      "reason": "only generic Capsicum entity",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Red Pepper Flakes",
+      "status": "excluded",
+      "reason": "only generic Capsicum entity",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Chipotle",
+      "status": "excluded",
+      "reason": "only generic Capsicum entity",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Gochugaru",
+      "status": "excluded",
+      "reason": "only generic Capsicum entity",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Aleppo Pepper",
+      "status": "excluded",
+      "reason": "only generic Capsicum entity",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Mustard Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 356,
+      "entityName": "Mustard",
+      "quality": "approx",
+      "molecules": 134,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Horseradish",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 355,
+      "entityName": "Horseradish",
+      "quality": "exact",
+      "molecules": 118,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Wasabi",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 361,
+      "entityName": "Wasabi",
+      "quality": "exact",
+      "molecules": 100,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Vanilla",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 245,
+      "entityName": "Vanilla",
+      "quality": "exact",
+      "molecules": 174,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Tonka Bean",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Fennel Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 257,
+      "entityName": "Fennel",
+      "quality": "approx",
+      "molecules": 147,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Anise Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 323,
+      "entityName": "Anise",
+      "quality": "exact",
+      "molecules": 145,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Fenugreek",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 258,
+      "entityName": "Fenugreek",
+      "quality": "exact",
+      "molecules": 123,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Mahlab",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Turmeric",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 341,
+      "entityName": "Turmeric",
+      "quality": "exact",
+      "molecules": 130,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Ginger",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 333,
+      "entityName": "Ginger",
+      "quality": "exact",
+      "molecules": 251,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Galangal",
+      "status": "excluded",
+      "reason": "thin entry (1 molecule)",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Cumin",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 332,
+      "entityName": "Cumin",
+      "quality": "exact",
+      "molecules": 149,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Coriander Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 254,
+      "entityName": "Coriander",
+      "quality": "approx",
+      "molecules": 196,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Caraway",
+      "status": "excluded",
+      "reason": "thin entry (16 molecules)",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Celery Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 329,
+      "entityName": "Celery",
+      "quality": "exact",
+      "molecules": 217,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Smoked Paprika",
+      "status": "excluded",
+      "reason": "only generic Capsicum entity",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Sumac",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Paprika",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Oregano",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 337,
+      "entityName": "Oregano",
+      "quality": "exact",
+      "molecules": 193,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Thyme",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 269,
+      "entityName": "Thyme",
+      "quality": "exact",
+      "molecules": 174,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Rosemary",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 264,
+      "entityName": "Rosemary",
+      "quality": "exact",
+      "molecules": 207,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Marjoram",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 335,
+      "entityName": "Marjoram",
+      "quality": "exact",
+      "molecules": 180,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Sage",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 265,
+      "entityName": "Sage",
+      "quality": "exact",
+      "molecules": 159,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Lemongrass",
+      "status": "excluded",
+      "reason": "essential-oil entry, not the ingredient",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Thai Basil",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 250,
+      "entityName": "Basil",
+      "quality": "approx",
+      "molecules": 210,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Kaffir Lime Leaf",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Shiso",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Basil",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 250,
+      "entityName": "Basil",
+      "quality": "exact",
+      "molecules": 210,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Parsley",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 338,
+      "entityName": "Parsley",
+      "quality": "exact",
+      "molecules": 167,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Cilantro",
+      "status": "excluded",
+      "reason": "seed and leaf chemistry differ",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Dill",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 256,
+      "entityName": "Dill",
+      "quality": "exact",
+      "molecules": 200,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Bay Leaf",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 305,
+      "entityName": "Laurel",
+      "quality": "exact",
+      "molecules": 209,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Tarragon",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 268,
+      "entityName": "Tarragon",
+      "quality": "exact",
+      "molecules": 144,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Rose Water",
+      "status": "excluded",
+      "reason": "thin entry (14 molecules)",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Saffron",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 340,
+      "entityName": "Saffron",
+      "quality": "exact",
+      "molecules": 127,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Hibiscus",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 623,
+      "entityName": "Roselle",
+      "quality": "exact",
+      "molecules": 114,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Lavender",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Chamomile",
+      "status": "excluded",
+      "reason": "essential-oil entry, not the ingredient",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Elderflower",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Lemon Zest",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 114,
+      "entityName": "Lemon Peel Oil",
+      "quality": "approx",
+      "molecules": 36,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Orange Zest",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 122,
+      "entityName": "Orange Oil",
+      "quality": "approx",
+      "molecules": 34,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Lime Zest",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 241,
+      "entityName": "Lime",
+      "quality": "approx",
+      "molecules": 164,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Yuzu",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Amchur",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 190,
+      "entityName": "Mango",
+      "quality": "approx",
+      "molecules": 238,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Tamarind",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 218,
+      "entityName": "Tamarind",
+      "quality": "exact",
+      "molecules": 164,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Dried Lime",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 241,
+      "entityName": "Lime",
+      "quality": "approx",
+      "molecules": 164,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Garlic Powder",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 259,
+      "entityName": "Garlic",
+      "quality": "approx",
+      "molecules": 143,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Onion Powder",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 348,
+      "entityName": "Onion",
+      "quality": "approx",
+      "molecules": 180,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Chive",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 343,
+      "entityName": "Chive",
+      "quality": "exact",
+      "molecules": 126,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Dried Mushroom",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 246,
+      "entityName": "Mushroom",
+      "quality": "approx",
+      "molecules": 227,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Nutritional Yeast",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Black Garlic",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 259,
+      "entityName": "Garlic",
+      "quality": "approx",
+      "molecules": 143,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Sesame Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 299,
+      "entityName": "Sesame",
+      "quality": "exact",
+      "molecules": 130,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Poppy Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 395,
+      "entityName": "Poppy Seed",
+      "quality": "exact",
+      "molecules": 131,
+      "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Nigella Seed",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 392,
+      "entityName": "Nigella Seed",
+      "quality": "exact",
+      "molecules": 30,
+      "alsoInFoodbUsda": true
+    }
+  ]
+}

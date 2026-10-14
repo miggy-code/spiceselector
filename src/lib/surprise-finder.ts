@@ -1,6 +1,6 @@
 import type { CompoundOverlap, PairingLink } from "@/types/pairing";
 import pairingScoresData from "@/data/pairing-scores.json";
-import { getCompoundOverlap, getCuratedLabel } from "./pairing-engine";
+import { compoundScore, getCompoundOverlap, getCuratedLabel } from "./pairing-engine";
 import { spiceName } from "./spice-list";
 
 /**
@@ -47,9 +47,6 @@ const TAXONOMY_WEIGHT = 0.45;
 const COMPOUND_WEIGHT = 0.35;
 const CURATED_WEIGHT = 0.2;
 
-// Same normalization the engine uses for compound overlap.
-const JACCARD_CEILING = 0.4;
-
 const CURATED_FAMILIARITY: Record<PairingLink["affinity"], number> = {
   classic: 1.0,
   complementary: 0.7,
@@ -73,9 +70,7 @@ function scorePair(pair: PairScore): SurprisePairing | null {
   const curatedFamiliarity = curatedLabel
     ? CURATED_FAMILIARITY[curatedLabel]
     : 0;
-  const compoundFamiliarity = compoundOverlap
-    ? Math.min(1, compoundOverlap.jaccard / JACCARD_CEILING)
-    : 0;
+  const compoundFamiliarity = compoundScore(compoundOverlap) ?? 0;
 
   // A strong curated label is disqualifying on its own (max), otherwise the
   // signals combine — a same-family pair with heavy overlap is doubly obvious.

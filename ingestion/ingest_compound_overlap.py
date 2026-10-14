@@ -1,5 +1,5 @@
 """
-Compound-overlap ingestion (Ahn/USDA layer).
+Compound-overlap ingestion (FooDB/USDA layer).
 
 Computes the shared flavor-compound overlap between every pair of project spices
 and writes it to src/data/compound-overlap.json for the pairing engine + "why" popover.
@@ -10,13 +10,24 @@ raw id spaces differ and are not comparable):
   - idea/spice_data_raw.json     — USDA phytochemical scrape, broader spice coverage,
                                     no flavor annotations.
 
+A second chemistry source, FlavorDB2, is merged in from flavordb2_pairs.json
+(produced by ingest_flavordb2.py — run that first). Its pair score is an IDF-weighted
+cosine, a different scale from Jaccard, so each source is converted to a percentile
+rank within its own distribution of pair values and the pair's compoundScore is the
+mean of the available ranks.
+
 Output per unordered spice-id pair:
-  { a, b, sharedCount, sharedAromaCount, jaccard, shared: [{name, flavors}] }
+  { a, b, sharedCount, sharedAromaCount, jaccard, shared: [{name, flavors}],
+    flavordb2?: {score, sharedCount, sharedFlavorWords}, compoundScore,
+    sources: ("foodb_usda"|"flavordb2")[] }
 
-"jaccard" also seeds a fallback pairing score for the spices FlavorGraph can't embed
-(see PLAN.md Step 4). No network or Supabase needed — pure local join.
+For FlavorDB2-only pairs (a spice with no FooDB/USDA data) the FooDB-derived fields
+are zero/empty (sources lacks "foodb_usda"); consumers should read compoundScore.
+"jaccard" is kept for reference. No network needed — pure local join.
 
-Source: Ahn et al. 2011 (CC BY) + USDA phytochemical DB. Attribution kept in-UI.
+Sources: FooDB (foodb.ca, via ingest_foodb.py) + USDA Dr. Duke's Phytochemical and
+Ethnobotanical Databases (via usda_scraper.py) + FlavorDB2 (Garg et al. 2018,
+CC BY-NC-SA 3.0, via ingest_flavordb2.py). Attribution kept in-UI.
 """
 
 import json
@@ -29,6 +40,7 @@ FOODB_PATH = PROJECT_ROOT / "idea" / "foodb_spice_data.json"
 USDA_PATH = PROJECT_ROOT / "idea" / "spice_data_raw.json"
 OUTPUT_PATH = PROJECT_ROOT / "src" / "data" / "compound-overlap.json"
 OUTPUT_COVERAGE = Path(__file__).parent / "compound_overlap_coverage.json"
+FLAVORDB2_PAIRS_PATH = Path(__file__).parent / "flavordb2_pairs.json"
 
 # The popover shows only a few shared compounds; keep the JSON light for the client
 # bundle. We list aroma compounds only (the actual pairing evidence) with a couple of
@@ -150,10 +162,39 @@ def resolve(spice, index):
     return None
 
 
-def main():
-    spices = load_spices()
-    index = build_compound_index()
+def percentile_ranks(values):
+    """Mid-rank percentile of each value within `values` (ties averaged), in (0, 1).
 
+    pct = (count_below + 0.5 * count_equal) / n
+    """
+    n = len(values)
+    if n == 0:
+        return []
+    ordered = sorted(values)
+    # first/last index of each distinct value
+    first, count = {}, {}
+    for i, v in enumerate(ordered):
+        first.setdefault(v, i)
+        count[v] = count.get(v, 0) + 1
+    return [(first[v] + 0.5 * count[v]) / n for v in values]
+
+
+def load_flavordb2_pairs():
+    if not FLAVORDB2_PAIRS_PATH.exists():
+        print(
+            f"WARNING: {FLAVORDB2_PAIRS_PATH.name} not found — run ingest_flavordb2.py "
+            "first. Continuing with FooDB/USDA only."
+        )
+        return []
+    return json.loads(FLAVORDB2_PAIRS_PATH.read_text())
+
+
+def compute_foodb_usda_pairs(spices, index):
+    """FooDB/USDA layer: -> (pairs sorted by aroma count, covered names, missing names).
+
+    Also used by ingest_flavordb2.py to learn which pairs already have FooDB/USDA
+    evidence (a pair "has a FooDB/USDA signal" iff it appears in `pairs`).
+    """
     # spice_id -> compound dict
     id_compounds: dict[str, dict[str, dict]] = {}
     covered, missing = [], []
@@ -164,10 +205,6 @@ def main():
             covered.append(sp["name"])
         else:
             missing.append(sp["name"])
-
-    print(f"Compound coverage: {len(covered)}/{len(spices)} spices")
-    if missing:
-        print(f"  No compound data for: {', '.join(missing)}")
 
     ids = list(id_compounds.keys())
     pairs = []
@@ -211,15 +248,105 @@ def main():
             )
 
     pairs.sort(key=lambda p: p["sharedAromaCount"], reverse=True)
+    return pairs, covered, missing
+
+
+def main():
+    spices = load_spices()
+    index = build_compound_index()
+
+    pairs, covered, missing = compute_foodb_usda_pairs(spices, index)
+    print(f"FooDB/USDA compound coverage: {len(covered)}/{len(spices)} spices")
+    if missing:
+        print(f"  No FooDB/USDA data for: {', '.join(missing)}")
+    foodb_pair_count = len(pairs)
+
+    # --- merge FlavorDB2 ---------------------------------------------------
+    fdb2_pairs = load_flavordb2_pairs()
+    fdb2_by_key = {tuple(sorted((p["a"], p["b"]))): p for p in fdb2_pairs}
+
+    # Percentile ranks, each source within its own distribution of pair values.
+    foodb_pct = percentile_ranks([p["jaccard"] for p in pairs])
+    fdb2_pct_list = percentile_ranks([p["score"] for p in fdb2_pairs])
+    fdb2_pct = {
+        tuple(sorted((p["a"], p["b"]))): pct for p, pct in zip(fdb2_pairs, fdb2_pct_list)
+    }
+
+    def fdb2_field(src):
+        return {
+            "score": src["score"],
+            "sharedCount": src["sharedCount"],
+            "sharedFlavorWords": src["sharedFlavorWords"],
+        }
+
+    seen_keys = set()
+    for p, pct in zip(pairs, foodb_pct):
+        key = tuple(sorted((p["a"], p["b"])))
+        seen_keys.add(key)
+        ranks = [pct]
+        sources = ["foodb_usda"]
+        src = fdb2_by_key.get(key)
+        if src is not None:
+            p["flavordb2"] = fdb2_field(src)
+            ranks.append(fdb2_pct[key])
+            sources.append("flavordb2")
+        p["compoundScore"] = round(sum(ranks) / len(ranks), 4)
+        p["sources"] = sources
+
+    fdb2_only = []
+    for src in fdb2_pairs:
+        key = tuple(sorted((src["a"], src["b"])))
+        if key in seen_keys:
+            continue
+        fdb2_only.append(
+            {
+                "a": src["a"],
+                "b": src["b"],
+                "sharedCount": 0,
+                "sharedAromaCount": 0,
+                "jaccard": 0,
+                "shared": [],
+                "flavordb2": fdb2_field(src),
+                "compoundScore": round(fdb2_pct[key], 4),
+                "sources": ["flavordb2"],
+            }
+        )
+    fdb2_only.sort(key=lambda p: p["compoundScore"], reverse=True)
+    pairs.extend(fdb2_only)
+
+    both = sum(1 for p in pairs if len(p["sources"]) == 2)
+    print(
+        f"Merged FlavorDB2: {len(fdb2_pairs)} pairs "
+        f"({both} also have FooDB/USDA, {len(fdb2_only)} FlavorDB2-only)"
+    )
+
+    # Coverage now = FooDB/USDA spices + spices that only appear via FlavorDB2.
+    covered_ids = {sp_id for p in pairs for sp_id in (p["a"], p["b"])}
+    foodb_covered_names = set(covered)
+    covered_all = [
+        sp["name"]
+        for sp in spices
+        if sp["name"] in foodb_covered_names or sp["id"] in covered_ids
+    ]
+    missing_all = [sp["name"] for sp in spices if sp["name"] not in set(covered_all)]
+    print(f"Combined compound coverage: {len(covered_all)}/{len(spices)} spices")
+    if missing_all:
+        print(f"  Still no compound data for: {', '.join(missing_all)}")
+
     OUTPUT_PATH.write_text(json.dumps(pairs, indent=2))
     print(f"Wrote {len(pairs)} compound-overlap pairs to {OUTPUT_PATH}")
 
     coverage = {
-        "covered": covered,
-        "missing": missing,
-        "coveredCount": len(covered),
+        "covered": covered_all,
+        "missing": missing_all,
+        "coveredCount": len(covered_all),
         "totalSpices": len(spices),
         "pairCount": len(pairs),
+        "foodbUsdaCoveredCount": len(covered),
+        "flavordb2OnlyCovered": [n for n in covered_all if n not in foodb_covered_names],
+        "foodbUsdaPairCount": foodb_pair_count,
+        "flavordb2PairCount": len(fdb2_pairs),
+        "flavordb2OnlyPairCount": len(fdb2_only),
     }
     OUTPUT_COVERAGE.write_text(json.dumps(coverage, indent=2))
     print(f"Wrote coverage report to {OUTPUT_COVERAGE}")

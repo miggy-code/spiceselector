@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.gstack/
+
+# FooDB CSV dump (large, third-party; download from foodb.ca)
+/foodb_2020_04_07_csv/
+
+# FlavorDB2 raw entity JSON cache (CC BY-NC-SA; re-fetched by ingest_flavordb2.py; derived output is committed)
+/ingestion/flavordb2_cache/
+
+# Python bytecode
+__pycache__/

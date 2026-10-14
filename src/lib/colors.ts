@@ -1,5 +1,3 @@
-import { hsl } from "d3-color";
-
 export const FAMILY_COLORS: Record<string, string> = {
   warm: "hsl(30, 70%, 50%)",
   "hot-pungent": "hsl(0, 75%, 48%)",
@@ -11,36 +9,22 @@ export const FAMILY_COLORS: Record<string, string> = {
   "umami-savory": "hsl(180, 50%, 35%)",
 };
 
-/**
- * Derive ring-level color from a family's base color.
- * Inner ring = base, middle = lighter, outer = lightest.
- */
-export function ringColor(
-  familyId: string,
-  level: "family" | "subcategory" | "spice"
-): string {
-  const base = hsl(FAMILY_COLORS[familyId] ?? "hsl(0, 0%, 50%)");
-
-  switch (level) {
-    case "family":
-      return base.formatHsl();
-    case "subcategory":
-      base.s = Math.max(0, base.s - 0.1);
-      base.l = Math.min(1, base.l + 0.12);
-      return base.formatHsl();
-    case "spice":
-      base.s = Math.max(0, base.s - 0.2);
-      base.l = Math.min(1, base.l + 0.25);
-      return base.formatHsl();
-  }
+/** Normalize generated family labels to the app's eight canonical families. */
+export function normalizeFamily(family: string): string {
+  const key = family.trim().toLowerCase().replace(/[\s_]+/g, '-');
+  const aliases: Record<string, string> = {
+    'ginger-family': 'earthy',
+    'chili-pepper': 'hot-pungent',
+    nutty: 'umami-savory',
+  };
+  return aliases[key] ?? key;
 }
 
-/**
- * Boosted color for selected arcs.
- */
-export function selectedColor(familyId: string): string {
-  const base = hsl(FAMILY_COLORS[familyId] ?? "hsl(0, 0%, 50%)");
-  base.s = Math.min(1, base.s + 0.15);
-  base.l = Math.max(0, base.l - 0.05);
-  return base.formatHsl();
+export function getFamilyColor(family: string): string {
+  return FAMILY_COLORS[normalizeFamily(family)] ?? '#90caf9';
+}
+
+export function familyLabel(family: string): string {
+  const label = normalizeFamily(family).replace('hot-pungent', 'hot & pungent').replace('citrus-bright', 'citrus & bright').replace('umami-savory', 'umami & savory');
+  return label.charAt(0).toUpperCase() + label.slice(1);
 }

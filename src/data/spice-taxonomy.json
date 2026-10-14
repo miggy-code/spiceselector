@@ -131,7 +131,8 @@
           "level": "subcategory",
           "children": [
             { "id": "earthy.smoky.smoked-paprika", "name": "Smoked Paprika", "level": "spice", "description": "Sweet-smoky dried pepper" },
-            { "id": "earthy.smoky.sumac", "name": "Sumac", "level": "spice", "description": "Tart, fruity, wine-red berry" }
+            { "id": "earthy.smoky.sumac", "name": "Sumac", "level": "spice", "description": "Tart, fruity, wine-red berry" },
+            { "id": "earthy.smoky.paprika", "name": "Paprika", "level": "spice", "description": "Sweet unsmoked ground Capsicum; distinct from smoked paprika" }
           ]
         }
       ]

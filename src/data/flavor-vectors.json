@@ -295,13 +295,13 @@
     "heat": 20,
     "intensity": 80
   },
-  "earthy.smoky.smoked-paprika": {
-    "warmth": 78,
+  "earthy.smoky.paprika": {
+    "warmth": 55,
     "brightness": 35,
-    "earthiness": 92,
+    "earthiness": 70,
     "florality": 10,
     "heat": 15,
-    "intensity": 80
+    "intensity": 60
   },
   "umami-savory.salty.poppy-seed": {
     "warmth": 55,
@@ -358,6 +358,14 @@
     "florality": 25,
     "heat": 45,
     "intensity": 85
+  },
+  "earthy.smoky.smoked-paprika": {
+    "warmth": 78,
+    "brightness": 35,
+    "earthiness": 92,
+    "florality": 10,
+    "heat": 15,
+    "intensity": 80
   },
   "warm.woody.star-anise": {
     "warmth": 85,
@@ -437,6 +445,142 @@
     "earthiness": 70,
     "florality": 10,
     "heat": 18,
+    "intensity": 70
+  },
+  "hot-pungent.sharp.horseradish": {
+    "warmth": 15,
+    "brightness": 48,
+    "earthiness": 18,
+    "florality": 4,
+    "heat": 78,
+    "intensity": 78
+  },
+  "hot-pungent.sharp.wasabi": {
+    "warmth": 12,
+    "brightness": 55,
+    "earthiness": 16,
+    "florality": 8,
+    "heat": 72,
+    "intensity": 72
+  },
+  "sweet.aromatic-sweet.mahlab": {
+    "warmth": 48,
+    "brightness": 42,
+    "earthiness": 18,
+    "florality": 58,
+    "heat": 0,
+    "intensity": 48
+  },
+  "herbal.asian.kaffir-lime-leaf": {
+    "warmth": 18,
+    "brightness": 88,
+    "earthiness": 12,
+    "florality": 48,
+    "heat": 0,
+    "intensity": 76
+  },
+  "herbal.asian.shiso": {
+    "warmth": 22,
+    "brightness": 62,
+    "earthiness": 20,
+    "florality": 42,
+    "heat": 0,
+    "intensity": 59
+  },
+  "herbal.leafy.parsley": {
+    "warmth": 12,
+    "brightness": 62,
+    "earthiness": 18,
+    "florality": 18,
+    "heat": 0,
+    "intensity": 38
+  },
+  "herbal.leafy.cilantro": {
+    "warmth": 8,
+    "brightness": 78,
+    "earthiness": 10,
+    "florality": 20,
+    "heat": 0,
+    "intensity": 62
+  },
+  "floral.delicate.elderflower": {
+    "warmth": 28,
+    "brightness": 42,
+    "earthiness": 6,
+    "florality": 82,
+    "heat": 0,
+    "intensity": 49
+  },
+  "citrus-bright.peel.lemon-zest": {
+    "warmth": 12,
+    "brightness": 94,
+    "earthiness": 8,
+    "florality": 28,
+    "heat": 0,
+    "intensity": 77
+  },
+  "citrus-bright.peel.orange-zest": {
+    "warmth": 28,
+    "brightness": 84,
+    "earthiness": 8,
+    "florality": 32,
+    "heat": 0,
+    "intensity": 67
+  },
+  "citrus-bright.peel.lime-zest": {
+    "warmth": 10,
+    "brightness": 92,
+    "earthiness": 9,
+    "florality": 22,
+    "heat": 0,
+    "intensity": 74
+  },
+  "citrus-bright.peel.yuzu": {
+    "warmth": 12,
+    "brightness": 96,
+    "earthiness": 8,
+    "florality": 44,
+    "heat": 0,
+    "intensity": 82
+  },
+  "citrus-bright.tart.dried-lime": {
+    "warmth": 22,
+    "brightness": 68,
+    "earthiness": 44,
+    "florality": 15,
+    "heat": 0,
+    "intensity": 68
+  },
+  "umami-savory.allium.chive": {
+    "warmth": 8,
+    "brightness": 40,
+    "earthiness": 8,
+    "florality": 12,
+    "heat": 0,
+    "intensity": 35
+  },
+  "umami-savory.fermented.dried-mushroom": {
+    "warmth": 28,
+    "brightness": 16,
+    "earthiness": 76,
+    "florality": 8,
+    "heat": 0,
+    "intensity": 83
+  },
+  "umami-savory.fermented.nutritional-yeast": {
+    "warmth": 30,
+    "brightness": 12,
+    "earthiness": 43,
+    "florality": 5,
+    "heat": 0,
+    "intensity": 66
+  },
+  "umami-savory.fermented.black-garlic": {
+    "warmth": 66,
+    "brightness": 36,
+    "earthiness": 38,
+    "florality": 22,
+    "heat": 0,
     "intensity": 70
   }
 }

@@ -1,22 +1,27 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Young_Serif, Schibsted_Grotesk } from "next/font/google";
 import RootLayoutClient from "./RootLayoutClient";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const youngSerif = Young_Serif({
+  variable: "--font-young-serif",
+  weight: "400",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "SpiceSelection — Evidence-Backed Flavor Pairing",
+  title: "SpiceSelection",
   description:
-    "Explore spice pairings on an interactive flavor map — every score backed by visible science: recipe data, shared aroma compounds, and flavor chemistry.",
+    "Explore 72 spices on an interactive flavor map and find pairings backed by recipe data, shared aroma chemistry and culinary tradition.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#24282c",
 };
 
 export default function RootLayout({
@@ -25,11 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={`${youngSerif.variable} ${schibsted.variable} h-full`}>
+      <body className="h-full">
         <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>

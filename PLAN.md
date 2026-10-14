@@ -5,26 +5,34 @@ open-source datasets. This is the thing Epicure (epicure.kaikaku.ai) deliberatel
 they say "science-backed" but never show the science. Our differentiation is **transparency**:
 every pairing score comes with a visible "why".
 
-## Data sources (both open, both commercially usable)
+## Data sources
 
 - **FlavorGraph** (Park et al. 2021, *Scientific Reports*) — Apache 2.0.
   Graph embedding model trained on ~1M recipes + chemical compound data. 300-dim ingredient
   embeddings. Cosine similarity between two spices = a **learned pairing affinity** (0–1).
   Repo: github.com/lamypark/FlavorGraph
-- **Ahn et al. 2011** ("Flavor network and the principles of food pairing", *Scientific Reports*) — CC BY.
-  Ingredient→flavor-compound relationships. Shared-compound count between two ingredients =
-  the **explanation** ("cumin & coriander share 11 aroma compounds").
-- **USDA phytochemical scrape** (already in `/ingestion/`) — corroborates/extends compound data.
+- **FooDB** (foodb.ca; `ingestion/ingest_foodb.py` over the FooDB CSV dump) — compound content
+  plus compound→flavor annotations. Shared aroma-compound count between two spices =
+  the **explanation** ("cumin & coriander share 18 aroma compounds"). Non-commercial terms.
+- **USDA Dr. Duke's Phytochemical DB scrape** (`ingestion/usda_scraper.py`) — corroborates/extends
+  compound data.
+- **FlavorDB2** (Garg et al. 2018, *Nucleic Acids Research*; cosylab.iiitd.edu.in/flavordb2) —
+  second chemistry source (flavor molecules per ingredient entity); CC BY-NC-SA 3.0. See the
+  FlavorDB2 status entry below.
 
-Attribution obligation: keep the Apache license notice; add a footer credit like
-"Pairing data derived from FlavorGraph (Park et al. 2021) and Ahn et al. (2011)".
+*Correction (cleanup pass):* the original plan named Ahn et al. 2011 as the compound source, but
+no Ahn et al. dataset was ever ingested — the compound layer is FooDB + USDA. Ahn et al. remains
+the theoretical basis (food-pairing hypothesis) only.
+
+Attribution obligation: keep the Apache license notice; credit
+"FlavorGraph (Park et al. 2021), FooDB, USDA Dr. Duke's Phytochemical DB" in the UI.
 This credit *reinforces* the transparency positioning rather than being mere compliance.
 
 ## Scoring model
 
 A pairing's `pairingScore` blends three visible ingredients:
 1. **Recipe affinity** — FlavorGraph cosine similarity (learned from real recipes).
-2. **Compound overlap** — count/list of shared flavor compounds (Ahn + USDA). Also the "why".
+2. **Compound overlap** — count/list of shared flavor compounds (FooDB + USDA). Also the "why".
 3. **Curated label** — the existing classic/complementary/surprising hint from LLM seed data.
 
 Every score in the UI gets a "why?" popover showing this breakdown.
@@ -55,7 +63,8 @@ Every score in the UI gets a "why?" popover showing this breakdown.
       absent) so the ~10 FlavorGraph-less spices still score. Coverage: 55/72 have compound
       data; combined FlavorGraph∪compound = 68/72 (only Dried Lime, Dried Mushroom, Kaffir
       Lime Leaf, Mahlab uncovered). "Why" popover gained a shared-aroma-compound section +
-      Ahn et al. (2011) attribution; suggestion rows and detail chips show the aroma count.
+      data-source attribution (originally mis-credited to Ahn et al. 2011 — corrected in the
+      cleanup pass); suggestion rows and detail chips show the aroma count.
 - [x] **Step 5 — Affinity edges on the Flavor Map.** `FlavorMap2D.tsx` now draws glowing
       cyan edges from each selected spice to its top-6 FlavorGraph partners (score ≥ 0.5),
       width + stroke-opacity scaled by score, under a blur glow filter with a gentle pulse
@@ -211,6 +220,45 @@ Every score in the UI gets a "why?" popover showing this breakdown.
       cinnamon+cardamom+clove+cumin, ⌘K→"saff"→Enter adds Saffron) + mobile 390×844
       (sheet + collapsed + substitution stack). `tsc` + `next build` clean.
 
+- [x] **Cleanup pass (portfolio readiness).**
+      *Attribution correction:* every UI credit / comment that named Ahn et al. (2011) as a data
+      source now credits FlavorGraph (Park et al. 2021), FooDB and USDA Dr. Duke's Phytochemical DB
+      (Ahn stays in the README as the theory only). *Dead code:* removed the unmounted
+      `SpiceSelectionApp` → `PairingSidebar` chain (`Header`, `flavor-wheel/*`, `AIToggle`,
+      `PairingSuggestions`, `SpiceDetailCard`, `useResizeObserver`), leftover Supabase types
+      (`types/database.ts`), unused AI-mode state in `SelectionContext`, and helpers only that UI
+      used. *Docs:* rewrote `README.md` and `ingestion/README.md` to match the real pipeline and
+      engine weights; `compute_compound_overlap.py` / `generate_coords.py` flagged legacy.
+      *Lint clean:* real types replace `any` (shared `SpiceProfile` types), localStorage contexts
+      moved to `useSyncExternalStore` (`lib/local-store.ts`), SpiceSearch resets moved out of
+      effects. Incidental fix: the 3D tooltip rendered `key_compounds` objects as React children.
+      `tsc` + `eslint src` (0 problems) + `next build` clean.
+
+- [x] **FlavorDB2 as a second chemistry source.** Added `ingestion/ingest_flavordb2.py`
+      (entity JSON cached in git-ignored `ingestion/flavordb2_cache/`, fetched on miss) and a
+      hand-verified `FLAVORDB2_MAP` (spice → entity id + exact/approx). *Pair-level rule:* an entry is
+      usable at ≥30 molecules; a pair gets a FlavorDB2 signal if both spices are usable, map to
+      different entities, and (both exact OR the pair has no FooDB/USDA signal) — approx entries fill
+      gaps pair by pair but never add a second opinion where FooDB/USDA has evidence (Cumin ×
+      Coriander Seed stays FooDB-only; Horseradish × Mustard Seed is FlavorDB2-scored). Pair score
+      = IDF-weighted cosine over PubChem-id molecule sets (IDF over the 44 distinct usable
+      entities; raw Jaccard is useless: ~90 molecules appear in nearly every entity); same-entity
+      pairs are excluded. 47 usable spices → 866 pairs (`flavordb2_pairs.json`,
+      `flavordb2_coverage.json`).
+      `ingest_compound_overlap.py` now merges it: each source is converted to a percentile rank
+      within its own pair distribution and `compoundScore` = mean of the available ranks; pairs gain
+      `flavordb2 {score, sharedCount, sharedFlavorWords}`, `compoundScore`, `sources`; FooDB/USDA
+      fields are untouched (verified identical for all 914 existing pairs). 513 FlavorDB2-only pairs
+      were added → 1,427 pairs; compound coverage 55 → 65/72 (new: Horseradish, Wasabi, Parsley,
+      Chive, Lemon/Orange/Lime Zest, Dried Lime, Black Garlic, Dried Mushroom). *App wiring:*
+      pairing, substitution and surprise engines read `compoundScore` instead of
+      `min(1, jaccard / 0.4)` (weights unchanged: 0.6/0.2/0.2 pairing, 0.4/0.25/0.2/0.15
+      substitution); `getCompoundDetails` now ranks by `compoundScore`; WhyPopover and the
+      substitution evidence panel show "Shared flavor notes (FlavorDB2)" chips; all UI credits name
+      FlavorDB2. *License:* FlavorDB2 is CC BY-NC-SA 3.0, so the derived `compound-overlap.json` is
+      distributed under it (non-commercial; consistent with FooDB). Run order: `ingest_flavordb2.py`
+      → `ingest_compound_overlap.py`. `tsc` + `eslint src` + `next build` clean.
+
 ### Remaining coverage gap
 Truly absent from FlavorGraph embeddings (7): Sichuan Pepper, Long Pepper, Aleppo Pepper,
 Tonka Bean, Mahlab, Hibiscus, Chamomile — all but Mahlab are covered by the Step 4
@@ -233,8 +281,8 @@ compound-overlap fallback. Mahlab scores on curated label only.
 - "Why?" popover: FlavorGraph affinity + shared-compound list + curated label.
 - Dark / neon aesthetic — this is a feature to show off, not a footnote.
 
-### Step 4 — Compound-overlap layer (Ahn + USDA)  ← also backfills coverage
-- New ingestion step: pull Ahn et al. ingredient–compound table; join with existing USDA
+### Step 4 — Compound-overlap layer (FooDB + USDA)  ← also backfills coverage
+- New ingestion step: join FooDB compound data (originally planned: Ahn et al. table — never used) with existing USDA
   compound data (`compute_compound_overlap.py` is already started).
 - Emit shared-compound lists per pair → feeds the "why" popover.
 - For the 14 spices FlavorGraph can't embed, use compound overlap to produce a fallback score,
@@ -277,3 +325,27 @@ compound-overlap fallback. Mahlab scores on curated label only.
 ## Build order
 1b (retry) → 2 (engine merge) → 3 (UI scores/why) → 4 (compound layer + coverage backfill) →
 5 (map edges) → 6 (bridge finder) → 7 (surprise) → 8 (substitutions).
+
+
+## Data pipeline audit — 2026-10-13
+
+- Preserve sweet Paprika separately from Smoked Paprika: one new taxonomy leaf,
+  generated idempotently by `ingestion/add_paprika_taxonomy.py` (73 leaves total).
+  Its `sweet-paprika` profile slug/new alias preserves the historical `paprika` alias.
+- Merge Bay leaf/Bay leaves, retaining alternate source record as provenance; normalize
+  active families from taxonomy. Existing numerical axis estimates are preserved.
+- Extend the generator's compound context to cached FlavorDB2 plus FooDB and USDA,
+  validate schema, make skip-existing identity-aware, and support validated local imports.
+  Provider exception bodies are suppressed because they may contain credentials.
+- User authorized Luna-authored missing profiles after Gemini consumer suspension;
+  provenance explicitly distinguishes estimates from measurements.
+- Add descriptor-derived IDF aroma fingerprints with 12 fixed families, null missing
+  vectors, source quality and descriptor audit; compare original axes with Pearson,
+  Spearman and standardized disagreement reports. No silent axis recalibration.
+- Integrate only CulinaryDB as an additional bulk source: 45,772 recipes, 26 cuisine
+  labels, 33 mapped ingredients; preserve denominators, provenance, hashes and NC-SA terms.
+- Add cited pungency evidence separately from odor; no fabricated whole-spice Scoville
+  values or purported universal pepper/mustard/ginger ranking.
+- Rebuild recipe, compound, dish, vector and atlas artifacts; identity/coverage checks
+  and fingerprint/cuisine invariants live under `ingestion/`. Full results and changed
+  files are recorded in `docs/analysis/data-completeness-report.md`.

@@ -9,7 +9,8 @@ import React, {
 } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Search } from 'lucide-react';
-import { FAMILY_COLORS } from '@/lib/colors';
+import { familyLabel } from '@/lib/colors';
+import { spiceColor } from '@/lib/spice-colors';
 import { useSelection } from '@/context/SelectionContext';
 
 interface SpiceItem {
@@ -20,6 +21,7 @@ interface SpiceItem {
 
 interface SpiceSearchProps {
   data: SpiceItem[];
+  inline?: boolean;
 }
 
 const MAX_RESULTS = 8;
@@ -30,7 +32,7 @@ interface Feedback {
   key: number;
 }
 
-export default function SpiceSearch({ data }: SpiceSearchProps) {
+export default function SpiceSearch({ data, inline = false }: SpiceSearchProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
@@ -54,21 +56,20 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
       .slice(0, MAX_RESULTS);
   }, [data, query]);
 
-  // Reset active index when results change.
-  useEffect(() => {
+  // Reset active index when results change (state adjusted during render,
+  // not in an effect, so there's no extra cascading render).
+  const [prevResults, setPrevResults] = useState(results);
+  if (results !== prevResults) {
+    setPrevResults(results);
     setActiveIndex(0);
-  }, [results]);
+  }
 
   // Focus input when palette opens.
   useEffect(() => {
-    if (open) {
-      // Small delay so the animation starts before we try to focus.
-      const id = setTimeout(() => inputRef.current?.focus(), 30);
-      return () => clearTimeout(id);
-    } else {
-      setQuery('');
-      setFeedback(null);
-    }
+    if (!open) return;
+    // Small delay so the animation starts before we try to focus.
+    const id = setTimeout(() => inputRef.current?.focus(), 30);
+    return () => clearTimeout(id);
   }, [open]);
 
   // Scroll highlighted row into view.
@@ -79,7 +80,12 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
   }, [activeIndex]);
 
   const openPalette = useCallback(() => setOpen(true), []);
-  const closePalette = useCallback(() => setOpen(false), []);
+  // Closing also clears the query and any feedback toast.
+  const closePalette = useCallback(() => {
+    setOpen(false);
+    setQuery('');
+    setFeedback(null);
+  }, []);
 
   // Global keyboard listeners: Cmd+K / Ctrl+K and "/" to open; Escape to close.
   useEffect(() => {
@@ -89,7 +95,8 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
 
       if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (!isInput && e.key === '/')) {
         e.preventDefault();
-        setOpen((prev) => !prev);
+        if (open) closePalette();
+        else openPalette();
         return;
       }
       if (e.key === 'Escape' && open) {
@@ -99,7 +106,7 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open, closePalette]);
+  }, [open, openPalette, closePalette]);
 
   const showFeedback = useCallback((text: string) => {
     if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
@@ -112,7 +119,7 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
       const wasSelected = selectedSpiceIds.has(spice.id);
       toggleSpice(spice.id);
       setQuery('');
-      showFeedback(wasSelected ? `✓ removed ${spice.name}` : `✓ added ${spice.name}`);
+      showFeedback(wasSelected ? `Removed ${spice.name}` : `Added ${spice.name}`);
     },
     [selectedSpiceIds, toggleSpice, showFeedback],
   );
@@ -139,18 +146,15 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
 
   return (
     <>
-      {/* Trigger button — positioned by parent (absolute top-4 right-[360px]) */}
       <button
         type="button"
         onClick={openPalette}
         aria-label="Search spices"
-        className="absolute top-4 right-[360px] max-md:right-4 z-40 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur border border-white/10 text-white/70 text-[12px] hover:bg-black/80 hover:text-white/90 hover:border-white/20 transition-all duration-150 cursor-pointer select-none"
+        className={`${inline ? 'relative' : 'absolute right-4 top-4 z-40'} flex h-9 cursor-pointer select-none items-center gap-2 rounded-md bg-board-high px-3 text-small font-medium text-chalk-2 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14)] transition-[box-shadow,color,background-color] duration-150 hover:bg-[#424950] hover:text-chalk hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.28)] md:w-60`}
       >
-        <Search size={13} strokeWidth={2} />
-        <span>Search</span>
-        <span className="ml-0.5 px-1.5 py-0.5 rounded bg-white/8 border border-white/10 text-[10px] text-white/45 font-mono leading-none">
-          ⌘K
-        </span>
+        <Search size={14} strokeWidth={1.75} aria-hidden />
+        <span className="max-sm:sr-only">Find a spice</span>
+        <kbd className="ml-auto hidden rounded border border-rule px-1.5 py-0.5 text-micro leading-none text-chalk-3 md:inline">⌘K</kbd>
       </button>
 
       {/* Command palette overlay */}
@@ -164,7 +168,7 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px]"
+              className="fixed inset-0 z-50 bg-board-deep/60"
               onClick={closePalette}
             />
 
@@ -175,20 +179,20 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: -8 }}
               transition={{ duration: 0.15, ease: 'easeOut' }}
-              className="fixed z-40 top-[72px] left-1/2 -translate-x-1/2 w-full max-w-md"
+              className="fixed left-1/2 top-[72px] z-50 w-[calc(100%-32px)] max-w-md -translate-x-1/2"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="rounded-xl bg-neutral-950/95 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.7)] overflow-hidden">
+              <div className="overflow-hidden rounded-lg border border-rule-strong bg-board-raised shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
                 {/* Input row */}
-                <div className="flex items-center gap-3 px-4 py-3 border-b border-white/8">
-                  <Search size={15} strokeWidth={2} className="text-white/35 shrink-0" />
+                <div className="flex items-center gap-3 border-b border-rule px-4 py-3">
+                  <Search size={16} strokeWidth={1.75} className="shrink-0 text-chalk-3" />
                   <input
                     ref={inputRef}
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Search spices…"
-                    className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none"
+                    placeholder="Cumin, saffron, sumac…"
+                    className="flex-1 bg-transparent text-lead text-chalk placeholder:text-chalk-3 outline-none"
                     aria-label="Search spices"
                     autoComplete="off"
                     spellCheck={false}
@@ -197,7 +201,7 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
                     <button
                       type="button"
                       onClick={() => setQuery('')}
-                      className="text-white/30 hover:text-white/60 text-xs transition-colors"
+                      className="text-small text-chalk-3 transition-colors hover:text-chalk"
                       aria-label="Clear search"
                     >
                       ✕
@@ -216,7 +220,7 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
                       transition={{ duration: 0.15 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-4 py-1.5 text-[11px] text-cyan-400/90 bg-cyan-400/6 border-b border-white/5">
+                      <div className="border-b border-rule bg-board-high px-4 py-1.5 text-small text-chalk">
                         {feedback.text}
                       </div>
                     </motion.div>
@@ -231,15 +235,14 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
                   aria-label="Spice results"
                 >
                   {results.length === 0 ? (
-                    <li className="px-4 py-4 text-sm text-white/30 text-center">
+                    <li className="px-4 py-4 text-center text-body text-chalk-3">
                       No spices match &ldquo;{query}&rdquo;
                     </li>
                   ) : (
                     results.map((spice, i) => {
                       const isActive = i === activeIndex;
                       const isSelected = selectedSpiceIds.has(spice.id);
-                      const color =
-                        FAMILY_COLORS[spice.family] ?? 'hsl(0, 0%, 50%)';
+                      const color = spiceColor(spice.id, spice.name, spice.family);
                       return (
                         <li
                           key={spice.id}
@@ -249,34 +252,27 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
                           onClick={() => selectItem(spice)}
                           className={[
                             'flex items-center gap-3 px-4 py-2.5 cursor-pointer transition-colors duration-75',
-                            isActive
-                              ? 'bg-white/6'
-                              : 'hover:bg-white/4',
-                            isSelected ? 'text-cyan-300' : 'text-white/85',
+                            isActive ? 'bg-board-high' : '',
+                            'text-chalk',
                           ].join(' ')}
                         >
-                          {/* Family color dot */}
                           <span
-                            className="w-2 h-2 rounded-full shrink-0 ring-1 ring-black/20"
+                            className="h-3.5 w-3.5 shrink-0 rounded-full ring-1 ring-rule-strong"
                             style={{ backgroundColor: color }}
                           />
 
                           {/* Name */}
-                          <span className="flex-1 text-sm font-medium truncate">
+                          <span className="flex-1 truncate text-body">
                             {spice.name}
                           </span>
 
-                          {/* Family label */}
-                          <span
-                            className="text-[10px] font-medium uppercase tracking-wider shrink-0 opacity-60"
-                            style={{ color }}
-                          >
-                            {spice.family}
+                          <span className="shrink-0 text-small text-chalk-3">
+                            {familyLabel(spice.family)}
                           </span>
 
                           {/* Selected checkmark */}
                           {isSelected && (
-                            <span className="text-cyan-400 text-[11px] shrink-0">✓</span>
+                            <span className="shrink-0 text-small text-chalk">Selected</span>
                           )}
                         </li>
                       );
@@ -285,10 +281,10 @@ export default function SpiceSearch({ data }: SpiceSearchProps) {
                 </ul>
 
                 {/* Footer hint */}
-                <div className="flex items-center gap-4 px-4 py-2 border-t border-white/5 text-[10px] text-white/25">
-                  <span><kbd className="font-mono">↑↓</kbd> navigate</span>
-                  <span><kbd className="font-mono">↵</kbd> select</span>
-                  <span><kbd className="font-mono">Esc</kbd> close</span>
+                <div className="flex items-center gap-4 border-t border-rule px-4 py-2 text-micro text-chalk-3">
+                  <span><kbd>↑↓</kbd> move</span>
+                  <span><kbd>Enter</kbd> add or remove</span>
+                  <span><kbd>Esc</kbd> close</span>
                 </div>
               </div>
             </motion.div>

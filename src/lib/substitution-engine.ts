@@ -1,7 +1,7 @@
 import type { CompoundOverlap } from "@/types/pairing";
 import flavorVectorsData from "@/data/flavor-vectors.json";
-import { getAffinity, getCompoundOverlap } from "./pairing-engine";
-import { allSpices } from "./spice-list";
+import { compoundScore, getAffinity, getCompoundOverlap } from "./pairing-engine";
+import { allSpices, displayName } from "./spice-list";
 
 /**
  * Data-driven substitutions (PLAN.md Step 8).
@@ -11,7 +11,7 @@ import { allSpices } from "./spice-list";
  * terrible substitute). Substitutability instead blends four signals, each
  * shown in the UI as the "why":
  *   1. flavor-profile similarity — distance over the 5-axis profile vectors
- *   2. shared chemistry — compound-overlap jaccard (Ahn/USDA layer)
+ *   2. shared chemistry — compound score (FooDB/USDA + FlavorDB2 layers)
  *   3. taxonomy proximity — same subfamily/family
  *   4. FlavorGraph affinity — embedding proximity, as a supporting signal
  * Weights redistribute over whichever signals exist, so spices missing a
@@ -40,9 +40,6 @@ const PROFILE_AXES = [
 // Euclidean distance over five 0–100 axes; 150 ≈ the distance between two
 // genuinely unrelated spices, so similarity bottoms out at 0 there.
 const PROFILE_DISTANCE_CEILING = 150;
-// Same jaccard normalization as the pairing engine.
-const JACCARD_CEILING = 0.4;
-
 const PROFILE_WEIGHT = 0.4;
 const CHEMISTRY_WEIGHT = 0.25;
 const TAXONOMY_WEIGHT = 0.2;
@@ -102,11 +99,8 @@ export function getSubstitutionScore(
 
   const parts: Array<[number, number]> = [[taxProximity, TAXONOMY_WEIGHT]];
   if (profileSimilarity !== null) parts.push([profileSimilarity, PROFILE_WEIGHT]);
-  if (compoundOverlap !== null)
-    parts.push([
-      Math.min(1, compoundOverlap.jaccard / JACCARD_CEILING),
-      CHEMISTRY_WEIGHT,
-    ]);
+  const chemistry = compoundScore(compoundOverlap);
+  if (chemistry !== null) parts.push([chemistry, CHEMISTRY_WEIGHT]);
   if (affinity !== null) parts.push([affinity, AFFINITY_WEIGHT]);
 
   const totalWeight = parts.reduce((sum, [, w]) => sum + w, 0);
@@ -133,7 +127,7 @@ export function getSubstitutionScore(
   };
 }
 
-const allSpiceNames = new Map(allSpices.map((s) => [s.id, s.name]));
+const allSpiceNames = new Map(allSpices.map((s) => [s.id, displayName(s.name)]));
 
 export interface SubstituteOptions {
   /** Max candidates to return (default 6, matching the curated list length). */

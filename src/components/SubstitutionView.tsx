@@ -1,12 +1,15 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { FAMILY_COLORS } from '@/lib/colors';
+import { familyLabel } from '@/lib/colors';
+import { spiceColor } from '@/lib/spice-colors';
 import { useSelection } from '@/context/SelectionContext';
 import { useRack } from '@/context/RackContext';
 import { getSubstitutes, type SubstituteCandidate } from '@/lib/substitution-engine';
+import { compoundScore } from '@/lib/pairing-engine';
 import { toTaxonomyId } from '@/lib/spice-id-map';
+import { Swatch, Meter, SmallButton } from '@/components/pairing/ui';
 
 interface Substitute {
   spice: string;
@@ -34,38 +37,11 @@ const FAMILY_ORDER = [
   'warm', 'hot-pungent', 'sweet', 'earthy', 'herbal', 'floral', 'citrus-bright', 'umami-savory',
 ];
 
-const FAMILY_LABELS: Record<string, string> = {
-  'warm': 'Warm',
-  'hot-pungent': 'Hot & Pungent',
-  'sweet': 'Sweet',
-  'earthy': 'Earthy',
-  'herbal': 'Herbal',
-  'floral': 'Floral',
-  'citrus-bright': 'Citrus & Bright',
-  'umami-savory': 'Umami & Savory',
-};
-
-// Same jaccard normalization the engine uses for the chemistry signal.
-const JACCARD_CEILING = 0.4;
-
-/** FAMILY_COLORS are hsl() strings, so hex-suffix alpha doesn't work on them. */
-function withAlpha(color: string, alpha: number): string {
-  return color.startsWith('hsl(')
-    ? color.replace('hsl(', 'hsla(').replace(')', `, ${alpha})`)
-    : color;
-}
-
-function similarityColor(score: number): string {
-  if (score >= 0.6) return '#4ade80'; // green
-  if (score >= 0.4) return '#fbbf24'; // amber
-  return '#f87171'; // red
-}
-
 function similarityLabel(score: number): string {
-  if (score >= 0.7) return 'Very close';
-  if (score >= 0.55) return 'Close';
-  if (score >= 0.4) return 'Moderate';
-  return 'Distant';
+  if (score >= 0.8) return 'Very close';
+  if (score >= 0.7) return 'Close';
+  if (score >= 0.55) return 'Workable';
+  return 'Loose';
 }
 
 function taxonomyLabel(proximity: number): string {
@@ -74,41 +50,29 @@ function taxonomyLabel(proximity: number): string {
   return 'different family';
 }
 
-function intensityGuidance(delta: number | null): { text: string; icon: string } | null {
+function intensityGuidance(delta: number | null): string | null {
   if (delta === null) return null;
-  if (delta >= 8) return { icon: '▾', text: 'It’s punchier — start with less and adjust up.' };
-  if (delta <= -8) return { icon: '▴', text: 'It’s milder — use a touch more than the recipe calls for.' };
-  return { icon: '≈', text: 'Similar intensity — swap roughly 1:1.' };
+  if (delta >= 8) return 'It’s punchier, so start with less and adjust up.';
+  if (delta <= -8) return 'It’s milder, so use a touch more than the recipe calls for.';
+  return 'Similar intensity, so swap roughly 1:1.';
 }
 
-/** One per-signal evidence row inside a substitute card. */
-function SignalRow({
-  label,
-  value,
-  detail,
-  color = '#22d3ee',
-}: {
-  label: string;
-  value: number | null;
-  detail: string;
-  color?: string;
-}) {
+function formatList(items: string[]): string {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
+
+/** One per-signal evidence row inside a candidate: label, chalk meter, detail. */
+function SignalRow({ label, value, detail }: { label: string; value: number | null; detail: string }) {
   return (
     <div className="flex items-center gap-2.5">
-      <span className="text-[10px] uppercase tracking-wider text-white/35 w-16 shrink-0">{label}</span>
-      <div className="h-1 flex-1 rounded-full bg-white/8 overflow-hidden">
-        {value !== null && (
-          <div
-            className="h-full rounded-full"
-            style={{
-              width: `${Math.round(value * 100)}%`,
-              backgroundColor: color,
-              boxShadow: `0 0 5px ${color}90`,
-            }}
-          />
-        )}
-      </div>
-      <span className="text-[10px] text-white/40 w-32 shrink-0 truncate" title={detail}>
+      <span className="w-24 shrink-0 text-small text-chalk-2">{label}</span>
+      {value !== null ? (
+        <Meter value={value} className="flex-1" />
+      ) : (
+        <span className="block h-1 flex-1 rounded-full bg-board-high" />
+      )}
+      <span className="w-36 shrink-0 truncate text-small text-chalk-3 max-md:w-28" title={detail}>
         {detail}
       </span>
     </div>
@@ -128,7 +92,7 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
     return map;
   }, [data]);
 
-  // taxonomy dot-id → map slug, for family colors and "view in map".
+  // taxonomy dot-id → map slug, for "view on the map".
   const tidToSlug = useMemo(() => {
     const map = new Map<string, string>();
     for (const s of data) {
@@ -177,52 +141,63 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
     return candidates.filter((c) => c.slug && rackIds.has(c.slug)).slice(0, 8);
   }, [candidates, rackOnly, rackIds]);
 
-  const familyColor = (family: string) =>
-    (FAMILY_COLORS as Record<string, string>)[family] ?? '#888';
-  const familyColorForTid = (tid: string) => familyColor(tid.split('.')[0]);
-
   function chemistryDetail(c: SubstituteCandidate): string {
     if (!c.compoundOverlap) return 'no shared compounds';
-    const n = c.compoundOverlap.sharedAromaCount;
-    return n > 0
-      ? `${n} shared aroma compound${n !== 1 ? 's' : ''}`
-      : `${c.compoundOverlap.sharedCount} shared compounds`;
+    const o = c.compoundOverlap;
+    const parts: string[] = [];
+    if (o.sources.includes('foodb_usda')) {
+      const n = o.sharedAromaCount;
+      parts.push(
+        n > 0
+          ? `${n} shared aroma compound${n !== 1 ? 's' : ''}`
+          : `${o.sharedCount} shared compounds`
+      );
+    }
+    if (o.flavordb2) {
+      parts.push(`${o.flavordb2.sharedCount} shared molecules (FlavorDB2)`);
+    }
+    return parts.join(', ');
   }
 
   return (
-    <div className="w-full h-full flex bg-neutral-950 pl-14 max-md:pl-0 max-md:flex-col">
-      {/* Left: Spice list */}
-      <div className="w-64 shrink-0 flex flex-col border-r border-white/8 h-full max-md:w-full max-md:h-40 max-md:border-r-0 max-md:border-b max-md:shrink-0">
-        <div className="px-4 pt-5 pb-3 border-b border-white/8 max-md:pl-14">
-          <div className="text-white/80 text-sm font-semibold mb-3">Substitution Finder</div>
+    <div className="slate flex h-full w-full text-chalk max-md:flex-col">
+      {/* Left: spice list. On mobile it fills the view until a spice is picked. */}
+      <div
+        className={`flex min-h-0 flex-col border-r border-rule bg-board-raised md:w-72 md:shrink-0 max-md:w-full max-md:flex-1 max-md:border-r-0 ${
+          focusedId ? 'max-md:hidden' : ''
+        }`}
+      >
+        <div className="border-b border-rule px-4 pb-3 pt-4">
+          <h2 className="font-display text-title leading-tight text-chalk">Substitutes</h2>
+          <p className="mb-3 mt-0.5 text-small text-chalk-3">Out of a spice? Pick it to see what can stand in.</p>
           <div className="relative">
             <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-white/25"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 text-chalk-3"
               width="13" height="13" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+              aria-hidden
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
             </svg>
             <input
               type="text"
-              placeholder="Search spices…"
+              placeholder="Search spices"
+              aria-label="Search spices"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 bg-white/6 border border-white/10 rounded-lg text-white/80 text-sm placeholder:text-white/25 focus:outline-none focus:border-white/25 transition-colors"
+              className="h-8 w-full rounded-md border border-rule bg-board-high pl-8 pr-2.5 text-small text-chalk outline-none placeholder:text-chalk-3 focus:border-rule-strong"
             />
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto py-2">
+        <div className="min-h-0 flex-1 overflow-y-auto py-2">
           {FAMILY_ORDER.map((family) => {
             const spices = groupedSpices[family];
             if (!spices?.length) return null;
             return (
               <div key={family}>
-                <div className="px-4 py-1.5 text-[10px] uppercase tracking-widest text-white/25 font-medium">
-                  {FAMILY_LABELS[family]}
-                </div>
+                <div className="px-4 pb-1 pt-3 text-small text-chalk-3">{familyLabel(family)}</div>
                 {spices.map((spice) => {
                   const owned = rackIds.has(spice.id);
                   return (
@@ -230,34 +205,32 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
                       key={spice.id}
                       className={`group flex items-center transition-colors ${
                         focusedId === spice.id
-                          ? 'bg-white/10 text-white'
-                          : 'text-white/55 hover:text-white hover:bg-white/5'
+                          ? 'bg-board-high text-chalk'
+                          : 'text-chalk-2 hover:bg-board-high/50 hover:text-chalk'
                       }`}
                     >
                       <button
+                        type="button"
                         onClick={() => {
                           setFocusedId(spice.id);
                           setExpandedId(null);
                         }}
-                        className="flex-1 flex items-center gap-2.5 pl-4 py-2 text-left min-w-0"
+                        className="flex min-w-0 flex-1 items-center gap-2.5 py-2 pl-4 text-left"
                       >
-                        <span
-                          className="w-2 h-2 rounded-full shrink-0"
-                          style={{ backgroundColor: familyColor(spice.family) }}
-                        />
-                        <span className="text-sm truncate">{spice.name}</span>
+                        <Swatch color={spiceColor(spice.id, spice.name, spice.family)} size={12} />
+                        <span className="truncate text-body">{spice.name}</span>
                       </button>
                       <button
+                        type="button"
                         onClick={() => toggleRack(spice.id)}
                         title={owned ? 'Remove from my rack' : 'Add to my rack'}
+                        aria-label={owned ? `Remove ${spice.name} from my rack` : `Add ${spice.name} to my rack`}
                         aria-pressed={owned}
-                        className={`shrink-0 px-3 py-2 text-[13px] leading-none transition-all ${
-                          owned
-                            ? 'text-emerald-400 drop-shadow-[0_0_4px_rgba(52,211,153,0.7)]'
-                            : 'text-white/15 opacity-0 group-hover:opacity-100 hover:text-emerald-300'
+                        className={`flex shrink-0 items-center gap-1 px-3 py-2 text-micro transition-opacity ${
+                          owned ? 'text-chalk opacity-100' : 'text-chalk-3 opacity-0 hover:text-chalk focus-visible:opacity-100 group-hover:opacity-100'
                         }`}
                       >
-                        {owned ? '◉' : '○'}
+                        {owned ? 'On my shelf' : '+ Shelf'}
                       </button>
                     </div>
                   );
@@ -265,143 +238,109 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
               </div>
             );
           })}
-          {!data.some((s) =>
-            s.name.toLowerCase().includes(search.toLowerCase())
-          ) && search && (
-            <div className="px-4 py-6 text-center text-white/25 text-sm">No spices found</div>
+          {search && !data.some((s) => s.name.toLowerCase().includes(search.toLowerCase().trim())) && (
+            <div className="px-4 py-6 text-center text-body text-chalk-3">No spices found</div>
           )}
         </div>
       </div>
 
-      {/* Right: Substitutes panel */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden">
+      {/* Right: substitutes. On mobile it replaces the list once a spice is picked. */}
+      <div className={`flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden ${focusedId ? '' : 'max-md:hidden'}`}>
         {focusedSpice ? (
           <>
+            <div className="shrink-0 border-b border-rule md:hidden">
+              <button
+                type="button"
+                onClick={() => {
+                  setFocusedId(null);
+                  setExpandedId(null);
+                }}
+                className="px-4 py-3 text-small text-chalk-2 hover:text-chalk"
+              >
+                ← All spices
+              </button>
+            </div>
+
             {/* Spice header */}
-            <div className="px-8 pt-8 pb-5 border-b border-white/8 shrink-0 max-md:px-4 max-md:pt-4">
-              <div className="flex items-start gap-3">
-                <span
-                  className="w-3 h-3 rounded-full mt-1 shrink-0"
-                  style={{ backgroundColor: familyColor(focusedSpice.family) }}
-                />
-                <div>
-                  <h2 className="text-xl font-semibold text-white">{focusedSpice.name}</h2>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span
-                      className="text-xs px-2 py-0.5 rounded-full border"
-                      style={{
-                        color: familyColor(focusedSpice.family),
-                        borderColor: withAlpha(familyColor(focusedSpice.family), 0.25),
-                        backgroundColor: withAlpha(familyColor(focusedSpice.family), 0.08),
-                      }}
-                    >
-                      {FAMILY_LABELS[focusedSpice.family] ?? focusedSpice.family}
-                    </span>
-                    {focusedSpice.heat_level && focusedSpice.heat_level !== 'mild' && (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 capitalize">
-                        {focusedSpice.heat_level}
-                      </span>
-                    )}
-                  </div>
-                  {focusedSpice.description && (
-                    <p className="text-white/40 text-sm mt-2 max-w-lg">{focusedSpice.description}</p>
-                  )}
-                </div>
+            <div className="shrink-0 border-b border-rule pb-6 pt-9 md:px-[max(2rem,calc((100%-46rem)/2))] max-md:px-4 max-md:pt-4">
+              <div className="flex items-center gap-3">
+                <Swatch color={spiceColor(focusedSpice.id, focusedSpice.name, focusedSpice.family)} size={32} />
+                <h2 className="font-display text-display leading-none text-chalk">{focusedSpice.name}</h2>
               </div>
+              <p className="mt-2 text-small text-chalk-3">
+                {familyLabel(focusedSpice.family)}
+                {focusedSpice.heat_level && focusedSpice.heat_level !== 'mild' ? `, ${focusedSpice.heat_level} heat` : ''}
+              </p>
+              {focusedSpice.description && (
+                <p className="mt-3 max-w-[60ch] text-body leading-relaxed text-chalk-2">{focusedSpice.description}</p>
+              )}
             </div>
 
             {/* Substitutes list */}
-            <div className="flex-1 overflow-y-auto px-8 py-6 max-md:px-4">
+            <div className="flex-1 overflow-y-auto py-6 md:px-[max(2rem,calc((100%-46rem)/2))] max-md:px-4">
               {visibleCandidates.length > 0 ? (
                 <>
-                  <div className="flex items-baseline justify-between max-w-2xl mb-4">
-                    <div className="text-white/30 text-xs uppercase tracking-widest">
-                      {visibleCandidates.length} substitutes · ranked by evidence
-                      {rackOnly && <span className="text-emerald-400/60"> · your rack only</span>}
-                    </div>
-                    <div className="text-white/20 text-[10px]">
-                      flavor profile · chemistry · family · recipes
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-3 max-w-2xl">
+                  <p className="mb-2 max-w-none text-small text-chalk-3">
+                    {visibleCandidates.length} {visibleCandidates.length === 1 ? 'substitute' : 'substitutes'}, best evidence first
+                    {rackOnly ? ', from your rack only' : ''}
+                  </p>
+                  <ul className="max-w-none divide-y divide-rule">
                     {visibleCandidates.map((sub, i) => {
-                      const pct = Math.round(sub.score * 100);
-                      const color = similarityColor(sub.score);
                       const expanded = expandedId === sub.spiceId;
                       const guidance = intensityGuidance(sub.intensityDelta);
+                      const sharedCompounds = sub.compoundOverlap?.shared.slice(0, 6).map((c) => c.name) ?? [];
+                      const sharedNotes = sub.compoundOverlap?.flavordb2?.sharedFlavorWords ?? [];
+                      const tags = [
+                        i === 0 ? 'Best match' : null,
+                        !rackOnly && sub.slug && rackIds.has(sub.slug) ? (i === 0 ? 'in your rack' : 'In your rack') : null,
+                      ].filter(Boolean) as string[];
                       return (
-                        <motion.div
+                        <motion.li
                           key={sub.spiceId}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: i * 0.04, duration: 0.25 }}
-                          className={`bg-white/4 border rounded-xl p-4 transition-colors ${
-                            i === 0 ? 'border-emerald-400/25' : 'border-white/8 hover:border-white/15'
-                          }`}
+                          className="py-4"
                         >
-                          <div className="flex items-center justify-between gap-4 mb-2">
-                            <div className="flex items-center gap-2.5 min-w-0">
-                              <span
-                                className="w-2.5 h-2.5 rounded-full shrink-0"
-                                style={{ backgroundColor: familyColorForTid(sub.spiceId) }}
-                              />
-                              <span className="text-white font-medium">{sub.spiceName}</span>
-                              <span className="text-white/30 text-xs">
-                                {FAMILY_LABELS[sub.spiceId.split('.')[0]] ?? sub.spiceId.split('.')[0]}
-                              </span>
-                              {i === 0 && (
-                                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/25 text-emerald-300">
-                                  best match
-                                </span>
-                              )}
-                              {!rackOnly && sub.slug && rackIds.has(sub.slug) && (
-                                <span
-                                  className="text-[11px] text-emerald-400"
-                                  title="In your rack"
-                                >
-                                  ◉
-                                </span>
-                              )}
-                            </div>
-                            <div className="flex items-center gap-3 shrink-0">
-                              <span className="text-xs" style={{ color }}>
-                                {similarityLabel(sub.score)}
-                              </span>
-                              <span className="text-sm font-mono font-semibold" style={{ color }}>
-                                {pct}%
+                          <div className="flex items-center justify-between gap-4">
+                            <div className="flex min-w-0 items-center gap-2.5">
+                              <Swatch tid={sub.spiceId} size={16} />
+                              <span className="truncate font-display text-lead text-chalk">{sub.spiceName}</span>
+                              <span className="shrink-0 text-small text-chalk-3">
+                                {familyLabel(sub.spiceId.split('.')[0])}
                               </span>
                             </div>
                           </div>
 
-                          {/* Blended score bar */}
-                          <div className="w-full h-1.5 bg-white/8 rounded-full overflow-hidden mb-3">
-                            <motion.div
-                              className="h-full rounded-full"
-                              initial={{ width: 0 }}
-                              animate={{ width: `${pct}%` }}
-                              transition={{ delay: i * 0.04 + 0.1, duration: 0.4, ease: 'easeOut' }}
-                              style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}80` }}
-                            />
+                          {tags.length > 0 && <p className="mt-1 text-small text-chalk">{tags.join(', ')}</p>}
+
+                          <div className="mt-2.5 flex items-center gap-3">
+                            <Meter value={sub.score} className="w-[240px] max-w-[55%]" />
+                            <span className="text-small font-medium text-chalk">{sub.score.toFixed(2)}</span>
+                            <span className="text-small text-chalk-2">{similarityLabel(sub.score)}</span>
                           </div>
 
-                          {guidance && (
-                            <p className="text-white/50 text-xs mb-1.5">
-                              <span className="text-white/30 mr-1">{guidance.icon}</span>
-                              {guidance.text}
-                            </p>
-                          )}
+                          {guidance && <p className="mt-2.5 text-small text-chalk-2">{guidance}</p>}
 
                           {sub.curatedNote && (
-                            <p className="text-white/45 text-sm mb-1.5">{sub.curatedNote}</p>
+                            <p className="mt-1.5 text-small leading-relaxed text-chalk-2">{sub.curatedNote}</p>
                           )}
 
-                          <button
-                            onClick={() => setExpandedId(expanded ? null : sub.spiceId)}
-                            className="text-xs text-cyan-400/70 hover:text-cyan-300 transition-colors"
-                            aria-expanded={expanded}
-                          >
-                            {expanded ? 'hide the evidence ▴' : 'why this score? ▾'}
-                          </button>
+                          <div className="mt-3 flex items-center gap-1.5">
+                            <SmallButton onClick={() => setExpandedId(expanded ? null : sub.spiceId)} aria-expanded={expanded}>
+                              {expanded ? 'Hide the evidence' : 'Show the evidence'}
+                            </SmallButton>
+                            {sub.slug && (
+                              <SmallButton
+                                onClick={() => {
+                                  toggleSpice(sub.slug!);
+                                  onViewInMap(sub.slug!);
+                                }}
+                              >
+                                View on the map
+                              </SmallButton>
+                            )}
+                          </div>
 
                           {expanded && (
                             <motion.div
@@ -409,101 +348,72 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
                               animate={{ opacity: 1, height: 'auto' }}
                               className="overflow-hidden"
                             >
-                              <div className="mt-3 pt-3 border-t border-white/8 space-y-2">
+                              <div className="mt-3 space-y-2 border-t border-rule pt-3">
                                 <SignalRow
-                                  label="profile"
+                                  label="Flavor profile"
                                   value={sub.profileSimilarity}
                                   detail={
                                     sub.profileSimilarity !== null
-                                      ? 'warmth·bright·earth·floral·heat'
+                                      ? 'warmth, brightness, earthiness, florality, heat'
                                       : 'no profile data'
                                   }
-                                  color="#22d3ee"
                                 />
                                 <SignalRow
-                                  label="chemistry"
-                                  value={
-                                    sub.compoundOverlap
-                                      ? Math.min(1, sub.compoundOverlap.jaccard / JACCARD_CEILING)
-                                      : null
-                                  }
+                                  label="Chemistry"
+                                  value={compoundScore(sub.compoundOverlap)}
                                   detail={chemistryDetail(sub)}
-                                  color="#34d399"
                                 />
                                 <SignalRow
-                                  label="family"
+                                  label="Family"
                                   value={sub.taxonomyProximity}
                                   detail={taxonomyLabel(sub.taxonomyProximity)}
-                                  color="#a78bfa"
                                 />
                                 <SignalRow
-                                  label="recipes"
+                                  label="Recipes"
                                   value={sub.affinity}
                                   detail={
                                     sub.affinity !== null
                                       ? `FlavorGraph ${sub.affinity.toFixed(2)}`
-                                      : 'no embedding'
+                                      : 'no recipe data'
                                   }
-                                  color="#fbbf24"
                                 />
-                                {sub.compoundOverlap && sub.compoundOverlap.shared.length > 0 && (
-                                  <div className="flex flex-wrap gap-1 pt-1">
-                                    {sub.compoundOverlap.shared.slice(0, 6).map((c) => (
-                                      <span
-                                        key={c.name}
-                                        title={c.flavors.join(', ')}
-                                        className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
-                                      >
-                                        {c.name}
-                                      </span>
-                                    ))}
-                                  </div>
+                                {sharedCompounds.length > 0 && (
+                                  <p className="pt-1 text-small leading-snug text-chalk-2">
+                                    Shared aroma compounds include {formatList(sharedCompounds)}.
+                                  </p>
+                                )}
+                                {sharedNotes.length > 0 && (
+                                  <p className="text-small leading-snug text-chalk-2">
+                                    Both carry {formatList(sharedNotes)} notes.
+                                  </p>
                                 )}
                               </div>
                             </motion.div>
                           )}
-
-                          {sub.slug && (
-                            <button
-                              onClick={() => {
-                                toggleSpice(sub.slug!);
-                                onViewInMap(sub.slug!);
-                              }}
-                              className="mt-3 text-xs text-white/35 hover:text-white/70 transition-colors flex items-center gap-1.5"
-                            >
-                              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 8v4l3 3" />
-                              </svg>
-                              View in map
-                            </button>
-                          )}
-                        </motion.div>
+                        </motion.li>
                       );
                     })}
-                  </div>
-                  <p className="max-w-2xl mt-4 text-[10px] text-white/20">
-                    Blend of 5-axis flavor profile, shared aroma chemistry (Ahn et al. 2011 + USDA),
-                    taxonomy proximity, and FlavorGraph recipe affinity (Park et al. 2021).
+                  </ul>
+                  <p className="mt-4 max-w-none text-small text-chalk-3">
+                    Each score blends the five-axis flavor profile, shared aroma chemistry (FlavorDB2, FooDB and USDA Dr. Duke&apos;s),
+                    family closeness, and recipe affinity from FlavorGraph (Park et al. 2021).
                   </p>
                 </>
               ) : (
-                <div className="text-white/25 text-sm">
+                <p className="text-body text-chalk-2">
                   {rackOnly && candidates.length > 0
-                    ? 'No substitutes in your rack — turn off “only my rack” in the menu, or mark more spices with ◉ in the list.'
+                    ? 'No substitutes in your rack. Turn off “Only suggest what I have” in Filters, or mark more spices as owned in the list.'
                     : 'No substitution data available for this spice.'}
-                </div>
+                </p>
               )}
             </div>
           </>
         ) : (
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-12">
-            <div className="text-5xl mb-6 opacity-30">⇄</div>
-            <div className="text-white/50 text-base font-medium mb-2">Select a spice</div>
-            <div className="text-white/25 text-sm max-w-xs">
-              Choose any spice from the list to see its closest substitutes — ranked by flavor
-              profile, shared chemistry, and recipe evidence.
-            </div>
+          <div className="flex flex-1 flex-col items-center justify-center px-12 text-center">
+            <p className="font-display text-title text-chalk">Pick a spice</p>
+            <p className="mt-2 max-w-xs text-body text-chalk-2">
+              Choose any spice from the list to see its closest substitutes, ranked by flavor profile, shared chemistry and recipe evidence.
+            </p>
           </div>
         )}
       </div>

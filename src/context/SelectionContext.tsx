@@ -7,14 +7,10 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
-import type { PairingLink } from "@/types/pairing";
 
 interface SelectionState {
   selectedSpiceIds: Set<string>;
   hoveredSpiceId: string | null;
-  aiMode: boolean;
-  aiSuggestions: PairingLink[] | null;
-  isAiLoading: boolean;
 }
 
 interface SelectionActions {
@@ -23,9 +19,6 @@ interface SelectionActions {
   selectSpices: (ids: string[]) => void;
   clearSelection: () => void;
   setHovered: (id: string | null) => void;
-  toggleAiMode: () => void;
-  setAiSuggestions: (suggestions: PairingLink[] | null) => void;
-  setIsAiLoading: (loading: boolean) => void;
 }
 
 const SelectionContext = createContext<
@@ -37,11 +30,6 @@ export function SelectionProvider({ children }: { children: ReactNode }) {
     new Set()
   );
   const [hoveredSpiceId, setHoveredSpiceId] = useState<string | null>(null);
-  const [aiMode, setAiMode] = useState(false);
-  const [aiSuggestions, setAiSuggestions] = useState<PairingLink[] | null>(
-    null
-  );
-  const [isAiLoading, setIsAiLoading] = useState(false);
 
   const toggleSpice = useCallback((id: string) => {
     setSelectedSpiceIds((prev) => {
@@ -61,16 +49,10 @@ export function SelectionProvider({ children }: { children: ReactNode }) {
 
   const clearSelection = useCallback(() => {
     setSelectedSpiceIds(new Set());
-    setAiSuggestions(null);
   }, []);
 
   const setHovered = useCallback((id: string | null) => {
     setHoveredSpiceId(id);
-  }, []);
-
-  const toggleAiMode = useCallback(() => {
-    setAiMode((prev) => !prev);
-    setAiSuggestions(null);
   }, []);
 
   return (
@@ -78,16 +60,10 @@ export function SelectionProvider({ children }: { children: ReactNode }) {
       value={{
         selectedSpiceIds,
         hoveredSpiceId,
-        aiMode,
-        aiSuggestions,
-        isAiLoading,
         toggleSpice,
         selectSpices,
         clearSelection,
         setHovered,
-        toggleAiMode,
-        setAiSuggestions,
-        setIsAiLoading,
       }}
     >
       {children}

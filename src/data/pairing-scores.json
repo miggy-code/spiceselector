@@ -146,6 +146,11 @@
   },
   {
     "a": "warm.baking.cinnamon",
+    "b": "earthy.smoky.paprika",
+    "score": 0.8622
+  },
+  {
+    "a": "warm.baking.cinnamon",
     "b": "herbal.mediterranean.oregano",
     "score": 0.855
   },
@@ -461,6 +466,11 @@
   },
   {
     "a": "warm.baking.nutmeg",
+    "b": "earthy.smoky.paprika",
+    "score": 0.9305
+  },
+  {
+    "a": "warm.baking.nutmeg",
     "b": "herbal.mediterranean.oregano",
     "score": 0.9278
   },
@@ -771,6 +781,11 @@
   },
   {
     "a": "warm.baking.allspice",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5949
+  },
+  {
+    "a": "warm.baking.allspice",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5959
   },
@@ -1076,6 +1091,11 @@
   },
   {
     "a": "warm.baking.mace",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5145
+  },
+  {
+    "a": "warm.baking.mace",
     "b": "herbal.mediterranean.oregano",
     "score": 0.4948
   },
@@ -1376,6 +1396,11 @@
   },
   {
     "a": "warm.woody.clove",
+    "b": "earthy.smoky.paprika",
+    "score": 0.6097
+  },
+  {
+    "a": "warm.woody.clove",
     "b": "herbal.mediterranean.oregano",
     "score": 0.6341
   },
@@ -1671,6 +1696,11 @@
   },
   {
     "a": "warm.woody.star-anise",
+    "b": "earthy.smoky.paprika",
+    "score": 0.51
+  },
+  {
+    "a": "warm.woody.star-anise",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5126
   },
@@ -1961,6 +1991,11 @@
   },
   {
     "a": "warm.woody.cardamom",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5725
+  },
+  {
+    "a": "warm.woody.cardamom",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5761
   },
@@ -2246,6 +2281,11 @@
   },
   {
     "a": "warm.woody.cassia",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5779
+  },
+  {
+    "a": "warm.woody.cassia",
     "b": "herbal.mediterranean.oregano",
     "score": 0.575
   },
@@ -2526,6 +2566,11 @@
   },
   {
     "a": "hot-pungent.pepper.black-pepper",
+    "b": "earthy.smoky.paprika",
+    "score": 0.536
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5546
   },
@@ -2801,6 +2846,11 @@
   },
   {
     "a": "hot-pungent.pepper.white-pepper",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5364
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5631
   },
@@ -3071,6 +3121,11 @@
   },
   {
     "a": "hot-pungent.chili.cayenne",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5839
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5994
   },
@@ -3336,6 +3391,11 @@
   },
   {
     "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "earthy.smoky.paprika",
+    "score": 0.4867
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5095
   },
@@ -3596,6 +3656,11 @@
   },
   {
     "a": "hot-pungent.chili.chipotle",
+    "b": "earthy.smoky.paprika",
+    "score": 0.4971
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
     "b": "herbal.mediterranean.oregano",
     "score": 0.4989
   },
@@ -3851,6 +3916,11 @@
   },
   {
     "a": "hot-pungent.chili.gochugaru",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5423
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5483
   },
@@ -4101,6 +4171,11 @@
   },
   {
     "a": "hot-pungent.sharp.mustard-seed",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5566
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5678
   },
@@ -4346,6 +4421,11 @@
   },
   {
     "a": "hot-pungent.sharp.horseradish",
+    "b": "earthy.smoky.paprika",
+    "score": 0.7375
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
     "b": "herbal.mediterranean.oregano",
     "score": 0.7468
   },
@@ -4586,6 +4666,11 @@
   },
   {
     "a": "hot-pungent.sharp.wasabi",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5776
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5738
   },
@@ -4821,6 +4906,11 @@
   },
   {
     "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "earthy.smoky.paprika",
+    "score": 0.863
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
     "b": "herbal.mediterranean.oregano",
     "score": 0.8684
   },
@@ -5051,6 +5141,11 @@
   },
   {
     "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5083
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5145
   },
@@ -5276,6 +5371,11 @@
   },
   {
     "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "earthy.smoky.paprika",
+    "score": 0.493
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
     "b": "herbal.mediterranean.oregano",
     "score": 0.4923
   },
@@ -5496,6 +5596,11 @@
   },
   {
     "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5647
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5727
   },
@@ -5711,6 +5816,11 @@
   },
   {
     "a": "earthy.root.turmeric",
+    "b": "earthy.smoky.paprika",
+    "score": 0.6092
+  },
+  {
+    "a": "earthy.root.turmeric",
     "b": "herbal.mediterranean.oregano",
     "score": 0.6246
   },
@@ -5921,6 +6031,11 @@
   },
   {
     "a": "earthy.root.ginger",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5639
+  },
+  {
+    "a": "earthy.root.ginger",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5816
   },
@@ -6126,6 +6241,11 @@
   },
   {
     "a": "earthy.root.galangal",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5635
+  },
+  {
+    "a": "earthy.root.galangal",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5676
   },
@@ -6326,6 +6446,11 @@
   },
   {
     "a": "earthy.seed.cumin",
+    "b": "earthy.smoky.paprika",
+    "score": 0.6143
+  },
+  {
+    "a": "earthy.seed.cumin",
     "b": "herbal.mediterranean.oregano",
     "score": 0.6196
   },
@@ -6521,6 +6646,11 @@
   },
   {
     "a": "earthy.seed.coriander",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5366
+  },
+  {
+    "a": "earthy.seed.coriander",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5385
   },
@@ -6711,6 +6841,11 @@
   },
   {
     "a": "earthy.seed.caraway",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5014
+  },
+  {
+    "a": "earthy.seed.caraway",
     "b": "herbal.mediterranean.oregano",
     "score": 0.4821
   },
@@ -6896,6 +7031,11 @@
   },
   {
     "a": "earthy.seed.celery-seed",
+    "b": "earthy.smoky.paprika",
+    "score": 0.4986
+  },
+  {
+    "a": "earthy.seed.celery-seed",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5141
   },
@@ -7076,6 +7216,11 @@
   },
   {
     "a": "earthy.smoky.smoked-paprika",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5117
+  },
+  {
+    "a": "earthy.smoky.smoked-paprika",
     "b": "herbal.mediterranean.oregano",
     "score": 0.5215
   },
@@ -7251,6 +7396,11 @@
   },
   {
     "a": "earthy.smoky.sumac",
+    "b": "earthy.smoky.paprika",
+    "score": 0.6492
+  },
+  {
+    "a": "earthy.smoky.sumac",
     "b": "herbal.mediterranean.oregano",
     "score": 0.634
   },
@@ -7423,6 +7573,181 @@
     "a": "earthy.smoky.sumac",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.5908
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.mediterranean.oregano",
+    "score": 0.96
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.mediterranean.thyme",
+    "score": 0.9394
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.mediterranean.rosemary",
+    "score": 0.9265
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.mediterranean.marjoram",
+    "score": 0.6791
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.mediterranean.sage",
+    "score": 0.6249
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.asian.lemongrass",
+    "score": 0.6026
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.asian.thai-basil",
+    "score": 0.5376
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.asian.kaffir-lime-leaf",
+    "score": 0.5545
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.asian.shiso",
+    "score": 0.6564
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.basil",
+    "score": 0.9432
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.parsley",
+    "score": 0.9365
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.cilantro",
+    "score": 0.9454
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.dill",
+    "score": 0.9132
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.bay-leaf",
+    "score": 0.4985
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.tarragon",
+    "score": 0.6193
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.5134
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "floral.rose-family.saffron",
+    "score": 0.5881
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "floral.delicate.lavender",
+    "score": 0.5831
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "floral.delicate.elderflower",
+    "score": 0.5084
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.5129
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.5252
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.499
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.6056
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.5955
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.5089
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.5612
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.5035
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.5032
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.allium.chive",
+    "score": 0.8015
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.5322
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.4983
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.5671
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.8731
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.6485
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.5418
   },
   {
     "a": "herbal.mediterranean.oregano",

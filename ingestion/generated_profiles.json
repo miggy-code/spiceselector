@@ -510,7 +510,7 @@
     "earthiness": 45,
     "florality": 30,
     "heat": 2,
-    "family": "Citrus-Bright",
+    "family": "citrus-bright",
     "subfamilies": [
       "Fruity",
       "Sour",
@@ -1172,167 +1172,169 @@
         "name": "(+)-LINALOOL",
         "role": "Imparts floral, sweet, and slightly woody nuances to the overall aroma."
       }
-    ]
-  },
-  "Bay leaves": {
-    "id": "bay-leaves",
-    "name": "Bay leaves",
-    "botanical_name": "Laurus nobilis",
-    "botanical_family": "Lauraceae",
-    "common_names": [
-      "Bayleaf",
-      "Sweet Bay",
-      "Grecian Laurel",
-      "Bay Laurel",
-      "Laurel",
-      "Bay"
     ],
-    "origin": "Mediterranean",
-    "description": "Bay leaves impart a subtle, aromatic, and slightly bitter-woody flavor with hints of eucalyptus and citrus. They contribute a foundational herbal note that deepens savory dishes.",
-    "warmth": 45,
-    "brightness": 35,
-    "earthiness": 60,
-    "florality": 25,
-    "heat": 2,
-    "family": "herbal",
-    "subfamilies": [
-      "woody",
-      "camphoraceous",
-      "citrusy"
-    ],
-    "heat_level": "mild",
-    "intensity": 50,
-    "commonality": 75,
-    "cuisines": [
+    "merged_profiles": [
       {
-        "cuisine": "French",
-        "frequency": "common",
-        "typical_quantity": "1-2 leaves per stew/soup"
-      },
-      {
-        "cuisine": "Mediterranean",
-        "frequency": "common",
-        "typical_quantity": "1-2 leaves per dish"
-      },
-      {
-        "cuisine": "Indian",
-        "frequency": "occasional",
-        "typical_quantity": "1-2 leaves in rice or curries"
-      },
-      {
-        "cuisine": "Caribbean",
-        "frequency": "occasional",
-        "typical_quantity": "1 leaf per pot of beans/rice"
-      },
-      {
-        "cuisine": "American",
-        "frequency": "common",
-        "typical_quantity": "1-2 leaves per pot roast/soup"
-      }
-    ],
-    "top_pairings": [
-      {
-        "spice": "Thyme",
-        "affinity": "classic",
-        "note": "A quintessential pairing, both contribute earthy, woody, and slightly camphoraceous notes, forming the backbone of many savory dishes.",
+        "id": "bay-leaves",
+        "name": "Bay leaves",
+        "botanical_name": "Laurus nobilis",
+        "botanical_family": "Lauraceae",
+        "common_names": [
+          "Bayleaf",
+          "Sweet Bay",
+          "Grecian Laurel",
+          "Bay Laurel",
+          "Laurel",
+          "Bay"
+        ],
+        "origin": "Mediterranean",
+        "description": "Bay leaves impart a subtle, aromatic, and slightly bitter-woody flavor with hints of eucalyptus and citrus. They contribute a foundational herbal note that deepens savory dishes.",
+        "warmth": 45,
+        "brightness": 35,
+        "earthiness": 60,
+        "florality": 25,
+        "heat": 2,
+        "family": "herbal",
+        "subfamilies": [
+          "woody",
+          "camphoraceous",
+          "citrusy"
+        ],
+        "heat_level": "mild",
+        "intensity": 50,
+        "commonality": 75,
         "cuisines": [
-          "French",
-          "Mediterranean",
-          "American"
+          {
+            "cuisine": "French",
+            "frequency": "common",
+            "typical_quantity": "1-2 leaves per stew/soup"
+          },
+          {
+            "cuisine": "Mediterranean",
+            "frequency": "common",
+            "typical_quantity": "1-2 leaves per dish"
+          },
+          {
+            "cuisine": "Indian",
+            "frequency": "occasional",
+            "typical_quantity": "1-2 leaves in rice or curries"
+          },
+          {
+            "cuisine": "Caribbean",
+            "frequency": "occasional",
+            "typical_quantity": "1 leaf per pot of beans/rice"
+          },
+          {
+            "cuisine": "American",
+            "frequency": "common",
+            "typical_quantity": "1-2 leaves per pot roast/soup"
+          }
+        ],
+        "top_pairings": [
+          {
+            "spice": "Thyme",
+            "affinity": "classic",
+            "note": "A quintessential pairing, both contribute earthy, woody, and slightly camphoraceous notes, forming the backbone of many savory dishes.",
+            "cuisines": [
+              "French",
+              "Mediterranean",
+              "American"
+            ]
+          },
+          {
+            "spice": "Rosemary",
+            "affinity": "classic",
+            "note": "Their shared piney, woody, and slightly peppery notes create a robust herbal foundation, excellent for roasted meats and root vegetables.",
+            "cuisines": [
+              "Mediterranean",
+              "Italian",
+              "French"
+            ]
+          },
+          {
+            "spice": "Garlic powder",
+            "affinity": "complementary",
+            "note": "The pungent, savory depth of garlic complements the subtle herbal warmth of bay leaf, enhancing the overall umami of stews and braises.",
+            "cuisines": [
+              "Global"
+            ]
+          },
+          {
+            "spice": "Black pepper",
+            "affinity": "classic",
+            "note": "The sharp, piquant notes of black pepper provide a counterpoint to bay leaf's more mellow, earthy profile, adding complexity and warmth.",
+            "cuisines": [
+              "Global"
+            ]
+          },
+          {
+            "spice": "Parsley",
+            "affinity": "classic",
+            "note": "Often used together in bouquet garni, parsley offers fresh, green notes that lift the deeper, more resonant qualities of bay leaf.",
+            "cuisines": [
+              "French",
+              "Mediterranean"
+            ]
+          },
+          {
+            "spice": "Cinnamon",
+            "affinity": "complementary",
+            "note": "While less common in Western savory, a touch of cinnamon can add a sweet, woody warmth that harmonizes with bay leaf, especially in slow-cooked meat dishes.",
+            "cuisines": [
+              "Indian",
+              "Middle Eastern"
+            ]
+          },
+          {
+            "spice": "Nutmeg",
+            "affinity": "complementary",
+            "note": "The warm, slightly sweet, and musky notes of nutmeg blend well with the earthy-herbal character of bay leaf, often found in creamy sauces or braises.",
+            "cuisines": [
+              "French",
+              "Caribbean"
+            ]
+          }
+        ],
+        "substitutes": [
+          {
+            "spice": "Thyme",
+            "similarity": 0.65,
+            "notes": "Offers similar earthy, woody, and slightly camphoraceous notes, but lacks the specific eucalyptus-citrus edge of bay leaf."
+          },
+          {
+            "spice": "Oregano",
+            "similarity": 0.5,
+            "notes": "Provides an herbal, somewhat pungent flavor, but is generally more assertive and peppery than bay leaf, with less of the subtle woody undertone."
+          },
+          {
+            "spice": "Rosemary",
+            "similarity": 0.6,
+            "notes": "Shares piney and woody notes, making it a decent substitute, especially for roasted dishes, but it is more resinous and strong-flavored than bay leaf."
+          },
+          {
+            "spice": "Juniper berries",
+            "similarity": 0.4,
+            "notes": "Can offer a similar piney, slightly citrusy and woody aroma, particularly in game dishes, but with a more pronounced gin-like flavor."
+          }
+        ],
+        "key_compounds": [
+          {
+            "name": "(+)-LINALOOL",
+            "role": "Contributes floral, sweet, and slightly woody notes, adding complexity to the overall aroma."
+          },
+          {
+            "name": "(+)-LIMONENE",
+            "role": "Responsible for bright, citrusy, and fresh notes, balancing the earthier compounds."
+          },
+          {
+            "name": "(-)-ALPHA-PINENE",
+            "role": "Imparts piney, woody, and slightly camphoraceous aromas, characteristic of many herbal spices."
+          },
+          {
+            "name": "(+)-ACTINODAPHNINE",
+            "role": "A less common alkaloid, contributing to the subtle bitter and complex background notes."
+          }
         ]
-      },
-      {
-        "spice": "Rosemary",
-        "affinity": "classic",
-        "note": "Their shared piney, woody, and slightly peppery notes create a robust herbal foundation, excellent for roasted meats and root vegetables.",
-        "cuisines": [
-          "Mediterranean",
-          "Italian",
-          "French"
-        ]
-      },
-      {
-        "spice": "Garlic powder",
-        "affinity": "complementary",
-        "note": "The pungent, savory depth of garlic complements the subtle herbal warmth of bay leaf, enhancing the overall umami of stews and braises.",
-        "cuisines": [
-          "Global"
-        ]
-      },
-      {
-        "spice": "Black pepper",
-        "affinity": "classic",
-        "note": "The sharp, piquant notes of black pepper provide a counterpoint to bay leaf's more mellow, earthy profile, adding complexity and warmth.",
-        "cuisines": [
-          "Global"
-        ]
-      },
-      {
-        "spice": "Parsley",
-        "affinity": "classic",
-        "note": "Often used together in bouquet garni, parsley offers fresh, green notes that lift the deeper, more resonant qualities of bay leaf.",
-        "cuisines": [
-          "French",
-          "Mediterranean"
-        ]
-      },
-      {
-        "spice": "Cinnamon",
-        "affinity": "complementary",
-        "note": "While less common in Western savory, a touch of cinnamon can add a sweet, woody warmth that harmonizes with bay leaf, especially in slow-cooked meat dishes.",
-        "cuisines": [
-          "Indian",
-          "Middle Eastern"
-        ]
-      },
-      {
-        "spice": "Nutmeg",
-        "affinity": "complementary",
-        "note": "The warm, slightly sweet, and musky notes of nutmeg blend well with the earthy-herbal character of bay leaf, often found in creamy sauces or braises.",
-        "cuisines": [
-          "French",
-          "Caribbean"
-        ]
-      }
-    ],
-    "substitutes": [
-      {
-        "spice": "Thyme",
-        "similarity": 0.65,
-        "notes": "Offers similar earthy, woody, and slightly camphoraceous notes, but lacks the specific eucalyptus-citrus edge of bay leaf."
-      },
-      {
-        "spice": "Oregano",
-        "similarity": 0.5,
-        "notes": "Provides an herbal, somewhat pungent flavor, but is generally more assertive and peppery than bay leaf, with less of the subtle woody undertone."
-      },
-      {
-        "spice": "Rosemary",
-        "similarity": 0.6,
-        "notes": "Shares piney and woody notes, making it a decent substitute, especially for roasted dishes, but it is more resinous and strong-flavored than bay leaf."
-      },
-      {
-        "spice": "Juniper berries",
-        "similarity": 0.4,
-        "notes": "Can offer a similar piney, slightly citrusy and woody aroma, particularly in game dishes, but with a more pronounced gin-like flavor."
-      }
-    ],
-    "key_compounds": [
-      {
-        "name": "(+)-LINALOOL",
-        "role": "Contributes floral, sweet, and slightly woody notes, adding complexity to the overall aroma."
-      },
-      {
-        "name": "(+)-LIMONENE",
-        "role": "Responsible for bright, citrusy, and fresh notes, balancing the earthier compounds."
-      },
-      {
-        "name": "(-)-ALPHA-PINENE",
-        "role": "Imparts piney, woody, and slightly camphoraceous aromas, characteristic of many herbal spices."
-      },
-      {
-        "name": "(+)-ACTINODAPHNINE",
-        "role": "A less common alkaloid, contributing to the subtle bitter and complex background notes."
       }
     ]
   },
@@ -1530,7 +1532,7 @@
     "earthiness": 70,
     "florality": 25,
     "heat": 5,
-    "family": "Earthy",
+    "family": "earthy",
     "subfamilies": [
       "Anise-like",
       "Herbaceous",
@@ -1852,7 +1854,7 @@
     "earthiness": 65,
     "florality": 10,
     "heat": 5,
-    "family": "Warm",
+    "family": "warm",
     "subfamilies": [
       "Sweet",
       "Pungent",
@@ -2008,7 +2010,7 @@
     "earthiness": 50,
     "florality": 5,
     "heat": 75,
-    "family": "Hot-Pungent",
+    "family": "hot-pungent",
     "subfamilies": [
       "Capsicum",
       "Chili Powder"
@@ -2178,7 +2180,7 @@
     "earthiness": 70,
     "florality": 20,
     "heat": 0,
-    "family": "Earthy",
+    "family": "earthy",
     "subfamilies": [
       "Herbaceous",
       "Umami",
@@ -2332,7 +2334,7 @@
     "earthiness": 25,
     "florality": 90,
     "heat": 0,
-    "family": "Floral",
+    "family": "floral",
     "subfamilies": [
       "Herbal",
       "Fruity"
@@ -2492,7 +2494,7 @@
     "earthiness": 80,
     "florality": 15,
     "heat": 50,
-    "family": "Hot-pungent",
+    "family": "hot-pungent",
     "subfamilies": [
       "Savory blend",
       "Tex-Mex",
@@ -3307,7 +3309,7 @@
     "earthiness": 35,
     "florality": 25,
     "heat": 0,
-    "family": "Herbal",
+    "family": "herbal",
     "subfamilies": [
       "Fresh herbs",
       "Anise",
@@ -3786,7 +3788,7 @@
     "earthiness": 55,
     "florality": 20,
     "heat": 30,
-    "family": "Ginger Family",
+    "family": "earthy",
     "subfamilies": [
       "Aromatic Rhizomes",
       "Pungent Spices",
@@ -3956,7 +3958,7 @@
     "earthiness": 80,
     "florality": 5,
     "heat": 10,
-    "family": "Umami-Savory",
+    "family": "umami-savory",
     "subfamilies": [
       "Alliaceous",
       "Pungent",
@@ -4302,7 +4304,7 @@
     "earthiness": 40,
     "florality": 10,
     "heat": 55,
-    "family": "Hot-Pungent",
+    "family": "hot-pungent",
     "subfamilies": [
       "Chili Pepper",
       "Fruity Chili",
@@ -4478,7 +4480,7 @@
     "earthiness": 20,
     "florality": 75,
     "heat": 0,
-    "family": "Floral",
+    "family": "floral",
     "subfamilies": [
       "Tart",
       "Fruity",
@@ -4961,7 +4963,7 @@
     "earthiness": 55,
     "florality": 20,
     "heat": 65,
-    "family": "Hot-Pungent",
+    "family": "hot-pungent",
     "subfamilies": [
       "Peppery",
       "Aromatic",
@@ -5624,7 +5626,7 @@
     "earthiness": 70,
     "florality": 5,
     "heat": 15,
-    "family": "Umami-Savory",
+    "family": "umami-savory",
     "subfamilies": [
       "Allium-like",
       "Peppery",
@@ -5804,7 +5806,7 @@
     "earthiness": 65,
     "florality": 30,
     "heat": 5,
-    "family": "Warm",
+    "family": "warm",
     "subfamilies": [
       "Woody",
       "Sweet",
@@ -5966,7 +5968,7 @@
     "earthiness": 70,
     "florality": 5,
     "heat": 0,
-    "family": "Umami-savory",
+    "family": "umami-savory",
     "subfamilies": [
       "Alliaceous",
       "Pungent",
@@ -6285,7 +6287,7 @@
     ]
   },
   "Paprika": {
-    "id": "paprika",
+    "id": "sweet-paprika",
     "name": "Paprika",
     "botanical_name": "Capsicum annuum",
     "botanical_family": "Solanaceae",
@@ -6304,7 +6306,7 @@
     "earthiness": 70,
     "florality": 10,
     "heat": 15,
-    "family": "Earthy",
+    "family": "earthy",
     "subfamilies": [
       "Sweet",
       "Fruity",
@@ -6456,7 +6458,8 @@
         "name": "2,3-DIMETHYL-PYRAZINE",
         "role": "Contributes to roasted, nutty, and earthy undertones"
       }
-    ]
+    ],
+    "legacy_id": "paprika"
   },
   "Poppy seed": {
     "id": "poppy-seed",
@@ -6474,7 +6477,7 @@
     "earthiness": 70,
     "florality": 10,
     "heat": 0,
-    "family": "Nutty",
+    "family": "umami-savory",
     "subfamilies": [
       "Savory",
       "Earthy"
@@ -6810,7 +6813,7 @@
     "earthiness": 40,
     "florality": 20,
     "heat": 5,
-    "family": "Herbal",
+    "family": "herbal",
     "subfamilies": [
       "Piney",
       "Camphoraceous",
@@ -7146,7 +7149,7 @@
     "earthiness": 70,
     "florality": 10,
     "heat": 5,
-    "family": "Herbal",
+    "family": "herbal",
     "subfamilies": [
       "Woody Herbs",
       "Savory Herbs"
@@ -7630,7 +7633,7 @@
     "earthiness": 92,
     "florality": 10,
     "heat": 15,
-    "family": "Chili Pepper",
+    "family": "earthy",
     "subfamilies": [
       "Smoked",
       "Sweet",
@@ -7804,7 +7807,7 @@
     "earthiness": 30,
     "florality": 20,
     "heat": 5,
-    "family": "Warm",
+    "family": "warm",
     "subfamilies": [
       "Licorice",
       "Sweet Spice",
@@ -9431,5 +9434,2705 @@
         "role": "Offers woody, herbaceous, and slightly peppery undertones."
       }
     ]
+  },
+  "Horseradish": {
+    "id": "horseradish",
+    "name": "Horseradish",
+    "botanical_name": "Armoracia rusticana",
+    "botanical_family": "Brassicaceae",
+    "common_names": [
+      "Horseradish root"
+    ],
+    "origin": "Central and Eastern Europe",
+    "description": "Freshly grated horseradish is sharply pungent and sinus-clearing, with a green, mustard-like bite that fades quickly after grating. Heat drops markedly with cooking.",
+    "warmth": 15,
+    "brightness": 48,
+    "earthiness": 18,
+    "florality": 4,
+    "heat": 78,
+    "family": "hot-pungent",
+    "subfamilies": [
+      "pungent",
+      "mustard-like",
+      "root"
+    ],
+    "heat_level": "hot",
+    "intensity": 78,
+    "commonality": 58,
+    "cuisines": [
+      {
+        "cuisine": "Central European",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp freshly grated per 4 servings"
+      },
+      {
+        "cuisine": "British",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp prepared horseradish per 4 servings"
+      },
+      {
+        "cuisine": "Jewish Ashkenazi",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp prepared horseradish per 4 servings"
+      },
+      {
+        "cuisine": "Scandinavian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "American",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Mustard Seed",
+        "affinity": "classic",
+        "note": "Both bring sharp mustard-family pungency; mustard adds a rounder, slower heat.",
+        "cuisines": [
+          "Central European",
+          "British"
+        ]
+      },
+      {
+        "spice": "Dill",
+        "affinity": "complementary",
+        "note": "Fresh herbal lift softens the root\u2019s direct bite.",
+        "cuisines": [
+          "Scandinavian",
+          "Central European"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Adds dry, lingering warmth alongside horseradish\u2019s fleeting nasal heat.",
+        "cuisines": [
+          "British",
+          "American"
+        ]
+      },
+      {
+        "spice": "Garlic Powder",
+        "affinity": "complementary",
+        "note": "Savory sulfur notes round out the sharp root flavor.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Cayenne",
+        "affinity": "surprising",
+        "note": "A small amount adds tongue heat while horseradish supplies nasal pungency.",
+        "cuisines": [
+          "American"
+        ]
+      },
+      {
+        "spice": "Chive",
+        "affinity": "complementary",
+        "note": "Mild allium sweetness bridges the root with creamy sauces.",
+        "cuisines": [
+          "Central European"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "surprising",
+        "note": "Citrusy seed notes bring lift to rich horseradish sauces.",
+        "cuisines": [
+          "Global"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Wasabi",
+        "similarity": 0.72,
+        "notes": "Shares volatile mustard-family pungency; its aroma and finish differ."
+      },
+      {
+        "spice": "Mustard Seed",
+        "similarity": 0.55,
+        "notes": "Provides sharpness but lacks horseradish\u2019s fleeting, sinus-clearing character."
+      },
+      {
+        "spice": "Black Pepper",
+        "similarity": 0.28,
+        "notes": "Adds warmth without the same nasal pungency."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Butyl isothiocyanate",
+        "role": "FlavorDB2 exact-ingredient record lists this pungent sulfur compound; it is consistent with horseradish\u2019s sharp mustard-like aroma."
+      },
+      {
+        "name": "Phenethyl isothiocyanate",
+        "role": "Listed in the exact FlavorDB2 cache record with horseradish, watercress, green, and bitter descriptors."
+      },
+      {
+        "name": "Methyl isothiocyanate",
+        "role": "Listed in the exact FlavorDB2 record with horseradish/mustard pungency descriptors."
+      },
+      {
+        "name": "Allyl isothiocyanate",
+        "role": "Culinary literature associates this volatile isothiocyanate with freshly disrupted horseradish; it is not asserted from a local USDA/FooDB record."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 355 (exact match)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Wasabi": {
+    "id": "wasabi",
+    "name": "Wasabi",
+    "botanical_name": "Eutrema japonicum",
+    "botanical_family": "Brassicaceae",
+    "common_names": [
+      "Japanese horseradish"
+    ],
+    "origin": "Japan",
+    "description": "Fresh wasabi is green, vegetal, and intensely nasal, with a brief pungency that recedes quickly rather than lingering like chili heat. Commercial pastes vary and often contain horseradish.",
+    "warmth": 12,
+    "brightness": 55,
+    "earthiness": 16,
+    "florality": 8,
+    "heat": 72,
+    "family": "hot-pungent",
+    "subfamilies": [
+      "pungent",
+      "mustard-like",
+      "green"
+    ],
+    "heat_level": "hot",
+    "intensity": 72,
+    "commonality": 42,
+    "cuisines": [
+      {
+        "cuisine": "Japanese",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp freshly grated per 4 servings"
+      },
+      {
+        "cuisine": "Korean",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Contemporary Japanese fusion",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Global seafood cookery",
+        "frequency": "rare",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Ginger",
+        "affinity": "classic",
+        "note": "Fresh aromatic heat complements wasabi\u2019s green pungency in condiments.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Citrus Zest",
+        "affinity": "complementary",
+        "note": "Bright oils sharpen the fresh vegetal impression.",
+        "cuisines": [
+          "Japanese",
+          "Contemporary Japanese fusion"
+        ]
+      },
+      {
+        "spice": "Dill",
+        "affinity": "surprising",
+        "note": "Anise-like herbal notes work with seafood and creamy sauces.",
+        "cuisines": [
+          "Global seafood cookery"
+        ]
+      },
+      {
+        "spice": "Mustard Seed",
+        "affinity": "complementary",
+        "note": "Shares mustard-family sharpness while adding a slower, rounder bite.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Adds lingering warmth under wasabi\u2019s quick nasal lift.",
+        "cuisines": [
+          "Global seafood cookery"
+        ]
+      },
+      {
+        "spice": "Chive",
+        "affinity": "complementary",
+        "note": "Gentle onion notes round wasabi in dips and dressings.",
+        "cuisines": [
+          "Contemporary Japanese fusion"
+        ]
+      },
+      {
+        "spice": "Horseradish",
+        "affinity": "classic",
+        "note": "A close pungency analogue; use carefully because the combined nasal heat can dominate.",
+        "cuisines": [
+          "Japanese"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Horseradish",
+        "similarity": 0.78,
+        "notes": "Similar fleeting sinus pungency; lacks fresh wasabi\u2019s greener profile."
+      },
+      {
+        "spice": "Mustard Seed",
+        "similarity": 0.48,
+        "notes": "Can replace some sharpness but is less aromatic and less nasal."
+      },
+      {
+        "spice": "Ginger",
+        "similarity": 0.32,
+        "notes": "Provides fresh heat with a warmer, less pungent character."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Phenethyl isothiocyanate",
+        "role": "The exact FlavorDB2 cache record lists this with horseradish/watercress-like, green, and bitter descriptors."
+      },
+      {
+        "name": "3-(Methylthio)propyl isothiocyanate",
+        "role": "Listed in the exact FlavorDB2 record with horseradish, earthy, vegetable, and sulfurous descriptors."
+      },
+      {
+        "name": "4-Pentenyl isothiocyanate",
+        "role": "Listed in the exact FlavorDB2 record with horseradish and mustard descriptors."
+      },
+      {
+        "name": "6-Methylsulfinylhexyl isothiocyanate",
+        "role": "Culinary literature identifies this as a characteristic wasabi pungency compound; it is not a local USDA/FooDB record."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 361 (exact match)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Mahlab": {
+    "id": "mahlab",
+    "name": "Mahlab",
+    "botanical_name": "Prunus mahaleb",
+    "botanical_family": "Rosaceae",
+    "common_names": [
+      "Mahleb",
+      "Mahalab",
+      "St Lucie cherry kernel"
+    ],
+    "origin": "Eastern Mediterranean",
+    "description": "Mahlab is a finely ground cherry kernel spice with a sweet almond-like aroma, gentle fruitiness, and a faint bitter edge. Its fragrance is strongest in baked goods and fades with prolonged cooking.",
+    "warmth": 48,
+    "brightness": 42,
+    "earthiness": 18,
+    "florality": 58,
+    "heat": 0,
+    "family": "sweet",
+    "subfamilies": [
+      "sweet",
+      "fruity",
+      "nutty"
+    ],
+    "heat_level": "mild",
+    "intensity": 48,
+    "commonality": 23,
+    "cuisines": [
+      {
+        "cuisine": "Levantine",
+        "frequency": "common",
+        "typical_quantity": "0.5-1 tsp ground per 4 servings"
+      },
+      {
+        "cuisine": "Greek",
+        "frequency": "common",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Turkish",
+        "frequency": "common",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Armenian",
+        "frequency": "occasional",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Cypriot",
+        "frequency": "occasional",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Mace",
+        "affinity": "complementary",
+        "note": "Warm floral sweetness supports mahlab\u2019s almond-cherry aroma.",
+        "cuisines": [
+          "Levantine",
+          "Greek"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "classic",
+        "note": "Adds citrusy perfume to enriched breads and pastries.",
+        "cuisines": [
+          "Greek",
+          "Turkish"
+        ]
+      },
+      {
+        "spice": "Anise Seed",
+        "affinity": "complementary",
+        "note": "Sweet licorice notes broaden the kernel\u2019s bakery aroma.",
+        "cuisines": [
+          "Levantine",
+          "Armenian"
+        ]
+      },
+      {
+        "spice": "Cinnamon",
+        "affinity": "complementary",
+        "note": "Familiar warm sweetness suits festive breads and cookies.",
+        "cuisines": [
+          "Turkish",
+          "Greek"
+        ]
+      },
+      {
+        "spice": "Nutmeg",
+        "affinity": "complementary",
+        "note": "Adds warm, woody sweetness without masking mahlab.",
+        "cuisines": [
+          "Greek",
+          "Cypriot"
+        ]
+      },
+      {
+        "spice": "Rose",
+        "affinity": "surprising",
+        "note": "Floral water or petals emphasize mahlab\u2019s fragrant, confectionery side.",
+        "cuisines": [
+          "Levantine"
+        ]
+      },
+      {
+        "spice": "Vanilla",
+        "affinity": "complementary",
+        "note": "Rounds its almond-like aroma in sweet doughs.",
+        "cuisines": [
+          "Global baking"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Almond",
+        "similarity": 0.62,
+        "notes": "Provides a related nutty aroma but lacks mahlab\u2019s cherry-kernel perfume."
+      },
+      {
+        "spice": "Mace",
+        "similarity": 0.48,
+        "notes": "Adds warm floral sweetness but is less fruity and almond-like."
+      },
+      {
+        "spice": "Anise Seed",
+        "similarity": 0.38,
+        "notes": "Offers sweet aromatic lift with a distinctly licorice direction."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Benzaldehyde",
+        "role": "Culinary literature associates benzaldehyde with mahlab\u2019s almond-like kernel aroma; no local compound record is available."
+      },
+      {
+        "name": "Coumarin",
+        "role": "A literature-based association with the sweet, hay-like aroma; not present in the local compound context."
+      },
+      {
+        "name": "Cyanogenic glycosides",
+        "role": "Present in stone-fruit kernels as a food-safety-relevant compound class; this profile does not treat them as desirable flavor ingredients."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Kaffir Lime Leaf": {
+    "id": "kaffir-lime-leaf",
+    "name": "Kaffir Lime Leaf",
+    "botanical_name": "Citrus hystrix",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Makrut lime leaf",
+      "Thai lime leaf"
+    ],
+    "origin": "Southeast Asia",
+    "description": "Makrut lime leaves have a vivid, floral citrus aroma with green, slightly resinous notes. The thick leaves are usually bruised or finely sliced to perfume broths, curries, and salads.",
+    "warmth": 18,
+    "brightness": 88,
+    "earthiness": 12,
+    "florality": 48,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "citrus",
+      "floral",
+      "green"
+    ],
+    "heat_level": "mild",
+    "intensity": 76,
+    "commonality": 39,
+    "cuisines": [
+      {
+        "cuisine": "Thai",
+        "frequency": "common",
+        "typical_quantity": "2-4 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Lao",
+        "frequency": "common",
+        "typical_quantity": "2-4 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Cambodian",
+        "frequency": "common",
+        "typical_quantity": "2-4 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Indonesian",
+        "frequency": "occasional",
+        "typical_quantity": "2-4 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Malaysian",
+        "frequency": "occasional",
+        "typical_quantity": "2-4 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Vietnamese",
+        "frequency": "occasional",
+        "typical_quantity": "1-3 finely sliced leaves per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Lemongrass",
+        "affinity": "classic",
+        "note": "Both give Southeast Asian dishes layered citrus fragrance.",
+        "cuisines": [
+          "Thai",
+          "Lao"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Warm root notes deepen the leaf\u2019s bright aroma in broths.",
+        "cuisines": [
+          "Thai",
+          "Cambodian"
+        ]
+      },
+      {
+        "spice": "Galangal",
+        "affinity": "classic",
+        "note": "Peppery, piney rhizome notes build a classic aromatic base.",
+        "cuisines": [
+          "Thai",
+          "Lao"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "Heat contrasts with the leaf\u2019s floral citrus lift.",
+        "cuisines": [
+          "Thai",
+          "Indonesian"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Citrusy seed and leafy notes harmonize with the lime perfume.",
+        "cuisines": [
+          "Thai",
+          "Cambodian"
+        ]
+      },
+      {
+        "spice": "Basil",
+        "affinity": "complementary",
+        "note": "Green herbal sweetness supports the leaf in salads and curries.",
+        "cuisines": [
+          "Vietnamese",
+          "Thai"
+        ]
+      },
+      {
+        "spice": "Ginger (ground)",
+        "affinity": "surprising",
+        "note": "A dry pantry substitute direction that supplies warmth beneath citrus notes.",
+        "cuisines": [
+          "Global"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Lime Zest",
+        "similarity": 0.61,
+        "notes": "Supplies citrus oils but misses the leaf\u2019s floral, green complexity."
+      },
+      {
+        "spice": "Lemongrass",
+        "similarity": 0.47,
+        "notes": "Adds citrusy herbal fragrance with a more grassy, lemon-like character."
+      },
+      {
+        "spice": "Lemon Zest",
+        "similarity": 0.38,
+        "notes": "Offers citrus brightness but is less floral and less Southeast Asian in character."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Citronellal",
+        "role": "Culinary literature commonly associates citronellal-rich essential oil with the leaf\u2019s lemony, floral aroma; not a local record."
+      },
+      {
+        "name": "Linalool",
+        "role": "A literature-based contributor to floral citrus fragrance; no local compound record is available."
+      },
+      {
+        "name": "\u03b2-Citronellol",
+        "role": "Reported in citrus leaf oils and consistent with floral aroma; not a local compound record."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Shiso": {
+    "id": "shiso",
+    "name": "Shiso",
+    "botanical_name": "Perilla frutescens",
+    "botanical_family": "Lamiaceae",
+    "common_names": [
+      "Perilla leaf",
+      "Japanese basil"
+    ],
+    "origin": "East Asia",
+    "description": "Shiso leaves are aromatic and green, combining minty, basil-like, and cinnamon-clove hints with a fresh vegetal finish. Red and green cultivars differ in color and aroma.",
+    "warmth": 22,
+    "brightness": 62,
+    "earthiness": 20,
+    "florality": 42,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "herbal",
+      "green",
+      "minty"
+    ],
+    "heat_level": "mild",
+    "intensity": 59,
+    "commonality": 36,
+    "cuisines": [
+      {
+        "cuisine": "Japanese",
+        "frequency": "common",
+        "typical_quantity": "4-8 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Korean",
+        "frequency": "common",
+        "typical_quantity": "4-8 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Chinese",
+        "frequency": "occasional",
+        "typical_quantity": "4-8 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Vietnamese",
+        "frequency": "occasional",
+        "typical_quantity": "4-8 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Contemporary East Asian fusion",
+        "frequency": "occasional",
+        "typical_quantity": "4-8 leaves per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Ginger",
+        "affinity": "classic",
+        "note": "Fresh heat complements shiso\u2019s cool, green aroma.",
+        "cuisines": [
+          "Japanese",
+          "Korean"
+        ]
+      },
+      {
+        "spice": "Citrus Zest",
+        "affinity": "complementary",
+        "note": "Bright peel oils reinforce its fresh, aromatic character.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "Adds warmth to herb-forward Korean preparations.",
+        "cuisines": [
+          "Korean"
+        ]
+      },
+      {
+        "spice": "Sesame Seed",
+        "affinity": "classic",
+        "note": "Nutty richness balances the leaf\u2019s green lift.",
+        "cuisines": [
+          "Korean",
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Garlic Powder",
+        "affinity": "complementary",
+        "note": "Savory depth anchors shiso in marinades and sauces.",
+        "cuisines": [
+          "Korean"
+        ]
+      },
+      {
+        "spice": "Basil",
+        "affinity": "surprising",
+        "note": "Shares sweet herbal notes, though shiso is more minty and spicy.",
+        "cuisines": [
+          "Contemporary East Asian fusion"
+        ]
+      },
+      {
+        "spice": "Sumac",
+        "affinity": "surprising",
+        "note": "Tartness contrasts with shiso\u2019s aromatic green flavor.",
+        "cuisines": [
+          "Contemporary East Asian fusion"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Basil",
+        "similarity": 0.55,
+        "notes": "Similar fresh herbal use but lacks shiso\u2019s minty, clove-like notes."
+      },
+      {
+        "spice": "Mint",
+        "similarity": 0.43,
+        "notes": "Matches cool green lift but is sweeter and less savory."
+      },
+      {
+        "spice": "Thai basil",
+        "similarity": 0.39,
+        "notes": "Adds anise-like herbal fragrance with a different spice profile."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Perillaldehyde",
+        "role": "Culinary literature identifies perillaldehyde as a major aroma compound in some shiso cultivars; no local compound record is available."
+      },
+      {
+        "name": "Perilla ketone",
+        "role": "A literature-reported constituent of some varieties; composition varies by cultivar and chemotype."
+      },
+      {
+        "name": "Limonene",
+        "role": "Reported in perilla volatile oils and consistent with citrus-like notes; not a local record."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Parsley": {
+    "id": "parsley",
+    "name": "Parsley",
+    "botanical_name": "Petroselinum crispum",
+    "botanical_family": "Apiaceae",
+    "common_names": [
+      "Garden parsley",
+      "Flat-leaf parsley",
+      "Curly parsley"
+    ],
+    "origin": "Mediterranean region",
+    "description": "Parsley is clean, green, and gently peppery, with a fresh leafy aroma and restrained bitterness. Flat-leaf parsley is more assertive than curly parsley and is used both as a herb and a finishing garnish.",
+    "warmth": 12,
+    "brightness": 62,
+    "earthiness": 18,
+    "florality": 18,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "herbal",
+      "leafy",
+      "green"
+    ],
+    "heat_level": "mild",
+    "intensity": 38,
+    "commonality": 91,
+    "cuisines": [
+      {
+        "cuisine": "Mediterranean",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Middle Eastern",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "French",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Italian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "North African",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Latin American",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp chopped per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Garlic Powder",
+        "affinity": "classic",
+        "note": "Savory allium notes make a familiar herb-garlic base.",
+        "cuisines": [
+          "Mediterranean",
+          "Middle Eastern"
+        ]
+      },
+      {
+        "spice": "Thyme",
+        "affinity": "classic",
+        "note": "Woody herbal notes deepen parsley in stocks and stews.",
+        "cuisines": [
+          "French",
+          "Mediterranean"
+        ]
+      },
+      {
+        "spice": "Dill",
+        "affinity": "complementary",
+        "note": "Fresh, slightly anise-like notes work in salads and sauces.",
+        "cuisines": [
+          "Middle Eastern",
+          "Mediterranean"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Citrusy green notes complement parsley in herb sauces.",
+        "cuisines": [
+          "Middle Eastern",
+          "North African"
+        ]
+      },
+      {
+        "spice": "Lemon Zest",
+        "affinity": "classic",
+        "note": "Citrus oils enliven parsley\u2019s fresh leafy flavor.",
+        "cuisines": [
+          "Mediterranean"
+        ]
+      },
+      {
+        "spice": "Chive",
+        "affinity": "complementary",
+        "note": "Mild onion notes add depth without overpowering the leaves.",
+        "cuisines": [
+          "French"
+        ]
+      },
+      {
+        "spice": "Sumac",
+        "affinity": "surprising",
+        "note": "Tartness brings contrast to parsley-heavy salads.",
+        "cuisines": [
+          "Middle Eastern"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Cilantro",
+        "similarity": 0.58,
+        "notes": "Similar leafy freshness but with a more citrusy, distinctive aroma."
+      },
+      {
+        "spice": "Chive",
+        "similarity": 0.42,
+        "notes": "Can replace parsley as a fresh green garnish but is more onion-like."
+      },
+      {
+        "spice": "Basil",
+        "similarity": 0.37,
+        "notes": "Provides fresh herbal lift with sweeter, more anise-like notes."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Butylphthalide",
+        "role": "Listed in the exact FlavorDB2 cache record; literature associates phthalides with parsley\u2019s characteristic aroma."
+      },
+      {
+        "name": "Dillapiole",
+        "role": "Listed in the exact FlavorDB2 cache record; a phenylpropanoid found in parsley-related aromatic herbs."
+      },
+      {
+        "name": "3-Carene",
+        "role": "Listed in the exact FlavorDB2 record with lemon, citrus, and sweet descriptors."
+      },
+      {
+        "name": "Apiol",
+        "role": "Culinary literature reports apiol in parsley oil; this is not asserted from the local cached record."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 338 (exact match)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Cilantro": {
+    "id": "cilantro",
+    "name": "Cilantro",
+    "botanical_name": "Coriandrum sativum",
+    "botanical_family": "Apiaceae",
+    "common_names": [
+      "Coriander leaves",
+      "Fresh coriander",
+      "Chinese parsley"
+    ],
+    "origin": "Mediterranean region; widely cultivated",
+    "description": "Cilantro leaves taste bright, green, and citrusy, with a distinctive aldehydic aroma that some people perceive as soapy. The leaves are usually added near the end of cooking to preserve their freshness.",
+    "warmth": 8,
+    "brightness": 78,
+    "earthiness": 10,
+    "florality": 20,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "herbal",
+      "citrus",
+      "green"
+    ],
+    "heat_level": "mild",
+    "intensity": 62,
+    "commonality": 86,
+    "cuisines": [
+      {
+        "cuisine": "Mexican",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Indian",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Thai",
+        "frequency": "common",
+        "typical_quantity": "1-3 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Vietnamese",
+        "frequency": "common",
+        "typical_quantity": "1-3 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Middle Eastern",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Chinese",
+        "frequency": "occasional",
+        "typical_quantity": "1-3 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "Peruvian",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Earthy warmth anchors cilantro\u2019s bright green lift.",
+        "cuisines": [
+          "Mexican",
+          "Indian"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "classic",
+        "note": "Herbal freshness balances chili heat in salsas and curries.",
+        "cuisines": [
+          "Mexican",
+          "Thai"
+        ]
+      },
+      {
+        "spice": "Lime Zest",
+        "affinity": "classic",
+        "note": "Citrus aroma echoes cilantro\u2019s bright notes.",
+        "cuisines": [
+          "Mexican",
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Fresh warmth complements cilantro in sauces and stir-fries.",
+        "cuisines": [
+          "Indian",
+          "Thai"
+        ]
+      },
+      {
+        "spice": "Garlic Powder",
+        "affinity": "classic",
+        "note": "Savory depth supports cilantro in marinades and dips.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Mint",
+        "affinity": "complementary",
+        "note": "Cool herbal notes amplify cilantro in chutneys and salads.",
+        "cuisines": [
+          "Indian",
+          "Middle Eastern"
+        ]
+      },
+      {
+        "spice": "Sumac",
+        "affinity": "surprising",
+        "note": "Tart, fruity notes add contrast to fresh cilantro.",
+        "cuisines": [
+          "Middle Eastern"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Parsley",
+        "similarity": 0.57,
+        "notes": "Matches leafy freshness but lacks cilantro\u2019s citrusy aldehydic character."
+      },
+      {
+        "spice": "Basil",
+        "similarity": 0.39,
+        "notes": "Can provide fresh green aroma, with sweeter, more anise-like notes."
+      },
+      {
+        "spice": "Dill",
+        "similarity": 0.32,
+        "notes": "Adds fresh herbal lift but a more grassy, anise-like flavor."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Decanal",
+        "role": "Culinary literature reports aldehydes such as decanal in cilantro leaf aroma; local compound records are absent."
+      },
+      {
+        "name": "E-2-decenal",
+        "role": "A literature-reported cilantro aroma aldehyde; this is not a FlavorDB2 cache claim."
+      },
+      {
+        "name": "Linalool",
+        "role": "Aromatic constituent reported in coriander plant material; leaf and seed profiles differ, so this is literature context only."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Elderflower": {
+    "id": "elderflower",
+    "name": "Elderflower",
+    "botanical_name": "Sambucus nigra",
+    "botanical_family": "Adoxaceae",
+    "common_names": [
+      "Elder blossoms",
+      "European elderflower"
+    ],
+    "origin": "Europe",
+    "description": "Elderflower has a delicate sweet-floral aroma with muscat, pear, and honey-like impressions. Its fragrance is best preserved in infusions, syrups, and gentle desserts.",
+    "warmth": 28,
+    "brightness": 42,
+    "earthiness": 6,
+    "florality": 82,
+    "heat": 0,
+    "family": "floral",
+    "subfamilies": [
+      "floral",
+      "fruity",
+      "sweet"
+    ],
+    "heat_level": "mild",
+    "intensity": 49,
+    "commonality": 30,
+    "cuisines": [
+      {
+        "cuisine": "British",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp syrup per 4 servings"
+      },
+      {
+        "cuisine": "Scandinavian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp syrup per 4 servings"
+      },
+      {
+        "cuisine": "Central European",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp infusion per 4 servings"
+      },
+      {
+        "cuisine": "French",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp syrup per 4 servings"
+      },
+      {
+        "cuisine": "Contemporary European",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp syrup per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Rose",
+        "affinity": "complementary",
+        "note": "Floral aromas reinforce elderflower\u2019s fragrant, delicate character.",
+        "cuisines": [
+          "French",
+          "Contemporary European"
+        ]
+      },
+      {
+        "spice": "Chamomile",
+        "affinity": "complementary",
+        "note": "Soft floral and honey-like notes suit infusions and desserts.",
+        "cuisines": [
+          "British",
+          "Scandinavian"
+        ]
+      },
+      {
+        "spice": "Vanilla",
+        "affinity": "classic",
+        "note": "Rounds elderflower in custards, creams, and baked fruit.",
+        "cuisines": [
+          "French"
+        ]
+      },
+      {
+        "spice": "Lemon Zest",
+        "affinity": "classic",
+        "note": "Bright citrus balances floral sweetness in cordials.",
+        "cuisines": [
+          "British",
+          "Scandinavian"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "surprising",
+        "note": "Gentle warmth adds contrast to floral drinks and syrups.",
+        "cuisines": [
+          "Contemporary European"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "complementary",
+        "note": "Citrusy warmth adds aromatic structure to fruit desserts.",
+        "cuisines": [
+          "Scandinavian"
+        ]
+      },
+      {
+        "spice": "Hibiscus",
+        "affinity": "surprising",
+        "note": "Tart fruit notes balance elderflower cordial and tea.",
+        "cuisines": [
+          "Contemporary European"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Rose",
+        "similarity": 0.51,
+        "notes": "Provides floral aroma but is less fruity and muscat-like."
+      },
+      {
+        "spice": "Chamomile",
+        "similarity": 0.43,
+        "notes": "Offers a soft floral infusion, with more apple and hay notes."
+      },
+      {
+        "spice": "Lavender",
+        "similarity": 0.34,
+        "notes": "Gives floral perfume but is more resinous and herbal."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Linalool",
+        "role": "Literature-based contributor to floral aroma; no local compound record is available."
+      },
+      {
+        "name": "Benzyl alcohol",
+        "role": "Reported in floral aromas and consistent with sweet blossom notes; not a local record."
+      },
+      {
+        "name": "2-Phenylethanol",
+        "role": "A common floral aroma compound reported in blossoms; this claim is culinary literature knowledge."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Lemon Zest": {
+    "id": "lemon-zest",
+    "name": "Lemon Zest",
+    "botanical_name": "Citrus limon",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Lemon peel",
+      "Lemon rind"
+    ],
+    "origin": "Asia; cultivated globally",
+    "description": "Lemon zest is intensely aromatic, bright, and lightly bitter, with concentrated citrus oils in the colored outer peel. It adds fragrance without the acidity of lemon juice.",
+    "warmth": 12,
+    "brightness": 94,
+    "earthiness": 8,
+    "florality": 28,
+    "heat": 0,
+    "family": "citrus-bright",
+    "subfamilies": [
+      "citrus",
+      "bright",
+      "fruity"
+    ],
+    "heat_level": "mild",
+    "intensity": 77,
+    "commonality": 94,
+    "cuisines": [
+      {
+        "cuisine": "Mediterranean",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp finely grated per 4 servings"
+      },
+      {
+        "cuisine": "Italian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "French",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Middle Eastern",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "North African",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Global baking",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Rosemary",
+        "affinity": "classic",
+        "note": "Resinous herb oils pair naturally with lemon\u2019s bright peel aroma.",
+        "cuisines": [
+          "Mediterranean",
+          "Italian"
+        ]
+      },
+      {
+        "spice": "Thyme",
+        "affinity": "classic",
+        "note": "Woody herbal notes complement citrus zest in savory dishes.",
+        "cuisines": [
+          "French",
+          "Mediterranean"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Warm spice balances the zest\u2019s bright, sharp fragrance.",
+        "cuisines": [
+          "Global baking"
+        ]
+      },
+      {
+        "spice": "Vanilla",
+        "affinity": "classic",
+        "note": "Soft sweetness rounds lemon in cakes and custards.",
+        "cuisines": [
+          "French",
+          "Global baking"
+        ]
+      },
+      {
+        "spice": "Sumac",
+        "affinity": "complementary",
+        "note": "Tart citrus-like notes reinforce lemon\u2019s brightness.",
+        "cuisines": [
+          "Middle Eastern"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "complementary",
+        "note": "Citrusy, warm aromatics work in sweet and savory dishes.",
+        "cuisines": [
+          "Middle Eastern"
+        ]
+      },
+      {
+        "spice": "Basil",
+        "affinity": "surprising",
+        "note": "Green sweetness gives contrast in sauces and salads.",
+        "cuisines": [
+          "Italian"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Lime Zest",
+        "similarity": 0.74,
+        "notes": "Close citrus-peel substitute, with greener and more bitter notes."
+      },
+      {
+        "spice": "Orange Zest",
+        "similarity": 0.59,
+        "notes": "Provides citrus aroma but is sweeter and less sharp."
+      },
+      {
+        "spice": "Sumac",
+        "similarity": 0.35,
+        "notes": "Supplies tart citrus-like brightness without peel oils."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Limonene",
+        "role": "Listed in the FlavorDB2 lemon peel oil stand-in record; the source is approximate, not lemon-zest-specific."
+      },
+      {
+        "name": "Citronellal",
+        "role": "Listed in the approximate FlavorDB2 lemon peel oil context with lemon/citrus descriptors."
+      },
+      {
+        "name": "Citral",
+        "role": "Listed in the approximate FlavorDB2 context with lemon and citrus descriptors."
+      },
+      {
+        "name": "\u03b3-Terpinene",
+        "role": "Culinary literature reports this terpene in lemon peel oil; local USDA/FooDB records are absent."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 114 (approximate stand-in: lemon peel oil)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Orange Zest": {
+    "id": "orange-zest",
+    "name": "Orange Zest",
+    "botanical_name": "Citrus sinensis",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Sweet orange peel",
+      "Orange rind"
+    ],
+    "origin": "China and Southeast Asia; cultivated globally",
+    "description": "Orange zest gives dishes sweet, sunny citrus fragrance with a mild bitter edge from the colored peel. Its oils are especially effective in baking, sauces, and spice blends.",
+    "warmth": 28,
+    "brightness": 84,
+    "earthiness": 8,
+    "florality": 32,
+    "heat": 0,
+    "family": "citrus-bright",
+    "subfamilies": [
+      "citrus",
+      "sweet",
+      "fruity"
+    ],
+    "heat_level": "mild",
+    "intensity": 67,
+    "commonality": 88,
+    "cuisines": [
+      {
+        "cuisine": "Mediterranean",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp finely grated per 4 servings"
+      },
+      {
+        "cuisine": "Italian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "French",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "North African",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Chinese",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Global baking",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cinnamon",
+        "affinity": "classic",
+        "note": "Warm sweetness complements orange\u2019s rounded citrus aroma.",
+        "cuisines": [
+          "Global baking",
+          "Mediterranean"
+        ]
+      },
+      {
+        "spice": "Cloves",
+        "affinity": "classic",
+        "note": "A small amount adds deep, warm contrast to orange peel.",
+        "cuisines": [
+          "French",
+          "North African"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "complementary",
+        "note": "Citrusy spice notes amplify the zest\u2019s fragrant top notes.",
+        "cuisines": [
+          "North African",
+          "Global baking"
+        ]
+      },
+      {
+        "spice": "Vanilla",
+        "affinity": "classic",
+        "note": "Soft sweetness rounds orange in desserts and creams.",
+        "cuisines": [
+          "French",
+          "Global baking"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Adds warm brightness that works in sweets and savory glazes.",
+        "cuisines": [
+          "Chinese",
+          "Global baking"
+        ]
+      },
+      {
+        "spice": "Rosemary",
+        "affinity": "surprising",
+        "note": "Woody herbal notes contrast orange\u2019s sweetness in savory dishes.",
+        "cuisines": [
+          "Mediterranean"
+        ]
+      },
+      {
+        "spice": "Star Anise",
+        "affinity": "complementary",
+        "note": "Sweet licorice aroma supports orange in braises and desserts.",
+        "cuisines": [
+          "Chinese",
+          "French"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Lemon Zest",
+        "similarity": 0.62,
+        "notes": "Brighter and sharper, with less sweet orange character."
+      },
+      {
+        "spice": "Lime Zest",
+        "similarity": 0.48,
+        "notes": "More tart, green, and bitter than sweet orange peel."
+      },
+      {
+        "spice": "Cardamom",
+        "similarity": 0.25,
+        "notes": "Can replace aromatic lift but not the citrus flavor itself."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Limonene",
+        "role": "The FlavorDB2 orange oil stand-in record includes citrus-oil chemistry; it is an approximate source for zest."
+      },
+      {
+        "name": "Octyl acetate",
+        "role": "Listed in the approximate FlavorDB2 orange oil context; associated descriptors include herbal, waxy, and green."
+      },
+      {
+        "name": "Methyl anthranilate",
+        "role": "Listed in the approximate cache record with orange blossom and fruity descriptors."
+      },
+      {
+        "name": "Valencene",
+        "role": "Culinary literature reports this terpene in orange peel oil; not a local USDA/FooDB claim."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 122 (approximate stand-in: orange oil)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Lime Zest": {
+    "id": "lime-zest",
+    "name": "Lime Zest",
+    "botanical_name": "Citrus aurantiifolia",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Key lime peel",
+      "Mexican lime peel"
+    ],
+    "origin": "Southeast Asia; cultivated in tropical regions",
+    "description": "Lime zest is intensely aromatic, sharp, and green, with concentrated citrus oils and a faint pithy bitterness. It contributes fragrance and a dry citrus edge without adding juice-like acidity.",
+    "warmth": 10,
+    "brightness": 92,
+    "earthiness": 9,
+    "florality": 22,
+    "heat": 0,
+    "family": "citrus-bright",
+    "subfamilies": [
+      "citrus",
+      "bright",
+      "green"
+    ],
+    "heat_level": "mild",
+    "intensity": 74,
+    "commonality": 81,
+    "cuisines": [
+      {
+        "cuisine": "Mexican",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp finely grated per 4 servings"
+      },
+      {
+        "cuisine": "Thai",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Vietnamese",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Caribbean",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Indian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Latin American",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Coriander",
+        "affinity": "classic",
+        "note": "Citrusy seed notes echo lime while adding gentle warmth.",
+        "cuisines": [
+          "Mexican",
+          "Thai"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "classic",
+        "note": "Bright peel fragrance balances chili heat.",
+        "cuisines": [
+          "Mexican",
+          "Caribbean"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Warm aromatic bite deepens lime\u2019s green citrus notes.",
+        "cuisines": [
+          "Thai",
+          "Vietnamese"
+        ]
+      },
+      {
+        "spice": "Cumin",
+        "affinity": "complementary",
+        "note": "Earthy depth contrasts with sharp lime peel.",
+        "cuisines": [
+          "Mexican"
+        ]
+      },
+      {
+        "spice": "Lemongrass",
+        "affinity": "classic",
+        "note": "Builds a layered citrus aroma in Southeast Asian dishes.",
+        "cuisines": [
+          "Thai",
+          "Vietnamese"
+        ]
+      },
+      {
+        "spice": "Basil",
+        "affinity": "complementary",
+        "note": "Green herbal sweetness softens lime\u2019s sharp edge.",
+        "cuisines": [
+          "Thai"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "surprising",
+        "note": "Citrusy warmth suits drinks and desserts.",
+        "cuisines": [
+          "Indian",
+          "Caribbean"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Lemon Zest",
+        "similarity": 0.72,
+        "notes": "Similar citrus oils but less green and more floral."
+      },
+      {
+        "spice": "Dried Lime",
+        "similarity": 0.55,
+        "notes": "Provides deep citrus character, with more bitter and fermented notes."
+      },
+      {
+        "spice": "Orange Zest",
+        "similarity": 0.42,
+        "notes": "Gives citrus aroma but is sweeter and less sharp."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Limonene",
+        "role": "The FlavorDB2 source is lime fruit, an approximate stand-in for zest; its cache lists citrus-related molecules."
+      },
+      {
+        "name": "Citral",
+        "role": "Listed in the approximate lime FlavorDB2 context with lemon/citrus descriptors."
+      },
+      {
+        "name": "\u03b2-Pinene",
+        "role": "Present in the approximate lime FlavorDB2 context; not zest-specific evidence."
+      },
+      {
+        "name": "\u03b3-Terpinene",
+        "role": "Culinary literature associates this terpene with lime peel oil; no local USDA/FooDB data."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 241 (approximate stand-in: lime fruit)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Yuzu": {
+    "id": "yuzu",
+    "name": "Yuzu",
+    "botanical_name": "Citrus junos",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Yuzu citrus",
+      "Japanese citron"
+    ],
+    "origin": "East Asia",
+    "description": "Yuzu peel is highly fragrant and tart, combining lemon, mandarin, and grapefruit-like citrus notes with a floral, slightly resinous edge. Its zest is potent, so a little goes a long way.",
+    "warmth": 12,
+    "brightness": 96,
+    "earthiness": 8,
+    "florality": 44,
+    "heat": 0,
+    "family": "citrus-bright",
+    "subfamilies": [
+      "citrus",
+      "floral",
+      "bright"
+    ],
+    "heat_level": "mild",
+    "intensity": 82,
+    "commonality": 29,
+    "cuisines": [
+      {
+        "cuisine": "Japanese",
+        "frequency": "common",
+        "typical_quantity": "0.5-1 tsp finely grated per 4 servings"
+      },
+      {
+        "cuisine": "Korean",
+        "frequency": "occasional",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Chinese",
+        "frequency": "occasional",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Contemporary East Asian fusion",
+        "frequency": "common",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      },
+      {
+        "cuisine": "French contemporary",
+        "frequency": "occasional",
+        "typical_quantity": "0.5-1 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Ginger",
+        "affinity": "classic",
+        "note": "Fresh warmth complements yuzu\u2019s floral citrus brightness.",
+        "cuisines": [
+          "Japanese",
+          "Korean"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "Heat contrasts with yuzu\u2019s aromatic peel in citrus condiments.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "surprising",
+        "note": "Citrusy perfume links well with yuzu in sweets and drinks.",
+        "cuisines": [
+          "Contemporary East Asian fusion"
+        ]
+      },
+      {
+        "spice": "Shiso",
+        "affinity": "classic",
+        "note": "Green aromatic notes complement yuzu in dressings and seafood.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pungent warmth adds savory depth beneath the citrus.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Chive",
+        "affinity": "complementary",
+        "note": "Mild onion notes work with yuzu in sauces and seafood.",
+        "cuisines": [
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Sichuan pepper",
+        "affinity": "surprising",
+        "note": "Citrus-like tingling aromatics make a vivid pairing.",
+        "cuisines": [
+          "Chinese",
+          "Contemporary East Asian fusion"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Lemon Zest",
+        "similarity": 0.62,
+        "notes": "Brighter and less floral, with less mandarin-like complexity."
+      },
+      {
+        "spice": "Lime Zest",
+        "similarity": 0.47,
+        "notes": "Sharper and greener, without yuzu\u2019s rounded floral aroma."
+      },
+      {
+        "spice": "Grapefruit Zest",
+        "similarity": 0.39,
+        "notes": "Adds floral citrus and bitterness but is less tart and less delicate."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Limonene",
+        "role": "Culinary literature reports limonene among citrus peel volatiles; no local yuzu record is available."
+      },
+      {
+        "name": "\u03b3-Terpinene",
+        "role": "Reported in citrus oils and relevant to yuzu peel aroma; literature knowledge only."
+      },
+      {
+        "name": "Linalool",
+        "role": "A literature-based contributor to yuzu\u2019s floral citrus character."
+      },
+      {
+        "name": "Citral",
+        "role": "Commonly reported in citrus oils; included as a literature-informed aroma contributor, not a local record."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Dried Lime": {
+    "id": "dried-lime",
+    "name": "Dried Lime",
+    "botanical_name": "Citrus aurantiifolia",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Black lime",
+      "Loomi",
+      "Omani lime"
+    ],
+    "origin": "Oman and Persian Gulf region",
+    "description": "Dried lime has concentrated tart citrus flavor with earthy, fermented, and gently bitter notes. Whole fruits are simmered in broths and stews, where they release a deep sour aroma.",
+    "warmth": 22,
+    "brightness": 68,
+    "earthiness": 44,
+    "florality": 15,
+    "heat": 0,
+    "family": "citrus-bright",
+    "subfamilies": [
+      "citrus",
+      "tart",
+      "earthy"
+    ],
+    "heat_level": "mild",
+    "intensity": 68,
+    "commonality": 25,
+    "cuisines": [
+      {
+        "cuisine": "Persian",
+        "frequency": "common",
+        "typical_quantity": "1-2 pierced dried limes per 4 servings"
+      },
+      {
+        "cuisine": "Iraqi",
+        "frequency": "common",
+        "typical_quantity": "1-2 pierced dried limes per 4 servings"
+      },
+      {
+        "cuisine": "Omani",
+        "frequency": "common",
+        "typical_quantity": "1-2 pierced dried limes per 4 servings"
+      },
+      {
+        "cuisine": "Gulf Arab",
+        "frequency": "common",
+        "typical_quantity": "1-2 pierced dried limes per 4 servings"
+      },
+      {
+        "cuisine": "Middle Eastern",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 pierced dried limes per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Earthy warmth gives structure to sour lime in stews.",
+        "cuisines": [
+          "Persian",
+          "Gulf Arab"
+        ]
+      },
+      {
+        "spice": "Turmeric",
+        "affinity": "classic",
+        "note": "Earthy color and flavor complement long-cooked broths.",
+        "cuisines": [
+          "Persian"
+        ]
+      },
+      {
+        "spice": "Cinnamon",
+        "affinity": "complementary",
+        "note": "Sweet warmth balances dried lime\u2019s tart, bitter edge.",
+        "cuisines": [
+          "Persian",
+          "Iraqi"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pungency adds depth to slow-cooked sour dishes.",
+        "cuisines": [
+          "Gulf Arab"
+        ]
+      },
+      {
+        "spice": "Dill",
+        "affinity": "classic",
+        "note": "Fresh herbal notes lift dried lime in rice and fish dishes.",
+        "cuisines": [
+          "Persian"
+        ]
+      },
+      {
+        "spice": "Cardamom",
+        "affinity": "complementary",
+        "note": "Warm citrus-spice notes reinforce the lime aroma.",
+        "cuisines": [
+          "Omani"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Citrusy seed notes bridge lime\u2019s acidity and earthy spices.",
+        "cuisines": [
+          "Middle Eastern"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Lime Zest",
+        "similarity": 0.56,
+        "notes": "Lacks the dried fruit\u2019s fermented, earthy depth and needs added acidity."
+      },
+      {
+        "spice": "Sumac",
+        "similarity": 0.5,
+        "notes": "Provides tartness but not dried lime\u2019s deep citrus aroma."
+      },
+      {
+        "spice": "Lemon Zest",
+        "similarity": 0.43,
+        "notes": "Adds citrus oils but is fresher and less earthy."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Limonene",
+        "role": "FlavorDB2 record is lime fruit, an approximate stand-in; it does not capture drying changes."
+      },
+      {
+        "name": "Citral",
+        "role": "Listed in the approximate lime cache context with citrus descriptors."
+      },
+      {
+        "name": "Linalool",
+        "role": "Citrus-oil literature association; not a local dried-lime measurement."
+      },
+      {
+        "name": "Organic acids",
+        "role": "Culinary literature explains dried lime\u2019s sourness through retained organic acids; no local compound record is available."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 241 (approximate stand-in: lime fruit)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Chive": {
+    "id": "chive",
+    "name": "Chive",
+    "botanical_name": "Allium schoenoprasum",
+    "botanical_family": "Amaryllidaceae",
+    "common_names": [
+      "Common chive",
+      "Garden chive"
+    ],
+    "origin": "Europe and Asia",
+    "description": "Chives have a mild, fresh onion flavor with green and lightly sulfurous notes. Their thin leaves are best added near the end of cooking to preserve their delicate aroma.",
+    "warmth": 8,
+    "brightness": 40,
+    "earthiness": 8,
+    "florality": 12,
+    "heat": 0,
+    "family": "umami-savory",
+    "subfamilies": [
+      "allium",
+      "herbal",
+      "green"
+    ],
+    "heat_level": "mild",
+    "intensity": 35,
+    "commonality": 78,
+    "cuisines": [
+      {
+        "cuisine": "French",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp chopped per 4 servings"
+      },
+      {
+        "cuisine": "German",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "Scandinavian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "East Asian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "North American",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "Central European",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Parsley",
+        "affinity": "classic",
+        "note": "Fresh green herbal notes complement chive\u2019s mild onion flavor.",
+        "cuisines": [
+          "French",
+          "North American"
+        ]
+      },
+      {
+        "spice": "Dill",
+        "affinity": "classic",
+        "note": "Herbal freshness suits potatoes, eggs, and creamy sauces.",
+        "cuisines": [
+          "Scandinavian",
+          "German"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "classic",
+        "note": "Simple pungency sharpens chives in savory dishes.",
+        "cuisines": [
+          "French",
+          "North American"
+        ]
+      },
+      {
+        "spice": "Garlic Powder",
+        "affinity": "complementary",
+        "note": "Adds deeper allium character beneath delicate chives.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Tarragon",
+        "affinity": "complementary",
+        "note": "Anise-like herbal notes add complexity to chive sauces.",
+        "cuisines": [
+          "French"
+        ]
+      },
+      {
+        "spice": "Cilantro",
+        "affinity": "surprising",
+        "note": "Fresh green notes combine well in dips and herb sauces.",
+        "cuisines": [
+          "East Asian"
+        ]
+      },
+      {
+        "spice": "Sour cream",
+        "affinity": "classic",
+        "note": "Creamy tang carries chive aroma in a familiar pairing.",
+        "cuisines": [
+          "Central European"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Scallion",
+        "similarity": 0.7,
+        "notes": "Closest fresh allium alternative, though greener and more pungent."
+      },
+      {
+        "spice": "Garlic Powder",
+        "similarity": 0.4,
+        "notes": "Adds stronger cooked allium flavor without chive\u2019s delicate freshness."
+      },
+      {
+        "spice": "Parsley",
+        "similarity": 0.31,
+        "notes": "Provides fresh green garnish but little onion character."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Propenyl propyl disulfide",
+        "role": "Listed in the exact FlavorDB2 chive record with onion and sulfurous descriptors."
+      },
+      {
+        "name": "Allyl propyl disulfide",
+        "role": "Listed in the exact cache with garlic, onion, and alliaceous descriptors."
+      },
+      {
+        "name": "Methanethiol",
+        "role": "Listed in the exact record with sulfur and garlic descriptors."
+      },
+      {
+        "name": "Dimethyl disulfide",
+        "role": "Listed in the exact FlavorDB2 record with onion, cabbage, and sulfurous descriptors."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 343 (exact match)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Dried Mushroom": {
+    "id": "dried-mushroom",
+    "name": "Dried Mushroom",
+    "botanical_name": "Lentinula edodes",
+    "botanical_family": "Omphalotaceae",
+    "common_names": [
+      "Dried shiitake",
+      "Dried mushrooms"
+    ],
+    "origin": "East Asia",
+    "description": "Dried shiitake is deeply savory, earthy, and woodsy, with concentrated umami and a faint smoky quality after rehydration. This profile uses shiitake as a representative dried mushroom; other species vary.",
+    "warmth": 28,
+    "brightness": 16,
+    "earthiness": 76,
+    "florality": 8,
+    "heat": 0,
+    "family": "umami-savory",
+    "subfamilies": [
+      "umami",
+      "earthy",
+      "woody"
+    ],
+    "heat_level": "mild",
+    "intensity": 83,
+    "commonality": 61,
+    "cuisines": [
+      {
+        "cuisine": "Chinese",
+        "frequency": "common",
+        "typical_quantity": "2-4 dried caps per 4 servings"
+      },
+      {
+        "cuisine": "Japanese",
+        "frequency": "common",
+        "typical_quantity": "2-4 dried caps per 4 servings"
+      },
+      {
+        "cuisine": "Korean",
+        "frequency": "common",
+        "typical_quantity": "2-4 dried caps per 4 servings"
+      },
+      {
+        "cuisine": "Vietnamese",
+        "frequency": "occasional",
+        "typical_quantity": "2-4 dried caps per 4 servings"
+      },
+      {
+        "cuisine": "European",
+        "frequency": "occasional",
+        "typical_quantity": "20-40 g dried mushrooms per 4 servings"
+      },
+      {
+        "cuisine": "Global vegetarian cooking",
+        "frequency": "common",
+        "typical_quantity": "20-40 g dried mushrooms per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Ginger",
+        "affinity": "classic",
+        "note": "Fresh warmth balances concentrated mushroom savoriness.",
+        "cuisines": [
+          "Chinese",
+          "Japanese"
+        ]
+      },
+      {
+        "spice": "Garlic Powder",
+        "affinity": "classic",
+        "note": "Savory allium notes deepen mushroom broth and filling.",
+        "cuisines": [
+          "Global vegetarian cooking"
+        ]
+      },
+      {
+        "spice": "Thyme",
+        "affinity": "complementary",
+        "note": "Woody herbal aroma supports mushrooms in soups and braises.",
+        "cuisines": [
+          "European"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "classic",
+        "note": "Pungency cuts through the rich, earthy flavor.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Dried Lime",
+        "affinity": "surprising",
+        "note": "Tart citrus contrasts with mushroom depth in broths.",
+        "cuisines": [
+          "Contemporary fusion"
+        ]
+      },
+      {
+        "spice": "Star Anise",
+        "affinity": "complementary",
+        "note": "Sweet spice can add aromatic depth to long-simmered broths.",
+        "cuisines": [
+          "Chinese"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Citrusy seed notes lift an earthy mushroom base.",
+        "cuisines": [
+          "Global vegetarian cooking"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Dried porcini",
+        "similarity": 0.68,
+        "notes": "Strong earthy substitute with a more nutty, forest-floor aroma."
+      },
+      {
+        "spice": "Dried mushroom",
+        "similarity": 0.64,
+        "notes": "A mixed dried-mushroom blend works, though species change the flavor."
+      },
+      {
+        "spice": "Nutritional Yeast",
+        "similarity": 0.36,
+        "notes": "Adds savory umami but not the earthy texture or woodsy aroma."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "1-Octen-3-ol",
+        "role": "Listed in the approximate FlavorDB2 mushroom record; associated with mushroom-like aroma."
+      },
+      {
+        "name": "Bis(methylthio)methane",
+        "role": "Listed in the approximate FlavorDB2 mushroom record with mushroom, sulfurous, and savory descriptors."
+      },
+      {
+        "name": "Glutamic acid",
+        "role": "Literature-based contributor to mushroom umami; no local USDA/FooDB record is available."
+      },
+      {
+        "name": "Guanosine monophosphate",
+        "role": "Literature-based umami nucleotide often discussed for dried shiitake; not a local cache claim."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 246 (approximate stand-in: mushroom)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
+  },
+  "Nutritional Yeast": {
+    "id": "nutritional-yeast",
+    "name": "Nutritional Yeast",
+    "botanical_name": "Saccharomyces cerevisiae",
+    "botanical_family": "Saccharomycetaceae",
+    "common_names": [
+      "Inactive yeast flakes",
+      "Nooch"
+    ],
+    "origin": "Produced globally by cultivating Saccharomyces cerevisiae",
+    "description": "Nutritional yeast is an inactive yeast food ingredient rather than a botanical spice. Its flakes or powder taste savory, nutty, and cheese-like, with strong umami and a dry, toasted edge.",
+    "warmth": 30,
+    "brightness": 12,
+    "earthiness": 43,
+    "florality": 5,
+    "heat": 0,
+    "family": "umami-savory",
+    "subfamilies": [
+      "umami",
+      "savory",
+      "fermented"
+    ],
+    "heat_level": "mild",
+    "intensity": 66,
+    "commonality": 53,
+    "cuisines": [
+      {
+        "cuisine": "North American vegetarian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp flakes per 4 servings"
+      },
+      {
+        "cuisine": "Vegan cooking",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "Australian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "British vegetarian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      },
+      {
+        "cuisine": "Contemporary global",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Garlic Powder",
+        "affinity": "classic",
+        "note": "Savory allium flavor complements yeast\u2019s cheese-like notes.",
+        "cuisines": [
+          "Vegan cooking"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "classic",
+        "note": "Pungency offsets rich savory flavor in sauces and toppings.",
+        "cuisines": [
+          "North American vegetarian"
+        ]
+      },
+      {
+        "spice": "Paprika",
+        "affinity": "complementary",
+        "note": "Sweet pepper warmth adds color and rounds savory flakes.",
+        "cuisines": [
+          "Contemporary global"
+        ]
+      },
+      {
+        "spice": "Dried Mushroom",
+        "affinity": "classic",
+        "note": "Layered umami deepens soups, sauces, and plant-based fillings.",
+        "cuisines": [
+          "Vegan cooking"
+        ]
+      },
+      {
+        "spice": "Cumin",
+        "affinity": "complementary",
+        "note": "Earthy warmth gives depth to savory seasoning blends.",
+        "cuisines": [
+          "Contemporary global"
+        ]
+      },
+      {
+        "spice": "Chive",
+        "affinity": "complementary",
+        "note": "Fresh onion notes balance yeast\u2019s toasted savoriness.",
+        "cuisines": [
+          "North American vegetarian"
+        ]
+      },
+      {
+        "spice": "Mustard Seed",
+        "affinity": "surprising",
+        "note": "Pungent lift cuts through creamy yeast sauces.",
+        "cuisines": [
+          "British vegetarian"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Dried Mushroom",
+        "similarity": 0.53,
+        "notes": "Adds savory umami but has an earthy mushroom aroma and texture."
+      },
+      {
+        "spice": "Sesame Seed",
+        "similarity": 0.37,
+        "notes": "Provides nutty richness without the same cheesy savory flavor."
+      },
+      {
+        "spice": "Parmesan",
+        "similarity": 0.34,
+        "notes": "Similar savory, cheesy use, but it is a dairy ingredient rather than a seasoning substitute."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Glutamic acid",
+        "role": "Common umami amino acid in yeast-derived foods; literature-based, not a local compound record."
+      },
+      {
+        "name": "5\u2032-Nucleotides",
+        "role": "Yeast extract and yeast-derived foods may contain savory nucleotides; exact content depends on processing and product."
+      },
+      {
+        "name": "B vitamins",
+        "role": "Nutritional yeast is often fortified, so vitamin content is product-dependent and is not described here as an aroma compound."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "culinary literature and product knowledge; local USDA, FooDB, and FlavorDB2 records absent"
+      ]
+    }
+  },
+  "Black Garlic": {
+    "id": "black-garlic",
+    "name": "Black Garlic",
+    "botanical_name": "Allium sativum",
+    "botanical_family": "Amaryllidaceae",
+    "common_names": [
+      "Aged garlic",
+      "Fermented black garlic"
+    ],
+    "origin": "East Asia; produced globally",
+    "description": "Black garlic is garlic aged under controlled warm, humid conditions, yielding soft cloves with sweet, tangy, balsamic, and molasses-like notes. It is mellow and savory, with far less raw garlic pungency.",
+    "warmth": 66,
+    "brightness": 36,
+    "earthiness": 38,
+    "florality": 22,
+    "heat": 0,
+    "family": "umami-savory",
+    "subfamilies": [
+      "sweet",
+      "umami",
+      "fermented",
+      "allium"
+    ],
+    "heat_level": "mild",
+    "intensity": 70,
+    "commonality": 46,
+    "cuisines": [
+      {
+        "cuisine": "Korean",
+        "frequency": "common",
+        "typical_quantity": "1-2 cloves per 4 servings"
+      },
+      {
+        "cuisine": "Japanese",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 cloves per 4 servings"
+      },
+      {
+        "cuisine": "Chinese",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 cloves per 4 servings"
+      },
+      {
+        "cuisine": "Contemporary European",
+        "frequency": "common",
+        "typical_quantity": "1-2 cloves per 4 servings"
+      },
+      {
+        "cuisine": "Global fusion",
+        "frequency": "common",
+        "typical_quantity": "1-2 cloves per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Thyme",
+        "affinity": "classic",
+        "note": "Woody herbal notes balance black garlic\u2019s sweet depth.",
+        "cuisines": [
+          "Contemporary European"
+        ]
+      },
+      {
+        "spice": "Rosemary",
+        "affinity": "complementary",
+        "note": "Resinous herb aroma offsets the mellow, balsamic sweetness.",
+        "cuisines": [
+          "Contemporary European"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "Heat adds contrast to black garlic\u2019s sweet-savory richness.",
+        "cuisines": [
+          "Korean",
+          "Global fusion"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Fresh warmth lifts the dense, mellow allium notes.",
+        "cuisines": [
+          "East Asian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "classic",
+        "note": "Pungency adds definition to black garlic sauces.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Smoked paprika",
+        "affinity": "complementary",
+        "note": "Smoky sweetness reinforces its aged, roasted impressions.",
+        "cuisines": [
+          "Global fusion"
+        ]
+      },
+      {
+        "spice": "Dried Mushroom",
+        "affinity": "classic",
+        "note": "Shared savory depth works in sauces, broths, and vegetable dishes.",
+        "cuisines": [
+          "Japanese",
+          "Contemporary European"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Garlic Powder",
+        "similarity": 0.56,
+        "notes": "Provides garlic identity but is sharper and lacks sweetness and balsamic depth."
+      },
+      {
+        "spice": "Roasted garlic",
+        "similarity": 0.62,
+        "notes": "Shares mellow sweetness but is less tangy and less complex."
+      },
+      {
+        "spice": "Dried Mushroom",
+        "similarity": 0.34,
+        "notes": "Adds umami depth without the allium flavor."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "2,6-Dimethylpyrazine",
+        "role": "Listed in the approximate FlavorDB2 garlic stand-in record with roasted nut, coffee, and cocoa descriptors."
+      },
+      {
+        "name": "Allyl propyl disulfide",
+        "role": "Listed in that approximate garlic cache with garlic/onion/allium descriptors; processing changes the profile."
+      },
+      {
+        "name": "S-allyl cysteine",
+        "role": "Culinary literature associates this water-soluble compound with aged garlic; no local black-garlic record is available."
+      },
+      {
+        "name": "5-Hydroxymethylfurfural",
+        "role": "Literature-based product of warm aging associated with sweet, browned notes; not a local cache measurement."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "FlavorDB2 cache entity 259 (approximate stand-in: garlic)",
+        "culinary literature knowledge; local USDA and FooDB records absent"
+      ]
+    }
   }
 }

@@ -181,6 +181,12 @@
       "approximate": false
     },
     {
+      "spiceId": "earthy.smoky.paprika",
+      "spiceName": "Paprika",
+      "flavorGraphNode": "paprika",
+      "approximate": false
+    },
+    {
       "spiceId": "herbal.mediterranean.oregano",
       "spiceName": "Oregano",
       "flavorGraphNode": "oregano",
@@ -421,6 +427,6 @@
       "spiceName": "Chamomile"
     }
   ],
-  "matchedCount": 65,
-  "totalSpices": 72
+  "matchedCount": 66,
+  "totalSpices": 73
 }

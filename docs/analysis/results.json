@@ -1,0 +1,947 @@
+{
+  "display_quality": {
+    "profiles_missing_canonical_family_color": 22,
+    "profiles_with_heat_at_most_10": 40
+  },
+  "unique_vector_relationship": {
+    "pair_observations": 1176,
+    "flavor_similarity_vs_recipe_spearman": 0.056
+  },
+  "scope": {
+    "profiles": 57,
+    "taxonomy": 72,
+    "unique_profile_taxonomy_ids": 55,
+    "mapped_duplicates": {
+      "herbal.leafy.bay-leaf": [
+        "Bay leaf",
+        "Bay leaves"
+      ],
+      "earthy.smoky.smoked-paprika": [
+        "Paprika",
+        "Smoked paprika"
+      ]
+    },
+    "unmapped": [],
+    "taxonomy_absent_from_map": [
+      "Horseradish",
+      "Wasabi",
+      "Mahlab",
+      "Kaffir Lime Leaf",
+      "Shiso",
+      "Parsley",
+      "Cilantro",
+      "Elderflower",
+      "Lemon Zest",
+      "Orange Zest",
+      "Lime Zest",
+      "Yuzu",
+      "Dried Lime",
+      "Chive",
+      "Dried Mushroom",
+      "Nutritional Yeast",
+      "Black Garlic"
+    ],
+    "missing_axis_values": {
+      "warmth": 0,
+      "brightness": 0,
+      "earthiness": 0,
+      "florality": 0,
+      "heat": 0
+    },
+    "profile_families": {
+      "earthy": 5,
+      "hot-pungent": 6,
+      "warm": 5,
+      "Citrus-Bright": 1,
+      "sweet": 5,
+      "herbal": 9,
+      "Earthy": 3,
+      "Warm": 3,
+      "Hot-Pungent": 3,
+      "Floral": 2,
+      "Hot-pungent": 1,
+      "Herbal": 3,
+      "Ginger Family": 1,
+      "Umami-Savory": 2,
+      "floral": 3,
+      "Umami-savory": 1,
+      "Nutty": 1,
+      "umami-savory": 1,
+      "Chili Pepper": 1,
+      "citrus-bright": 1
+    }
+  },
+  "axes": {
+    "warmth": {
+      "min": 10.0,
+      "median": 65.0,
+      "max": 90.0,
+      "unique_values": 15,
+      "pct_multiple_5": 96.5
+    },
+    "brightness": {
+      "min": 10.0,
+      "median": 45.0,
+      "max": 90.0,
+      "unique_values": 17,
+      "pct_multiple_5": 96.5
+    },
+    "earthiness": {
+      "min": 20.0,
+      "median": 50.0,
+      "max": 95.0,
+      "unique_values": 17,
+      "pct_multiple_5": 96.5
+    },
+    "florality": {
+      "min": 5.0,
+      "median": 20.0,
+      "max": 95.0,
+      "unique_values": 15,
+      "pct_multiple_5": 98.2
+    },
+    "heat": {
+      "min": 0.0,
+      "median": 5.0,
+      "max": 75.0,
+      "unique_values": 16,
+      "pct_multiple_5": 78.9
+    }
+  },
+  "axis_correlations": [
+    [
+      1.0,
+      -0.552,
+      0.221,
+      -0.267,
+      0.298
+    ],
+    [
+      -0.552,
+      1.0,
+      -0.458,
+      0.327,
+      -0.056
+    ],
+    [
+      0.221,
+      -0.458,
+      1.0,
+      -0.568,
+      0.209
+    ],
+    [
+      -0.267,
+      0.327,
+      -0.568,
+      1.0,
+      -0.343
+    ],
+    [
+      0.298,
+      -0.056,
+      0.209,
+      -0.343,
+      1.0
+    ]
+  ],
+  "axis_pairs": [
+    {
+      "axes": [
+        "warmth",
+        "brightness"
+      ],
+      "neighbors_retained": 0.4561,
+      "dot_overlaps": 10,
+      "exact_coordinate_groups": [
+        [
+          "Allspice",
+          "Star Anise"
+        ],
+        [
+          "Amchur",
+          "Sumac"
+        ],
+        [
+          "Cardamom",
+          "Ginger"
+        ],
+        [
+          "Coriander",
+          "Rosemary",
+          "Thai basil"
+        ],
+        [
+          "Galangal",
+          "Sichuan pepper"
+        ],
+        [
+          "Gochugaru",
+          "Mustard seeds"
+        ],
+        [
+          "Hibiscus",
+          "Lemongrass"
+        ],
+        [
+          "Long pepper",
+          "Vanilla"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "warmth",
+        "earthiness"
+      ],
+      "neighbors_retained": 0.4474,
+      "dot_overlaps": 17,
+      "exact_coordinate_groups": [
+        [
+          "Allspice",
+          "Ginger"
+        ],
+        [
+          "Caraway",
+          "Paprika",
+          "Poppy seed"
+        ],
+        [
+          "Cardamom",
+          "Tonka bean"
+        ],
+        [
+          "Celery seed",
+          "Onion powder"
+        ],
+        [
+          "Galangal",
+          "Mustard seeds",
+          "Sesame seed"
+        ],
+        [
+          "Gochugaru",
+          "Rosemary"
+        ],
+        [
+          "Rose",
+          "Tarragon"
+        ],
+        [
+          "Sage",
+          "Thyme",
+          "White pepper"
+        ],
+        [
+          "Sichuan pepper",
+          "Thai basil"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "warmth",
+        "florality"
+      ],
+      "neighbors_retained": 0.4181,
+      "dot_overlaps": 30,
+      "exact_coordinate_groups": [
+        [
+          "Cumin",
+          "Fennel seed"
+        ],
+        [
+          "Aleppo pepper",
+          "Gochugaru",
+          "Sage",
+          "Sesame seed",
+          "White pepper"
+        ],
+        [
+          "Amchur",
+          "Basil"
+        ],
+        [
+          "Anise seed",
+          "Oregano"
+        ],
+        [
+          "Black pepper",
+          "Garlic powder",
+          "Nigella seed"
+        ],
+        [
+          "Cayenne",
+          "Onion powder"
+        ],
+        [
+          "Chamomile",
+          "Saffron"
+        ],
+        [
+          "Coriander",
+          "Thai basil"
+        ],
+        [
+          "Galangal",
+          "Rosemary",
+          "Thyme"
+        ],
+        [
+          "Ginger",
+          "Long pepper",
+          "Star Anise"
+        ],
+        [
+          "Nutmeg",
+          "Tonka bean"
+        ],
+        [
+          "Paprika",
+          "Poppy seed"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "warmth",
+        "heat"
+      ],
+      "neighbors_retained": 0.4211,
+      "dot_overlaps": 39,
+      "exact_coordinate_groups": [
+        [
+          "Aleppo pepper",
+          "Galangal"
+        ],
+        [
+          "Amchur",
+          "Basil"
+        ],
+        [
+          "Bay leaves",
+          "Lavender"
+        ],
+        [
+          "Cassia",
+          "Cinnamon"
+        ],
+        [
+          "Celery seed",
+          "Onion powder",
+          "Rose"
+        ],
+        [
+          "Chamomile",
+          "Saffron"
+        ],
+        [
+          "Coriander",
+          "Rosemary",
+          "Sage",
+          "Thyme",
+          "Turmeric"
+        ],
+        [
+          "Ginger",
+          "Long pepper"
+        ],
+        [
+          "Nutmeg",
+          "Star Anise"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "brightness",
+        "earthiness"
+      ],
+      "neighbors_retained": 0.4327,
+      "dot_overlaps": 11,
+      "exact_coordinate_groups": [
+        [
+          "Amchur",
+          "Tamarind"
+        ],
+        [
+          "Black pepper",
+          "Coriander"
+        ],
+        [
+          "Caraway",
+          "Thyme"
+        ],
+        [
+          "Cinnamon",
+          "Star Anise"
+        ],
+        [
+          "Cloves",
+          "Fenugreek"
+        ],
+        [
+          "Nigella seed",
+          "Poppy seed",
+          "Sage"
+        ],
+        [
+          "Saffron",
+          "Sichuan pepper"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "brightness",
+        "florality"
+      ],
+      "neighbors_retained": 0.4327,
+      "dot_overlaps": 11,
+      "exact_coordinate_groups": [
+        [
+          "Cumin",
+          "Sesame seed"
+        ],
+        [
+          "Amchur",
+          "Lemongrass"
+        ],
+        [
+          "Cassia",
+          "White pepper"
+        ],
+        [
+          "Chipotle",
+          "Fenugreek"
+        ],
+        [
+          "Coriander",
+          "Thai basil"
+        ],
+        [
+          "Garlic powder",
+          "Onion powder"
+        ],
+        [
+          "Ginger",
+          "Rosemary"
+        ],
+        [
+          "Paprika",
+          "Smoked paprika"
+        ],
+        [
+          "Poppy seed",
+          "Sage"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "brightness",
+        "heat"
+      ],
+      "neighbors_retained": 0.4912,
+      "dot_overlaps": 26,
+      "exact_coordinate_groups": [
+        [
+          "Amchur",
+          "Lemongrass"
+        ],
+        [
+          "Caraway",
+          "Nutmeg",
+          "Thyme"
+        ],
+        [
+          "Cardamom",
+          "Thai basil"
+        ],
+        [
+          "Cassia",
+          "Mace"
+        ],
+        [
+          "Chamomile",
+          "Vanilla"
+        ],
+        [
+          "Cinnamon",
+          "Star Anise"
+        ],
+        [
+          "Coriander",
+          "Rosemary",
+          "Tarragon"
+        ],
+        [
+          "Hibiscus",
+          "Sumac",
+          "Tamarind"
+        ],
+        [
+          "Paprika",
+          "Smoked paprika"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "earthiness",
+        "florality"
+      ],
+      "neighbors_retained": 0.4035,
+      "dot_overlaps": 17,
+      "exact_coordinate_groups": [
+        [
+          "Amchur",
+          "Bay leaf",
+          "Tonka bean"
+        ],
+        [
+          "Basil",
+          "Lemongrass"
+        ],
+        [
+          "Cayenne",
+          "Fenugreek"
+        ],
+        [
+          "Celery seed",
+          "Thyme"
+        ],
+        [
+          "Cinnamon",
+          "Sichuan pepper"
+        ],
+        [
+          "Galangal",
+          "Long pepper"
+        ],
+        [
+          "Nigella seed",
+          "Onion powder"
+        ],
+        [
+          "Oregano",
+          "Sumac"
+        ],
+        [
+          "Paprika",
+          "Poppy seed",
+          "Sage",
+          "White pepper"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "earthiness",
+        "heat"
+      ],
+      "neighbors_retained": 0.3918,
+      "dot_overlaps": 29,
+      "exact_coordinate_groups": [
+        [
+          "Amchur",
+          "Tonka bean"
+        ],
+        [
+          "Anise seed",
+          "Chamomile"
+        ],
+        [
+          "Basil",
+          "Lemongrass"
+        ],
+        [
+          "Bay leaf",
+          "Mace"
+        ],
+        [
+          "Caraway",
+          "Sage",
+          "Thyme"
+        ],
+        [
+          "Cassia",
+          "Nutmeg"
+        ],
+        [
+          "Celery seed",
+          "Onion powder",
+          "Poppy seed"
+        ],
+        [
+          "Cinnamon",
+          "Star Anise"
+        ],
+        [
+          "Hibiscus",
+          "Rose",
+          "Vanilla"
+        ],
+        [
+          "Nigella seed",
+          "Paprika"
+        ]
+      ]
+    },
+    {
+      "axes": [
+        "florality",
+        "heat"
+      ],
+      "neighbors_retained": 0.3889,
+      "dot_overlaps": 45,
+      "exact_coordinate_groups": [
+        [
+          "Allspice",
+          "White pepper"
+        ],
+        [
+          "Amchur",
+          "Basil",
+          "Lemongrass",
+          "Tonka bean"
+        ],
+        [
+          "Anise seed",
+          "Sumac"
+        ],
+        [
+          "Bay leaf",
+          "Nutmeg",
+          "Tarragon"
+        ],
+        [
+          "Caraway",
+          "Cinnamon",
+          "Mace"
+        ],
+        [
+          "Cassia",
+          "Sage"
+        ],
+        [
+          "Chamomile",
+          "Saffron"
+        ],
+        [
+          "Chipotle",
+          "Mustard seeds"
+        ],
+        [
+          "Ginger",
+          "Long pepper"
+        ],
+        [
+          "Paprika",
+          "Smoked paprika"
+        ],
+        [
+          "Poppy seed",
+          "Sesame seed",
+          "Tamarind"
+        ],
+        [
+          "Rosemary",
+          "Star Anise",
+          "Thyme"
+        ]
+      ]
+    }
+  ],
+  "pca": {
+    "explained_variance_ratios": [
+      0.4788,
+      0.2047,
+      0.1687,
+      0.0858,
+      0.062
+    ],
+    "top6_neighbors_retained": 0.6023,
+    "loadings": [
+      [
+        -0.445,
+        0.514,
+        -0.429,
+        0.528,
+        -0.274
+      ],
+      [
+        -0.447,
+        0.549,
+        0.202,
+        -0.521,
+        0.433
+      ]
+    ]
+  },
+  "affinity": {
+    "nodes": 65,
+    "pairs": 2080,
+    "quantiles": {
+      "min": 0.4573,
+      "p10": 0.5101,
+      "p25": 0.5357,
+      "median": 0.5738,
+      "p75": 0.6315,
+      "p90": 0.7011,
+      "p95": 0.7783,
+      "max": 0.9456
+    },
+    "thresholds": {
+      "0.5": {
+        "edges": 1954,
+        "fraction": 0.9394
+      },
+      "0.6": {
+        "edges": 762,
+        "fraction": 0.3663
+      },
+      "0.7": {
+        "edges": 215,
+        "fraction": 0.1034
+      },
+      "0.8": {
+        "edges": 85,
+        "fraction": 0.0409
+      },
+      "0.9": {
+        "edges": 31,
+        "fraction": 0.0149
+      }
+    },
+    "most_frequent_top6_partners": [
+      [
+        "warm.woody.clove",
+        14
+      ],
+      [
+        "herbal.leafy.cilantro",
+        13
+      ],
+      [
+        "citrus-bright.tart.amchur",
+        12
+      ],
+      [
+        "herbal.mediterranean.thyme",
+        12
+      ],
+      [
+        "citrus-bright.tart.tamarind",
+        11
+      ],
+      [
+        "earthy.seed.cumin",
+        11
+      ],
+      [
+        "earthy.root.turmeric",
+        10
+      ],
+      [
+        "herbal.mediterranean.oregano",
+        10
+      ],
+      [
+        "herbal.leafy.parsley",
+        10
+      ],
+      [
+        "herbal.leafy.dill",
+        10
+      ]
+    ],
+    "map_profiles_with_recipe_signal": 51,
+    "map_profiles_without_recipe_signal": [
+      "Aleppo pepper",
+      "Chamomile",
+      "Hibiscus",
+      "Long pepper",
+      "Sichuan pepper",
+      "Tonka bean"
+    ],
+    "approximate_matches": [
+      {
+        "spiceId": "hot-pungent.chili.gochugaru",
+        "spiceName": "Gochugaru",
+        "flavorGraphNode": "red_pepper_powder",
+        "approximate": true
+      },
+      {
+        "spiceId": "sweet.aromatic-sweet.fenugreek",
+        "spiceName": "Fenugreek",
+        "flavorGraphNode": "fenugreek_leaves",
+        "approximate": true
+      },
+      {
+        "spiceId": "floral.delicate.elderflower",
+        "spiceName": "Elderflower",
+        "flavorGraphNode": "elderflower_liqueur",
+        "approximate": true
+      },
+      {
+        "spiceId": "citrus-bright.tart.tamarind",
+        "spiceName": "Tamarind",
+        "flavorGraphNode": "tamarind_paste",
+        "approximate": true
+      },
+      {
+        "spiceId": "umami-savory.fermented.black-garlic",
+        "spiceName": "Black Garlic",
+        "flavorGraphNode": "garlic",
+        "approximate": true
+      }
+    ]
+  },
+  "signal_relationships": {
+    "mapped_pair_observations": 1273,
+    "flavor5_similarity_vs_recipe_spearman": 0.0602,
+    "default2_similarity_vs_recipe_spearman": 0.0157,
+    "recipe_vs_compound_spearman": 0.0245,
+    "recipe_compound_shared_pairs": 1338,
+    "same_family_affinity_median": 0.6111,
+    "cross_family_affinity_median": 0.5808,
+    "high_affinity_distant_flavor": [
+      {
+        "a": "Basil",
+        "b": "Oregano",
+        "affinity": 0.9456,
+        "distance5": 73.64781055808787,
+        "distance2": 65.19202405202648,
+        "chemistry": 0.5391,
+        "same_family": true
+      },
+      {
+        "a": "Oregano",
+        "b": "Thyme",
+        "affinity": 0.9419,
+        "distance5": 21.79449471770337,
+        "distance2": 14.142135623730951,
+        "chemistry": 0.9469,
+        "same_family": true
+      },
+      {
+        "a": "Basil",
+        "b": "Rosemary",
+        "affinity": 0.937,
+        "distance5": 48.569537778323564,
+        "distance2": 47.43416490252569,
+        "chemistry": 0.6052,
+        "same_family": false
+      },
+      {
+        "a": "Nutmeg",
+        "b": "Oregano",
+        "affinity": 0.9278,
+        "distance5": 25.495097567963924,
+        "distance2": 14.142135623730951,
+        "chemistry": 0.7468,
+        "same_family": false
+      },
+      {
+        "a": "Basil",
+        "b": "Thyme",
+        "affinity": 0.9262,
+        "distance5": 71.12664760833313,
+        "distance2": 63.63961030678928,
+        "chemistry": 0.5624,
+        "same_family": true
+      },
+      {
+        "a": "Dill",
+        "b": "Oregano",
+        "affinity": 0.9208,
+        "distance5": 74.49161026585477,
+        "distance2": 64.41273166075166,
+        "chemistry": 0.7836,
+        "same_family": false
+      },
+      {
+        "a": "Garlic powder",
+        "b": "Onion powder",
+        "affinity": 0.9204,
+        "distance5": 20.615528128088304,
+        "distance2": 15.0,
+        "chemistry": 0.8791,
+        "same_family": false
+      },
+      {
+        "a": "Rosemary",
+        "b": "Thyme",
+        "affinity": 0.9181,
+        "distance5": 42.42640687119285,
+        "distance2": 30.0,
+        "chemistry": 0.9351,
+        "same_family": false
+      },
+      {
+        "a": "Oregano",
+        "b": "Rosemary",
+        "affinity": 0.9171,
+        "distance5": 37.080992435478315,
+        "distance2": 22.360679774997898,
+        "chemistry": 0.9767,
+        "same_family": false
+      },
+      {
+        "a": "Nutmeg",
+        "b": "Thyme",
+        "affinity": 0.9164,
+        "distance5": 22.9128784747792,
+        "distance2": 20.0,
+        "chemistry": 0.8602,
+        "same_family": false
+      },
+      {
+        "a": "Coriander",
+        "b": "Fennel seed",
+        "affinity": 0.9151,
+        "distance5": 62.120849961989414,
+        "distance2": 11.180339887498949,
+        "chemistry": 0.8671,
+        "same_family": false
+      },
+      {
+        "a": "Dill",
+        "b": "Thyme",
+        "affinity": 0.9136,
+        "distance5": 71.30217387990355,
+        "distance2": 61.71709649683789,
+        "chemistry": 0.7861,
+        "same_family": false
+      },
+      {
+        "a": "Basil",
+        "b": "Dill",
+        "affinity": 0.9135,
+        "distance5": 9.1104335791443,
+        "distance2": 5.385164807134504,
+        "chemistry": 0.8516,
+        "same_family": false
+      },
+      {
+        "a": "Basil",
+        "b": "Nutmeg",
+        "affinity": 0.9132,
+        "distance5": 82.96987405076617,
+        "distance2": 79.05694150420949,
+        "chemistry": 0.5883,
+        "same_family": false
+      },
+      {
+        "a": "Dill",
+        "b": "Nutmeg",
+        "affinity": 0.9106,
+        "distance5": 83.89874850079708,
+        "distance2": 78.03204469959762,
+        "chemistry": 0.6897,
+        "same_family": false
+      }
+    ]
+  }
+}

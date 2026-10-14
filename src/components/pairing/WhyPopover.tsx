@@ -1,140 +1,91 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import type { RankedPairing } from "@/lib/pairing-engine";
+import { spiceName } from "@/lib/spice-list";
+import { Meter } from "./ui";
 
-function nameFromId(id: string): string {
-  return id
-    .split(".")
-    .pop()!
-    .split("-")
-    .map((w) => w[0].toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-const affinityLabel: Record<string, string> = {
-  classic: "a classic pairing",
-  complementary: "a complementary pairing",
-  surprising: "a surprising pairing",
+const traditionSentence: Record<string, string> = {
+  classic: "A classic pairing in at least one cuisine.",
+  complementary: "Complementary: different characters that support each other.",
+  surprising: "Surprising: uncommon, but it works.",
 };
 
+/** Kept for existing callers: a chalk meter for a 0–1 score. */
 export function ScoreBar({ score }: { score: number }) {
-  return (
-    <div className="h-1.5 flex-1 rounded-full bg-neutral-200 dark:bg-neutral-700/80 overflow-hidden">
-      <div
-        className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-        style={{ width: `${Math.round(score * 100)}%` }}
-      />
-    </div>
-  );
+  return <Meter value={score} className="flex-1" />;
 }
 
 /**
- * "Why?" popover: shows the visible breakdown behind a pairing score —
- * FlavorGraph affinity per selected spice plus the curated label.
+ * The three kinds of evidence behind a suggestion, shown side by side rather
+ * than folded into one number. Rendered inline under the suggestion so it is
+ * never clipped by the panel's scroll area.
  */
-export default function WhyPopover({ pairing }: { pairing: RankedPairing }) {
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    function onPointerDown(e: PointerEvent) {
-      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [open]);
+export default function WhyDetails({ pairing }: { pairing: RankedPairing }) {
+  const overlap = pairing.compoundOverlap;
+  const words = overlap?.flavordb2?.sharedFlavorWords ?? [];
 
   return (
-    <div ref={rootRef} className="relative flex-shrink-0">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="text-[10px] px-1.5 py-0.5 rounded-full border border-cyan-500/40 text-cyan-600 dark:text-cyan-300 hover:bg-cyan-500/10 hover:shadow-[0_0_8px_rgba(34,211,238,0.35)] transition-all"
-      >
-        why?
-      </button>
-      {open && (
-        <div className="absolute right-0 top-full mt-1.5 z-20 w-64 rounded-xl border border-cyan-500/25 bg-white dark:bg-neutral-900 p-3 shadow-xl shadow-cyan-500/10">
-          <p className="text-xs font-semibold text-neutral-700 dark:text-neutral-200 mb-2">
-            Why {pairing.spiceName}?
-          </p>
+    <div className="rise-in mt-1 pr-1">
+      <p className="text-small text-chalk-3">
+        Overall {pairing.blendedScore.toFixed(2)}, from three independent kinds of evidence.
+      </p>
 
-          {pairing.affinityDetails.length > 0 ? (
-            <div className="space-y-1.5 mb-2">
-              <p className="text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
-                Recipe affinity (FlavorGraph)
-              </p>
+      <div className="mt-3">
+        <p className="text-body font-medium text-chalk">Recipes</p>
+        {pairing.affinityDetails.length > 0 ? (
+          <>
+            <div className="mt-1.5 grid gap-1.5">
               {pairing.affinityDetails.map((d) => (
-                <div key={d.spiceId} className="flex items-center gap-2">
-                  <span className="text-[11px] text-neutral-600 dark:text-neutral-300 w-20 truncate">
-                    {nameFromId(d.spiceId)}
-                  </span>
-                  <ScoreBar score={d.score} />
-                  <span className="text-[11px] tabular-nums text-cyan-600 dark:text-cyan-300 w-8 text-right">
-                    {d.score.toFixed(2)}
-                  </span>
+                <div key={d.spiceId} className="grid grid-cols-[minmax(0,118px)_1fr_32px] items-center gap-2">
+                  <span className="text-small leading-tight text-chalk-2">with {spiceName(d.spiceId)}</span>
+                  <Meter value={d.score} />
+                  <span className="text-right text-small text-chalk-2">{d.score.toFixed(2)}</span>
                 </div>
               ))}
-              <p className="text-[10px] text-neutral-400 dark:text-neutral-500">
-                Learned from ~1M real recipes + chemical compound data.
-              </p>
             </div>
-          ) : (
-            <p className="text-[11px] text-neutral-500 dark:text-neutral-400 mb-2">
-              No FlavorGraph embedding for this pair yet — score comes from
-              the curated label below.
-            </p>
-          )}
+            <p className="mt-1 text-micro text-chalk-3">How closely they travel together across about a million recipes.</p>
+          </>
+        ) : (
+          <p className="mt-1 text-small text-chalk-3">No recipe data for this pair.</p>
+        )}
+      </div>
 
-          {pairing.compoundOverlap &&
-            pairing.compoundOverlap.sharedAromaCount > 0 && (
-              <div className="pt-2 border-t border-neutral-200 dark:border-neutral-700/70">
-                <p className="text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500 mb-1">
-                  Shares {pairing.compoundOverlap.sharedAromaCount} aroma
-                  compound
-                  {pairing.compoundOverlap.sharedAromaCount !== 1 ? "s" : ""}
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {pairing.compoundOverlap.shared.map((c) => (
-                    <span
-                      key={c.name}
-                      title={c.flavors.join(", ")}
-                      className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20"
-                    >
-                      {c.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      <div className="mt-3 border-t border-rule pt-3">
+        <p className="text-body font-medium text-chalk">Chemistry</p>
+        {overlap ? (
+          <>
+            <div className="mt-1.5 grid grid-cols-[minmax(0,118px)_1fr_32px] items-center gap-2">
+              <span className="text-small text-chalk-2">shared aroma</span>
+              <Meter value={overlap.compoundScore} />
+              <span className="text-right text-small text-chalk-2">{overlap.compoundScore.toFixed(2)}</span>
+            </div>
+            {words.length > 0 && (
+              <p className="mt-2 text-small leading-snug text-chalk-2">Both carry {formatList(words.slice(0, 6))} notes.</p>
             )}
+            {overlap.sharedAromaCount > 0 && (
+              <p className="mt-1 text-small leading-snug text-chalk-3">
+                {overlap.sharedAromaCount} shared aroma compound{overlap.sharedAromaCount !== 1 ? "s" : ""}
+                {overlap.shared.length > 0 ? `, including ${formatList(overlap.shared.slice(0, 3).map((c) => c.name))}` : ""}.
+              </p>
+            )}
+          </>
+        ) : (
+          <p className="mt-1 text-small text-chalk-3">No chemistry data for this pair.</p>
+        )}
+      </div>
 
-          <div className="pt-2 mt-2 border-t border-neutral-200 dark:border-neutral-700/70">
-            <p className="text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500 mb-0.5">
-              Curated label
-            </p>
-            <p className="text-[11px] text-neutral-600 dark:text-neutral-300">
-              Tagged as {affinityLabel[pairing.affinity]}
-              {pairing.note ? ` — ${pairing.note}` : "."}
-            </p>
-          </div>
-
-          <p className="mt-2 text-[9px] text-neutral-400 dark:text-neutral-600">
-            Derived from FlavorGraph (Park et al. 2021) and Ahn et al. (2011)
-          </p>
-        </div>
-      )}
+      <div className="mt-3 border-t border-rule pt-3">
+        <p className="text-body font-medium text-chalk">Tradition</p>
+        <p className="mt-1 text-small leading-snug text-chalk-2">
+          {traditionSentence[pairing.affinity]}
+          {pairing.note ? ` ${pairing.note}` : ""}
+        </p>
+      </div>
     </div>
   );
+}
+
+function formatList(items: string[]): string {
+  if (items.length <= 1) return items.join("");
+  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
 }

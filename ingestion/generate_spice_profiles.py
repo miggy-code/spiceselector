@@ -1,5 +1,5 @@
 """
-Interactive spice profile generator.
+Spice profile generator.
 
 Takes USDA compound data for each spice and uses Gemini to generate
 structured flavor profiles, cuisine associations, pairings, and substitutes.
@@ -15,12 +15,13 @@ import os
 import sys
 from pydantic import BaseModel, Field
 from typing import List
+from pathlib import Path
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 
 # Load environment variables from .env.local in the project root
-load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env.local'))
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env.local'), override=True)
 
 RAW_DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'idea', 'spice_data_raw.json')
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), 'generated_profiles.json')
@@ -90,6 +91,31 @@ SPICE_FAMILIES = {
     "Chili powder": "hot-pungent",
 }
 
+# Canonical family assignments come from taxonomy, including newly added leaves.
+from ingest_compound_overlap import load_spices, build_compound_index, resolve
+from ingest_flavordb2 import FLAVORDB2_MAP
+for leaf in load_spices():
+    SPICE_FAMILIES[leaf["name"]] = leaf["id"].split(".")[0]
+
+
+def compound_context(name, raw_entry):
+    sections = [format_compound_data(raw_entry)]
+    bucket = resolve({"name": name}, build_compound_index()) or {}
+    annotated = [c for c in bucket.values() if c["flavors"]]
+    if annotated:
+        sections.append("FooDB compound descriptors (presence, not sensory intensity):\n" +
+                        "\n".join(f"{c['name']}: {', '.join(c['flavors'])}" for c in annotated[:40]))
+    mapped = FLAVORDB2_MAP.get(name)
+    if mapped:
+        eid, quality = mapped
+        path = Path(__file__).parent / "flavordb2_cache" / f"{eid}.json"
+        if path.exists():
+            raw = json.loads(path.read_text())
+            sections.append(f"FlavorDB2 entity {eid}, match={quality}, ingredient={raw.get('entity_alias_readable')}. Approximate matches are stand-ins, not ingredient-specific measurements.")
+            sections.extend(f"{m.get('common_name', m.get('pubchem_id'))}: {m.get('flavor_profile', '')}" for m in raw.get("molecules", [])[:60])
+    return "\n".join(sections)
+
+
 SYSTEM_PROMPT = """You are a culinary scientist and spice expert. You have deep knowledge of:
 - Aromatic chemistry (volatile compounds, essential oils)
 - Culinary traditions across all major world cuisines
@@ -131,6 +157,13 @@ def load_existing_profiles():
         with open(OUTPUT_PATH, 'r') as f:
             return json.load(f)
     return {}
+
+
+def has_profile(profiles, name):
+    from complete_profile_identities import ALIASES
+    from ingest_compound_overlap import spice_key
+    return any(ALIASES.get(spice_key(p["name"]), spice_key(p["name"])) == spice_key(name)
+               for p in profiles.values())
 
 
 def save_profiles(profiles):
@@ -244,8 +277,7 @@ def generate_profile(client, spice_name, family, compound_data, all_spices):
         print(f"\n  Error: Failed to parse JSON from AI.")
         print(f"  Reason: {e}")
         print("-" * 40)
-        print("  RAW TEXT:")
-        print(raw_text)
+        print("  Provider response body suppressed.")
         print("-" * 40)
         raise e
 
@@ -293,26 +325,43 @@ def main():
     parser.add_argument("--spice", type=str, help="Generate for a single spice")
     parser.add_argument("--all", action="store_true", help="Generate for all spices")
     parser.add_argument("--skip-existing", action="store_true", help="Skip spices that already have profiles")
+    parser.add_argument("--import-profiles", type=Path, help="Import locally authored schema-compatible profiles (requires --skip-existing)")
     parser.add_argument("--list", action="store_true", help="List all spices and their status")
     args = parser.parse_args()
 
     raw_data = load_raw_data()
     profiles = load_existing_profiles()
 
-    all_spice_names = sorted(set(
-        name for name in SPICE_FAMILIES.keys()
-        if not any(alt in name for alt in ['(ground)', '(dried)'])
-    ))
+    all_spice_names = sorted(s["name"] for s in load_spices())
 
     if args.list:
         print(f"\nSpice Status ({len(all_spice_names)} total):\n")
         for name in all_spice_names:
             has_usda = "USDA" if name in raw_data else "    "
-            has_profile = "DONE" if name in profiles else "    "
+            status = "DONE" if has_profile(profiles, name) else "    "
             family = SPICE_FAMILIES.get(name, "?")
-            print(f"  [{has_usda}] [{has_profile}] {name:25s} ({family})")
+            print(f"  [{has_usda}] [{status}] {name:25s} ({family})")
         print(f"\n  USDA data: {sum(1 for n in all_spice_names if n in raw_data)}/{len(all_spice_names)}")
-        print(f"  Profiles:  {sum(1 for n in all_spice_names if n in profiles)}/{len(all_spice_names)}")
+        print(f"  Profiles:  {sum(1 for n in all_spice_names if has_profile(profiles, n))}/{len(all_spice_names)}")
+        return
+
+    if args.import_profiles:
+        if not args.skip_existing:
+            parser.error("--import-profiles requires --skip-existing")
+        from complete_profile_identities import ALIASES
+        from ingest_compound_overlap import spice_key
+        additions = json.loads(args.import_profiles.read_text())
+        leaves = {s["name"]: s for s in load_spices()}
+        for name, profile in additions.items():
+            SpiceProfileSchema.model_validate(profile)
+            if name not in leaves or profile["name"] != name:
+                parser.error(f"Imported profile must use a taxonomy name: {name}")
+            if has_profile(profiles, name):
+                continue
+            profile["family"] = leaves[name]["id"].split(".")[0]
+            profiles[name] = profile
+        save_profiles(profiles)
+        print(f"Validated import; {len(profiles)} total profiles. Existing records retained.")
         return
 
     api_key = os.environ.get("GOOGLE_API_KEY")
@@ -332,7 +381,9 @@ def main():
         sys.exit(0)
 
     for spice_name in spices_to_process:
-        if args.skip_existing and spice_name in profiles:
+        from complete_profile_identities import ALIASES
+        from ingest_compound_overlap import spice_key
+        if args.skip_existing and has_profile(profiles, spice_name):
             print(f"Skipping {spice_name} (already has profile)")
             continue
 
@@ -346,11 +397,13 @@ def main():
                 if raw_entry:
                     break
 
-        compound_text = format_compound_data(raw_entry)
+        compound_text = compound_context(spice_name, raw_entry)
 
         print(f"\nGenerating profile for: {spice_name}...")
         try:
             profile = generate_profile(client, spice_name, family, compound_text, all_spice_names)
+            SpiceProfileSchema.model_validate(profile)
+            profile["family"] = family
             display_profile(profile)
 
             # Batch Processing Flow
@@ -363,14 +416,9 @@ def main():
             # Error already printed in generate_profile
             print("  Skipping this spice due to JSON error.")
         except Exception as e:
-            print(f"  Error generating profile: {e}")
-            import traceback
-            traceback.print_exc()
-            print("  Skipping this spice.")
-
-
-if __name__ == "__main__":
-    main()
+            # Provider exceptions can embed API keys; never print their bodies.
+            print(f"  Generation failed ({type(e).__name__}); provider details suppressed.")
+            raise SystemExit(1)
 
 
 if __name__ == "__main__":
