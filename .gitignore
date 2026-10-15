@@ -49,3 +49,10 @@ next-env.d.ts
 
 # Python bytecode
 __pycache__/
+
+# Agent notes and planning scratch (kept on the agent-notes branch)
+/AGENTS.md
+/CLAUDE.md
+/.claude/
+/PLAN.md
+/idea/
