@@ -73,7 +73,7 @@ Spice Selector is an independent project inspired by the ingredient-and-molecule
 - **CulinaryDB:** Recipe and cuisine-frequency data attributed to CoSyLab, IIIT-Delhi, and Ganesh Bagler, distributed under CC BY-NC-SA 3.0.
 - **Flavor profiles:** Five-axis profiles and some descriptive fields were generated with Google Gemini and reviewed or curated for this project. They are estimates, not laboratory measurements.
 
-The source-specific restrictions also apply to relevant derived data in this repository. Review the linked terms before reusing the datasets, especially for commercial purposes. This repository does not currently include a general software license.
+The source-specific restrictions also apply to relevant derived data in this repository. Review the linked terms before reusing the datasets, especially for commercial purposes. The application code is released under the [MIT License](LICENSE). The datasets keep their source licenses, which include non-commercial terms (CC BY-NC-SA 3.0 and FooDB terms); the MIT License does not apply to them.
 
 ## Repository map
 
