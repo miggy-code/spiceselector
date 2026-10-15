@@ -1,34 +1,29 @@
 # SpiceSelection
 
-**Explore how spices relate through flavor, chemistry, and cooking traditions.**
+[![CI](https://github.com/miggy-code/spiceselector/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/miggy-code/spiceselector/actions/workflows/ci.yml)
 
-SpiceSelection is an interactive spice explorer built for curious cooks. Move between a 3D flavor map and a 2D atlas, compare flavor dimensions, build blends, and inspect why a pairing or substitution is suggested.
+**A visual guide to how spices relate through flavor, chemistry, and cooking.**
 
-The project was inspired by [FlavorDB](https://cosylab.iiitd.edu.in/flavordb/), which connects ingredients with the molecules and descriptors behind flavor. SpiceSelection brings that spirit of exploration to a focused, visual tool for spices, combining molecular data with recipe relationships and curated culinary context.
+SpiceSelection turns flavor data into an interactive tool for exploring 73 spices. Move between a 3D flavor map and a 2D atlas, inspect evidence behind pairing suggestions, and compare possible substitutions. The app runs from committed data files; the frontend needs no API key, account, or backend.
 
-## Explore
+## What you can explore
 
-- **Map and Atlas:** Explore spices in a 3D flavor space or a 2D atlas. In the map, choose which flavor dimensions define the axes. In the atlas, explore neighborhoods or compare two dimensions directly.
-- **Pairing suggestions:** See ranked suggestions with evidence from recipe affinity, shared aroma chemistry, and curated pairing notes. Select a suggestion to add it to the map.
-- **Substitution finder:** Find possible replacements for a selected spice, compare the evidence behind each match, and get guidance on adjusting for intensity.
-- **Blend builder:** Combine spices, inspect the blend’s flavor profile and cohesion, and get suggestions for gaps in the blend.
-- **Cooking ideas:** Explore classic blend references, bridge suggestions for a weak pairing, surprise pairings, and spice matches for a dish.
-- **Personal tools:** Search with the keyboard, save and share blends, mark spices on your rack, and filter by cuisine or heat.
-- **Responsive layout:** Use the explorer on desktop or mobile, where the pairing panel becomes a bottom sheet.
+- **Flavor map:** Arrange spices across warmth, brightness, earthiness, florality, and heat. Select a spice to see its strongest recipe-affinity relationships.
+- **Flavor atlas:** Explore neighborhoods across all five dimensions at once, or compare two dimensions directly. Switch between map and atlas with an animated transition.
+- **Pairing evidence:** See suggestions ranked against selected spices, with per-pair recipe, chemistry, and curated evidence available in the explanation.
+- **Substitutions:** Compare flavor-profile similarity, shared chemistry, taxonomy, and recipe affinity, with guidance for adjusting a replacement's intensity.
+- **Blend and dish tools:** Build and share blends, save favorites, browse classic blends, find a bridge between two spices, or explore spices used with a dish.
+- **Personalization:** Search the spice catalog, filter by cuisine or heat, and mark spices in your rack. Preferences stay in the browser.
 
 ## How recommendations work
 
-Pairing and substitution scores answer different questions. A strong pairing can have contrasting flavors; a useful substitute should usually taste more similar. SpiceSelection uses separate ranking logic for each.
+Pairing and substitution are separate ranking problems. A spice can pair well with another while tasting very different from it, so the app uses different signals for each.
 
-Pairing suggestions combine available evidence from:
+Pairing scores blend three signals: recipe affinity from [FlavorGraph](https://github.com/lamypark/FlavorGraph), compound overlap from FooDB, USDA Dr. Duke's, and FlavorDB2, and a curated pairing label. The nominal weights are 0.6, 0.2, and 0.2; when a signal is unavailable for a pair, the remaining weights are renormalized. The interface exposes the evidence that contributed to each suggestion.
 
-1. **Recipe affinity** from [FlavorGraph](https://github.com/lamypark/FlavorGraph).
-2. **Compound overlap** from FooDB, USDA Dr. Duke’s, and FlavorDB2.
-3. **Curated pairing labels** that add culinary context.
+Substitution scores combine five-axis profile similarity (0.4), compound overlap (0.25), taxonomy proximity (0.2), and recipe affinity (0.15), again renormalizing when data is missing. Taxonomy-only candidates are dampened so a shared family does not imply a perfect replacement.
 
-Substitutions use flavor-profile similarity, compound overlap, taxonomy proximity, and recipe affinity. Missing evidence is handled per pair, so a candidate is not presented as a perfect match just because other sources have no data.
-
-The five flavor dimensions—warmth, brightness, earthiness, florality, and heat—make the map easier to read. Profile scores are generated and curated estimates, not laboratory measurements or universal descriptions of taste.
+These scores are decision aids, not taste measurements. Flavor profiles are generated and reviewed estimates; recipe co-occurrence does not establish that every cook will enjoy a pairing; and shared molecules alone do not prove that two ingredients taste good together. Coverage varies by spice and data source, and the app shows which evidence is available.
 
 ## Run locally
 
@@ -37,59 +32,58 @@ The five flavor dimensions—warmth, brightness, earthiness, florality, and heat
 - Node.js 20.9 or newer
 - npm
 
-The app uses committed data files and does not need API keys for local development.
-
 ```bash
 git clone https://github.com/miggy-code/spiceselector.git
 cd spiceselector
-npm install
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). The committed JSON files power the frontend, so local development does not require API credentials.
 
-To create a production build:
+Useful project checks:
 
 ```bash
+npm run lint
 npm run build
 npm start
 ```
 
-## Technology
+The data-generation workflow is documented separately in [`ingestion/README.md`](ingestion/README.md). Regenerating datasets may require third-party source files or API credentials; that pipeline is not needed to run the app.
 
-- **Next.js 16, React 19, TypeScript** for the application and UI
-- **Three.js and React Three Fiber** for the interactive 3D flavor map
-- **D3** for the 2D atlas and charts
-- **Framer Motion** for interface transitions
-- **Static JSON data** for fast, self-contained local use; no backend or account required
+## Implementation
+
+- **Next.js 16, React 19, TypeScript:** application shell, routing, and interactive views
+- **Three.js / React Three Fiber:** 3D map, camera controls, and map-to-atlas morph
+- **D3:** 2D atlas and data visualizations
+- **Framer Motion:** interface transitions and focused feedback
+- **Python and TypeScript ingestion scripts:** source-data processing and committed static outputs
+- **Browser storage:** saved blends, rack inventory, and user preferences without an account
+
+The app is organized around small ranking and data modules in `src/lib/`, visual and interaction components in `src/components/`, and generated or curated datasets in `src/data/`. There is no server-side database or application API.
 
 ## Data and attribution
 
-FlavorDB inspired the project’s ingredient-and-molecule exploration. FlavorDB and FlavorDB2 are research resources developed by CoSyLab. This project is an independent application and is not affiliated with or endorsed by the FlavorDB team.
+SpiceSelection is an independent project inspired by the ingredient-and-molecule exploration in FlavorDB. It is not affiliated with or endorsed by the FlavorDB team.
 
-- **FlavorDB:** Garg et al., [“FlavorDB: a database of flavor molecules”](https://doi.org/10.1093/nar/gkx957), *Nucleic Acids Research* (2018). [Database](https://cosylab.iiitd.edu.in/flavordb/).
-- **FlavorDB2:** Used as a source for flavor-molecule evidence. See the [FlavorDB2 database](https://cosylab.iiitd.edu.in/flavordb2/) and [updated database paper](https://doi.org/10.1111/1750-3841.17298).
+- **FlavorDB / FlavorDB2:** Garg et al., [“FlavorDB: a database of flavor molecules”](https://doi.org/10.1093/nar/gkx957), *Nucleic Acids Research* (2018); [FlavorDB2](https://cosylab.iiitd.edu.in/flavordb2/). Relevant derived FlavorDB2 data is distributed under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 - **FlavorGraph:** Recipe relationships and embeddings from [lamypark/FlavorGraph](https://github.com/lamypark/FlavorGraph), licensed under Apache-2.0.
-- **FooDB:** Compound and flavor annotations from [FooDB](https://foodb.ca/), subject to its terms; commercial use requires permission from the FooDB authors.
-- **USDA Dr. Duke’s:** Phytochemical information from the [USDA Dr. Duke’s Phytochemical and Ethnobotanical Databases](https://phytochem.nal.usda.gov/).
-- **CulinaryDB:** Recipe and cuisine frequency data attributed to CoSyLab / IIIT-Delhi / Ganesh Bagler and distributed under CC BY-NC-SA 3.0.
-- **Flavor profiles:** Five-axis profiles and some descriptive fields were generated with Google Gemini and reviewed or curated for this project. They should be treated as estimates.
+- **FooDB:** Compound and flavor annotations from [foodb.ca](https://foodb.ca/), subject to FooDB's terms. FooDB data is provided for non-commercial use; commercial use requires permission from its authors.
+- **USDA Dr. Duke's:** Phytochemical information from the [USDA Dr. Duke's Phytochemical and Ethnobotanical Databases](https://phytochem.nal.usda.gov/).
+- **CulinaryDB:** Recipe and cuisine-frequency data attributed to CoSyLab, IIIT-Delhi, and Ganesh Bagler, distributed under CC BY-NC-SA 3.0.
+- **Flavor profiles:** Five-axis profiles and some descriptive fields were generated with Google Gemini and reviewed or curated for this project. They are estimates, not laboratory measurements.
 
-FlavorDB2-derived data is distributed under **CC BY-NC-SA 3.0**. FooDB data is provided for non-commercial use. These restrictions apply to relevant derived data in this repository; review the source terms before reusing data, especially for commercial purposes. The repository does not currently include a general software license.
+The source-specific restrictions also apply to relevant derived data in this repository. Review the linked terms before reusing the datasets, especially for commercial purposes. This repository does not currently include a general software license.
 
-## Data pipeline
-
-The committed outputs power the app. To regenerate or extend the datasets, use the scripts and instructions in [`ingestion/README.md`](ingestion/README.md). Some pipeline steps require external datasets or API credentials; they are not needed to run the frontend.
-
-## Project layout
+## Repository map
 
 ```text
 src/
   app/            Next.js route, layout, and global styles
-  components/     Maps, search, filters, substitution finder, pairing tools
+  components/     Maps, search, filters, substitution and pairing tools
   context/        Selection, rack, and saved-blend state
   data/           Taxonomy, profiles, and generated evidence datasets
-  lib/            Pairing, substitution, blend, and flavor utilities
+  lib/            Ranking, substitution, blend, and flavor utilities
 ingestion/        Data ingestion and generation scripts
-docs/             Data notes, analyses, and project documentation
+docs/             Data notes, analyses, and source documentation
 ```
