@@ -33,13 +33,26 @@ const SavedBlendsContext = createContext<SavedBlendsState | null>(null);
 
 const NO_BLENDS: SavedBlend[] = [];
 
+function isSavedBlend(value: unknown): value is SavedBlend {
+  if (typeof value !== "object" || value === null) return false;
+  const blend = value as Partial<SavedBlend>;
+  return (
+    typeof blend.id === "string" &&
+    typeof blend.name === "string" &&
+    Array.isArray(blend.slugs) &&
+    blend.slugs.every((slug) => typeof slug === "string") &&
+    typeof blend.createdAt === "number" &&
+    Number.isFinite(blend.createdAt)
+  );
+}
+
 const blendsStore = createLocalStore<SavedBlend[]>(
   STORAGE_KEY,
   NO_BLENDS,
   (raw) => {
     const blends: unknown = JSON.parse(raw);
     if (!Array.isArray(blends)) throw new Error("corrupt blends");
-    return blends as SavedBlend[];
+    return blends.filter(isSavedBlend);
   },
   (blends) => JSON.stringify(blends)
 );

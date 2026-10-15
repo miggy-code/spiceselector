@@ -31,15 +31,17 @@ export function createLocalStore<T>(
   const listeners = new Set<Listener>();
   let value = initial;
   let loaded = false;
+  let storageListener: ((event: StorageEvent) => void) | null = null;
 
   function getSnapshot(): T {
     if (!loaded) {
       loaded = true;
       try {
         const raw = localStorage.getItem(key);
-        if (raw) value = decode(raw);
+        value = raw === null ? initial : decode(raw);
       } catch {
         // Corrupt or unavailable storage — start fresh.
+        value = initial;
       }
     }
     return value;
@@ -48,8 +50,21 @@ export function createLocalStore<T>(
   return {
     subscribe(listener) {
       listeners.add(listener);
+      if (!storageListener) {
+        storageListener = (event) => {
+          if (event.key !== key && event.key !== null) return;
+          loaded = false;
+          getSnapshot();
+          for (const subscriber of listeners) subscriber();
+        };
+        window.addEventListener("storage", storageListener);
+      }
       return () => {
         listeners.delete(listener);
+        if (listeners.size === 0 && storageListener) {
+          window.removeEventListener("storage", storageListener);
+          storageListener = null;
+        }
       };
     },
     getSnapshot,
