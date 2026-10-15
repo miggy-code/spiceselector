@@ -15,7 +15,7 @@ const schibsted = Schibsted_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SpiceSelection",
+  title: "Spice Selector",
   description:
     "Explore spices on an interactive flavor map and find pairings backed by recipe data, shared aroma chemistry and culinary tradition.",
 };

@@ -1,10 +1,10 @@
-# SpiceSelection
+# Spice Selector
 
 [![CI](https://github.com/miggy-code/spiceselector/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/miggy-code/spiceselector/actions/workflows/ci.yml)
 
 **A visual guide to how spices relate through flavor, chemistry, and cooking.**
 
-SpiceSelection turns flavor data into an interactive tool for exploring 73 spices. Move between a 3D flavor map and a 2D atlas, inspect evidence behind pairing suggestions, and compare possible substitutions. The app runs from committed data files; the frontend needs no API key, account, or backend.
+Spice Selector turns flavor data into an interactive tool for exploring 73 spices. Move between a 3D flavor map and a 2D atlas, inspect evidence behind pairing suggestions, and compare possible substitutions. The app runs from committed data files; the frontend needs no API key, account, or backend.
 
 ## What you can explore
 
@@ -64,7 +64,7 @@ The app is organized around small ranking and data modules in `src/lib/`, visual
 
 ## Data and attribution
 
-SpiceSelection is an independent project inspired by the ingredient-and-molecule exploration in FlavorDB. It is not affiliated with or endorsed by the FlavorDB team.
+Spice Selector is an independent project inspired by the ingredient-and-molecule exploration in FlavorDB. It is not affiliated with or endorsed by the FlavorDB team.
 
 - **FlavorDB / FlavorDB2:** Garg et al., [“FlavorDB: a database of flavor molecules”](https://doi.org/10.1093/nar/gkx957), *Nucleic Acids Research* (2018); [FlavorDB2](https://cosylab.iiitd.edu.in/flavordb2/). Relevant derived FlavorDB2 data is distributed under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 - **FlavorGraph:** Recipe relationships and embeddings from [lamypark/FlavorGraph](https://github.com/lamypark/FlavorGraph), licensed under Apache-2.0.

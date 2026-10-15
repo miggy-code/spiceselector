@@ -152,7 +152,7 @@ def fetch_entity(entity_id: int) -> dict:
     last_err = None
     for attempt in range(1, FETCH_RETRIES + 1):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "SpiceSelection-ingestion"})
+            req = urllib.request.Request(url, headers={"User-Agent": "SpiceSelector-ingestion"})
             with urllib.request.urlopen(req, timeout=FETCH_TIMEOUT) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, OSError) as e:
