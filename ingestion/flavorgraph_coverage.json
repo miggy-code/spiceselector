@@ -169,6 +169,18 @@
       "approximate": false
     },
     {
+      "spiceId": "earthy.seed.ajwain",
+      "spiceName": "Ajwain",
+      "flavorGraphNode": "ajwain",
+      "approximate": false
+    },
+    {
+      "spiceId": "earthy.seed.annatto",
+      "spiceName": "Annatto",
+      "flavorGraphNode": "annatto_seeds",
+      "approximate": false
+    },
+    {
       "spiceId": "earthy.smoky.smoked-paprika",
       "spiceName": "Smoked Paprika",
       "flavorGraphNode": "smoked_paprika",
@@ -217,6 +229,12 @@
       "approximate": false
     },
     {
+      "spiceId": "herbal.mediterranean.savory",
+      "spiceName": "Savory",
+      "flavorGraphNode": "summer_savory",
+      "approximate": false
+    },
+    {
       "spiceId": "herbal.asian.lemongrass",
       "spiceName": "Lemongrass",
       "flavorGraphNode": "lemongrass",
@@ -238,6 +256,12 @@
       "spiceId": "herbal.asian.shiso",
       "spiceName": "Shiso",
       "flavorGraphNode": "shiso",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.asian.curry-leaf",
+      "spiceName": "Curry Leaf",
+      "flavorGraphNode": "curry_leaf",
       "approximate": false
     },
     {
@@ -274,6 +298,18 @@
       "spiceId": "herbal.leafy.tarragon",
       "spiceName": "Tarragon",
       "flavorGraphNode": "tarragon",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.mint",
+      "spiceName": "Mint",
+      "flavorGraphNode": "spearmint",
+      "approximate": false
+    },
+    {
+      "spiceId": "herbal.leafy.epazote",
+      "spiceName": "Epazote",
+      "flavorGraphNode": "epazote",
       "approximate": false
     },
     {
@@ -395,9 +431,19 @@
       "spiceName": "Nigella Seed",
       "flavorGraphNode": "nigella_seeds",
       "approximate": false
+    },
+    {
+      "spiceId": "umami-savory.resin.asafoetida",
+      "spiceName": "Asafoetida",
+      "flavorGraphNode": "asafoetida_powder",
+      "approximate": true
     }
   ],
   "unmatched": [
+    {
+      "spiceId": "warm.woody.black-cardamom",
+      "spiceName": "Black Cardamom"
+    },
     {
       "spiceId": "hot-pungent.pepper.sichuan-pepper",
       "spiceName": "Sichuan Pepper"
@@ -411,12 +457,32 @@
       "spiceName": "Aleppo Pepper"
     },
     {
+      "spiceId": "hot-pungent.chili.aji-amarillo",
+      "spiceName": "Aj\u00ed Amarillo"
+    },
+    {
+      "spiceId": "hot-pungent.chili.aji-panca",
+      "spiceName": "Aj\u00ed Panca"
+    },
+    {
+      "spiceId": "hot-pungent.chili.rocoto",
+      "spiceName": "Rocoto"
+    },
+    {
       "spiceId": "sweet.vanilla-adjacent.tonka-bean",
       "spiceName": "Tonka Bean"
     },
     {
       "spiceId": "sweet.aromatic-sweet.mahlab",
       "spiceName": "Mahlab"
+    },
+    {
+      "spiceId": "herbal.mediterranean.juniper-berry",
+      "spiceName": "Juniper Berry"
+    },
+    {
+      "spiceId": "herbal.leafy.huacatay",
+      "spiceName": "Huacatay"
     },
     {
       "spiceId": "floral.rose-family.hibiscus",
@@ -427,6 +493,6 @@
       "spiceName": "Chamomile"
     }
   ],
-  "matchedCount": 66,
-  "totalSpices": 73
+  "matchedCount": 73,
+  "totalSpices": 86
 }

@@ -150,6 +150,10 @@ def normalize_spice_name(name):
 # vector in the kitchenette embeddings (which use plural, recipe-style keys).
 # Candidates are tried in order; first one with an embedding wins.
 NAME_OVERRIDES = {
+    "Mint": ["spearmint"],  # The taxonomy defines Mint as Mentha spicata.
+    "Asafoetida": ["asafoetida_powder"],
+    "Annatto": ["annatto_seeds", "achiote_seeds"],
+    "Savory": ["summer_savory"],
     "Chipotle": ["chipotle_pepper", "chipotle_chiles"],
     "Mustard Seed": ["yellow_mustard_seeds", "black_mustard_seeds"],
     "Fenugreek": ["fenugreek_leaves"],
@@ -169,6 +173,7 @@ NAME_OVERRIDES = {
 # Matches that stand in for a related-but-not-identical ingredient. Recorded in
 # the coverage report so downstream UI can qualify the evidence.
 APPROXIMATE_MATCHES = {
+    ("Asafoetida", "asafoetida_powder"),  # Powder may contain a carrier rather than pure resin.
     ("Fenugreek", "fenugreek_leaves"),
     ("Gochugaru", "red_pepper_powder"),
     ("Elderflower", "elderflower_liqueur"),

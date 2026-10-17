@@ -1,5 +1,7 @@
 # Flavor data completeness report
 
+Historical 73-ingredient snapshot. See the [2026-10-17 expansion report](../research/spice-expansion-2026-10-17.md) for the current 86-ingredient collection.
+
 Final pipeline audit for the 2026-10-13 work session (completed 2026-10-14).
 
 73/73 taxonomy leaves map to exactly one active profile using the application's actual

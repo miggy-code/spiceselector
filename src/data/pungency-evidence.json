@@ -66,6 +66,14 @@
       "sources": [],
       "missing": true
     },
+    "warm.woody.black-cardamom": {
+      "name": "Black Cardamom",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
     "hot-pungent.pepper.black-pepper": {
       "name": "Black Pepper",
       "scovilleRange": null,
@@ -158,6 +166,39 @@
     },
     "hot-pungent.chili.aleppo": {
       "name": "Aleppo Pepper",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.chili.aji-amarillo": {
+      "name": "Aj\u00ed Amarillo",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.chili.aji-panca": {
+      "name": "Aj\u00ed Panca",
+      "scovilleRange": null,
+      "pungencyClass": "capsaicinoid-variable",
+      "sourceQuality": "none",
+      "sources": [
+        "https://pubs.nmsu.edu/_h/H237/index.html"
+      ],
+      "missing": true,
+      "note": "Cultivar, blend and processing unspecified; no ingredient-specific measured range available in this reference layer."
+    },
+    "hot-pungent.chili.rocoto": {
+      "name": "Rocoto",
       "scovilleRange": null,
       "pungencyClass": "capsaicinoid-variable",
       "sourceQuality": "none",
@@ -307,6 +348,22 @@
       "sources": [],
       "missing": true
     },
+    "earthy.seed.ajwain": {
+      "name": "Ajwain",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "earthy.seed.annatto": {
+      "name": "Annatto",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
     "earthy.smoky.smoked-paprika": {
       "name": "Smoked Paprika",
       "scovilleRange": null,
@@ -377,6 +434,22 @@
       "sources": [],
       "missing": true
     },
+    "herbal.mediterranean.juniper-berry": {
+      "name": "Juniper Berry",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.mediterranean.savory": {
+      "name": "Savory",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
     "herbal.asian.lemongrass": {
       "name": "Lemongrass",
       "scovilleRange": null,
@@ -403,6 +476,14 @@
     },
     "herbal.asian.shiso": {
       "name": "Shiso",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.asian.curry-leaf": {
+      "name": "Curry Leaf",
       "scovilleRange": null,
       "pungencyClass": null,
       "sourceQuality": "none",
@@ -451,6 +532,30 @@
     },
     "herbal.leafy.tarragon": {
       "name": "Tarragon",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.mint": {
+      "name": "Mint",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.epazote": {
+      "name": "Epazote",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "herbal.leafy.huacatay": {
+      "name": "Huacatay",
       "scovilleRange": null,
       "pungencyClass": null,
       "sourceQuality": "none",
@@ -627,6 +732,14 @@
     },
     "umami-savory.salty.nigella-seed": {
       "name": "Nigella Seed",
+      "scovilleRange": null,
+      "pungencyClass": null,
+      "sourceQuality": "none",
+      "sources": [],
+      "missing": true
+    },
+    "umami-savory.resin.asafoetida": {
+      "name": "Asafoetida",
       "scovilleRange": null,
       "pungencyClass": null,
       "sourceQuality": "none",

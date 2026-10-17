@@ -136,6 +136,16 @@
   },
   {
     "a": "warm.baking.cinnamon",
+    "b": "earthy.seed.ajwain",
+    "score": 0.564
+  },
+  {
+    "a": "warm.baking.cinnamon",
+    "b": "earthy.seed.annatto",
+    "score": 0.5536
+  },
+  {
+    "a": "warm.baking.cinnamon",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5039
   },
@@ -176,6 +186,11 @@
   },
   {
     "a": "warm.baking.cinnamon",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.4865
+  },
+  {
+    "a": "warm.baking.cinnamon",
     "b": "herbal.asian.lemongrass",
     "score": 0.5512
   },
@@ -193,6 +208,11 @@
     "a": "warm.baking.cinnamon",
     "b": "herbal.asian.shiso",
     "score": 0.6065
+  },
+  {
+    "a": "warm.baking.cinnamon",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5781
   },
   {
     "a": "warm.baking.cinnamon",
@@ -223,6 +243,16 @@
     "a": "warm.baking.cinnamon",
     "b": "herbal.leafy.tarragon",
     "score": 0.5824
+  },
+  {
+    "a": "warm.baking.cinnamon",
+    "b": "herbal.leafy.mint",
+    "score": 0.5629
+  },
+  {
+    "a": "warm.baking.cinnamon",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5191
   },
   {
     "a": "warm.baking.cinnamon",
@@ -323,6 +353,11 @@
     "a": "warm.baking.cinnamon",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.5537
+  },
+  {
+    "a": "warm.baking.cinnamon",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5614
   },
   {
     "a": "warm.baking.nutmeg",
@@ -456,6 +491,16 @@
   },
   {
     "a": "warm.baking.nutmeg",
+    "b": "earthy.seed.ajwain",
+    "score": 0.531
+  },
+  {
+    "a": "warm.baking.nutmeg",
+    "b": "earthy.seed.annatto",
+    "score": 0.5416
+  },
+  {
+    "a": "warm.baking.nutmeg",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.4952
   },
@@ -496,6 +541,11 @@
   },
   {
     "a": "warm.baking.nutmeg",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.533
+  },
+  {
+    "a": "warm.baking.nutmeg",
     "b": "herbal.asian.lemongrass",
     "score": 0.5879
   },
@@ -513,6 +563,11 @@
     "a": "warm.baking.nutmeg",
     "b": "herbal.asian.shiso",
     "score": 0.6575
+  },
+  {
+    "a": "warm.baking.nutmeg",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5628
   },
   {
     "a": "warm.baking.nutmeg",
@@ -543,6 +598,16 @@
     "a": "warm.baking.nutmeg",
     "b": "herbal.leafy.tarragon",
     "score": 0.613
+  },
+  {
+    "a": "warm.baking.nutmeg",
+    "b": "herbal.leafy.mint",
+    "score": 0.5943
+  },
+  {
+    "a": "warm.baking.nutmeg",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5059
   },
   {
     "a": "warm.baking.nutmeg",
@@ -643,6 +708,11 @@
     "a": "warm.baking.nutmeg",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.5161
+  },
+  {
+    "a": "warm.baking.nutmeg",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5336
   },
   {
     "a": "warm.baking.allspice",
@@ -771,6 +841,16 @@
   },
   {
     "a": "warm.baking.allspice",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6369
+  },
+  {
+    "a": "warm.baking.allspice",
+    "b": "earthy.seed.annatto",
+    "score": 0.556
+  },
+  {
+    "a": "warm.baking.allspice",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5548
   },
@@ -811,6 +891,11 @@
   },
   {
     "a": "warm.baking.allspice",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6099
+  },
+  {
+    "a": "warm.baking.allspice",
     "b": "herbal.asian.lemongrass",
     "score": 0.6674
   },
@@ -828,6 +913,11 @@
     "a": "warm.baking.allspice",
     "b": "herbal.asian.shiso",
     "score": 0.6746
+  },
+  {
+    "a": "warm.baking.allspice",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.617
   },
   {
     "a": "warm.baking.allspice",
@@ -858,6 +948,16 @@
     "a": "warm.baking.allspice",
     "b": "herbal.leafy.tarragon",
     "score": 0.7142
+  },
+  {
+    "a": "warm.baking.allspice",
+    "b": "herbal.leafy.mint",
+    "score": 0.603
+  },
+  {
+    "a": "warm.baking.allspice",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5604
   },
   {
     "a": "warm.baking.allspice",
@@ -958,6 +1058,11 @@
     "a": "warm.baking.allspice",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.5818
+  },
+  {
+    "a": "warm.baking.allspice",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6008
   },
   {
     "a": "warm.baking.mace",
@@ -1081,6 +1186,16 @@
   },
   {
     "a": "warm.baking.mace",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6834
+  },
+  {
+    "a": "warm.baking.mace",
+    "b": "earthy.seed.annatto",
+    "score": 0.5776
+  },
+  {
+    "a": "warm.baking.mace",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.6265
   },
@@ -1121,6 +1236,11 @@
   },
   {
     "a": "warm.baking.mace",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6281
+  },
+  {
+    "a": "warm.baking.mace",
     "b": "herbal.asian.lemongrass",
     "score": 0.536
   },
@@ -1138,6 +1258,11 @@
     "a": "warm.baking.mace",
     "b": "herbal.asian.shiso",
     "score": 0.5277
+  },
+  {
+    "a": "warm.baking.mace",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6203
   },
   {
     "a": "warm.baking.mace",
@@ -1168,6 +1293,16 @@
     "a": "warm.baking.mace",
     "b": "herbal.leafy.tarragon",
     "score": 0.5403
+  },
+  {
+    "a": "warm.baking.mace",
+    "b": "herbal.leafy.mint",
+    "score": 0.5957
+  },
+  {
+    "a": "warm.baking.mace",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5527
   },
   {
     "a": "warm.baking.mace",
@@ -1268,6 +1403,11 @@
     "a": "warm.baking.mace",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.6703
+  },
+  {
+    "a": "warm.baking.mace",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6298
   },
   {
     "a": "warm.woody.clove",
@@ -1386,6 +1526,16 @@
   },
   {
     "a": "warm.woody.clove",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6478
+  },
+  {
+    "a": "warm.woody.clove",
+    "b": "earthy.seed.annatto",
+    "score": 0.5739
+  },
+  {
+    "a": "warm.woody.clove",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5512
   },
@@ -1426,6 +1576,11 @@
   },
   {
     "a": "warm.woody.clove",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6122
+  },
+  {
+    "a": "warm.woody.clove",
     "b": "herbal.asian.lemongrass",
     "score": 0.7214
   },
@@ -1443,6 +1598,11 @@
     "a": "warm.woody.clove",
     "b": "herbal.asian.shiso",
     "score": 0.6874
+  },
+  {
+    "a": "warm.woody.clove",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6646
   },
   {
     "a": "warm.woody.clove",
@@ -1473,6 +1633,16 @@
     "a": "warm.woody.clove",
     "b": "herbal.leafy.tarragon",
     "score": 0.7517
+  },
+  {
+    "a": "warm.woody.clove",
+    "b": "herbal.leafy.mint",
+    "score": 0.6524
+  },
+  {
+    "a": "warm.woody.clove",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5496
   },
   {
     "a": "warm.woody.clove",
@@ -1573,6 +1743,11 @@
     "a": "warm.woody.clove",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.5788
+  },
+  {
+    "a": "warm.woody.clove",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6219
   },
   {
     "a": "warm.woody.star-anise",
@@ -1686,6 +1861,16 @@
   },
   {
     "a": "warm.woody.star-anise",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6149
+  },
+  {
+    "a": "warm.woody.star-anise",
+    "b": "earthy.seed.annatto",
+    "score": 0.675
+  },
+  {
+    "a": "warm.woody.star-anise",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5478
   },
@@ -1726,6 +1911,11 @@
   },
   {
     "a": "warm.woody.star-anise",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6098
+  },
+  {
+    "a": "warm.woody.star-anise",
     "b": "herbal.asian.lemongrass",
     "score": 0.6046
   },
@@ -1743,6 +1933,11 @@
     "a": "warm.woody.star-anise",
     "b": "herbal.asian.shiso",
     "score": 0.5194
+  },
+  {
+    "a": "warm.woody.star-anise",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6314
   },
   {
     "a": "warm.woody.star-anise",
@@ -1773,6 +1968,16 @@
     "a": "warm.woody.star-anise",
     "b": "herbal.leafy.tarragon",
     "score": 0.4853
+  },
+  {
+    "a": "warm.woody.star-anise",
+    "b": "herbal.leafy.mint",
+    "score": 0.6149
+  },
+  {
+    "a": "warm.woody.star-anise",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5881
   },
   {
     "a": "warm.woody.star-anise",
@@ -1873,6 +2078,11 @@
     "a": "warm.woody.star-anise",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.6414
+  },
+  {
+    "a": "warm.woody.star-anise",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6107
   },
   {
     "a": "warm.woody.cardamom",
@@ -1981,6 +2191,16 @@
   },
   {
     "a": "warm.woody.cardamom",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7077
+  },
+  {
+    "a": "warm.woody.cardamom",
+    "b": "earthy.seed.annatto",
+    "score": 0.597
+  },
+  {
+    "a": "warm.woody.cardamom",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5399
   },
@@ -2021,6 +2241,11 @@
   },
   {
     "a": "warm.woody.cardamom",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5675
+  },
+  {
+    "a": "warm.woody.cardamom",
     "b": "herbal.asian.lemongrass",
     "score": 0.712
   },
@@ -2038,6 +2263,11 @@
     "a": "warm.woody.cardamom",
     "b": "herbal.asian.shiso",
     "score": 0.6734
+  },
+  {
+    "a": "warm.woody.cardamom",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6729
   },
   {
     "a": "warm.woody.cardamom",
@@ -2068,6 +2298,16 @@
     "a": "warm.woody.cardamom",
     "b": "herbal.leafy.tarragon",
     "score": 0.6926
+  },
+  {
+    "a": "warm.woody.cardamom",
+    "b": "herbal.leafy.mint",
+    "score": 0.63
+  },
+  {
+    "a": "warm.woody.cardamom",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5241
   },
   {
     "a": "warm.woody.cardamom",
@@ -2168,6 +2408,11 @@
     "a": "warm.woody.cardamom",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.6407
+  },
+  {
+    "a": "warm.woody.cardamom",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.652
   },
   {
     "a": "warm.woody.cassia",
@@ -2271,6 +2516,16 @@
   },
   {
     "a": "warm.woody.cassia",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7424
+  },
+  {
+    "a": "warm.woody.cassia",
+    "b": "earthy.seed.annatto",
+    "score": 0.6642
+  },
+  {
+    "a": "warm.woody.cassia",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5584
   },
@@ -2311,6 +2566,11 @@
   },
   {
     "a": "warm.woody.cassia",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6052
+  },
+  {
+    "a": "warm.woody.cassia",
     "b": "herbal.asian.lemongrass",
     "score": 0.6129
   },
@@ -2328,6 +2588,11 @@
     "a": "warm.woody.cassia",
     "b": "herbal.asian.shiso",
     "score": 0.5699
+  },
+  {
+    "a": "warm.woody.cassia",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6927
   },
   {
     "a": "warm.woody.cassia",
@@ -2358,6 +2623,16 @@
     "a": "warm.woody.cassia",
     "b": "herbal.leafy.tarragon",
     "score": 0.4986
+  },
+  {
+    "a": "warm.woody.cassia",
+    "b": "herbal.leafy.mint",
+    "score": 0.6704
+  },
+  {
+    "a": "warm.woody.cassia",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5456
   },
   {
     "a": "warm.woody.cassia",
@@ -2460,6 +2735,11 @@
     "score": 0.6847
   },
   {
+    "a": "warm.woody.cassia",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6915
+  },
+  {
     "a": "hot-pungent.pepper.black-pepper",
     "b": "hot-pungent.pepper.white-pepper",
     "score": 0.8146
@@ -2556,6 +2836,16 @@
   },
   {
     "a": "hot-pungent.pepper.black-pepper",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7009
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
+    "b": "earthy.seed.annatto",
+    "score": 0.6044
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.723
   },
@@ -2596,6 +2886,11 @@
   },
   {
     "a": "hot-pungent.pepper.black-pepper",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.7168
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
     "b": "herbal.asian.lemongrass",
     "score": 0.5603
   },
@@ -2613,6 +2908,11 @@
     "a": "hot-pungent.pepper.black-pepper",
     "b": "herbal.asian.shiso",
     "score": 0.577
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.7275
   },
   {
     "a": "hot-pungent.pepper.black-pepper",
@@ -2643,6 +2943,16 @@
     "a": "hot-pungent.pepper.black-pepper",
     "b": "herbal.leafy.tarragon",
     "score": 0.5495
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
+    "b": "herbal.leafy.mint",
+    "score": 0.5886
+  },
+  {
+    "a": "hot-pungent.pepper.black-pepper",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6295
   },
   {
     "a": "hot-pungent.pepper.black-pepper",
@@ -2745,6 +3055,11 @@
     "score": 0.6698
   },
   {
+    "a": "hot-pungent.pepper.black-pepper",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6833
+  },
+  {
     "a": "hot-pungent.pepper.white-pepper",
     "b": "hot-pungent.chili.cayenne",
     "score": 0.6441
@@ -2836,6 +3151,16 @@
   },
   {
     "a": "hot-pungent.pepper.white-pepper",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6926
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
+    "b": "earthy.seed.annatto",
+    "score": 0.6546
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.6758
   },
@@ -2876,6 +3201,11 @@
   },
   {
     "a": "hot-pungent.pepper.white-pepper",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.723
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
     "b": "herbal.asian.lemongrass",
     "score": 0.5568
   },
@@ -2893,6 +3223,11 @@
     "a": "hot-pungent.pepper.white-pepper",
     "b": "herbal.asian.shiso",
     "score": 0.5498
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.698
   },
   {
     "a": "hot-pungent.pepper.white-pepper",
@@ -2923,6 +3258,16 @@
     "a": "hot-pungent.pepper.white-pepper",
     "b": "herbal.leafy.tarragon",
     "score": 0.5461
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
+    "b": "herbal.leafy.mint",
+    "score": 0.6124
+  },
+  {
+    "a": "hot-pungent.pepper.white-pepper",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6255
   },
   {
     "a": "hot-pungent.pepper.white-pepper",
@@ -3025,6 +3370,11 @@
     "score": 0.6589
   },
   {
+    "a": "hot-pungent.pepper.white-pepper",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6795
+  },
+  {
     "a": "hot-pungent.chili.cayenne",
     "b": "hot-pungent.chili.red-pepper-flakes",
     "score": 0.6054
@@ -3111,6 +3461,16 @@
   },
   {
     "a": "hot-pungent.chili.cayenne",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6128
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
+    "b": "earthy.seed.annatto",
+    "score": 0.5113
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.6474
   },
@@ -3151,6 +3511,11 @@
   },
   {
     "a": "hot-pungent.chili.cayenne",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6185
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
     "b": "herbal.asian.lemongrass",
     "score": 0.6664
   },
@@ -3168,6 +3533,11 @@
     "a": "hot-pungent.chili.cayenne",
     "b": "herbal.asian.shiso",
     "score": 0.6579
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5789
   },
   {
     "a": "hot-pungent.chili.cayenne",
@@ -3198,6 +3568,16 @@
     "a": "hot-pungent.chili.cayenne",
     "b": "herbal.leafy.tarragon",
     "score": 0.7389
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
+    "b": "herbal.leafy.mint",
+    "score": 0.6028
+  },
+  {
+    "a": "hot-pungent.chili.cayenne",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6018
   },
   {
     "a": "hot-pungent.chili.cayenne",
@@ -3300,6 +3680,11 @@
     "score": 0.5785
   },
   {
+    "a": "hot-pungent.chili.cayenne",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5871
+  },
+  {
     "a": "hot-pungent.chili.red-pepper-flakes",
     "b": "hot-pungent.chili.chipotle",
     "score": 0.673
@@ -3381,6 +3766,16 @@
   },
   {
     "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "earthy.seed.ajwain",
+    "score": 0.5507
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "earthy.seed.annatto",
+    "score": 0.5952
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.8167
   },
@@ -3421,6 +3816,11 @@
   },
   {
     "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6059
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
     "b": "herbal.asian.lemongrass",
     "score": 0.5394
   },
@@ -3438,6 +3838,11 @@
     "a": "hot-pungent.chili.red-pepper-flakes",
     "b": "herbal.asian.shiso",
     "score": 0.5311
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5689
   },
   {
     "a": "hot-pungent.chili.red-pepper-flakes",
@@ -3468,6 +3873,16 @@
     "a": "hot-pungent.chili.red-pepper-flakes",
     "b": "herbal.leafy.tarragon",
     "score": 0.5429
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "herbal.leafy.mint",
+    "score": 0.5728
+  },
+  {
+    "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6356
   },
   {
     "a": "hot-pungent.chili.red-pepper-flakes",
@@ -3570,6 +3985,11 @@
     "score": 0.6088
   },
   {
+    "a": "hot-pungent.chili.red-pepper-flakes",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5873
+  },
+  {
     "a": "hot-pungent.chili.chipotle",
     "b": "hot-pungent.chili.gochugaru",
     "score": 0.6378
@@ -3646,6 +4066,16 @@
   },
   {
     "a": "hot-pungent.chili.chipotle",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6008
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
+    "b": "earthy.seed.annatto",
+    "score": 0.5913
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.712
   },
@@ -3686,6 +4116,11 @@
   },
   {
     "a": "hot-pungent.chili.chipotle",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6154
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
     "b": "herbal.asian.lemongrass",
     "score": 0.5672
   },
@@ -3703,6 +4138,11 @@
     "a": "hot-pungent.chili.chipotle",
     "b": "herbal.asian.shiso",
     "score": 0.5312
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.587
   },
   {
     "a": "hot-pungent.chili.chipotle",
@@ -3733,6 +4173,16 @@
     "a": "hot-pungent.chili.chipotle",
     "b": "herbal.leafy.tarragon",
     "score": 0.5834
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
+    "b": "herbal.leafy.mint",
+    "score": 0.59
+  },
+  {
+    "a": "hot-pungent.chili.chipotle",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6598
   },
   {
     "a": "hot-pungent.chili.chipotle",
@@ -3835,6 +4285,11 @@
     "score": 0.5803
   },
   {
+    "a": "hot-pungent.chili.chipotle",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6326
+  },
+  {
     "a": "hot-pungent.chili.gochugaru",
     "b": "hot-pungent.sharp.mustard-seed",
     "score": 0.6734
@@ -3906,6 +4361,16 @@
   },
   {
     "a": "hot-pungent.chili.gochugaru",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7248
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
+    "b": "earthy.seed.annatto",
+    "score": 0.5645
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.624
   },
@@ -3946,6 +4411,11 @@
   },
   {
     "a": "hot-pungent.chili.gochugaru",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6419
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
     "b": "herbal.asian.lemongrass",
     "score": 0.5928
   },
@@ -3963,6 +4433,11 @@
     "a": "hot-pungent.chili.gochugaru",
     "b": "herbal.asian.shiso",
     "score": 0.5971
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.7306
   },
   {
     "a": "hot-pungent.chili.gochugaru",
@@ -3993,6 +4468,16 @@
     "a": "hot-pungent.chili.gochugaru",
     "b": "herbal.leafy.tarragon",
     "score": 0.5762
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
+    "b": "herbal.leafy.mint",
+    "score": 0.5836
+  },
+  {
+    "a": "hot-pungent.chili.gochugaru",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6054
   },
   {
     "a": "hot-pungent.chili.gochugaru",
@@ -4095,6 +4580,11 @@
     "score": 0.6738
   },
   {
+    "a": "hot-pungent.chili.gochugaru",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.7474
+  },
+  {
     "a": "hot-pungent.sharp.mustard-seed",
     "b": "hot-pungent.sharp.horseradish",
     "score": 0.5728
@@ -4161,6 +4651,16 @@
   },
   {
     "a": "hot-pungent.sharp.mustard-seed",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7322
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
+    "b": "earthy.seed.annatto",
+    "score": 0.7232
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.587
   },
@@ -4201,6 +4701,11 @@
   },
   {
     "a": "hot-pungent.sharp.mustard-seed",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6325
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
     "b": "herbal.asian.lemongrass",
     "score": 0.593
   },
@@ -4218,6 +4723,11 @@
     "a": "hot-pungent.sharp.mustard-seed",
     "b": "herbal.asian.shiso",
     "score": 0.5639
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.7419
   },
   {
     "a": "hot-pungent.sharp.mustard-seed",
@@ -4248,6 +4758,16 @@
     "a": "hot-pungent.sharp.mustard-seed",
     "b": "herbal.leafy.tarragon",
     "score": 0.5168
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
+    "b": "herbal.leafy.mint",
+    "score": 0.602
+  },
+  {
+    "a": "hot-pungent.sharp.mustard-seed",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5655
   },
   {
     "a": "hot-pungent.sharp.mustard-seed",
@@ -4350,6 +4870,11 @@
     "score": 0.741
   },
   {
+    "a": "hot-pungent.sharp.mustard-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.7682
+  },
+  {
     "a": "hot-pungent.sharp.horseradish",
     "b": "hot-pungent.sharp.wasabi",
     "score": 0.7196
@@ -4411,6 +4936,16 @@
   },
   {
     "a": "hot-pungent.sharp.horseradish",
+    "b": "earthy.seed.ajwain",
+    "score": 0.5571
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
+    "b": "earthy.seed.annatto",
+    "score": 0.5493
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5086
   },
@@ -4451,6 +4986,11 @@
   },
   {
     "a": "hot-pungent.sharp.horseradish",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5989
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
     "b": "herbal.asian.lemongrass",
     "score": 0.6531
   },
@@ -4468,6 +5008,11 @@
     "a": "hot-pungent.sharp.horseradish",
     "b": "herbal.asian.shiso",
     "score": 0.6353
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5836
   },
   {
     "a": "hot-pungent.sharp.horseradish",
@@ -4498,6 +5043,16 @@
     "a": "hot-pungent.sharp.horseradish",
     "b": "herbal.leafy.tarragon",
     "score": 0.6826
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
+    "b": "herbal.leafy.mint",
+    "score": 0.5615
+  },
+  {
+    "a": "hot-pungent.sharp.horseradish",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5071
   },
   {
     "a": "hot-pungent.sharp.horseradish",
@@ -4600,6 +5155,11 @@
     "score": 0.5256
   },
   {
+    "a": "hot-pungent.sharp.horseradish",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5439
+  },
+  {
     "a": "hot-pungent.sharp.wasabi",
     "b": "sweet.vanilla-adjacent.vanilla",
     "score": 0.5626
@@ -4656,6 +5216,16 @@
   },
   {
     "a": "hot-pungent.sharp.wasabi",
+    "b": "earthy.seed.ajwain",
+    "score": 0.5467
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
+    "b": "earthy.seed.annatto",
+    "score": 0.5224
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5228
   },
@@ -4696,6 +5266,11 @@
   },
   {
     "a": "hot-pungent.sharp.wasabi",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5124
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
     "b": "herbal.asian.lemongrass",
     "score": 0.7524
   },
@@ -4713,6 +5288,11 @@
     "a": "hot-pungent.sharp.wasabi",
     "b": "herbal.asian.shiso",
     "score": 0.7656
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.555
   },
   {
     "a": "hot-pungent.sharp.wasabi",
@@ -4743,6 +5323,16 @@
     "a": "hot-pungent.sharp.wasabi",
     "b": "herbal.leafy.tarragon",
     "score": 0.7341
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
+    "b": "herbal.leafy.mint",
+    "score": 0.5531
+  },
+  {
+    "a": "hot-pungent.sharp.wasabi",
+    "b": "herbal.leafy.epazote",
+    "score": 0.4804
   },
   {
     "a": "hot-pungent.sharp.wasabi",
@@ -4845,6 +5435,11 @@
     "score": 0.5626
   },
   {
+    "a": "hot-pungent.sharp.wasabi",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5378
+  },
+  {
     "a": "sweet.vanilla-adjacent.vanilla",
     "b": "sweet.aromatic-sweet.fennel-seed",
     "score": 0.5086
@@ -4896,6 +5491,16 @@
   },
   {
     "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "earthy.seed.ajwain",
+    "score": 0.5592
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "earthy.seed.annatto",
+    "score": 0.5588
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.5135
   },
@@ -4936,6 +5541,11 @@
   },
   {
     "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.4977
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
     "b": "herbal.asian.lemongrass",
     "score": 0.5672
   },
@@ -4953,6 +5563,11 @@
     "a": "sweet.vanilla-adjacent.vanilla",
     "b": "herbal.asian.shiso",
     "score": 0.6064
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5572
   },
   {
     "a": "sweet.vanilla-adjacent.vanilla",
@@ -4983,6 +5598,16 @@
     "a": "sweet.vanilla-adjacent.vanilla",
     "b": "herbal.leafy.tarragon",
     "score": 0.5763
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "herbal.leafy.mint",
+    "score": 0.553
+  },
+  {
+    "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5019
   },
   {
     "a": "sweet.vanilla-adjacent.vanilla",
@@ -5085,6 +5710,11 @@
     "score": 0.5226
   },
   {
+    "a": "sweet.vanilla-adjacent.vanilla",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5606
+  },
+  {
     "a": "sweet.aromatic-sweet.fennel-seed",
     "b": "sweet.aromatic-sweet.anise-seed",
     "score": 0.6778
@@ -5131,6 +5761,16 @@
   },
   {
     "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6737
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "earthy.seed.annatto",
+    "score": 0.7264
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.6798
   },
@@ -5171,6 +5811,11 @@
   },
   {
     "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.631
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
     "b": "herbal.asian.lemongrass",
     "score": 0.5401
   },
@@ -5188,6 +5833,11 @@
     "a": "sweet.aromatic-sweet.fennel-seed",
     "b": "herbal.asian.shiso",
     "score": 0.5404
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6447
   },
   {
     "a": "sweet.aromatic-sweet.fennel-seed",
@@ -5218,6 +5868,16 @@
     "a": "sweet.aromatic-sweet.fennel-seed",
     "b": "herbal.leafy.tarragon",
     "score": 0.5459
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "herbal.leafy.mint",
+    "score": 0.617
+  },
+  {
+    "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5957
   },
   {
     "a": "sweet.aromatic-sweet.fennel-seed",
@@ -5320,6 +5980,11 @@
     "score": 0.7451
   },
   {
+    "a": "sweet.aromatic-sweet.fennel-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6646
+  },
+  {
     "a": "sweet.aromatic-sweet.anise-seed",
     "b": "sweet.aromatic-sweet.fenugreek",
     "score": 0.5632
@@ -5358,6 +6023,16 @@
     "a": "sweet.aromatic-sweet.anise-seed",
     "b": "earthy.seed.celery-seed",
     "score": 0.6797
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6764
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "earthy.seed.annatto",
+    "score": 0.6072
   },
   {
     "a": "sweet.aromatic-sweet.anise-seed",
@@ -5401,6 +6076,11 @@
   },
   {
     "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5963
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
     "b": "herbal.asian.lemongrass",
     "score": 0.5168
   },
@@ -5418,6 +6098,11 @@
     "a": "sweet.aromatic-sweet.anise-seed",
     "b": "herbal.asian.shiso",
     "score": 0.5168
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5896
   },
   {
     "a": "sweet.aromatic-sweet.anise-seed",
@@ -5448,6 +6133,16 @@
     "a": "sweet.aromatic-sweet.anise-seed",
     "b": "herbal.leafy.tarragon",
     "score": 0.5199
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "herbal.leafy.mint",
+    "score": 0.6053
+  },
+  {
+    "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5679
   },
   {
     "a": "sweet.aromatic-sweet.anise-seed",
@@ -5550,6 +6245,11 @@
     "score": 0.6757
   },
   {
+    "a": "sweet.aromatic-sweet.anise-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6123
+  },
+  {
     "a": "sweet.aromatic-sweet.fenugreek",
     "b": "earthy.root.turmeric",
     "score": 0.6982
@@ -5583,6 +6283,16 @@
     "a": "sweet.aromatic-sweet.fenugreek",
     "b": "earthy.seed.celery-seed",
     "score": 0.5537
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7939
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "earthy.seed.annatto",
+    "score": 0.5907
   },
   {
     "a": "sweet.aromatic-sweet.fenugreek",
@@ -5626,6 +6336,11 @@
   },
   {
     "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6162
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
     "b": "herbal.asian.lemongrass",
     "score": 0.5101
   },
@@ -5643,6 +6358,11 @@
     "a": "sweet.aromatic-sweet.fenugreek",
     "b": "herbal.asian.shiso",
     "score": 0.5629
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.8078
   },
   {
     "a": "sweet.aromatic-sweet.fenugreek",
@@ -5673,6 +6393,16 @@
     "a": "sweet.aromatic-sweet.fenugreek",
     "b": "herbal.leafy.tarragon",
     "score": 0.53
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "herbal.leafy.mint",
+    "score": 0.5805
+  },
+  {
+    "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5905
   },
   {
     "a": "sweet.aromatic-sweet.fenugreek",
@@ -5775,6 +6505,11 @@
     "score": 0.7048
   },
   {
+    "a": "sweet.aromatic-sweet.fenugreek",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.7993
+  },
+  {
     "a": "earthy.root.turmeric",
     "b": "earthy.root.ginger",
     "score": 0.684
@@ -5803,6 +6538,16 @@
     "a": "earthy.root.turmeric",
     "b": "earthy.seed.celery-seed",
     "score": 0.571
+  },
+  {
+    "a": "earthy.root.turmeric",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6793
+  },
+  {
+    "a": "earthy.root.turmeric",
+    "b": "earthy.seed.annatto",
+    "score": 0.572
   },
   {
     "a": "earthy.root.turmeric",
@@ -5846,6 +6591,11 @@
   },
   {
     "a": "earthy.root.turmeric",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5979
+  },
+  {
+    "a": "earthy.root.turmeric",
     "b": "herbal.asian.lemongrass",
     "score": 0.7012
   },
@@ -5863,6 +6613,11 @@
     "a": "earthy.root.turmeric",
     "b": "herbal.asian.shiso",
     "score": 0.7005
+  },
+  {
+    "a": "earthy.root.turmeric",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6826
   },
   {
     "a": "earthy.root.turmeric",
@@ -5893,6 +6648,16 @@
     "a": "earthy.root.turmeric",
     "b": "herbal.leafy.tarragon",
     "score": 0.6939
+  },
+  {
+    "a": "earthy.root.turmeric",
+    "b": "herbal.leafy.mint",
+    "score": 0.5859
+  },
+  {
+    "a": "earthy.root.turmeric",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5525
   },
   {
     "a": "earthy.root.turmeric",
@@ -5995,6 +6760,11 @@
     "score": 0.6088
   },
   {
+    "a": "earthy.root.turmeric",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6679
+  },
+  {
     "a": "earthy.root.ginger",
     "b": "earthy.root.galangal",
     "score": 0.6261
@@ -6018,6 +6788,16 @@
     "a": "earthy.root.ginger",
     "b": "earthy.seed.celery-seed",
     "score": 0.5714
+  },
+  {
+    "a": "earthy.root.ginger",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6769
+  },
+  {
+    "a": "earthy.root.ginger",
+    "b": "earthy.seed.annatto",
+    "score": 0.6192
   },
   {
     "a": "earthy.root.ginger",
@@ -6061,6 +6841,11 @@
   },
   {
     "a": "earthy.root.ginger",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5767
+  },
+  {
+    "a": "earthy.root.ginger",
     "b": "herbal.asian.lemongrass",
     "score": 0.6308
   },
@@ -6078,6 +6863,11 @@
     "a": "earthy.root.ginger",
     "b": "herbal.asian.shiso",
     "score": 0.6345
+  },
+  {
+    "a": "earthy.root.ginger",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6589
   },
   {
     "a": "earthy.root.ginger",
@@ -6108,6 +6898,16 @@
     "a": "earthy.root.ginger",
     "b": "herbal.leafy.tarragon",
     "score": 0.5821
+  },
+  {
+    "a": "earthy.root.ginger",
+    "b": "herbal.leafy.mint",
+    "score": 0.6195
+  },
+  {
+    "a": "earthy.root.ginger",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5348
   },
   {
     "a": "earthy.root.ginger",
@@ -6210,6 +7010,11 @@
     "score": 0.63
   },
   {
+    "a": "earthy.root.ginger",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6578
+  },
+  {
     "a": "earthy.root.galangal",
     "b": "earthy.seed.cumin",
     "score": 0.5931
@@ -6228,6 +7033,16 @@
     "a": "earthy.root.galangal",
     "b": "earthy.seed.celery-seed",
     "score": 0.5777
+  },
+  {
+    "a": "earthy.root.galangal",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6152
+  },
+  {
+    "a": "earthy.root.galangal",
+    "b": "earthy.seed.annatto",
+    "score": 0.623
   },
   {
     "a": "earthy.root.galangal",
@@ -6271,6 +7086,11 @@
   },
   {
     "a": "earthy.root.galangal",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.579
+  },
+  {
+    "a": "earthy.root.galangal",
     "b": "herbal.asian.lemongrass",
     "score": 0.6538
   },
@@ -6288,6 +7108,11 @@
     "a": "earthy.root.galangal",
     "b": "herbal.asian.shiso",
     "score": 0.5672
+  },
+  {
+    "a": "earthy.root.galangal",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6623
   },
   {
     "a": "earthy.root.galangal",
@@ -6318,6 +7143,16 @@
     "a": "earthy.root.galangal",
     "b": "herbal.leafy.tarragon",
     "score": 0.5451
+  },
+  {
+    "a": "earthy.root.galangal",
+    "b": "herbal.leafy.mint",
+    "score": 0.6186
+  },
+  {
+    "a": "earthy.root.galangal",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6374
   },
   {
     "a": "earthy.root.galangal",
@@ -6420,6 +7255,11 @@
     "score": 0.6228
   },
   {
+    "a": "earthy.root.galangal",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6514
+  },
+  {
     "a": "earthy.seed.cumin",
     "b": "earthy.seed.coriander",
     "score": 0.5988
@@ -6433,6 +7273,16 @@
     "a": "earthy.seed.cumin",
     "b": "earthy.seed.celery-seed",
     "score": 0.5604
+  },
+  {
+    "a": "earthy.seed.cumin",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6378
+  },
+  {
+    "a": "earthy.seed.cumin",
+    "b": "earthy.seed.annatto",
+    "score": 0.5426
   },
   {
     "a": "earthy.seed.cumin",
@@ -6476,6 +7326,11 @@
   },
   {
     "a": "earthy.seed.cumin",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5827
+  },
+  {
+    "a": "earthy.seed.cumin",
     "b": "herbal.asian.lemongrass",
     "score": 0.7136
   },
@@ -6493,6 +7348,11 @@
     "a": "earthy.seed.cumin",
     "b": "herbal.asian.shiso",
     "score": 0.694
+  },
+  {
+    "a": "earthy.seed.cumin",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6224
   },
   {
     "a": "earthy.seed.cumin",
@@ -6523,6 +7383,16 @@
     "a": "earthy.seed.cumin",
     "b": "herbal.leafy.tarragon",
     "score": 0.7569
+  },
+  {
+    "a": "earthy.seed.cumin",
+    "b": "herbal.leafy.mint",
+    "score": 0.5886
+  },
+  {
+    "a": "earthy.seed.cumin",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6121
   },
   {
     "a": "earthy.seed.cumin",
@@ -6625,6 +7495,11 @@
     "score": 0.601
   },
   {
+    "a": "earthy.seed.cumin",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6297
+  },
+  {
     "a": "earthy.seed.coriander",
     "b": "earthy.seed.caraway",
     "score": 0.7411
@@ -6633,6 +7508,16 @@
     "a": "earthy.seed.coriander",
     "b": "earthy.seed.celery-seed",
     "score": 0.7417
+  },
+  {
+    "a": "earthy.seed.coriander",
+    "b": "earthy.seed.ajwain",
+    "score": 0.7079
+  },
+  {
+    "a": "earthy.seed.coriander",
+    "b": "earthy.seed.annatto",
+    "score": 0.7279
   },
   {
     "a": "earthy.seed.coriander",
@@ -6676,6 +7561,11 @@
   },
   {
     "a": "earthy.seed.coriander",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6022
+  },
+  {
+    "a": "earthy.seed.coriander",
     "b": "herbal.asian.lemongrass",
     "score": 0.5679
   },
@@ -6693,6 +7583,11 @@
     "a": "earthy.seed.coriander",
     "b": "herbal.asian.shiso",
     "score": 0.5412
+  },
+  {
+    "a": "earthy.seed.coriander",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.695
   },
   {
     "a": "earthy.seed.coriander",
@@ -6723,6 +7618,16 @@
     "a": "earthy.seed.coriander",
     "b": "herbal.leafy.tarragon",
     "score": 0.5388
+  },
+  {
+    "a": "earthy.seed.coriander",
+    "b": "herbal.leafy.mint",
+    "score": 0.6031
+  },
+  {
+    "a": "earthy.seed.coriander",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5758
   },
   {
     "a": "earthy.seed.coriander",
@@ -6825,9 +7730,24 @@
     "score": 0.7769
   },
   {
+    "a": "earthy.seed.coriander",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.7288
+  },
+  {
     "a": "earthy.seed.caraway",
     "b": "earthy.seed.celery-seed",
     "score": 0.7802
+  },
+  {
+    "a": "earthy.seed.caraway",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6197
+  },
+  {
+    "a": "earthy.seed.caraway",
+    "b": "earthy.seed.annatto",
+    "score": 0.6153
   },
   {
     "a": "earthy.seed.caraway",
@@ -6871,6 +7791,11 @@
   },
   {
     "a": "earthy.seed.caraway",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6021
+  },
+  {
+    "a": "earthy.seed.caraway",
     "b": "herbal.asian.lemongrass",
     "score": 0.4971
   },
@@ -6888,6 +7813,11 @@
     "a": "earthy.seed.caraway",
     "b": "herbal.asian.shiso",
     "score": 0.5206
+  },
+  {
+    "a": "earthy.seed.caraway",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5928
   },
   {
     "a": "earthy.seed.caraway",
@@ -6918,6 +7848,16 @@
     "a": "earthy.seed.caraway",
     "b": "herbal.leafy.tarragon",
     "score": 0.5068
+  },
+  {
+    "a": "earthy.seed.caraway",
+    "b": "herbal.leafy.mint",
+    "score": 0.5498
+  },
+  {
+    "a": "earthy.seed.caraway",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5574
   },
   {
     "a": "earthy.seed.caraway",
@@ -7020,6 +7960,21 @@
     "score": 0.6969
   },
   {
+    "a": "earthy.seed.caraway",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5957
+  },
+  {
+    "a": "earthy.seed.celery-seed",
+    "b": "earthy.seed.ajwain",
+    "score": 0.6253
+  },
+  {
+    "a": "earthy.seed.celery-seed",
+    "b": "earthy.seed.annatto",
+    "score": 0.6365
+  },
+  {
     "a": "earthy.seed.celery-seed",
     "b": "earthy.smoky.smoked-paprika",
     "score": 0.7269
@@ -7061,6 +8016,11 @@
   },
   {
     "a": "earthy.seed.celery-seed",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6185
+  },
+  {
+    "a": "earthy.seed.celery-seed",
     "b": "herbal.asian.lemongrass",
     "score": 0.5251
   },
@@ -7078,6 +8038,11 @@
     "a": "earthy.seed.celery-seed",
     "b": "herbal.asian.shiso",
     "score": 0.5459
+  },
+  {
+    "a": "earthy.seed.celery-seed",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6091
   },
   {
     "a": "earthy.seed.celery-seed",
@@ -7108,6 +8073,16 @@
     "a": "earthy.seed.celery-seed",
     "b": "herbal.leafy.tarragon",
     "score": 0.5491
+  },
+  {
+    "a": "earthy.seed.celery-seed",
+    "b": "herbal.leafy.mint",
+    "score": 0.5914
+  },
+  {
+    "a": "earthy.seed.celery-seed",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5751
   },
   {
     "a": "earthy.seed.celery-seed",
@@ -7210,6 +8185,446 @@
     "score": 0.6878
   },
   {
+    "a": "earthy.seed.celery-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6505
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "earthy.seed.annatto",
+    "score": 0.6858
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "earthy.smoky.smoked-paprika",
+    "score": 0.6029
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "earthy.smoky.sumac",
+    "score": 0.6257
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5603
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.mediterranean.oregano",
+    "score": 0.5669
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.mediterranean.thyme",
+    "score": 0.5747
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.mediterranean.rosemary",
+    "score": 0.5435
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.mediterranean.marjoram",
+    "score": 0.5692
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.mediterranean.sage",
+    "score": 0.5033
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6277
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.asian.lemongrass",
+    "score": 0.5643
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.asian.thai-basil",
+    "score": 0.5623
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.asian.kaffir-lime-leaf",
+    "score": 0.6231
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.asian.shiso",
+    "score": 0.5687
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.8171
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.basil",
+    "score": 0.5585
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.parsley",
+    "score": 0.581
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.cilantro",
+    "score": 0.5764
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.dill",
+    "score": 0.5516
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.bay-leaf",
+    "score": 0.608
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.tarragon",
+    "score": 0.5144
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.mint",
+    "score": 0.591
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5779
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.6468
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "floral.rose-family.saffron",
+    "score": 0.5791
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "floral.delicate.lavender",
+    "score": 0.5673
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "floral.delicate.elderflower",
+    "score": 0.5012
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.6098
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.6335
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.5232
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.5757
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.8457
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.7067
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.6446
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.5671
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.5685
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.allium.chive",
+    "score": 0.5943
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.515
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.6127
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.6674
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.579
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.5852
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.8279
+  },
+  {
+    "a": "earthy.seed.ajwain",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.8612
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "earthy.smoky.smoked-paprika",
+    "score": 0.5612
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "earthy.smoky.sumac",
+    "score": 0.5819
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "earthy.smoky.paprika",
+    "score": 0.5553
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.mediterranean.oregano",
+    "score": 0.5589
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.mediterranean.thyme",
+    "score": 0.6021
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.mediterranean.rosemary",
+    "score": 0.5686
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.mediterranean.marjoram",
+    "score": 0.5116
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.mediterranean.sage",
+    "score": 0.5249
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6308
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.asian.lemongrass",
+    "score": 0.5348
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.asian.thai-basil",
+    "score": 0.5567
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.asian.kaffir-lime-leaf",
+    "score": 0.5836
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.asian.shiso",
+    "score": 0.4964
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6448
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.basil",
+    "score": 0.5545
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.parsley",
+    "score": 0.5619
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.cilantro",
+    "score": 0.5699
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.dill",
+    "score": 0.5691
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.bay-leaf",
+    "score": 0.6558
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.tarragon",
+    "score": 0.5076
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.mint",
+    "score": 0.5915
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6585
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.6219
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "floral.rose-family.saffron",
+    "score": 0.5601
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "floral.delicate.lavender",
+    "score": 0.5613
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "floral.delicate.elderflower",
+    "score": 0.5151
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.6118
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.6407
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.5406
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.5224
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.6263
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.6093
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.6004
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.5077
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.5076
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.allium.chive",
+    "score": 0.5609
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.6164
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.5278
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.5782
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.5745
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.5686
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.699
+  },
+  {
+    "a": "earthy.seed.annatto",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6689
+  },
+  {
     "a": "earthy.smoky.smoked-paprika",
     "b": "earthy.smoky.sumac",
     "score": 0.5611
@@ -7246,6 +8661,11 @@
   },
   {
     "a": "earthy.smoky.smoked-paprika",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6393
+  },
+  {
+    "a": "earthy.smoky.smoked-paprika",
     "b": "herbal.asian.lemongrass",
     "score": 0.51
   },
@@ -7263,6 +8683,11 @@
     "a": "earthy.smoky.smoked-paprika",
     "b": "herbal.asian.shiso",
     "score": 0.5245
+  },
+  {
+    "a": "earthy.smoky.smoked-paprika",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5921
   },
   {
     "a": "earthy.smoky.smoked-paprika",
@@ -7293,6 +8718,16 @@
     "a": "earthy.smoky.smoked-paprika",
     "b": "herbal.leafy.tarragon",
     "score": 0.5652
+  },
+  {
+    "a": "earthy.smoky.smoked-paprika",
+    "b": "herbal.leafy.mint",
+    "score": 0.5357
+  },
+  {
+    "a": "earthy.smoky.smoked-paprika",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6404
   },
   {
     "a": "earthy.smoky.smoked-paprika",
@@ -7395,6 +8830,11 @@
     "score": 0.6074
   },
   {
+    "a": "earthy.smoky.smoked-paprika",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6046
+  },
+  {
     "a": "earthy.smoky.sumac",
     "b": "earthy.smoky.paprika",
     "score": 0.6492
@@ -7426,6 +8866,11 @@
   },
   {
     "a": "earthy.smoky.sumac",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5981
+  },
+  {
+    "a": "earthy.smoky.sumac",
     "b": "herbal.asian.lemongrass",
     "score": 0.7473
   },
@@ -7443,6 +8888,11 @@
     "a": "earthy.smoky.sumac",
     "b": "herbal.asian.shiso",
     "score": 0.6686
+  },
+  {
+    "a": "earthy.smoky.sumac",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6084
   },
   {
     "a": "earthy.smoky.sumac",
@@ -7473,6 +8923,16 @@
     "a": "earthy.smoky.sumac",
     "b": "herbal.leafy.tarragon",
     "score": 0.6522
+  },
+  {
+    "a": "earthy.smoky.sumac",
+    "b": "herbal.leafy.mint",
+    "score": 0.618
+  },
+  {
+    "a": "earthy.smoky.sumac",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5116
   },
   {
     "a": "earthy.smoky.sumac",
@@ -7575,6 +9035,11 @@
     "score": 0.5908
   },
   {
+    "a": "earthy.smoky.sumac",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5628
+  },
+  {
     "a": "earthy.smoky.paprika",
     "b": "herbal.mediterranean.oregano",
     "score": 0.96
@@ -7601,6 +9066,11 @@
   },
   {
     "a": "earthy.smoky.paprika",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5551
+  },
+  {
+    "a": "earthy.smoky.paprika",
     "b": "herbal.asian.lemongrass",
     "score": 0.6026
   },
@@ -7618,6 +9088,11 @@
     "a": "earthy.smoky.paprika",
     "b": "herbal.asian.shiso",
     "score": 0.6564
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6071
   },
   {
     "a": "earthy.smoky.paprika",
@@ -7648,6 +9123,16 @@
     "a": "earthy.smoky.paprika",
     "b": "herbal.leafy.tarragon",
     "score": 0.6193
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.mint",
+    "score": 0.5599
+  },
+  {
+    "a": "earthy.smoky.paprika",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5303
   },
   {
     "a": "earthy.smoky.paprika",
@@ -7750,6 +9235,11 @@
     "score": 0.5418
   },
   {
+    "a": "earthy.smoky.paprika",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5654
+  },
+  {
     "a": "herbal.mediterranean.oregano",
     "b": "herbal.mediterranean.thyme",
     "score": 0.9419
@@ -7771,6 +9261,11 @@
   },
   {
     "a": "herbal.mediterranean.oregano",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.556
+  },
+  {
+    "a": "herbal.mediterranean.oregano",
     "b": "herbal.asian.lemongrass",
     "score": 0.617
   },
@@ -7788,6 +9283,11 @@
     "a": "herbal.mediterranean.oregano",
     "b": "herbal.asian.shiso",
     "score": 0.661
+  },
+  {
+    "a": "herbal.mediterranean.oregano",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6247
   },
   {
     "a": "herbal.mediterranean.oregano",
@@ -7818,6 +9318,16 @@
     "a": "herbal.mediterranean.oregano",
     "b": "herbal.leafy.tarragon",
     "score": 0.6233
+  },
+  {
+    "a": "herbal.mediterranean.oregano",
+    "b": "herbal.leafy.mint",
+    "score": 0.5839
+  },
+  {
+    "a": "herbal.mediterranean.oregano",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5403
   },
   {
     "a": "herbal.mediterranean.oregano",
@@ -7920,6 +9430,11 @@
     "score": 0.5434
   },
   {
+    "a": "herbal.mediterranean.oregano",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5812
+  },
+  {
     "a": "herbal.mediterranean.thyme",
     "b": "herbal.mediterranean.rosemary",
     "score": 0.9181
@@ -7933,6 +9448,11 @@
     "a": "herbal.mediterranean.thyme",
     "b": "herbal.mediterranean.sage",
     "score": 0.6455
+  },
+  {
+    "a": "herbal.mediterranean.thyme",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5879
   },
   {
     "a": "herbal.mediterranean.thyme",
@@ -7953,6 +9473,11 @@
     "a": "herbal.mediterranean.thyme",
     "b": "herbal.asian.shiso",
     "score": 0.6607
+  },
+  {
+    "a": "herbal.mediterranean.thyme",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6217
   },
   {
     "a": "herbal.mediterranean.thyme",
@@ -7983,6 +9508,16 @@
     "a": "herbal.mediterranean.thyme",
     "b": "herbal.leafy.tarragon",
     "score": 0.6427
+  },
+  {
+    "a": "herbal.mediterranean.thyme",
+    "b": "herbal.leafy.mint",
+    "score": 0.5944
+  },
+  {
+    "a": "herbal.mediterranean.thyme",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5478
   },
   {
     "a": "herbal.mediterranean.thyme",
@@ -8085,6 +9620,11 @@
     "score": 0.546
   },
   {
+    "a": "herbal.mediterranean.thyme",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5757
+  },
+  {
     "a": "herbal.mediterranean.rosemary",
     "b": "herbal.mediterranean.marjoram",
     "score": 0.6526
@@ -8093,6 +9633,11 @@
     "a": "herbal.mediterranean.rosemary",
     "b": "herbal.mediterranean.sage",
     "score": 0.6234
+  },
+  {
+    "a": "herbal.mediterranean.rosemary",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5791
   },
   {
     "a": "herbal.mediterranean.rosemary",
@@ -8113,6 +9658,11 @@
     "a": "herbal.mediterranean.rosemary",
     "b": "herbal.asian.shiso",
     "score": 0.6273
+  },
+  {
+    "a": "herbal.mediterranean.rosemary",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5864
   },
   {
     "a": "herbal.mediterranean.rosemary",
@@ -8143,6 +9693,16 @@
     "a": "herbal.mediterranean.rosemary",
     "b": "herbal.leafy.tarragon",
     "score": 0.6114
+  },
+  {
+    "a": "herbal.mediterranean.rosemary",
+    "b": "herbal.leafy.mint",
+    "score": 0.5803
+  },
+  {
+    "a": "herbal.mediterranean.rosemary",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5402
   },
   {
     "a": "herbal.mediterranean.rosemary",
@@ -8245,9 +9805,19 @@
     "score": 0.531
   },
   {
+    "a": "herbal.mediterranean.rosemary",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5412
+  },
+  {
     "a": "herbal.mediterranean.marjoram",
     "b": "herbal.mediterranean.sage",
     "score": 0.8097
+  },
+  {
+    "a": "herbal.mediterranean.marjoram",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.6258
   },
   {
     "a": "herbal.mediterranean.marjoram",
@@ -8268,6 +9838,11 @@
     "a": "herbal.mediterranean.marjoram",
     "b": "herbal.asian.shiso",
     "score": 0.7053
+  },
+  {
+    "a": "herbal.mediterranean.marjoram",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6031
   },
   {
     "a": "herbal.mediterranean.marjoram",
@@ -8298,6 +9873,16 @@
     "a": "herbal.mediterranean.marjoram",
     "b": "herbal.leafy.tarragon",
     "score": 0.7887
+  },
+  {
+    "a": "herbal.mediterranean.marjoram",
+    "b": "herbal.leafy.mint",
+    "score": 0.6327
+  },
+  {
+    "a": "herbal.mediterranean.marjoram",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5224
   },
   {
     "a": "herbal.mediterranean.marjoram",
@@ -8400,6 +9985,16 @@
     "score": 0.5206
   },
   {
+    "a": "herbal.mediterranean.marjoram",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5407
+  },
+  {
+    "a": "herbal.mediterranean.sage",
+    "b": "herbal.mediterranean.savory",
+    "score": 0.5966
+  },
+  {
     "a": "herbal.mediterranean.sage",
     "b": "herbal.asian.lemongrass",
     "score": 0.711
@@ -8418,6 +10013,11 @@
     "a": "herbal.mediterranean.sage",
     "b": "herbal.asian.shiso",
     "score": 0.6712
+  },
+  {
+    "a": "herbal.mediterranean.sage",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5186
   },
   {
     "a": "herbal.mediterranean.sage",
@@ -8448,6 +10048,16 @@
     "a": "herbal.mediterranean.sage",
     "b": "herbal.leafy.tarragon",
     "score": 0.8208
+  },
+  {
+    "a": "herbal.mediterranean.sage",
+    "b": "herbal.leafy.mint",
+    "score": 0.6261
+  },
+  {
+    "a": "herbal.mediterranean.sage",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5489
   },
   {
     "a": "herbal.mediterranean.sage",
@@ -8550,6 +10160,181 @@
     "score": 0.4687
   },
   {
+    "a": "herbal.mediterranean.sage",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.4753
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.asian.lemongrass",
+    "score": 0.5432
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.asian.thai-basil",
+    "score": 0.5769
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.asian.kaffir-lime-leaf",
+    "score": 0.6229
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.asian.shiso",
+    "score": 0.5381
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.685
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.basil",
+    "score": 0.5694
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.parsley",
+    "score": 0.5668
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.cilantro",
+    "score": 0.5326
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.dill",
+    "score": 0.5746
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.bay-leaf",
+    "score": 0.7041
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.tarragon",
+    "score": 0.5853
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.mint",
+    "score": 0.6119
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6066
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.5442
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "floral.rose-family.saffron",
+    "score": 0.5953
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "floral.delicate.lavender",
+    "score": 0.5133
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "floral.delicate.elderflower",
+    "score": 0.5333
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.5631
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.6347
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.4932
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.5312
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.6071
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.5582
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.6497
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.6444
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.6209
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.allium.chive",
+    "score": 0.5853
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.6024
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.5703
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.6454
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.5332
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.5533
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.5914
+  },
+  {
+    "a": "herbal.mediterranean.savory",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6375
+  },
+  {
     "a": "herbal.asian.lemongrass",
     "b": "herbal.asian.thai-basil",
     "score": 0.6412
@@ -8563,6 +10348,11 @@
     "a": "herbal.asian.lemongrass",
     "b": "herbal.asian.shiso",
     "score": 0.7257
+  },
+  {
+    "a": "herbal.asian.lemongrass",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5682
   },
   {
     "a": "herbal.asian.lemongrass",
@@ -8593,6 +10383,16 @@
     "a": "herbal.asian.lemongrass",
     "b": "herbal.leafy.tarragon",
     "score": 0.7398
+  },
+  {
+    "a": "herbal.asian.lemongrass",
+    "b": "herbal.leafy.mint",
+    "score": 0.6288
+  },
+  {
+    "a": "herbal.asian.lemongrass",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5085
   },
   {
     "a": "herbal.asian.lemongrass",
@@ -8695,6 +10495,11 @@
     "score": 0.5334
   },
   {
+    "a": "herbal.asian.lemongrass",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5378
+  },
+  {
     "a": "herbal.asian.thai-basil",
     "b": "herbal.asian.kaffir-lime-leaf",
     "score": 0.7866
@@ -8703,6 +10508,11 @@
     "a": "herbal.asian.thai-basil",
     "b": "herbal.asian.shiso",
     "score": 0.5492
+  },
+  {
+    "a": "herbal.asian.thai-basil",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6411
   },
   {
     "a": "herbal.asian.thai-basil",
@@ -8733,6 +10543,16 @@
     "a": "herbal.asian.thai-basil",
     "b": "herbal.leafy.tarragon",
     "score": 0.5425
+  },
+  {
+    "a": "herbal.asian.thai-basil",
+    "b": "herbal.leafy.mint",
+    "score": 0.696
+  },
+  {
+    "a": "herbal.asian.thai-basil",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6748
   },
   {
     "a": "herbal.asian.thai-basil",
@@ -8835,9 +10655,19 @@
     "score": 0.5835
   },
   {
+    "a": "herbal.asian.thai-basil",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5896
+  },
+  {
     "a": "herbal.asian.kaffir-lime-leaf",
     "b": "herbal.asian.shiso",
     "score": 0.5774
+  },
+  {
+    "a": "herbal.asian.kaffir-lime-leaf",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.6789
   },
   {
     "a": "herbal.asian.kaffir-lime-leaf",
@@ -8868,6 +10698,16 @@
     "a": "herbal.asian.kaffir-lime-leaf",
     "b": "herbal.leafy.tarragon",
     "score": 0.5401
+  },
+  {
+    "a": "herbal.asian.kaffir-lime-leaf",
+    "b": "herbal.leafy.mint",
+    "score": 0.6191
+  },
+  {
+    "a": "herbal.asian.kaffir-lime-leaf",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6489
   },
   {
     "a": "herbal.asian.kaffir-lime-leaf",
@@ -8970,6 +10810,16 @@
     "score": 0.5972
   },
   {
+    "a": "herbal.asian.kaffir-lime-leaf",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6459
+  },
+  {
+    "a": "herbal.asian.shiso",
+    "b": "herbal.asian.curry-leaf",
+    "score": 0.5976
+  },
+  {
     "a": "herbal.asian.shiso",
     "b": "herbal.leafy.basil",
     "score": 0.6308
@@ -8998,6 +10848,16 @@
     "a": "herbal.asian.shiso",
     "b": "herbal.leafy.tarragon",
     "score": 0.6791
+  },
+  {
+    "a": "herbal.asian.shiso",
+    "b": "herbal.leafy.mint",
+    "score": 0.6008
+  },
+  {
+    "a": "herbal.asian.shiso",
+    "b": "herbal.leafy.epazote",
+    "score": 0.4757
   },
   {
     "a": "herbal.asian.shiso",
@@ -9100,6 +10960,156 @@
     "score": 0.5473
   },
   {
+    "a": "herbal.asian.shiso",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5538
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.basil",
+    "score": 0.6037
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.parsley",
+    "score": 0.6075
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.cilantro",
+    "score": 0.6083
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.dill",
+    "score": 0.608
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.bay-leaf",
+    "score": 0.6611
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.tarragon",
+    "score": 0.5209
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.mint",
+    "score": 0.6201
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6021
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.6216
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "floral.rose-family.saffron",
+    "score": 0.5624
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "floral.delicate.lavender",
+    "score": 0.5407
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "floral.delicate.elderflower",
+    "score": 0.5137
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.593
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.6184
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.5364
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.5789
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.8262
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.711
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.7266
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.5558
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.5449
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.allium.chive",
+    "score": 0.5676
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.5485
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.5677
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.7227
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.625
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.5354
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.7613
+  },
+  {
+    "a": "herbal.asian.curry-leaf",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.8446
+  },
+  {
     "a": "herbal.leafy.basil",
     "b": "herbal.leafy.parsley",
     "score": 0.9345
@@ -9123,6 +11133,16 @@
     "a": "herbal.leafy.basil",
     "b": "herbal.leafy.tarragon",
     "score": 0.5996
+  },
+  {
+    "a": "herbal.leafy.basil",
+    "b": "herbal.leafy.mint",
+    "score": 0.5975
+  },
+  {
+    "a": "herbal.leafy.basil",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5277
   },
   {
     "a": "herbal.leafy.basil",
@@ -9225,6 +11245,11 @@
     "score": 0.5425
   },
   {
+    "a": "herbal.leafy.basil",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5685
+  },
+  {
     "a": "herbal.leafy.parsley",
     "b": "herbal.leafy.cilantro",
     "score": 0.9183
@@ -9243,6 +11268,16 @@
     "a": "herbal.leafy.parsley",
     "b": "herbal.leafy.tarragon",
     "score": 0.6089
+  },
+  {
+    "a": "herbal.leafy.parsley",
+    "b": "herbal.leafy.mint",
+    "score": 0.5989
+  },
+  {
+    "a": "herbal.leafy.parsley",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5453
   },
   {
     "a": "herbal.leafy.parsley",
@@ -9345,6 +11380,11 @@
     "score": 0.5298
   },
   {
+    "a": "herbal.leafy.parsley",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5541
+  },
+  {
     "a": "herbal.leafy.cilantro",
     "b": "herbal.leafy.dill",
     "score": 0.9253
@@ -9358,6 +11398,16 @@
     "a": "herbal.leafy.cilantro",
     "b": "herbal.leafy.tarragon",
     "score": 0.6117
+  },
+  {
+    "a": "herbal.leafy.cilantro",
+    "b": "herbal.leafy.mint",
+    "score": 0.6033
+  },
+  {
+    "a": "herbal.leafy.cilantro",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5208
   },
   {
     "a": "herbal.leafy.cilantro",
@@ -9460,6 +11510,11 @@
     "score": 0.5631
   },
   {
+    "a": "herbal.leafy.cilantro",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5754
+  },
+  {
     "a": "herbal.leafy.dill",
     "b": "herbal.leafy.bay-leaf",
     "score": 0.4878
@@ -9468,6 +11523,16 @@
     "a": "herbal.leafy.dill",
     "b": "herbal.leafy.tarragon",
     "score": 0.6542
+  },
+  {
+    "a": "herbal.leafy.dill",
+    "b": "herbal.leafy.mint",
+    "score": 0.6076
+  },
+  {
+    "a": "herbal.leafy.dill",
+    "b": "herbal.leafy.epazote",
+    "score": 0.522
   },
   {
     "a": "herbal.leafy.dill",
@@ -9570,9 +11635,24 @@
     "score": 0.5354
   },
   {
+    "a": "herbal.leafy.dill",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5524
+  },
+  {
     "a": "herbal.leafy.bay-leaf",
     "b": "herbal.leafy.tarragon",
     "score": 0.5035
+  },
+  {
+    "a": "herbal.leafy.bay-leaf",
+    "b": "herbal.leafy.mint",
+    "score": 0.5683
+  },
+  {
+    "a": "herbal.leafy.bay-leaf",
+    "b": "herbal.leafy.epazote",
+    "score": 0.6778
   },
   {
     "a": "herbal.leafy.bay-leaf",
@@ -9675,6 +11755,21 @@
     "score": 0.5934
   },
   {
+    "a": "herbal.leafy.bay-leaf",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.615
+  },
+  {
+    "a": "herbal.leafy.tarragon",
+    "b": "herbal.leafy.mint",
+    "score": 0.5863
+  },
+  {
+    "a": "herbal.leafy.tarragon",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5447
+  },
+  {
     "a": "herbal.leafy.tarragon",
     "b": "floral.rose-family.rose-water",
     "score": 0.5052
@@ -9775,6 +11870,226 @@
     "score": 0.5095
   },
   {
+    "a": "herbal.leafy.tarragon",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.49
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "herbal.leafy.epazote",
+    "score": 0.5975
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.6743
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "floral.rose-family.saffron",
+    "score": 0.609
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "floral.delicate.lavender",
+    "score": 0.6971
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "floral.delicate.elderflower",
+    "score": 0.6912
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.6077
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.6402
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.6005
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.6343
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.6097
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.6023
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.6424
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.5362
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.5125
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.allium.chive",
+    "score": 0.582
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.5573
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.5533
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.6029
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.5616
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.5198
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.563
+  },
+  {
+    "a": "herbal.leafy.mint",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5625
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "floral.rose-family.rose-water",
+    "score": 0.5378
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "floral.rose-family.saffron",
+    "score": 0.5527
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "floral.delicate.lavender",
+    "score": 0.4969
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "floral.delicate.elderflower",
+    "score": 0.4746
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.peel.lemon-zest",
+    "score": 0.4916
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.peel.orange-zest",
+    "score": 0.5083
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.peel.lime-zest",
+    "score": 0.635
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.peel.yuzu",
+    "score": 0.468
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.tart.amchur",
+    "score": 0.5754
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.tart.tamarind",
+    "score": 0.6347
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "citrus-bright.tart.dried-lime",
+    "score": 0.6041
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.allium.garlic",
+    "score": 0.5724
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.allium.onion-powder",
+    "score": 0.5498
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.allium.chive",
+    "score": 0.5179
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.fermented.dried-mushroom",
+    "score": 0.6372
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.fermented.nutritional-yeast",
+    "score": 0.5921
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.fermented.black-garlic",
+    "score": 0.5968
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.salty.sesame-seed",
+    "score": 0.5233
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.salty.poppy-seed",
+    "score": 0.4522
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.salty.nigella-seed",
+    "score": 0.5996
+  },
+  {
+    "a": "herbal.leafy.epazote",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5897
+  },
+  {
     "a": "floral.rose-family.rose-water",
     "b": "floral.rose-family.saffron",
     "score": 0.6374
@@ -9870,6 +12185,11 @@
     "score": 0.6136
   },
   {
+    "a": "floral.rose-family.rose-water",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6051
+  },
+  {
     "a": "floral.rose-family.saffron",
     "b": "floral.delicate.lavender",
     "score": 0.6777
@@ -9960,6 +12280,11 @@
     "score": 0.5299
   },
   {
+    "a": "floral.rose-family.saffron",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5302
+  },
+  {
     "a": "floral.delicate.lavender",
     "b": "floral.delicate.elderflower",
     "score": 0.6914
@@ -10045,6 +12370,11 @@
     "score": 0.5583
   },
   {
+    "a": "floral.delicate.lavender",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5483
+  },
+  {
     "a": "floral.delicate.elderflower",
     "b": "citrus-bright.peel.lemon-zest",
     "score": 0.6344
@@ -10125,6 +12455,11 @@
     "score": 0.525
   },
   {
+    "a": "floral.delicate.elderflower",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5056
+  },
+  {
     "a": "citrus-bright.peel.lemon-zest",
     "b": "citrus-bright.peel.orange-zest",
     "score": 0.8
@@ -10200,6 +12535,11 @@
     "score": 0.5864
   },
   {
+    "a": "citrus-bright.peel.lemon-zest",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5635
+  },
+  {
     "a": "citrus-bright.peel.orange-zest",
     "b": "citrus-bright.peel.lime-zest",
     "score": 0.6611
@@ -10270,6 +12610,11 @@
     "score": 0.6139
   },
   {
+    "a": "citrus-bright.peel.orange-zest",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5969
+  },
+  {
     "a": "citrus-bright.peel.lime-zest",
     "b": "citrus-bright.peel.yuzu",
     "score": 0.5291
@@ -10335,6 +12680,11 @@
     "score": 0.5521
   },
   {
+    "a": "citrus-bright.peel.lime-zest",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5366
+  },
+  {
     "a": "citrus-bright.peel.yuzu",
     "b": "citrus-bright.tart.amchur",
     "score": 0.5891
@@ -10395,6 +12745,11 @@
     "score": 0.5369
   },
   {
+    "a": "citrus-bright.peel.yuzu",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5573
+  },
+  {
     "a": "citrus-bright.tart.amchur",
     "b": "citrus-bright.tart.tamarind",
     "score": 0.7477
@@ -10450,6 +12805,11 @@
     "score": 0.7672
   },
   {
+    "a": "citrus-bright.tart.amchur",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.8363
+  },
+  {
     "a": "citrus-bright.tart.tamarind",
     "b": "citrus-bright.tart.dried-lime",
     "score": 0.6229
@@ -10500,6 +12860,11 @@
     "score": 0.6878
   },
   {
+    "a": "citrus-bright.tart.tamarind",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.7361
+  },
+  {
     "a": "citrus-bright.tart.dried-lime",
     "b": "umami-savory.allium.garlic",
     "score": 0.5301
@@ -10545,6 +12910,11 @@
     "score": 0.6414
   },
   {
+    "a": "citrus-bright.tart.dried-lime",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.652
+  },
+  {
     "a": "umami-savory.allium.garlic",
     "b": "umami-savory.allium.onion-powder",
     "score": 0.9204
@@ -10585,6 +12955,11 @@
     "score": 0.5692
   },
   {
+    "a": "umami-savory.allium.garlic",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5722
+  },
+  {
     "a": "umami-savory.allium.onion-powder",
     "b": "umami-savory.allium.chive",
     "score": 0.5346
@@ -10620,6 +12995,11 @@
     "score": 0.5571
   },
   {
+    "a": "umami-savory.allium.onion-powder",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5702
+  },
+  {
     "a": "umami-savory.allium.chive",
     "b": "umami-savory.fermented.dried-mushroom",
     "score": 0.5383
@@ -10650,6 +13030,11 @@
     "score": 0.5341
   },
   {
+    "a": "umami-savory.allium.chive",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.533
+  },
+  {
     "a": "umami-savory.fermented.dried-mushroom",
     "b": "umami-savory.fermented.nutritional-yeast",
     "score": 0.5308
@@ -10675,6 +13060,11 @@
     "score": 0.5108
   },
   {
+    "a": "umami-savory.fermented.dried-mushroom",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5234
+  },
+  {
     "a": "umami-savory.fermented.nutritional-yeast",
     "b": "umami-savory.fermented.black-garlic",
     "score": 0.5754
@@ -10695,6 +13085,11 @@
     "score": 0.6072
   },
   {
+    "a": "umami-savory.fermented.nutritional-yeast",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5905
+  },
+  {
     "a": "umami-savory.fermented.black-garlic",
     "b": "umami-savory.salty.sesame-seed",
     "score": 0.554
@@ -10710,6 +13105,11 @@
     "score": 0.6242
   },
   {
+    "a": "umami-savory.fermented.black-garlic",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.66
+  },
+  {
     "a": "umami-savory.salty.sesame-seed",
     "b": "umami-savory.salty.poppy-seed",
     "score": 0.6599
@@ -10720,8 +13120,23 @@
     "score": 0.5802
   },
   {
+    "a": "umami-savory.salty.sesame-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.6026
+  },
+  {
     "a": "umami-savory.salty.poppy-seed",
     "b": "umami-savory.salty.nigella-seed",
     "score": 0.5727
+  },
+  {
+    "a": "umami-savory.salty.poppy-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.5507
+  },
+  {
+    "a": "umami-savory.salty.nigella-seed",
+    "b": "umami-savory.resin.asafoetida",
+    "score": 0.8335
   }
 ]

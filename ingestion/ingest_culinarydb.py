@@ -17,6 +17,9 @@ CACHE=Path(__file__).parent/'culinarydb_cache'
 URL='https://cosylab.iiitd.edu.in/culinarydb/static/data/CulinaryDB.zip'
 # Ambiguous plant/part or processed forms are approximate; no generic chili stand-ins.
 MAPPING={
+ 'Mint':(262,'approx'),  # Generic mint; entity 266 specifically aliases spearmint oil.
+ 'Curry Leaf':(385,'exact'),'Asafoetida':(376,'exact'),'Ajwain':(381,'exact'),
+ 'Epazote':(708,'exact'),'Savory':(444,'exact'),
  'Cinnamon':(330,'exact'),'Nutmeg':(336,'exact'),'Allspice':(375,'exact'),
  'Mace':(334,'exact'),'Clove':(331,'exact'),'Star Anise':(325,'exact'),
  'Cardamom':(327,'exact'),'Cassia':(328,'exact'),'Black Pepper':(339,'approx'),

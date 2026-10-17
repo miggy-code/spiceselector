@@ -1369,6 +1369,12 @@
         }
       ]
     },
+    "warm.woody.black-cardamom": {
+      "name": "Black Cardamom",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
     "hot-pungent.pepper.black-pepper": {
       "name": "Black Pepper",
       "entityId": 339,
@@ -1899,6 +1905,24 @@
     },
     "hot-pungent.chili.aleppo": {
       "name": "Aleppo Pepper",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
+    "hot-pungent.chili.aji-amarillo": {
+      "name": "Aj\u00ed Amarillo",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
+    "hot-pungent.chili.aji-panca": {
+      "name": "Aj\u00ed Panca",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
+    "hot-pungent.chili.rocoto": {
+      "name": "Rocoto",
       "sourceQuality": "none",
       "missing": true,
       "cuisines": []
@@ -3599,6 +3623,178 @@
         }
       ]
     },
+    "earthy.seed.ajwain": {
+      "name": "Ajwain",
+      "entityId": 381,
+      "entityName": "Carom Seed",
+      "sourceQuality": "exact",
+      "missing": false,
+      "recipeCount": 119,
+      "cuisines": [
+        {
+          "cuisine": "Africa",
+          "recipeCount": 1,
+          "totalRecipes": 651,
+          "frequency": 0.001536
+        },
+        {
+          "cuisine": "Australia & NZ",
+          "recipeCount": 0,
+          "totalRecipes": 494,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "British Isles",
+          "recipeCount": 0,
+          "totalRecipes": 1075,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Canada",
+          "recipeCount": 0,
+          "totalRecipes": 1112,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Caribbean",
+          "recipeCount": 0,
+          "totalRecipes": 1103,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "China",
+          "recipeCount": 0,
+          "totalRecipes": 941,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "DACH Countries",
+          "recipeCount": 0,
+          "totalRecipes": 487,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Eastern Europe",
+          "recipeCount": 0,
+          "totalRecipes": 565,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "France",
+          "recipeCount": 0,
+          "totalRecipes": 2703,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Greece",
+          "recipeCount": 0,
+          "totalRecipes": 934,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Indian Subcontinent",
+          "recipeCount": 118,
+          "totalRecipes": 4058,
+          "frequency": 0.029078
+        },
+        {
+          "cuisine": "Italy",
+          "recipeCount": 0,
+          "totalRecipes": 7504,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Japan",
+          "recipeCount": 0,
+          "totalRecipes": 580,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Korea",
+          "recipeCount": 0,
+          "totalRecipes": 301,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Mexico",
+          "recipeCount": 0,
+          "totalRecipes": 3138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Middle East",
+          "recipeCount": 0,
+          "totalRecipes": 993,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Belgian",
+          "recipeCount": 0,
+          "totalRecipes": 15,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Central America",
+          "recipeCount": 0,
+          "totalRecipes": 14,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Dutch",
+          "recipeCount": 0,
+          "totalRecipes": 40,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Portugal",
+          "recipeCount": 0,
+          "totalRecipes": 138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Scandinavia",
+          "recipeCount": 0,
+          "totalRecipes": 404,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South America",
+          "recipeCount": 0,
+          "totalRecipes": 310,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South East Asia",
+          "recipeCount": 0,
+          "totalRecipes": 611,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Spain",
+          "recipeCount": 0,
+          "totalRecipes": 816,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Thailand",
+          "recipeCount": 0,
+          "totalRecipes": 667,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "USA",
+          "recipeCount": 0,
+          "totalRecipes": 16118,
+          "frequency": 0.0
+        }
+      ]
+    },
+    "earthy.seed.annatto": {
+      "name": "Annatto",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
     "earthy.smoky.smoked-paprika": {
       "name": "Smoked Paprika",
       "sourceQuality": "none",
@@ -4447,6 +4643,178 @@
         }
       ]
     },
+    "herbal.mediterranean.juniper-berry": {
+      "name": "Juniper Berry",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
+    "herbal.mediterranean.savory": {
+      "name": "Savory",
+      "entityId": 444,
+      "entityName": "Summer savory",
+      "sourceQuality": "exact",
+      "missing": false,
+      "recipeCount": 14,
+      "cuisines": [
+        {
+          "cuisine": "Africa",
+          "recipeCount": 0,
+          "totalRecipes": 651,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Australia & NZ",
+          "recipeCount": 0,
+          "totalRecipes": 494,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "British Isles",
+          "recipeCount": 0,
+          "totalRecipes": 1075,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Canada",
+          "recipeCount": 2,
+          "totalRecipes": 1112,
+          "frequency": 0.001799
+        },
+        {
+          "cuisine": "Caribbean",
+          "recipeCount": 0,
+          "totalRecipes": 1103,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "China",
+          "recipeCount": 0,
+          "totalRecipes": 941,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "DACH Countries",
+          "recipeCount": 0,
+          "totalRecipes": 487,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Eastern Europe",
+          "recipeCount": 3,
+          "totalRecipes": 565,
+          "frequency": 0.00531
+        },
+        {
+          "cuisine": "France",
+          "recipeCount": 2,
+          "totalRecipes": 2703,
+          "frequency": 0.00074
+        },
+        {
+          "cuisine": "Greece",
+          "recipeCount": 0,
+          "totalRecipes": 934,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Indian Subcontinent",
+          "recipeCount": 0,
+          "totalRecipes": 4058,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Italy",
+          "recipeCount": 0,
+          "totalRecipes": 7504,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Japan",
+          "recipeCount": 1,
+          "totalRecipes": 580,
+          "frequency": 0.001724
+        },
+        {
+          "cuisine": "Korea",
+          "recipeCount": 0,
+          "totalRecipes": 301,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Mexico",
+          "recipeCount": 0,
+          "totalRecipes": 3138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Middle East",
+          "recipeCount": 1,
+          "totalRecipes": 993,
+          "frequency": 0.001007
+        },
+        {
+          "cuisine": "Misc.: Belgian",
+          "recipeCount": 0,
+          "totalRecipes": 15,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Central America",
+          "recipeCount": 0,
+          "totalRecipes": 14,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Dutch",
+          "recipeCount": 0,
+          "totalRecipes": 40,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Portugal",
+          "recipeCount": 0,
+          "totalRecipes": 138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Scandinavia",
+          "recipeCount": 0,
+          "totalRecipes": 404,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South America",
+          "recipeCount": 0,
+          "totalRecipes": 310,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South East Asia",
+          "recipeCount": 0,
+          "totalRecipes": 611,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Spain",
+          "recipeCount": 0,
+          "totalRecipes": 816,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Thailand",
+          "recipeCount": 0,
+          "totalRecipes": 667,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "USA",
+          "recipeCount": 5,
+          "totalRecipes": 16118,
+          "frequency": 0.00031
+        }
+      ]
+    },
     "herbal.asian.lemongrass": {
       "name": "Lemongrass",
       "sourceQuality": "none",
@@ -4470,6 +4838,172 @@
       "sourceQuality": "none",
       "missing": true,
       "cuisines": []
+    },
+    "herbal.asian.curry-leaf": {
+      "name": "Curry Leaf",
+      "entityId": 385,
+      "entityName": "Curry Leaf",
+      "sourceQuality": "exact",
+      "missing": false,
+      "recipeCount": 476,
+      "cuisines": [
+        {
+          "cuisine": "Africa",
+          "recipeCount": 1,
+          "totalRecipes": 651,
+          "frequency": 0.001536
+        },
+        {
+          "cuisine": "Australia & NZ",
+          "recipeCount": 0,
+          "totalRecipes": 494,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "British Isles",
+          "recipeCount": 0,
+          "totalRecipes": 1075,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Canada",
+          "recipeCount": 2,
+          "totalRecipes": 1112,
+          "frequency": 0.001799
+        },
+        {
+          "cuisine": "Caribbean",
+          "recipeCount": 0,
+          "totalRecipes": 1103,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "China",
+          "recipeCount": 0,
+          "totalRecipes": 941,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "DACH Countries",
+          "recipeCount": 0,
+          "totalRecipes": 487,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Eastern Europe",
+          "recipeCount": 0,
+          "totalRecipes": 565,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "France",
+          "recipeCount": 0,
+          "totalRecipes": 2703,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Greece",
+          "recipeCount": 0,
+          "totalRecipes": 934,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Indian Subcontinent",
+          "recipeCount": 467,
+          "totalRecipes": 4058,
+          "frequency": 0.115081
+        },
+        {
+          "cuisine": "Italy",
+          "recipeCount": 0,
+          "totalRecipes": 7504,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Japan",
+          "recipeCount": 0,
+          "totalRecipes": 580,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Korea",
+          "recipeCount": 0,
+          "totalRecipes": 301,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Mexico",
+          "recipeCount": 0,
+          "totalRecipes": 3138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Middle East",
+          "recipeCount": 1,
+          "totalRecipes": 993,
+          "frequency": 0.001007
+        },
+        {
+          "cuisine": "Misc.: Belgian",
+          "recipeCount": 0,
+          "totalRecipes": 15,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Central America",
+          "recipeCount": 0,
+          "totalRecipes": 14,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Dutch",
+          "recipeCount": 0,
+          "totalRecipes": 40,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Portugal",
+          "recipeCount": 0,
+          "totalRecipes": 138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Scandinavia",
+          "recipeCount": 0,
+          "totalRecipes": 404,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South America",
+          "recipeCount": 0,
+          "totalRecipes": 310,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South East Asia",
+          "recipeCount": 2,
+          "totalRecipes": 611,
+          "frequency": 0.003273
+        },
+        {
+          "cuisine": "Spain",
+          "recipeCount": 0,
+          "totalRecipes": 816,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Thailand",
+          "recipeCount": 1,
+          "totalRecipes": 667,
+          "frequency": 0.001499
+        },
+        {
+          "cuisine": "USA",
+          "recipeCount": 2,
+          "totalRecipes": 16118,
+          "frequency": 0.000124
+        }
+      ]
     },
     "herbal.leafy.basil": {
       "name": "Basil",
@@ -5147,6 +5681,344 @@
         }
       ]
     },
+    "herbal.leafy.mint": {
+      "name": "Mint",
+      "entityId": 262,
+      "entityName": "Mint",
+      "sourceQuality": "approx",
+      "missing": false,
+      "recipeCount": 1504,
+      "cuisines": [
+        {
+          "cuisine": "Africa",
+          "recipeCount": 65,
+          "totalRecipes": 651,
+          "frequency": 0.099846
+        },
+        {
+          "cuisine": "Australia & NZ",
+          "recipeCount": 17,
+          "totalRecipes": 494,
+          "frequency": 0.034413
+        },
+        {
+          "cuisine": "British Isles",
+          "recipeCount": 24,
+          "totalRecipes": 1075,
+          "frequency": 0.022326
+        },
+        {
+          "cuisine": "Canada",
+          "recipeCount": 8,
+          "totalRecipes": 1112,
+          "frequency": 0.007194
+        },
+        {
+          "cuisine": "Caribbean",
+          "recipeCount": 51,
+          "totalRecipes": 1103,
+          "frequency": 0.046238
+        },
+        {
+          "cuisine": "China",
+          "recipeCount": 9,
+          "totalRecipes": 941,
+          "frequency": 0.009564
+        },
+        {
+          "cuisine": "DACH Countries",
+          "recipeCount": 2,
+          "totalRecipes": 487,
+          "frequency": 0.004107
+        },
+        {
+          "cuisine": "Eastern Europe",
+          "recipeCount": 0,
+          "totalRecipes": 565,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "France",
+          "recipeCount": 33,
+          "totalRecipes": 2703,
+          "frequency": 0.012209
+        },
+        {
+          "cuisine": "Greece",
+          "recipeCount": 143,
+          "totalRecipes": 934,
+          "frequency": 0.153105
+        },
+        {
+          "cuisine": "Indian Subcontinent",
+          "recipeCount": 175,
+          "totalRecipes": 4058,
+          "frequency": 0.043125
+        },
+        {
+          "cuisine": "Italy",
+          "recipeCount": 151,
+          "totalRecipes": 7504,
+          "frequency": 0.020123
+        },
+        {
+          "cuisine": "Japan",
+          "recipeCount": 8,
+          "totalRecipes": 580,
+          "frequency": 0.013793
+        },
+        {
+          "cuisine": "Korea",
+          "recipeCount": 3,
+          "totalRecipes": 301,
+          "frequency": 0.009967
+        },
+        {
+          "cuisine": "Mexico",
+          "recipeCount": 39,
+          "totalRecipes": 3138,
+          "frequency": 0.012428
+        },
+        {
+          "cuisine": "Middle East",
+          "recipeCount": 191,
+          "totalRecipes": 993,
+          "frequency": 0.192346
+        },
+        {
+          "cuisine": "Misc.: Belgian",
+          "recipeCount": 0,
+          "totalRecipes": 15,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Central America",
+          "recipeCount": 0,
+          "totalRecipes": 14,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Dutch",
+          "recipeCount": 0,
+          "totalRecipes": 40,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Portugal",
+          "recipeCount": 4,
+          "totalRecipes": 138,
+          "frequency": 0.028986
+        },
+        {
+          "cuisine": "Scandinavia",
+          "recipeCount": 6,
+          "totalRecipes": 404,
+          "frequency": 0.014851
+        },
+        {
+          "cuisine": "South America",
+          "recipeCount": 3,
+          "totalRecipes": 310,
+          "frequency": 0.009677
+        },
+        {
+          "cuisine": "South East Asia",
+          "recipeCount": 90,
+          "totalRecipes": 611,
+          "frequency": 0.1473
+        },
+        {
+          "cuisine": "Spain",
+          "recipeCount": 18,
+          "totalRecipes": 816,
+          "frequency": 0.022059
+        },
+        {
+          "cuisine": "Thailand",
+          "recipeCount": 81,
+          "totalRecipes": 667,
+          "frequency": 0.121439
+        },
+        {
+          "cuisine": "USA",
+          "recipeCount": 383,
+          "totalRecipes": 16118,
+          "frequency": 0.023762
+        }
+      ]
+    },
+    "herbal.leafy.epazote": {
+      "name": "Epazote",
+      "entityId": 708,
+      "entityName": "Epazote",
+      "sourceQuality": "exact",
+      "missing": false,
+      "recipeCount": 24,
+      "cuisines": [
+        {
+          "cuisine": "Africa",
+          "recipeCount": 0,
+          "totalRecipes": 651,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Australia & NZ",
+          "recipeCount": 0,
+          "totalRecipes": 494,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "British Isles",
+          "recipeCount": 0,
+          "totalRecipes": 1075,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Canada",
+          "recipeCount": 0,
+          "totalRecipes": 1112,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Caribbean",
+          "recipeCount": 0,
+          "totalRecipes": 1103,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "China",
+          "recipeCount": 0,
+          "totalRecipes": 941,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "DACH Countries",
+          "recipeCount": 0,
+          "totalRecipes": 487,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Eastern Europe",
+          "recipeCount": 0,
+          "totalRecipes": 565,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "France",
+          "recipeCount": 0,
+          "totalRecipes": 2703,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Greece",
+          "recipeCount": 0,
+          "totalRecipes": 934,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Indian Subcontinent",
+          "recipeCount": 0,
+          "totalRecipes": 4058,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Italy",
+          "recipeCount": 0,
+          "totalRecipes": 7504,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Japan",
+          "recipeCount": 0,
+          "totalRecipes": 580,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Korea",
+          "recipeCount": 0,
+          "totalRecipes": 301,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Mexico",
+          "recipeCount": 22,
+          "totalRecipes": 3138,
+          "frequency": 0.007011
+        },
+        {
+          "cuisine": "Middle East",
+          "recipeCount": 0,
+          "totalRecipes": 993,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Belgian",
+          "recipeCount": 0,
+          "totalRecipes": 15,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Central America",
+          "recipeCount": 0,
+          "totalRecipes": 14,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Dutch",
+          "recipeCount": 0,
+          "totalRecipes": 40,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Portugal",
+          "recipeCount": 0,
+          "totalRecipes": 138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Scandinavia",
+          "recipeCount": 0,
+          "totalRecipes": 404,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South America",
+          "recipeCount": 0,
+          "totalRecipes": 310,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South East Asia",
+          "recipeCount": 0,
+          "totalRecipes": 611,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Spain",
+          "recipeCount": 1,
+          "totalRecipes": 816,
+          "frequency": 0.001225
+        },
+        {
+          "cuisine": "Thailand",
+          "recipeCount": 0,
+          "totalRecipes": 667,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "USA",
+          "recipeCount": 1,
+          "totalRecipes": 16118,
+          "frequency": 6.2e-05
+        }
+      ]
+    },
+    "herbal.leafy.huacatay": {
+      "name": "Huacatay",
+      "sourceQuality": "none",
+      "missing": true,
+      "cuisines": []
+    },
     "floral.rose-family.rose-water": {
       "name": "Rose Water",
       "sourceQuality": "none",
@@ -5758,6 +6630,172 @@
       "sourceQuality": "none",
       "missing": true,
       "cuisines": []
+    },
+    "umami-savory.resin.asafoetida": {
+      "name": "Asafoetida",
+      "entityId": 376,
+      "entityName": "Asafoetida",
+      "sourceQuality": "exact",
+      "missing": false,
+      "recipeCount": 628,
+      "cuisines": [
+        {
+          "cuisine": "Africa",
+          "recipeCount": 1,
+          "totalRecipes": 651,
+          "frequency": 0.001536
+        },
+        {
+          "cuisine": "Australia & NZ",
+          "recipeCount": 0,
+          "totalRecipes": 494,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "British Isles",
+          "recipeCount": 0,
+          "totalRecipes": 1075,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Canada",
+          "recipeCount": 0,
+          "totalRecipes": 1112,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Caribbean",
+          "recipeCount": 0,
+          "totalRecipes": 1103,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "China",
+          "recipeCount": 0,
+          "totalRecipes": 941,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "DACH Countries",
+          "recipeCount": 0,
+          "totalRecipes": 487,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Eastern Europe",
+          "recipeCount": 0,
+          "totalRecipes": 565,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "France",
+          "recipeCount": 0,
+          "totalRecipes": 2703,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Greece",
+          "recipeCount": 0,
+          "totalRecipes": 934,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Indian Subcontinent",
+          "recipeCount": 625,
+          "totalRecipes": 4058,
+          "frequency": 0.154017
+        },
+        {
+          "cuisine": "Italy",
+          "recipeCount": 0,
+          "totalRecipes": 7504,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Japan",
+          "recipeCount": 0,
+          "totalRecipes": 580,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Korea",
+          "recipeCount": 0,
+          "totalRecipes": 301,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Mexico",
+          "recipeCount": 0,
+          "totalRecipes": 3138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Middle East",
+          "recipeCount": 1,
+          "totalRecipes": 993,
+          "frequency": 0.001007
+        },
+        {
+          "cuisine": "Misc.: Belgian",
+          "recipeCount": 0,
+          "totalRecipes": 15,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Central America",
+          "recipeCount": 0,
+          "totalRecipes": 14,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Dutch",
+          "recipeCount": 0,
+          "totalRecipes": 40,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Misc.: Portugal",
+          "recipeCount": 0,
+          "totalRecipes": 138,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Scandinavia",
+          "recipeCount": 0,
+          "totalRecipes": 404,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South America",
+          "recipeCount": 0,
+          "totalRecipes": 310,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "South East Asia",
+          "recipeCount": 0,
+          "totalRecipes": 611,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Spain",
+          "recipeCount": 0,
+          "totalRecipes": 816,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "Thailand",
+          "recipeCount": 0,
+          "totalRecipes": 667,
+          "frequency": 0.0
+        },
+        {
+          "cuisine": "USA",
+          "recipeCount": 1,
+          "totalRecipes": 16118,
+          "frequency": 6.2e-05
+        }
+      ]
     }
   }
 }
