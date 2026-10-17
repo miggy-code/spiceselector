@@ -70,6 +70,13 @@ MAX_FLAVOR_WORDS = 8
 # spice name (taxonomy leaf) -> (FlavorDB2 entity_id, quality). Hand-verified.
 # "exact": the entity is the same ingredient. "approx": a stand-in entity.
 FLAVORDB2_MAP = {
+    # Expansion verified against cached entity JSON, 2026-10-17.
+    "Mint": (266, "approx"),  # Spearmint display name, but entity_alias is spearmint-oil.
+    "Asafoetida": (376, "exact"),
+    "Ajwain": (381, "exact"),  # Carom Seed; explicit Ajwain synonym.
+    "Curry Leaf": (385, "exact"),
+    "Savory": (444, "exact"),  # Specifically Summer savory.
+    "Epazote": (708, "exact"),
     # exact
     "Cinnamon": (330, "exact"),
     "Nutmeg": (336, "exact"),

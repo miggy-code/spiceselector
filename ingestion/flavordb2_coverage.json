@@ -1,23 +1,29 @@
 {
-  "usableSpiceCount": 47,
-  "distinctUsableEntities": 44,
-  "totalSpices": 73,
+  "usableSpiceCount": 53,
+  "distinctUsableEntities": 50,
+  "totalSpices": 86,
   "minMolecules": 30,
-  "pairCount": 866,
+  "pairCount": 1154,
   "sameEntityPairsExcluded": 3,
   "approxPairsSkippedFoodbUsdaHasSignal": 208,
-  "zeroScorePairsDropped": 4,
+  "zeroScorePairsDropped": 13,
   "newlyCovered": [
     "Horseradish",
     "Wasabi",
+    "Ajwain",
+    "Savory",
+    "Curry Leaf",
     "Parsley",
+    "Mint",
+    "Epazote",
     "Lemon Zest",
     "Orange Zest",
     "Lime Zest",
     "Dried Lime",
     "Chive",
     "Dried Mushroom",
-    "Black Garlic"
+    "Black Garlic",
+    "Asafoetida"
   ],
   "spices": [
     {
@@ -100,6 +106,15 @@
       "alsoInFoodbUsda": true
     },
     {
+      "spice": "Black Cardamom",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
       "spice": "Black Pepper",
       "status": "usable",
       "reason": "usable",
@@ -180,6 +195,33 @@
       "quality": null,
       "molecules": null,
       "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Aj\u00ed Amarillo",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Aj\u00ed Panca",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Rocoto",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
     },
     {
       "spice": "Mustard Seed",
@@ -338,6 +380,25 @@
       "alsoInFoodbUsda": true
     },
     {
+      "spice": "Ajwain",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 381,
+      "entityName": "Carom Seed",
+      "quality": "exact",
+      "molecules": 155,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Annatto",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
       "spice": "Smoked Paprika",
       "status": "excluded",
       "reason": "only generic Capsicum entity",
@@ -415,6 +476,25 @@
       "alsoInFoodbUsda": true
     },
     {
+      "spice": "Juniper Berry",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Savory",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 444,
+      "entityName": "Summer savory",
+      "quality": "exact",
+      "molecules": 122,
+      "alsoInFoodbUsda": false
+    },
+    {
       "spice": "Lemongrass",
       "status": "excluded",
       "reason": "essential-oil entry, not the ingredient",
@@ -449,6 +529,16 @@
       "entityId": null,
       "quality": null,
       "molecules": null,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Curry Leaf",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 385,
+      "entityName": "Curry Leaf",
+      "quality": "exact",
+      "molecules": 31,
       "alsoInFoodbUsda": false
     },
     {
@@ -509,6 +599,35 @@
       "quality": "exact",
       "molecules": 144,
       "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Mint",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 266,
+      "entityName": "Spearmint",
+      "quality": "approx",
+      "molecules": 237,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Epazote",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 708,
+      "entityName": "Epazote",
+      "quality": "exact",
+      "molecules": 93,
+      "alsoInFoodbUsda": false
+    },
+    {
+      "spice": "Huacatay",
+      "status": "excluded",
+      "reason": "no FlavorDB2 entity mapped",
+      "entityId": null,
+      "quality": null,
+      "molecules": null,
+      "alsoInFoodbUsda": false
     },
     {
       "spice": "Rose Water",
@@ -723,6 +842,16 @@
       "quality": "exact",
       "molecules": 30,
       "alsoInFoodbUsda": true
+    },
+    {
+      "spice": "Asafoetida",
+      "status": "usable",
+      "reason": "usable",
+      "entityId": 376,
+      "entityName": "Asafoetida",
+      "quality": "exact",
+      "molecules": 37,
+      "alsoInFoodbUsda": false
     }
   ]
 }

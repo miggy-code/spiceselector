@@ -2,79 +2,79 @@
   "warm.baking.cinnamon": {
     "name": "Cinnamon",
     "vector": {
-      "woody": 0.09653116,
-      "citrus": 0.0506718,
-      "floral": 0.13704623,
-      "sweet-balsamic": 0.17983346,
-      "spicy-phenolic": 0.17892951,
-      "green-herbal": 0.08946668,
-      "earthy-roasty": 0.04265746,
-      "sulfurous-alliaceous": 0.00549808,
-      "minty-camphor": 0.06301653,
-      "fruity": 0.05689488,
-      "fatty-waxy": 0.07337211,
-      "nutty": 0.02608209
+      "woody": 0.09572985,
+      "citrus": 0.05078731,
+      "floral": 0.13794168,
+      "sweet-balsamic": 0.18007449,
+      "spicy-phenolic": 0.17913092,
+      "green-herbal": 0.08817192,
+      "earthy-roasty": 0.04282807,
+      "sulfurous-alliaceous": 0.00530537,
+      "minty-camphor": 0.06269815,
+      "fruity": 0.05704176,
+      "fatty-waxy": 0.07455547,
+      "nutty": 0.02573502
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 111.66953
+        "weight": 112.02297
       },
       {
         "descriptor": "floral",
-        "weight": 74.80676
+        "weight": 75.04032
       },
       {
         "descriptor": "woody",
-        "weight": 69.79922
+        "weight": 69.14027
       },
       {
         "descriptor": "bitter",
-        "weight": 55.90485
+        "weight": 56.2901
       },
       {
         "descriptor": "spicy",
-        "weight": 53.43258
+        "weight": 53.46009
       },
       {
         "descriptor": "balsam",
-        "weight": 47.76853
+        "weight": 48.6301
       },
       {
         "descriptor": "cinnamon",
-        "weight": 44.24466
+        "weight": 45.2558
       },
       {
         "descriptor": "herbal",
-        "weight": 42.90172
+        "weight": 42.01721
       },
       {
         "descriptor": "spice",
-        "weight": 39.04184
+        "weight": 39.09286
       },
       {
         "descriptor": "green",
-        "weight": 33.98466
+        "weight": 33.70711
       },
       {
         "descriptor": "fresh",
-        "weight": 31.94202
+        "weight": 31.66986
       },
       {
         "descriptor": "citrus",
-        "weight": 31.70685
+        "weight": 31.55009
       },
       {
         "descriptor": "fruity",
-        "weight": 28.8045
+        "weight": 28.97652
       },
       {
         "descriptor": "honey",
-        "weight": 24.88613
+        "weight": 25.2689
       },
       {
         "descriptor": "clove",
-        "weight": 23.51859
+        "weight": 23.92666
       }
     ],
     "moleculeCount": 221,
@@ -99,79 +99,79 @@
   "warm.baking.nutmeg": {
     "name": "Nutmeg",
     "vector": {
-      "woody": 0.11969406,
-      "citrus": 0.06731793,
-      "floral": 0.06361842,
-      "sweet-balsamic": 0.1639089,
-      "spicy-phenolic": 0.13183097,
-      "green-herbal": 0.14328561,
-      "earthy-roasty": 0.04620164,
-      "sulfurous-alliaceous": 0.01282533,
-      "minty-camphor": 0.08525878,
-      "fruity": 0.05627972,
-      "fatty-waxy": 0.07813166,
-      "nutty": 0.03164697
+      "woody": 0.1204055,
+      "citrus": 0.0674275,
+      "floral": 0.06359014,
+      "sweet-balsamic": 0.16291526,
+      "spicy-phenolic": 0.13202117,
+      "green-herbal": 0.14268242,
+      "earthy-roasty": 0.04647959,
+      "sulfurous-alliaceous": 0.01271133,
+      "minty-camphor": 0.08467145,
+      "fruity": 0.05637623,
+      "fatty-waxy": 0.07948674,
+      "nutty": 0.03123268
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 71.00854
+        "weight": 70.38517
       },
       {
         "descriptor": "woody",
-        "weight": 55.77225
+        "weight": 55.81199
       },
       {
         "descriptor": "bitter",
-        "weight": 42.18877
+        "weight": 42.07116
       },
       {
         "descriptor": "herbal",
-        "weight": 39.26244
+        "weight": 38.87287
       },
       {
         "descriptor": "citrus",
-        "weight": 35.83869
+        "weight": 35.58617
       },
       {
         "descriptor": "green",
-        "weight": 34.24417
+        "weight": 33.87269
       },
       {
         "descriptor": "camphor",
-        "weight": 30.94929
+        "weight": 30.82896
       },
       {
         "descriptor": "floral",
-        "weight": 30.72506
+        "weight": 30.56683
       },
       {
         "descriptor": "spice",
-        "weight": 28.04573
+        "weight": 27.8987
       },
       {
         "descriptor": "terpene",
-        "weight": 22.05642
+        "weight": 21.83637
       },
       {
         "descriptor": "spicy",
-        "weight": 21.25437
+        "weight": 21.57339
       },
       {
         "descriptor": "fresh",
-        "weight": 21.03641
+        "weight": 20.7742
       },
       {
         "descriptor": "pine",
-        "weight": 20.51359
+        "weight": 20.62162
       },
       {
         "descriptor": "balsam",
-        "weight": 18.0922
+        "weight": 18.05378
       },
       {
         "descriptor": "wood",
-        "weight": 16.36067
+        "weight": 16.38146
       }
     ],
     "moleculeCount": 185,
@@ -196,79 +196,79 @@
   "warm.baking.allspice": {
     "name": "Allspice",
     "vector": {
-      "woody": 0.20935476,
-      "citrus": 0.04682658,
-      "floral": 0.06056608,
-      "sweet-balsamic": 0.14835614,
-      "spicy-phenolic": 0.10248183,
-      "green-herbal": 0.14062393,
-      "earthy-roasty": 0.03515848,
-      "sulfurous-alliaceous": 0.00718461,
-      "minty-camphor": 0.04691966,
-      "fruity": 0.04544337,
-      "fatty-waxy": 0.12543399,
-      "nutty": 0.03165057
+      "woody": 0.2117448,
+      "citrus": 0.04653518,
+      "floral": 0.06108584,
+      "sweet-balsamic": 0.14724491,
+      "spicy-phenolic": 0.10300972,
+      "green-herbal": 0.1414705,
+      "earthy-roasty": 0.0351426,
+      "sulfurous-alliaceous": 0.00698044,
+      "minty-camphor": 0.0457484,
+      "fruity": 0.04520372,
+      "fatty-waxy": 0.12454729,
+      "nutty": 0.03128659
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 64.81398
+        "weight": 64.34753
       },
       {
         "descriptor": "woody",
-        "weight": 58.18006
+        "weight": 58.36804
       },
       {
         "descriptor": "wood",
-        "weight": 41.07255
+        "weight": 41.45857
       },
       {
         "descriptor": "herbal",
-        "weight": 38.37129
+        "weight": 38.12374
       },
       {
         "descriptor": "alkane",
-        "weight": 36.23026
-      },
-      {
-        "descriptor": "green",
-        "weight": 28.04393
+        "weight": 36.50548
       },
       {
         "descriptor": "herb",
-        "weight": 27.78043
+        "weight": 27.96612
+      },
+      {
+        "descriptor": "green",
+        "weight": 27.77203
       },
       {
         "descriptor": "waxy",
-        "weight": 26.0586
+        "weight": 25.7256
       },
       {
         "descriptor": "bitter",
-        "weight": 25.88523
+        "weight": 25.40299
       },
       {
         "descriptor": "citrus",
-        "weight": 24.2773
+        "weight": 23.73573
       },
       {
         "descriptor": "floral",
-        "weight": 23.65611
+        "weight": 23.47025
       },
       {
         "descriptor": "fruity",
-        "weight": 22.33061
-      },
-      {
-        "descriptor": "balsam",
-        "weight": 20.06628
+        "weight": 22.25269
       },
       {
         "descriptor": "spicy",
-        "weight": 19.80501
+        "weight": 20.04281
+      },
+      {
+        "descriptor": "balsam",
+        "weight": 20.03094
       },
       {
         "descriptor": "spice",
-        "weight": 18.06026
+        "weight": 18.04652
       }
     ],
     "moleculeCount": 184,
@@ -305,79 +305,79 @@
   "warm.woody.clove": {
     "name": "Clove",
     "vector": {
-      "woody": 0.1344548,
-      "citrus": 0.02383546,
-      "floral": 0.05295803,
-      "sweet-balsamic": 0.17666406,
-      "spicy-phenolic": 0.14991196,
-      "green-herbal": 0.13421634,
-      "earthy-roasty": 0.05121399,
-      "sulfurous-alliaceous": 0.00604892,
-      "minty-camphor": 0.03350747,
-      "fruity": 0.06915043,
-      "fatty-waxy": 0.1354114,
-      "nutty": 0.03262715
+      "woody": 0.13457738,
+      "citrus": 0.02390282,
+      "floral": 0.05285723,
+      "sweet-balsamic": 0.17645501,
+      "spicy-phenolic": 0.14860613,
+      "green-herbal": 0.13447654,
+      "earthy-roasty": 0.05160624,
+      "sulfurous-alliaceous": 0.00584214,
+      "minty-camphor": 0.03250767,
+      "fruity": 0.06960023,
+      "fatty-waxy": 0.13756924,
+      "nutty": 0.03199937
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 101.94816
+        "weight": 102.17638
       },
       {
         "descriptor": "woody",
-        "weight": 59.90975
+        "weight": 59.96764
       },
       {
         "descriptor": "bitter",
-        "weight": 57.39324
+        "weight": 57.4371
       },
       {
         "descriptor": "fruity",
-        "weight": 48.39127
+        "weight": 49.06351
       },
       {
         "descriptor": "herbal",
-        "weight": 48.17618
+        "weight": 48.62163
       },
       {
         "descriptor": "green",
-        "weight": 43.74708
+        "weight": 43.94048
       },
       {
         "descriptor": "waxy",
-        "weight": 39.47491
+        "weight": 40.07684
       },
       {
         "descriptor": "spice",
-        "weight": 37.23006
+        "weight": 37.32198
       },
       {
         "descriptor": "fresh",
-        "weight": 36.90392
+        "weight": 37.14622
       },
       {
         "descriptor": "spicy",
-        "weight": 31.86728
+        "weight": 32.01626
       },
       {
         "descriptor": "floral",
-        "weight": 31.57099
+        "weight": 31.65979
       },
       {
         "descriptor": "herb",
-        "weight": 29.46624
+        "weight": 29.48476
       },
       {
         "descriptor": "balsam",
-        "weight": 26.16548
+        "weight": 26.38392
       },
       {
         "descriptor": "wood",
-        "weight": 24.82006
+        "weight": 24.84737
       },
       {
         "descriptor": "fatty",
-        "weight": 23.9663
+        "weight": 24.39612
       }
     ],
     "moleculeCount": 203,
@@ -402,79 +402,79 @@
   "warm.woody.star-anise": {
     "name": "Star Anise",
     "vector": {
-      "woody": 0.1921696,
-      "citrus": 0.0762861,
-      "floral": 0.05001036,
-      "sweet-balsamic": 0.20003436,
-      "spicy-phenolic": 0.14084942,
-      "green-herbal": 0.12739248,
-      "earthy-roasty": 0.0280722,
-      "sulfurous-alliaceous": 0.00755067,
-      "minty-camphor": 0.06090014,
-      "fruity": 0.04068844,
-      "fatty-waxy": 0.05516971,
-      "nutty": 0.02087651
+      "woody": 0.19460697,
+      "citrus": 0.07629758,
+      "floral": 0.05032925,
+      "sweet-balsamic": 0.20170059,
+      "spicy-phenolic": 0.14139191,
+      "green-herbal": 0.12459409,
+      "earthy-roasty": 0.02798953,
+      "sulfurous-alliaceous": 0.00734381,
+      "minty-camphor": 0.05968393,
+      "fruity": 0.04049123,
+      "fatty-waxy": 0.05518774,
+      "nutty": 0.02038336
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 76.76964
+        "weight": 76.7895
       },
       {
         "descriptor": "woody",
-        "weight": 61.06838
+        "weight": 61.43299
       },
       {
         "descriptor": "citrus",
-        "weight": 40.76298
+        "weight": 40.4505
       },
       {
         "descriptor": "bitter",
-        "weight": 39.49338
+        "weight": 39.22322
       },
       {
         "descriptor": "herbal",
-        "weight": 37.74887
+        "weight": 37.01493
       },
       {
         "descriptor": "floral",
-        "weight": 33.40042
+        "weight": 33.48738
       },
       {
         "descriptor": "wood",
-        "weight": 27.18672
+        "weight": 27.61191
       },
       {
         "descriptor": "spice",
-        "weight": 26.18614
+        "weight": 26.19107
       },
       {
         "descriptor": "spicy",
-        "weight": 25.79316
+        "weight": 26.02545
       },
       {
         "descriptor": "green",
-        "weight": 24.08335
-      },
-      {
-        "descriptor": "camphor",
-        "weight": 19.71105
+        "weight": 23.66812
       },
       {
         "descriptor": "anise",
-        "weight": 19.40303
+        "weight": 19.83054
+      },
+      {
+        "descriptor": "camphor",
+        "weight": 19.57436
       },
       {
         "descriptor": "balsam",
-        "weight": 19.37841
-      },
-      {
-        "descriptor": "terpene",
-        "weight": 18.55578
+        "weight": 19.52539
       },
       {
         "descriptor": "pine",
-        "weight": 18.51199
+        "weight": 18.26143
+      },
+      {
+        "descriptor": "terpene",
+        "weight": 18.13772
       }
     ],
     "moleculeCount": 172,
@@ -499,79 +499,79 @@
   "warm.woody.cardamom": {
     "name": "Cardamom",
     "vector": {
-      "woody": 0.09742933,
-      "citrus": 0.08689731,
-      "floral": 0.08932879,
-      "sweet-balsamic": 0.13872096,
-      "spicy-phenolic": 0.08439099,
-      "green-herbal": 0.13357495,
-      "earthy-roasty": 0.03401828,
-      "sulfurous-alliaceous": 0.00706042,
-      "minty-camphor": 0.06287664,
-      "fruity": 0.07438164,
-      "fatty-waxy": 0.16753723,
-      "nutty": 0.02378345
+      "woody": 0.09798823,
+      "citrus": 0.08800772,
+      "floral": 0.08971122,
+      "sweet-balsamic": 0.13874929,
+      "spicy-phenolic": 0.0839931,
+      "green-herbal": 0.13204177,
+      "earthy-roasty": 0.0342009,
+      "sulfurous-alliaceous": 0.00687389,
+      "minty-camphor": 0.0612207,
+      "fruity": 0.07434841,
+      "fatty-waxy": 0.16959756,
+      "nutty": 0.02326722
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 61.53322
+        "weight": 61.21128
       },
       {
         "descriptor": "green",
-        "weight": 56.48462
+        "weight": 55.55827
       },
       {
         "descriptor": "floral",
-        "weight": 53.50254
+        "weight": 53.26615
       },
       {
         "descriptor": "woody",
-        "weight": 51.78315
+        "weight": 52.00557
       },
       {
         "descriptor": "bitter",
-        "weight": 45.72811
+        "weight": 44.71922
       },
       {
         "descriptor": "waxy",
-        "weight": 43.02917
+        "weight": 42.92228
       },
       {
         "descriptor": "citrus",
-        "weight": 41.80544
+        "weight": 41.84205
       },
       {
         "descriptor": "fatty",
-        "weight": 35.20405
+        "weight": 35.31357
       },
       {
         "descriptor": "fruity",
-        "weight": 31.97823
+        "weight": 31.51998
       },
       {
         "descriptor": "fresh",
-        "weight": 30.0891
+        "weight": 29.38714
       },
       {
         "descriptor": "rose",
-        "weight": 26.18987
+        "weight": 25.73565
       },
       {
         "descriptor": "herbal",
-        "weight": 24.90582
+        "weight": 24.39682
       },
       {
         "descriptor": "terpene",
-        "weight": 22.46188
+        "weight": 21.94557
       },
       {
         "descriptor": "spice",
-        "weight": 18.70966
+        "weight": 18.61369
       },
       {
         "descriptor": "orange",
-        "weight": 17.94461
+        "weight": 18.10604
       }
     ],
     "moleculeCount": 182,
@@ -596,79 +596,79 @@
   "warm.woody.cassia": {
     "name": "Cassia",
     "vector": {
-      "woody": 0.05865812,
-      "citrus": 0.03754328,
-      "floral": 0.07462267,
-      "sweet-balsamic": 0.20361538,
-      "spicy-phenolic": 0.19113298,
-      "green-herbal": 0.10816511,
-      "earthy-roasty": 0.04812606,
-      "sulfurous-alliaceous": 0.01043718,
-      "minty-camphor": 0.06280568,
-      "fruity": 0.05789269,
-      "fatty-waxy": 0.1031819,
-      "nutty": 0.04381894
+      "woody": 0.0580311,
+      "citrus": 0.03713941,
+      "floral": 0.07545253,
+      "sweet-balsamic": 0.20399853,
+      "spicy-phenolic": 0.1930685,
+      "green-herbal": 0.1081973,
+      "earthy-roasty": 0.0483206,
+      "sulfurous-alliaceous": 0.01016433,
+      "minty-camphor": 0.06167924,
+      "fruity": 0.05715287,
+      "fatty-waxy": 0.1034071,
+      "nutty": 0.0433885
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 66.0186
+        "weight": 65.93863
       },
       {
         "descriptor": "bitter",
-        "weight": 33.94461
+        "weight": 33.60776
       },
       {
         "descriptor": "balsam",
-        "weight": 30.94292
-      },
-      {
-        "descriptor": "green",
-        "weight": 26.79425
+        "weight": 31.34873
       },
       {
         "descriptor": "cinnamon",
-        "weight": 26.30051
+        "weight": 26.90038
       },
       {
-        "descriptor": "floral",
-        "weight": 24.43805
+        "descriptor": "green",
+        "weight": 26.66118
       },
       {
         "descriptor": "spicy",
-        "weight": 24.37115
+        "weight": 24.70572
+      },
+      {
+        "descriptor": "floral",
+        "weight": 24.38394
       },
       {
         "descriptor": "woody",
-        "weight": 24.19377
+        "weight": 23.74513
       },
       {
         "descriptor": "herbal",
-        "weight": 21.85769
+        "weight": 21.72961
       },
       {
         "descriptor": "honey",
-        "weight": 19.6236
+        "weight": 19.86344
       },
       {
         "descriptor": "fresh",
-        "weight": 18.80625
+        "weight": 18.68742
       },
       {
         "descriptor": "phenolic",
-        "weight": 17.55526
+        "weight": 17.8126
       },
       {
         "descriptor": "spice",
-        "weight": 15.10659
+        "weight": 15.03749
       },
       {
         "descriptor": "waxy",
-        "weight": 13.48324
+        "weight": 13.52924
       },
       {
         "descriptor": "clove",
-        "weight": 12.35752
+        "weight": 12.47976
       }
     ],
     "moleculeCount": 145,
@@ -685,82 +685,94 @@
       }
     ]
   },
+  "warm.woody.black-cardamom": {
+    "name": "Black Cardamom",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
   "hot-pungent.pepper.black-pepper": {
     "name": "Black Pepper",
     "vector": {
-      "woody": 0.1347221,
-      "citrus": 0.05027409,
-      "floral": 0.07259332,
-      "sweet-balsamic": 0.17534122,
-      "spicy-phenolic": 0.13506633,
-      "green-herbal": 0.1247429,
-      "earthy-roasty": 0.0351159,
-      "sulfurous-alliaceous": 0.00486475,
-      "minty-camphor": 0.08163113,
-      "fruity": 0.07258782,
-      "fatty-waxy": 0.09050924,
-      "nutty": 0.02255121
+      "woody": 0.13557404,
+      "citrus": 0.04999168,
+      "floral": 0.07357188,
+      "sweet-balsamic": 0.17608196,
+      "spicy-phenolic": 0.13537854,
+      "green-herbal": 0.1240732,
+      "earthy-roasty": 0.03545716,
+      "sulfurous-alliaceous": 0.00474687,
+      "minty-camphor": 0.07837295,
+      "fruity": 0.07345731,
+      "fatty-waxy": 0.09099514,
+      "nutty": 0.02229927
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 125.10032
+        "weight": 124.77033
       },
       {
         "descriptor": "woody",
-        "weight": 87.41334
+        "weight": 87.53718
       },
       {
         "descriptor": "herbal",
-        "weight": 62.05009
+        "weight": 60.76442
       },
       {
         "descriptor": "floral",
-        "weight": 59.80485
+        "weight": 60.24892
       },
       {
         "descriptor": "green",
-        "weight": 53.79457
+        "weight": 53.31412
       },
       {
         "descriptor": "bitter",
-        "weight": 46.14959
+        "weight": 45.79081
       },
       {
         "descriptor": "spice",
-        "weight": 44.82618
+        "weight": 44.48236
       },
       {
         "descriptor": "citrus",
-        "weight": 44.03562
+        "weight": 43.35084
       },
       {
         "descriptor": "spicy",
-        "weight": 40.88914
+        "weight": 40.99867
       },
       {
         "descriptor": "fruity",
-        "weight": 38.9658
+        "weight": 39.12022
       },
       {
         "descriptor": "waxy",
-        "weight": 38.28051
+        "weight": 38.45775
       },
       {
         "descriptor": "wood",
-        "weight": 34.82773
+        "weight": 34.70318
       },
       {
         "descriptor": "fresh",
-        "weight": 30.7309
+        "weight": 30.39993
       },
       {
         "descriptor": "balsam",
-        "weight": 30.44352
+        "weight": 30.34117
       },
       {
         "descriptor": "minty",
-        "weight": 26.08654
+        "weight": 24.95758
       }
     ],
     "moleculeCount": 223,
@@ -781,78 +793,78 @@
     "name": "White Pepper",
     "vector": {
       "woody": 0.0,
-      "citrus": 0.05154212,
+      "citrus": 0.05188168,
       "floral": 0.0,
       "sweet-balsamic": 0.0,
-      "spicy-phenolic": 0.23430791,
-      "green-herbal": 0.10763799,
+      "spicy-phenolic": 0.22964773,
+      "green-herbal": 0.10898224,
       "earthy-roasty": 0.0,
       "sulfurous-alliaceous": 0.0,
       "minty-camphor": 0.0,
-      "fruity": 0.04971885,
-      "fatty-waxy": 0.55679313,
+      "fruity": 0.05013259,
+      "fatty-waxy": 0.55935576,
       "nutty": 0.0
     },
     "topDescriptors": [
       {
         "descriptor": "odorless",
-        "weight": 14.21547
+        "weight": 15.00152
       },
       {
         "descriptor": "fatty",
-        "weight": 9.93133
+        "weight": 10.38502
       },
       {
         "descriptor": "bitter",
-        "weight": 6.37883
+        "weight": 6.75424
       },
       {
         "descriptor": "faint",
-        "weight": 5.08605
+        "weight": 5.37188
       },
       {
         "descriptor": "sour",
-        "weight": 4.31465
+        "weight": 4.52903
       },
       {
         "descriptor": "mild",
-        "weight": 3.66552
+        "weight": 3.8799
       },
       {
         "descriptor": "cheese",
-        "weight": 3.34648
+        "weight": 3.44288
       },
       {
         "descriptor": "sweat",
-        "weight": 3.34648
+        "weight": 3.44288
       },
       {
         "descriptor": "animal",
-        "weight": 3.29584
+        "weight": 3.3673
       },
       {
         "descriptor": "pepper",
-        "weight": 3.29584
+        "weight": 3.3673
       },
       {
         "descriptor": "rancid",
-        "weight": 2.79994
+        "weight": 2.89633
       },
       {
         "descriptor": "fat",
-        "weight": 2.47716
+        "weight": 2.62008
       },
       {
         "descriptor": "waxy",
-        "weight": 2.37708
+        "weight": 2.47348
       },
       {
         "descriptor": "citrus",
-        "weight": 1.45001
+        "weight": 1.52147
       },
       {
         "descriptor": "unpleasant",
-        "weight": 1.45001
+        "weight": 1.52147
       }
     ],
     "moleculeCount": 25,
@@ -953,82 +965,118 @@
     "missingReason": "no source molecules",
     "sources": []
   },
+  "hot-pungent.chili.aji-amarillo": {
+    "name": "Aj\u00ed Amarillo",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
+  "hot-pungent.chili.aji-panca": {
+    "name": "Aj\u00ed Panca",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
+  "hot-pungent.chili.rocoto": {
+    "name": "Rocoto",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
   "hot-pungent.sharp.mustard-seed": {
     "name": "Mustard Seed",
     "vector": {
-      "woody": 0.0250197,
-      "citrus": 0.02254789,
-      "floral": 0.03558339,
-      "sweet-balsamic": 0.13827855,
-      "spicy-phenolic": 0.1422604,
-      "green-herbal": 0.12459498,
-      "earthy-roasty": 0.0813159,
-      "sulfurous-alliaceous": 0.08759893,
-      "minty-camphor": 0.02253769,
-      "fruity": 0.08715554,
-      "fatty-waxy": 0.18038051,
-      "nutty": 0.05272652
+      "woody": 0.0244921,
+      "citrus": 0.02223942,
+      "floral": 0.03506724,
+      "sweet-balsamic": 0.13665396,
+      "spicy-phenolic": 0.14265191,
+      "green-herbal": 0.12415284,
+      "earthy-roasty": 0.08189034,
+      "sulfurous-alliaceous": 0.08862435,
+      "minty-camphor": 0.02186505,
+      "fruity": 0.0870235,
+      "fatty-waxy": 0.1831956,
+      "nutty": 0.0521437
     },
     "topDescriptors": [
       {
         "descriptor": "bitter",
-        "weight": 53.46252
+        "weight": 53.71308
       },
       {
         "descriptor": "sweet",
-        "weight": 47.38591
+        "weight": 47.25161
       },
       {
         "descriptor": "green",
-        "weight": 34.28362
+        "weight": 34.35426
       },
       {
         "descriptor": "waxy",
-        "weight": 30.48832
+        "weight": 30.91974
       },
       {
         "descriptor": "fruity",
-        "weight": 21.3751
-      },
-      {
-        "descriptor": "pungent",
-        "weight": 19.92862
+        "weight": 21.32151
       },
       {
         "descriptor": "odorless",
-        "weight": 19.66248
+        "weight": 20.27548
+      },
+      {
+        "descriptor": "pungent",
+        "weight": 19.98458
       },
       {
         "descriptor": "fatty",
-        "weight": 19.59913
+        "weight": 19.93255
       },
       {
         "descriptor": "musty",
-        "weight": 18.07471
+        "weight": 18.43857
       },
       {
         "descriptor": "fat",
-        "weight": 13.84245
+        "weight": 14.14112
       },
       {
         "descriptor": "herbal",
-        "weight": 13.47481
+        "weight": 13.50584
       },
       {
         "descriptor": "ethereal",
-        "weight": 12.62422
+        "weight": 12.70881
       },
       {
         "descriptor": "almond",
-        "weight": 12.18524
-      },
-      {
-        "descriptor": "floral",
-        "weight": 11.945
+        "weight": 12.13549
       },
       {
         "descriptor": "coconut",
-        "weight": 11.75541
+        "weight": 12.1127
+      },
+      {
+        "descriptor": "floral",
+        "weight": 11.66015
       }
     ],
     "moleculeCount": 153,
@@ -1053,79 +1101,79 @@
   "hot-pungent.sharp.horseradish": {
     "name": "Horseradish",
     "vector": {
-      "woody": 0.01388339,
-      "citrus": 0.02163486,
-      "floral": 0.03416406,
-      "sweet-balsamic": 0.1357166,
-      "spicy-phenolic": 0.19809457,
-      "green-herbal": 0.19542738,
-      "earthy-roasty": 0.0420462,
-      "sulfurous-alliaceous": 0.14207081,
-      "minty-camphor": 0.02589112,
-      "fruity": 0.05037891,
-      "fatty-waxy": 0.09813644,
-      "nutty": 0.04255565
+      "woody": 0.01351346,
+      "citrus": 0.02121797,
+      "floral": 0.03352946,
+      "sweet-balsamic": 0.13257554,
+      "spicy-phenolic": 0.20063559,
+      "green-herbal": 0.19687581,
+      "earthy-roasty": 0.04177566,
+      "sulfurous-alliaceous": 0.14482153,
+      "minty-camphor": 0.02510126,
+      "fruity": 0.049292,
+      "fatty-waxy": 0.09901725,
+      "nutty": 0.04164449
     },
     "topDescriptors": [
       {
         "descriptor": "bitter",
-        "weight": 34.20999
+        "weight": 34.04964
       },
       {
         "descriptor": "green",
-        "weight": 27.86356
+        "weight": 27.79824
       },
       {
         "descriptor": "pungent",
-        "weight": 27.50112
+        "weight": 27.78269
       },
       {
         "descriptor": "sweet",
-        "weight": 25.14786
+        "weight": 24.4555
       },
       {
         "descriptor": "horseradish",
-        "weight": 21.80235
+        "weight": 22.2311
       },
       {
         "descriptor": "mustard",
-        "weight": 20.10775
+        "weight": 20.42602
       },
       {
         "descriptor": "floral",
-        "weight": 14.06674
+        "weight": 13.85865
       },
       {
         "descriptor": "fruity",
-        "weight": 12.9415
+        "weight": 12.75623
       },
       {
         "descriptor": "garlic",
-        "weight": 11.74842
+        "weight": 11.92165
       },
       {
         "descriptor": "earthy",
-        "weight": 10.13838
+        "weight": 10.21641
       },
       {
         "descriptor": "fatty",
-        "weight": 9.76974
-      },
-      {
-        "descriptor": "odorless",
-        "weight": 9.61094
+        "weight": 9.67441
       },
       {
         "descriptor": "vegetable",
-        "weight": 9.45751
+        "weight": 9.55716
+      },
+      {
+        "descriptor": "odorless",
+        "weight": 9.3695
       },
       {
         "descriptor": "radish",
-        "weight": 8.7889
+        "weight": 8.93182
       },
       {
         "descriptor": "nutty",
-        "weight": 8.47971
+        "weight": 8.42138
       }
     ],
     "moleculeCount": 118,
@@ -1145,79 +1193,79 @@
   "hot-pungent.sharp.wasabi": {
     "name": "Wasabi",
     "vector": {
-      "woody": 0.01161704,
-      "citrus": 0.02415377,
-      "floral": 0.04816404,
-      "sweet-balsamic": 0.1711819,
-      "spicy-phenolic": 0.20693393,
-      "green-herbal": 0.16342025,
-      "earthy-roasty": 0.06091211,
-      "sulfurous-alliaceous": 0.06778624,
-      "minty-camphor": 0.0381283,
-      "fruity": 0.07438889,
-      "fatty-waxy": 0.07157749,
-      "nutty": 0.06173605
+      "woody": 0.01127858,
+      "citrus": 0.02388915,
+      "floral": 0.04754915,
+      "sweet-balsamic": 0.16883031,
+      "spicy-phenolic": 0.21109798,
+      "green-herbal": 0.16477961,
+      "earthy-roasty": 0.06104636,
+      "sulfurous-alliaceous": 0.06918859,
+      "minty-camphor": 0.03757636,
+      "fruity": 0.07334894,
+      "fatty-waxy": 0.07058331,
+      "nutty": 0.06083165
     },
     "topDescriptors": [
       {
         "descriptor": "bitter",
-        "weight": 29.07479
+        "weight": 28.74263
       },
       {
         "descriptor": "sweet",
-        "weight": 21.76164
+        "weight": 21.10718
       },
       {
         "descriptor": "green",
-        "weight": 14.68021
+        "weight": 14.40051
       },
       {
         "descriptor": "pungent",
-        "weight": 14.31777
+        "weight": 14.38497
       },
       {
         "descriptor": "mustard",
-        "weight": 11.31885
+        "weight": 11.4942
       },
       {
         "descriptor": "horseradish",
-        "weight": 10.69844
+        "weight": 10.91282
       },
       {
         "descriptor": "floral",
-        "weight": 9.67229
+        "weight": 9.39274
       },
       {
         "descriptor": "fruity",
-        "weight": 8.54705
+        "weight": 8.29032
       },
       {
         "descriptor": "fresh",
-        "weight": 5.98555
+        "weight": 5.80321
       },
       {
         "descriptor": "earthy",
-        "weight": 5.74393
+        "weight": 5.7505
       },
       {
         "descriptor": "odorless",
-        "weight": 5.44702
+        "weight": 5.27397
       },
       {
         "descriptor": "almond",
-        "weight": 5.39882
+        "weight": 5.23001
       },
       {
         "descriptor": "fatty",
-        "weight": 5.37529
+        "weight": 5.2085
+      },
+      {
+        "descriptor": "vegetable",
+        "weight": 5.09125
       },
       {
         "descriptor": "balsam",
-        "weight": 5.23406
-      },
-      {
-        "descriptor": "waxy",
-        "weight": 5.09558
+        "weight": 5.07942
       }
     ],
     "moleculeCount": 100,
@@ -1237,79 +1285,79 @@
   "sweet.vanilla-adjacent.vanilla": {
     "name": "Vanilla",
     "vector": {
-      "woody": 0.020243,
-      "citrus": 0.01843932,
-      "floral": 0.06820677,
-      "sweet-balsamic": 0.2169732,
-      "spicy-phenolic": 0.08466568,
-      "green-herbal": 0.11981056,
-      "earthy-roasty": 0.05760049,
-      "sulfurous-alliaceous": 0.00668301,
-      "minty-camphor": 0.03419633,
-      "fruity": 0.19080684,
-      "fatty-waxy": 0.13655715,
-      "nutty": 0.04581765
+      "woody": 0.02002742,
+      "citrus": 0.01841379,
+      "floral": 0.06828895,
+      "sweet-balsamic": 0.21704707,
+      "spicy-phenolic": 0.08470777,
+      "green-herbal": 0.11976637,
+      "earthy-roasty": 0.05761526,
+      "sulfurous-alliaceous": 0.00647548,
+      "minty-camphor": 0.03358916,
+      "fruity": 0.1916123,
+      "fatty-waxy": 0.13700686,
+      "nutty": 0.04544957
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 144.30824
+        "weight": 145.98096
       },
       {
         "descriptor": "fruity",
-        "weight": 112.81099
+        "weight": 114.47506
       },
       {
         "descriptor": "green",
-        "weight": 74.37349
+        "weight": 75.22445
       },
       {
         "descriptor": "bitter",
-        "weight": 51.26198
+        "weight": 51.38351
       },
       {
         "descriptor": "waxy",
-        "weight": 47.188
+        "weight": 47.97937
       },
       {
         "descriptor": "floral",
-        "weight": 44.11079
+        "weight": 44.54583
       },
       {
         "descriptor": "vanilla",
-        "weight": 37.10688
+        "weight": 37.84463
       },
       {
         "descriptor": "balsam",
-        "weight": 34.58496
+        "weight": 35.03956
       },
       {
         "descriptor": "creamy",
-        "weight": 34.06192
+        "weight": 34.66331
       },
       {
         "descriptor": "pineapple",
-        "weight": 32.62205
+        "weight": 33.15258
       },
       {
         "descriptor": "phenolic",
-        "weight": 31.01054
+        "weight": 31.48226
       },
       {
         "descriptor": "fruit",
-        "weight": 29.76804
+        "weight": 30.31808
       },
       {
         "descriptor": "herbal",
-        "weight": 29.70714
+        "weight": 30.17242
       },
       {
         "descriptor": "almond",
-        "weight": 28.96898
+        "weight": 29.19649
       },
       {
         "descriptor": "coconut",
-        "weight": 25.75496
+        "weight": 26.32663
       }
     ],
     "moleculeCount": 175,
@@ -1346,79 +1394,79 @@
   "sweet.aromatic-sweet.fennel-seed": {
     "name": "Fennel Seed",
     "vector": {
-      "woody": 0.09257149,
-      "citrus": 0.08366379,
-      "floral": 0.04108909,
-      "sweet-balsamic": 0.25967079,
-      "spicy-phenolic": 0.11708229,
-      "green-herbal": 0.11591141,
-      "earthy-roasty": 0.03275167,
-      "sulfurous-alliaceous": 0.01080006,
-      "minty-camphor": 0.09031189,
-      "fruity": 0.05485961,
-      "fatty-waxy": 0.0714273,
-      "nutty": 0.02986062
+      "woody": 0.09214649,
+      "citrus": 0.08400453,
+      "floral": 0.04086567,
+      "sweet-balsamic": 0.26154992,
+      "spicy-phenolic": 0.11769198,
+      "green-herbal": 0.11506213,
+      "earthy-roasty": 0.03250179,
+      "sulfurous-alliaceous": 0.01052841,
+      "minty-camphor": 0.08894668,
+      "fruity": 0.0546619,
+      "fatty-waxy": 0.07281804,
+      "nutty": 0.02922248
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 68.54136
+        "weight": 68.39733
       },
       {
         "descriptor": "bitter",
-        "weight": 43.8564
+        "weight": 43.85862
       },
       {
         "descriptor": "woody",
-        "weight": 30.30584
+        "weight": 29.99704
       },
       {
         "descriptor": "citrus",
-        "weight": 29.6615
+        "weight": 29.32473
       },
       {
         "descriptor": "herbal",
-        "weight": 29.04112
+        "weight": 28.65464
       },
       {
         "descriptor": "odorless",
-        "weight": 23.53873
+        "weight": 24.23748
       },
       {
         "descriptor": "floral",
-        "weight": 21.36494
+        "weight": 21.24097
       },
       {
         "descriptor": "balsam",
-        "weight": 20.18934
+        "weight": 20.32774
       },
       {
         "descriptor": "green",
-        "weight": 19.97658
+        "weight": 19.48338
       },
       {
         "descriptor": "spice",
-        "weight": 17.16678
-      },
-      {
-        "descriptor": "terpene",
-        "weight": 16.00716
+        "weight": 17.11276
       },
       {
         "descriptor": "lemon",
-        "weight": 15.58668
+        "weight": 15.5081
+      },
+      {
+        "descriptor": "terpene",
+        "weight": 15.36348
       },
       {
         "descriptor": "fruity",
-        "weight": 14.85105
+        "weight": 14.73723
       },
       {
         "descriptor": "anise",
-        "weight": 14.35181
+        "weight": 14.6364
       },
       {
         "descriptor": "pine",
-        "weight": 13.82986
+        "weight": 13.69016
       }
     ],
     "moleculeCount": 175,
@@ -1443,79 +1491,79 @@
   "sweet.aromatic-sweet.anise-seed": {
     "name": "Anise Seed",
     "vector": {
-      "woody": 0.07799477,
-      "citrus": 0.05193728,
-      "floral": 0.06873695,
-      "sweet-balsamic": 0.25332059,
-      "spicy-phenolic": 0.17964519,
-      "green-herbal": 0.11368403,
-      "earthy-roasty": 0.0419829,
-      "sulfurous-alliaceous": 0.00886931,
-      "minty-camphor": 0.05390179,
-      "fruity": 0.06539252,
-      "fatty-waxy": 0.05718616,
-      "nutty": 0.02734853
+      "woody": 0.07803779,
+      "citrus": 0.05224221,
+      "floral": 0.06817459,
+      "sweet-balsamic": 0.2550961,
+      "spicy-phenolic": 0.17907229,
+      "green-herbal": 0.11416114,
+      "earthy-roasty": 0.04222558,
+      "sulfurous-alliaceous": 0.00864392,
+      "minty-camphor": 0.0524497,
+      "fruity": 0.06566887,
+      "fatty-waxy": 0.05744101,
+      "nutty": 0.02678681
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 72.44832
+        "weight": 71.90618
       },
       {
         "descriptor": "bitter",
-        "weight": 36.83694
+        "weight": 36.49644
       },
       {
         "descriptor": "floral",
-        "weight": 29.50437
+        "weight": 28.90428
       },
       {
         "descriptor": "woody",
-        "weight": 28.89564
-      },
-      {
-        "descriptor": "spice",
-        "weight": 26.4877
+        "weight": 28.68446
       },
       {
         "descriptor": "balsam",
-        "weight": 26.40632
+        "weight": 26.61618
+      },
+      {
+        "descriptor": "spice",
+        "weight": 26.31424
       },
       {
         "descriptor": "fruity",
-        "weight": 24.33309
-      },
-      {
-        "descriptor": "green",
-        "weight": 22.947
+        "weight": 24.36219
       },
       {
         "descriptor": "spicy",
-        "weight": 22.92114
+        "weight": 22.89656
+      },
+      {
+        "descriptor": "green",
+        "weight": 22.671
       },
       {
         "descriptor": "citrus",
-        "weight": 22.61936
+        "weight": 22.41649
       },
       {
         "descriptor": "rose",
-        "weight": 21.32405
+        "weight": 20.88693
       },
       {
         "descriptor": "phenolic",
-        "weight": 17.44035
+        "weight": 17.43344
       },
       {
         "descriptor": "vanilla",
-        "weight": 16.58465
+        "weight": 16.93648
       },
       {
         "descriptor": "anise",
-        "weight": 16.1072
+        "weight": 16.46325
       },
       {
         "descriptor": "fresh",
-        "weight": 15.35631
+        "weight": 15.17836
       }
     ],
     "moleculeCount": 156,
@@ -1540,79 +1588,79 @@
   "sweet.aromatic-sweet.fenugreek": {
     "name": "Fenugreek",
     "vector": {
-      "woody": 0.04995919,
-      "citrus": 0.01922609,
-      "floral": 0.03664536,
-      "sweet-balsamic": 0.1547714,
-      "spicy-phenolic": 0.10637793,
-      "green-herbal": 0.10122977,
-      "earthy-roasty": 0.13914082,
-      "sulfurous-alliaceous": 0.01374789,
-      "minty-camphor": 0.02614532,
-      "fruity": 0.10535157,
-      "fatty-waxy": 0.13404058,
-      "nutty": 0.11336406
+      "woody": 0.05027522,
+      "citrus": 0.01876746,
+      "floral": 0.03589333,
+      "sweet-balsamic": 0.1529339,
+      "spicy-phenolic": 0.1063582,
+      "green-herbal": 0.10095111,
+      "earthy-roasty": 0.14068655,
+      "sulfurous-alliaceous": 0.01332633,
+      "minty-camphor": 0.02530718,
+      "fruity": 0.10526078,
+      "fatty-waxy": 0.13639826,
+      "nutty": 0.11384167
     },
     "topDescriptors": [
       {
         "descriptor": "bitter",
-        "weight": 40.68149
+        "weight": 40.73552
       },
       {
         "descriptor": "sweet",
-        "weight": 33.59643
+        "weight": 33.22781
       },
       {
         "descriptor": "odorless",
-        "weight": 22.27354
+        "weight": 22.90084
       },
       {
         "descriptor": "green",
-        "weight": 19.80555
+        "weight": 19.66877
       },
       {
         "descriptor": "nutty",
-        "weight": 16.17
+        "weight": 16.25459
       },
       {
         "descriptor": "woody",
-        "weight": 15.96629
+        "weight": 16.06597
       },
       {
         "descriptor": "cocoa",
-        "weight": 15.50199
+        "weight": 15.72505
       },
       {
         "descriptor": "musty",
-        "weight": 14.12737
+        "weight": 14.27685
       },
       {
         "descriptor": "peanut",
-        "weight": 13.42239
+        "weight": 13.59562
       },
       {
         "descriptor": "fatty",
-        "weight": 13.16254
+        "weight": 13.28159
       },
       {
         "descriptor": "roasted",
-        "weight": 12.76561
+        "weight": 12.95836
       },
       {
         "descriptor": "coffee",
-        "weight": 12.25479
+        "weight": 12.44753
       },
       {
         "descriptor": "floral",
-        "weight": 11.86952
+        "weight": 11.55607
       },
       {
         "descriptor": "fruity",
-        "weight": 10.37655
+        "weight": 10.19128
       },
       {
         "descriptor": "hazelnut",
-        "weight": 9.46978
+        "weight": 9.59106
       }
     ],
     "moleculeCount": 138,
@@ -1649,79 +1697,79 @@
   "earthy.root.turmeric": {
     "name": "Turmeric",
     "vector": {
-      "woody": 0.07363233,
-      "citrus": 0.07921876,
-      "floral": 0.04460163,
-      "sweet-balsamic": 0.17716082,
-      "spicy-phenolic": 0.14499812,
-      "green-herbal": 0.16515104,
-      "earthy-roasty": 0.02640538,
-      "sulfurous-alliaceous": 0.01196199,
-      "minty-camphor": 0.05732688,
-      "fruity": 0.05805615,
-      "fatty-waxy": 0.12012116,
-      "nutty": 0.04136574
+      "woody": 0.07365138,
+      "citrus": 0.07993354,
+      "floral": 0.04442881,
+      "sweet-balsamic": 0.17627143,
+      "spicy-phenolic": 0.1457749,
+      "green-herbal": 0.16610513,
+      "earthy-roasty": 0.0258151,
+      "sulfurous-alliaceous": 0.01161207,
+      "minty-camphor": 0.05660485,
+      "fruity": 0.0577183,
+      "fatty-waxy": 0.12142209,
+      "nutty": 0.04066239
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 42.83146
+        "weight": 42.38138
       },
       {
         "descriptor": "fresh",
-        "weight": 30.79567
+        "weight": 31.08184
       },
       {
         "descriptor": "herbal",
-        "weight": 27.23581
+        "weight": 27.16563
       },
       {
         "descriptor": "woody",
-        "weight": 27.01107
+        "weight": 26.86886
       },
       {
         "descriptor": "bitter",
-        "weight": 25.41891
+        "weight": 24.93481
       },
       {
         "descriptor": "green",
-        "weight": 21.62174
+        "weight": 21.24388
       },
       {
         "descriptor": "citrus",
-        "weight": 20.63343
+        "weight": 20.47164
       },
       {
         "descriptor": "floral",
-        "weight": 20.30724
+        "weight": 20.27697
       },
       {
         "descriptor": "fruity",
-        "weight": 16.11363
+        "weight": 16.07127
       },
       {
         "descriptor": "fatty",
-        "weight": 15.2718
+        "weight": 15.41579
       },
       {
         "descriptor": "camphor",
-        "weight": 14.09539
+        "weight": 14.04868
       },
       {
         "descriptor": "balsam",
-        "weight": 13.26219
+        "weight": 13.23924
       },
       {
         "descriptor": "spice",
-        "weight": 12.77825
+        "weight": 12.73186
       },
       {
         "descriptor": "spicy",
-        "weight": 12.36947
+        "weight": 12.4182
       },
       {
         "descriptor": "lemon",
-        "weight": 12.17306
+        "weight": 12.13388
       }
     ],
     "moleculeCount": 144,
@@ -1746,79 +1794,79 @@
   "earthy.root.ginger": {
     "name": "Ginger",
     "vector": {
-      "woody": 0.17137428,
-      "citrus": 0.05755451,
-      "floral": 0.06100615,
-      "sweet-balsamic": 0.12710178,
-      "spicy-phenolic": 0.11362047,
-      "green-herbal": 0.16594194,
-      "earthy-roasty": 0.05314549,
-      "sulfurous-alliaceous": 0.01905902,
-      "minty-camphor": 0.05770267,
-      "fruity": 0.05563257,
-      "fatty-waxy": 0.10352177,
-      "nutty": 0.01433935
+      "woody": 0.17235639,
+      "citrus": 0.05742999,
+      "floral": 0.06097791,
+      "sweet-balsamic": 0.1267059,
+      "spicy-phenolic": 0.11391346,
+      "green-herbal": 0.16531456,
+      "earthy-roasty": 0.05349662,
+      "sulfurous-alliaceous": 0.01916566,
+      "minty-camphor": 0.05680771,
+      "fruity": 0.05554206,
+      "fatty-waxy": 0.10425912,
+      "nutty": 0.01403061
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 141.74802
+        "weight": 142.97373
       },
       {
         "descriptor": "sweet",
-        "weight": 140.27376
+        "weight": 140.41485
       },
       {
         "descriptor": "green",
-        "weight": 117.49924
+        "weight": 117.79256
       },
       {
         "descriptor": "herbal",
-        "weight": 107.8585
+        "weight": 107.69537
       },
       {
         "descriptor": "fresh",
-        "weight": 69.77662
-      },
-      {
-        "descriptor": "citrus",
-        "weight": 68.13079
+        "weight": 70.1151
       },
       {
         "descriptor": "wood",
-        "weight": 67.76888
+        "weight": 68.43607
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 68.33236
       },
       {
         "descriptor": "fruity",
-        "weight": 61.037
+        "weight": 61.15469
       },
       {
         "descriptor": "floral",
-        "weight": 59.3363
+        "weight": 59.84692
       },
       {
         "descriptor": "bitter",
-        "weight": 59.00036
+        "weight": 59.04649
       },
       {
         "descriptor": "waxy",
-        "weight": 48.21037
+        "weight": 48.77354
       },
       {
         "descriptor": "fatty",
-        "weight": 45.9752
+        "weight": 46.26216
       },
       {
         "descriptor": "spicy",
-        "weight": 42.27907
+        "weight": 42.74082
       },
       {
         "descriptor": "camphor",
-        "weight": 38.81085
+        "weight": 38.77136
       },
       {
-        "descriptor": "spice",
-        "weight": 37.98731
+        "descriptor": "earthy",
+        "weight": 38.22385
       }
     ],
     "moleculeCount": 293,
@@ -1855,79 +1903,79 @@
   "earthy.seed.cumin": {
     "name": "Cumin",
     "vector": {
-      "woody": 0.11805291,
-      "citrus": 0.05602152,
-      "floral": 0.03895063,
-      "sweet-balsamic": 0.18394482,
-      "spicy-phenolic": 0.18938209,
-      "green-herbal": 0.14177538,
-      "earthy-roasty": 0.02978148,
-      "sulfurous-alliaceous": 0.00749957,
-      "minty-camphor": 0.06366188,
-      "fruity": 0.05986263,
-      "fatty-waxy": 0.09033185,
-      "nutty": 0.02073524
+      "woody": 0.1189675,
+      "citrus": 0.05626304,
+      "floral": 0.03903421,
+      "sweet-balsamic": 0.18428355,
+      "spicy-phenolic": 0.19033796,
+      "green-herbal": 0.1406649,
+      "earthy-roasty": 0.02965259,
+      "sulfurous-alliaceous": 0.00728826,
+      "minty-camphor": 0.0617202,
+      "fruity": 0.06010839,
+      "fatty-waxy": 0.09145022,
+      "nutty": 0.02022919
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 69.1451
+        "weight": 68.644
       },
       {
         "descriptor": "woody",
-        "weight": 48.19666
+        "weight": 47.99016
       },
       {
         "descriptor": "spice",
-        "weight": 45.96528
+        "weight": 45.93281
       },
       {
         "descriptor": "herbal",
-        "weight": 44.49095
+        "weight": 43.95019
       },
       {
         "descriptor": "bitter",
-        "weight": 40.66683
+        "weight": 40.62916
       },
       {
         "descriptor": "spicy",
-        "weight": 34.57636
+        "weight": 34.86147
       },
       {
         "descriptor": "balsam",
-        "weight": 32.39186
+        "weight": 32.61395
       },
       {
         "descriptor": "green",
-        "weight": 31.40876
+        "weight": 30.84187
       },
       {
         "descriptor": "wood",
-        "weight": 28.77368
+        "weight": 29.1468
       },
       {
         "descriptor": "floral",
-        "weight": 27.06321
+        "weight": 27.08056
       },
       {
         "descriptor": "fresh",
-        "weight": 24.36237
-      },
-      {
-        "descriptor": "citrus",
-        "weight": 23.67773
+        "weight": 23.71983
       },
       {
         "descriptor": "fatty",
-        "weight": 23.52035
+        "weight": 23.62739
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 23.51736
       },
       {
         "descriptor": "cherry",
-        "weight": 21.93577
+        "weight": 22.0114
       },
       {
         "descriptor": "fruity",
-        "weight": 20.34411
+        "weight": 20.30175
       }
     ],
     "moleculeCount": 190,
@@ -1952,79 +2000,79 @@
   "earthy.seed.coriander": {
     "name": "Coriander Seed",
     "vector": {
-      "woody": 0.07296392,
-      "citrus": 0.07749041,
-      "floral": 0.07855512,
-      "sweet-balsamic": 0.16081254,
-      "spicy-phenolic": 0.08196046,
-      "green-herbal": 0.10711242,
-      "earthy-roasty": 0.07055129,
-      "sulfurous-alliaceous": 0.00515933,
-      "minty-camphor": 0.06512903,
-      "fruity": 0.05762631,
-      "fatty-waxy": 0.1582491,
-      "nutty": 0.06439007
+      "woody": 0.07288844,
+      "citrus": 0.07751787,
+      "floral": 0.07876126,
+      "sweet-balsamic": 0.15988594,
+      "spicy-phenolic": 0.08159024,
+      "green-herbal": 0.10681706,
+      "earthy-roasty": 0.07077486,
+      "sulfurous-alliaceous": 0.00498083,
+      "minty-camphor": 0.06451109,
+      "fruity": 0.05760658,
+      "fatty-waxy": 0.16025028,
+      "nutty": 0.06441556
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 98.77909
+        "weight": 98.35878
       },
       {
         "descriptor": "waxy",
-        "weight": 79.00252
+        "weight": 80.16983
       },
       {
         "descriptor": "green",
-        "weight": 69.71116
+        "weight": 69.9337
       },
       {
         "descriptor": "citrus",
-        "weight": 62.57953
+        "weight": 62.54632
       },
       {
         "descriptor": "floral",
-        "weight": 54.90403
+        "weight": 55.12064
       },
       {
         "descriptor": "woody",
-        "weight": 54.25921
+        "weight": 54.15057
       },
       {
         "descriptor": "fatty",
-        "weight": 48.83753
+        "weight": 49.60079
       },
       {
         "descriptor": "aldehydic",
-        "weight": 40.16313
+        "weight": 40.62536
       },
       {
         "descriptor": "fresh",
-        "weight": 38.90384
+        "weight": 38.99893
       },
       {
         "descriptor": "fruity",
-        "weight": 35.48716
-      },
-      {
-        "descriptor": "herbal",
-        "weight": 32.91868
+        "weight": 35.67573
       },
       {
         "descriptor": "soapy",
-        "weight": 32.64674
+        "weight": 33.29234
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 32.63834
       },
       {
         "descriptor": "fat",
-        "weight": 31.87451
+        "weight": 32.43515
       },
       {
         "descriptor": "bitter",
-        "weight": 30.58751
+        "weight": 30.11446
       },
       {
         "descriptor": "rose",
-        "weight": 28.50488
+        "weight": 28.7438
       }
     ],
     "moleculeCount": 212,
@@ -2049,79 +2097,79 @@
   "earthy.seed.caraway": {
     "name": "Caraway",
     "vector": {
-      "woody": 0.04868448,
-      "citrus": 0.09685807,
-      "floral": 0.0424877,
-      "sweet-balsamic": 0.12666654,
-      "spicy-phenolic": 0.06741379,
-      "green-herbal": 0.2456591,
-      "earthy-roasty": 0.0080929,
+      "woody": 0.04920623,
+      "citrus": 0.10039484,
+      "floral": 0.04294769,
+      "sweet-balsamic": 0.12733645,
+      "spicy-phenolic": 0.06758426,
+      "green-herbal": 0.24387487,
+      "earthy-roasty": 0.00850623,
       "sulfurous-alliaceous": 0.0,
-      "minty-camphor": 0.17068393,
-      "fruity": 0.03627121,
-      "fatty-waxy": 0.15718227,
+      "minty-camphor": 0.16218642,
+      "fruity": 0.03526478,
+      "fatty-waxy": 0.16269823,
       "nutty": 0.0
     },
     "topDescriptors": [
       {
         "descriptor": "minty",
-        "weight": 16.72094
+        "weight": 15.89871
       },
       {
         "descriptor": "odorless",
-        "weight": 12.81675
+        "weight": 13.53134
       },
       {
         "descriptor": "fatty",
-        "weight": 12.00764
+        "weight": 12.32157
       },
       {
         "descriptor": "sweet",
-        "weight": 11.81847
-      },
-      {
-        "descriptor": "spearmint",
-        "weight": 11.06754
+        "weight": 11.69619
       },
       {
         "descriptor": "green",
-        "weight": 11.05708
+        "weight": 10.74447
+      },
+      {
+        "descriptor": "spearmint",
+        "weight": 10.18577
       },
       {
         "descriptor": "herbal",
-        "weight": 9.97512
+        "weight": 9.59756
       },
       {
         "descriptor": "mint",
-        "weight": 8.25609
+        "weight": 8.09941
       },
       {
         "descriptor": "warm",
-        "weight": 8.05938
-      },
-      {
-        "descriptor": "spice",
-        "weight": 7.31972
+        "weight": 7.9424
       },
       {
         "descriptor": "citrus",
-        "weight": 7.28229
+        "weight": 7.45065
+      },
+      {
+        "descriptor": "spice",
+        "weight": 7.23783
       },
       {
         "descriptor": "woody",
-        "weight": 6.99205
-      },
-      {
-        "descriptor": "caraway",
-        "weight": 6.70946
+        "weight": 7.06674
       },
       {
         "descriptor": "bitter",
-        "weight": 6.44565
+        "weight": 6.74014
+      },
+      {
+        "descriptor": "caraway",
+        "weight": 6.62923
       },
       {
         "descriptor": "rose",
-        "weight": 5.79317
+        "weight": 5.84077
       }
     ],
     "moleculeCount": 40,
@@ -2141,79 +2189,79 @@
   "earthy.seed.celery-seed": {
     "name": "Celery Seed",
     "vector": {
-      "woody": 0.09785176,
-      "citrus": 0.05467382,
-      "floral": 0.05550149,
-      "sweet-balsamic": 0.18153488,
-      "spicy-phenolic": 0.0747037,
-      "green-herbal": 0.24082869,
-      "earthy-roasty": 0.02671513,
-      "sulfurous-alliaceous": 0.00665043,
-      "minty-camphor": 0.07996815,
-      "fruity": 0.05737123,
-      "fatty-waxy": 0.09654803,
-      "nutty": 0.02765269
+      "woody": 0.09850839,
+      "citrus": 0.05537055,
+      "floral": 0.05584595,
+      "sweet-balsamic": 0.18146424,
+      "spicy-phenolic": 0.0747172,
+      "green-herbal": 0.2418276,
+      "earthy-roasty": 0.0267623,
+      "sulfurous-alliaceous": 0.0065251,
+      "minty-camphor": 0.07475536,
+      "fruity": 0.05808773,
+      "fatty-waxy": 0.09877185,
+      "nutty": 0.02736374
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 133.60004
+        "weight": 131.91158
       },
       {
         "descriptor": "herbal",
-        "weight": 86.18287
+        "weight": 84.99397
       },
       {
         "descriptor": "woody",
-        "weight": 73.82944
+        "weight": 73.71806
       },
       {
         "descriptor": "green",
-        "weight": 71.04069
+        "weight": 70.57561
       },
       {
         "descriptor": "fresh",
-        "weight": 55.51893
+        "weight": 54.26106
       },
       {
         "descriptor": "bitter",
-        "weight": 54.21172
+        "weight": 53.76859
       },
       {
         "descriptor": "citrus",
-        "weight": 50.07025
+        "weight": 50.06599
       },
       {
         "descriptor": "fruity",
-        "weight": 40.91568
+        "weight": 40.84171
       },
       {
         "descriptor": "floral",
-        "weight": 37.46659
-      },
-      {
-        "descriptor": "minty",
-        "weight": 32.90218
+        "weight": 37.01188
       },
       {
         "descriptor": "fatty",
-        "weight": 31.51054
+        "weight": 31.85463
+      },
+      {
+        "descriptor": "minty",
+        "weight": 30.04332
       },
       {
         "descriptor": "waxy",
-        "weight": 29.24661
-      },
-      {
-        "descriptor": "mint",
-        "weight": 25.71616
+        "weight": 29.47451
       },
       {
         "descriptor": "balsam",
-        "weight": 25.6824
+        "weight": 25.2479
       },
       {
         "descriptor": "spicy",
-        "weight": 24.97653
+        "weight": 24.72185
+      },
+      {
+        "descriptor": "odorless",
+        "weight": 24.23748
       }
     ],
     "moleculeCount": 251,
@@ -2235,82 +2283,186 @@
       }
     ]
   },
+  "earthy.seed.ajwain": {
+    "name": "Ajwain",
+    "vector": {
+      "woody": 0.0540606,
+      "citrus": 0.05502954,
+      "floral": 0.05335574,
+      "sweet-balsamic": 0.23517002,
+      "spicy-phenolic": 0.14005485,
+      "green-herbal": 0.14773164,
+      "earthy-roasty": 0.02076515,
+      "sulfurous-alliaceous": 0.01006233,
+      "minty-camphor": 0.13500946,
+      "fruity": 0.05354965,
+      "fatty-waxy": 0.06564985,
+      "nutty": 0.02956118
+    },
+    "topDescriptors": [
+      {
+        "descriptor": "sweet",
+        "weight": 62.20361
+      },
+      {
+        "descriptor": "bitter",
+        "weight": 34.94841
+      },
+      {
+        "descriptor": "green",
+        "weight": 33.44888
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 29.65903
+      },
+      {
+        "descriptor": "minty",
+        "weight": 26.23419
+      },
+      {
+        "descriptor": "floral",
+        "weight": 26.19504
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 25.99992
+      },
+      {
+        "descriptor": "woody",
+        "weight": 22.93804
+      },
+      {
+        "descriptor": "spice",
+        "weight": 20.83145
+      },
+      {
+        "descriptor": "mint",
+        "weight": 19.07205
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 18.9589
+      },
+      {
+        "descriptor": "fruity",
+        "weight": 16.12352
+      },
+      {
+        "descriptor": "spearmint",
+        "weight": 16.12185
+      },
+      {
+        "descriptor": "odorless",
+        "weight": 13.83541
+      },
+      {
+        "descriptor": "cherry",
+        "weight": 13.0445
+      }
+    ],
+    "moleculeCount": 155,
+    "annotatedMoleculeCount": 155,
+    "mappedMoleculeCount": 121,
+    "sourceQuality": "exact",
+    "missing": false,
+    "missingReason": null,
+    "sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 381,
+        "quality": "exact"
+      }
+    ]
+  },
+  "earthy.seed.annatto": {
+    "name": "Annatto",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
   "earthy.smoky.smoked-paprika": {
     "name": "Smoked Paprika",
     "vector": {
       "woody": 0.0,
-      "citrus": 0.02441389,
-      "floral": 0.05064845,
-      "sweet-balsamic": 0.24309351,
+      "citrus": 0.02474607,
+      "floral": 0.05008866,
+      "sweet-balsamic": 0.24136808,
       "spicy-phenolic": 0.0,
-      "green-herbal": 0.15289399,
-      "earthy-roasty": 0.05549217,
-      "sulfurous-alliaceous": 0.11098434,
+      "green-herbal": 0.15234459,
+      "earthy-roasty": 0.05476769,
+      "sulfurous-alliaceous": 0.10953537,
       "minty-camphor": 0.0,
-      "fruity": 0.02355027,
-      "fatty-waxy": 0.33892337,
+      "fruity": 0.02391181,
+      "fatty-waxy": 0.34323773,
       "nutty": 0.0
     },
     "topDescriptors": [
       {
         "descriptor": "odorless",
-        "weight": 39.31365
+        "weight": 40.59991
       },
       {
         "descriptor": "bitter",
-        "weight": 18.53786
+        "weight": 19.22889
       },
       {
         "descriptor": "ammoniacal",
-        "weight": 16.88465
+        "weight": 17.17049
       },
       {
         "descriptor": "mild",
-        "weight": 13.9585
-      },
-      {
-        "descriptor": "fishy",
-        "weight": 8.7889
+        "weight": 14.38725
       },
       {
         "descriptor": "fatty",
-        "weight": 8.5814
+        "weight": 9.01015
+      },
+      {
+        "descriptor": "fishy",
+        "weight": 8.93182
       },
       {
         "descriptor": "bland",
-        "weight": 8.04168
+        "weight": 8.18824
       },
       {
         "descriptor": "faint",
-        "weight": 7.40105
-      },
-      {
-        "descriptor": "balsam",
-        "weight": 5.32316
+        "weight": 7.75835
       },
       {
         "descriptor": "sour",
-        "weight": 5.18274
+        "weight": 5.46858
+      },
+      {
+        "descriptor": "balsam",
+        "weight": 5.46608
       },
       {
         "descriptor": "milky",
-        "weight": 4.07937
+        "weight": 4.19562
       },
       {
         "descriptor": "sweet",
-        "weight": 3.79169
+        "weight": 3.90794
       },
       {
         "descriptor": "herbal",
-        "weight": 3.7013
+        "weight": 3.77276
       },
       {
         "descriptor": "warm",
-        "weight": 3.7013
+        "weight": 3.77276
       },
       {
         "descriptor": "acidic",
-        "weight": 3.29584
+        "weight": 3.3673
       }
     ],
     "moleculeCount": 49,
@@ -2354,79 +2506,79 @@
   "herbal.mediterranean.oregano": {
     "name": "Oregano",
     "vector": {
-      "woody": 0.20269567,
-      "citrus": 0.06069031,
-      "floral": 0.04089226,
-      "sweet-balsamic": 0.13727331,
-      "spicy-phenolic": 0.07743064,
-      "green-herbal": 0.21687577,
-      "earthy-roasty": 0.03234291,
-      "sulfurous-alliaceous": 0.0045838,
-      "minty-camphor": 0.0515935,
-      "fruity": 0.06418529,
-      "fatty-waxy": 0.09034983,
-      "nutty": 0.02108671
+      "woody": 0.20435369,
+      "citrus": 0.06076749,
+      "floral": 0.04099254,
+      "sweet-balsamic": 0.13776226,
+      "spicy-phenolic": 0.07695977,
+      "green-herbal": 0.21464309,
+      "earthy-roasty": 0.03235868,
+      "sulfurous-alliaceous": 0.00444806,
+      "minty-camphor": 0.05055029,
+      "fruity": 0.06446477,
+      "fatty-waxy": 0.0918561,
+      "nutty": 0.02084328
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 121.98039
+        "weight": 122.75855
       },
       {
         "descriptor": "herbal",
-        "weight": 91.13393
+        "weight": 89.94606
       },
       {
         "descriptor": "sweet",
-        "weight": 84.87508
+        "weight": 84.53065
       },
       {
         "descriptor": "wood",
-        "weight": 79.85338
+        "weight": 80.43772
       },
       {
         "descriptor": "green",
-        "weight": 72.08443
+        "weight": 72.00517
       },
       {
         "descriptor": "herb",
-        "weight": 54.3396
+        "weight": 53.43874
       },
       {
         "descriptor": "citrus",
-        "weight": 52.30944
+        "weight": 51.93405
       },
       {
         "descriptor": "bitter",
-        "weight": 51.12579
+        "weight": 51.09353
       },
       {
         "descriptor": "fruity",
-        "weight": 37.53868
+        "weight": 37.69311
       },
       {
         "descriptor": "floral",
-        "weight": 32.3074
+        "weight": 32.30448
       },
       {
         "descriptor": "spice",
-        "weight": 30.89074
-      },
-      {
-        "descriptor": "fresh",
-        "weight": 25.29668
+        "weight": 30.93461
       },
       {
         "descriptor": "fatty",
-        "weight": 25.13756
+        "weight": 25.59005
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 25.09223
       },
       {
         "descriptor": "camphor",
-        "weight": 24.88371
+        "weight": 24.77893
       },
       {
         "descriptor": "waxy",
-        "weight": 24.53371
+        "weight": 24.75222
       }
     ],
     "moleculeCount": 248,
@@ -2451,79 +2603,79 @@
   "herbal.mediterranean.thyme": {
     "name": "Thyme",
     "vector": {
-      "woody": 0.09293946,
-      "citrus": 0.04999971,
-      "floral": 0.05959788,
-      "sweet-balsamic": 0.14814474,
-      "spicy-phenolic": 0.09059815,
-      "green-herbal": 0.17482486,
-      "earthy-roasty": 0.04241691,
-      "sulfurous-alliaceous": 0.00650987,
-      "minty-camphor": 0.09187148,
-      "fruity": 0.07803325,
-      "fatty-waxy": 0.14000439,
-      "nutty": 0.02505929
+      "woody": 0.0932852,
+      "citrus": 0.05032839,
+      "floral": 0.05962097,
+      "sweet-balsamic": 0.1474644,
+      "spicy-phenolic": 0.090939,
+      "green-herbal": 0.17445831,
+      "earthy-roasty": 0.04254235,
+      "sulfurous-alliaceous": 0.0063282,
+      "minty-camphor": 0.09062691,
+      "fruity": 0.07805689,
+      "fatty-waxy": 0.14160088,
+      "nutty": 0.02474851
     },
     "topDescriptors": [
       {
         "descriptor": "green",
-        "weight": 79.94007
+        "weight": 79.69665
       },
       {
         "descriptor": "sweet",
-        "weight": 75.53341
+        "weight": 74.6548
       },
       {
         "descriptor": "woody",
-        "weight": 62.74861
+        "weight": 62.36722
       },
       {
         "descriptor": "herbal",
-        "weight": 51.56861
+        "weight": 50.31805
       },
       {
         "descriptor": "bitter",
-        "weight": 41.51021
+        "weight": 41.55125
       },
       {
         "descriptor": "fruity",
-        "weight": 39.21526
+        "weight": 38.84397
       },
       {
         "descriptor": "waxy",
-        "weight": 38.25491
+        "weight": 38.70337
       },
       {
         "descriptor": "camphor",
-        "weight": 37.74301
+        "weight": 37.38507
       },
       {
         "descriptor": "fresh",
-        "weight": 33.13808
+        "weight": 32.71945
       },
       {
         "descriptor": "citrus",
-        "weight": 31.8067
+        "weight": 31.55476
       },
       {
         "descriptor": "balsam",
-        "weight": 29.01598
+        "weight": 28.83834
       },
       {
         "descriptor": "fatty",
-        "weight": 28.15586
+        "weight": 28.41707
       },
       {
         "descriptor": "spicy",
-        "weight": 26.91684
+        "weight": 27.02827
       },
       {
         "descriptor": "floral",
-        "weight": 25.67692
+        "weight": 25.59542
       },
       {
         "descriptor": "apple",
-        "weight": 19.90826
+        "weight": 19.89135
       }
     ],
     "moleculeCount": 197,
@@ -2548,79 +2700,79 @@
   "herbal.mediterranean.rosemary": {
     "name": "Rosemary",
     "vector": {
-      "woody": 0.17895971,
-      "citrus": 0.05549543,
-      "floral": 0.04199892,
-      "sweet-balsamic": 0.15944338,
-      "spicy-phenolic": 0.10121013,
-      "green-herbal": 0.18797842,
-      "earthy-roasty": 0.03939542,
-      "sulfurous-alliaceous": 0.0042025,
-      "minty-camphor": 0.10525843,
-      "fruity": 0.03945641,
-      "fatty-waxy": 0.06730567,
-      "nutty": 0.01929557
+      "woody": 0.17993501,
+      "citrus": 0.05567979,
+      "floral": 0.04231726,
+      "sweet-balsamic": 0.15940885,
+      "spicy-phenolic": 0.1014872,
+      "green-herbal": 0.18814988,
+      "earthy-roasty": 0.03968029,
+      "sulfurous-alliaceous": 0.00407745,
+      "minty-camphor": 0.10274585,
+      "fruity": 0.03959011,
+      "fatty-waxy": 0.06783965,
+      "nutty": 0.01908868
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 128.42237
+        "weight": 128.72973
       },
       {
         "descriptor": "sweet",
-        "weight": 126.41698
+        "weight": 125.95913
       },
       {
         "descriptor": "herbal",
-        "weight": 86.40051
+        "weight": 85.6343
       },
       {
         "descriptor": "bitter",
-        "weight": 71.38176
+        "weight": 71.76517
       },
       {
         "descriptor": "green",
-        "weight": 59.64977
+        "weight": 59.39039
       },
       {
         "descriptor": "herb",
-        "weight": 56.94229
+        "weight": 56.99408
       },
       {
         "descriptor": "citrus",
-        "weight": 55.39033
+        "weight": 55.13045
       },
       {
         "descriptor": "wood",
-        "weight": 50.85916
+        "weight": 51.3724
       },
       {
         "descriptor": "camphor",
-        "weight": 48.96469
+        "weight": 47.96388
       },
       {
         "descriptor": "fresh",
-        "weight": 47.44038
+        "weight": 47.09198
       },
       {
         "descriptor": "spice",
-        "weight": 46.35273
+        "weight": 46.34315
       },
       {
         "descriptor": "floral",
-        "weight": 38.58892
+        "weight": 38.83181
       },
       {
         "descriptor": "pine",
-        "weight": 37.83188
+        "weight": 37.84208
       },
       {
         "descriptor": "balsam",
-        "weight": 35.85369
+        "weight": 35.67971
       },
       {
         "descriptor": "earthy",
-        "weight": 30.04773
+        "weight": 30.27286
       }
     ],
     "moleculeCount": 255,
@@ -2645,79 +2797,79 @@
   "herbal.mediterranean.marjoram": {
     "name": "Marjoram",
     "vector": {
-      "woody": 0.15352941,
-      "citrus": 0.05694446,
-      "floral": 0.05873948,
-      "sweet-balsamic": 0.17802488,
-      "spicy-phenolic": 0.12318145,
-      "green-herbal": 0.15166697,
-      "earthy-roasty": 0.04786416,
-      "sulfurous-alliaceous": 0.00489949,
-      "minty-camphor": 0.06300784,
-      "fruity": 0.03644447,
-      "fatty-waxy": 0.10683711,
-      "nutty": 0.01886026
+      "woody": 0.15468157,
+      "citrus": 0.0568955,
+      "floral": 0.05873726,
+      "sweet-balsamic": 0.17826625,
+      "spicy-phenolic": 0.12321025,
+      "green-herbal": 0.15065156,
+      "earthy-roasty": 0.04804678,
+      "sulfurous-alliaceous": 0.00473052,
+      "minty-camphor": 0.06199569,
+      "fruity": 0.03600427,
+      "fatty-waxy": 0.10828011,
+      "nutty": 0.01850025
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 99.81245
+        "weight": 99.91493
       },
       {
         "descriptor": "woody",
-        "weight": 83.17506
+        "weight": 83.49425
       },
       {
         "descriptor": "herbal",
-        "weight": 50.65403
+        "weight": 49.86692
       },
       {
         "descriptor": "green",
-        "weight": 47.19844
+        "weight": 46.98924
       },
       {
         "descriptor": "wood",
-        "weight": 44.41718
+        "weight": 44.93919
       },
       {
         "descriptor": "citrus",
-        "weight": 43.95523
+        "weight": 43.68941
       },
       {
         "descriptor": "bitter",
-        "weight": 41.78622
+        "weight": 41.39913
       },
       {
         "descriptor": "floral",
-        "weight": 40.8915
+        "weight": 40.88308
       },
       {
         "descriptor": "spicy",
-        "weight": 34.38708
+        "weight": 34.50524
       },
       {
         "descriptor": "waxy",
-        "weight": 33.05327
+        "weight": 33.57682
       },
       {
         "descriptor": "herb",
-        "weight": 30.94046
-      },
-      {
-        "descriptor": "camphor",
-        "weight": 25.6569
-      },
-      {
-        "descriptor": "spice",
-        "weight": 25.65191
+        "weight": 31.09353
       },
       {
         "descriptor": "phenolic",
-        "weight": 25.50793
+        "weight": 25.89772
+      },
+      {
+        "descriptor": "camphor",
+        "weight": 25.55212
+      },
+      {
+        "descriptor": "spice",
+        "weight": 25.33664
       },
       {
         "descriptor": "fruity",
-        "weight": 24.77915
+        "weight": 24.7531
       }
     ],
     "moleculeCount": 218,
@@ -2742,79 +2894,79 @@
   "herbal.mediterranean.sage": {
     "name": "Sage",
     "vector": {
-      "woody": 0.22595877,
-      "citrus": 0.05333797,
-      "floral": 0.03085194,
-      "sweet-balsamic": 0.12397546,
-      "spicy-phenolic": 0.07529939,
-      "green-herbal": 0.16096043,
-      "earthy-roasty": 0.02424615,
-      "sulfurous-alliaceous": 0.00740374,
-      "minty-camphor": 0.08190674,
-      "fruity": 0.09731495,
-      "fatty-waxy": 0.0938255,
-      "nutty": 0.02491896
+      "woody": 0.22852861,
+      "citrus": 0.05369888,
+      "floral": 0.03064907,
+      "sweet-balsamic": 0.12229121,
+      "spicy-phenolic": 0.07523869,
+      "green-herbal": 0.15940402,
+      "earthy-roasty": 0.02391418,
+      "sulfurous-alliaceous": 0.00723212,
+      "minty-camphor": 0.08109385,
+      "fruity": 0.09646669,
+      "fatty-waxy": 0.09678655,
+      "nutty": 0.02469613
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 67.21455
+        "weight": 67.33009
       },
       {
         "descriptor": "bitter",
-        "weight": 54.91914
+        "weight": 54.99178
       },
       {
         "descriptor": "sweet",
-        "weight": 51.51662
+        "weight": 50.22929
       },
       {
         "descriptor": "green",
-        "weight": 41.12287
+        "weight": 39.88882
       },
       {
         "descriptor": "herbal",
-        "weight": 40.08377
+        "weight": 38.98207
       },
       {
         "descriptor": "wood",
-        "weight": 36.24447
-      },
-      {
-        "descriptor": "fruity",
-        "weight": 31.91802
+        "weight": 36.28709
       },
       {
         "descriptor": "odorless",
-        "weight": 30.76639
+        "weight": 31.59376
+      },
+      {
+        "descriptor": "fruity",
+        "weight": 30.89298
       },
       {
         "descriptor": "fresh",
-        "weight": 28.88613
+        "weight": 28.27986
       },
       {
         "descriptor": "citrus",
-        "weight": 26.73566
+        "weight": 26.32403
       },
       {
         "descriptor": "pine",
-        "weight": 25.4834
+        "weight": 25.26126
       },
       {
         "descriptor": "camphor",
-        "weight": 20.54137
-      },
-      {
-        "descriptor": "apple",
-        "weight": 18.50955
+        "weight": 20.46553
       },
       {
         "descriptor": "herb",
-        "weight": 18.48663
+        "weight": 18.16335
+      },
+      {
+        "descriptor": "apple",
+        "weight": 18.01571
       },
       {
         "descriptor": "terpene",
-        "weight": 17.45717
+        "weight": 16.88495
       }
     ],
     "moleculeCount": 205,
@@ -2836,82 +2988,186 @@
       }
     ]
   },
+  "herbal.mediterranean.juniper-berry": {
+    "name": "Juniper Berry",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
+  "herbal.mediterranean.savory": {
+    "name": "Savory",
+    "vector": {
+      "woody": 0.08006758,
+      "citrus": 0.05364385,
+      "floral": 0.04001648,
+      "sweet-balsamic": 0.17075798,
+      "spicy-phenolic": 0.13644819,
+      "green-herbal": 0.12503661,
+      "earthy-roasty": 0.04043747,
+      "sulfurous-alliaceous": 0.01793682,
+      "minty-camphor": 0.09183886,
+      "fruity": 0.05996702,
+      "fatty-waxy": 0.13353173,
+      "nutty": 0.05031741
+    },
+    "topDescriptors": [
+      {
+        "descriptor": "sweet",
+        "weight": 29.91653
+      },
+      {
+        "descriptor": "bitter",
+        "weight": 25.24496
+      },
+      {
+        "descriptor": "woody",
+        "weight": 21.00933
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 16.83676
+      },
+      {
+        "descriptor": "green",
+        "weight": 13.35373
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 12.81851
+      },
+      {
+        "descriptor": "camphor",
+        "weight": 11.06342
+      },
+      {
+        "descriptor": "floral",
+        "weight": 10.89801
+      },
+      {
+        "descriptor": "waxy",
+        "weight": 10.88714
+      },
+      {
+        "descriptor": "spice",
+        "weight": 10.54383
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 9.62181
+      },
+      {
+        "descriptor": "spicy",
+        "weight": 8.6614
+      },
+      {
+        "descriptor": "fruity",
+        "weight": 8.29032
+      },
+      {
+        "descriptor": "minty",
+        "weight": 8.00212
+      },
+      {
+        "descriptor": "terpene",
+        "weight": 7.34431
+      }
+    ],
+    "moleculeCount": 122,
+    "annotatedMoleculeCount": 122,
+    "mappedMoleculeCount": 96,
+    "sourceQuality": "exact",
+    "missing": false,
+    "missingReason": null,
+    "sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 444,
+        "quality": "exact"
+      }
+    ]
+  },
   "herbal.asian.lemongrass": {
     "name": "Lemongrass",
     "vector": {
       "woody": 0.0,
-      "citrus": 0.03305123,
-      "floral": 0.03305123,
-      "sweet-balsamic": 0.28696179,
-      "spicy-phenolic": 0.25391056,
-      "green-herbal": 0.32692271,
+      "citrus": 0.03122694,
+      "floral": 0.03122694,
+      "sweet-balsamic": 0.28505305,
+      "spicy-phenolic": 0.25382611,
+      "green-herbal": 0.33621309,
       "earthy-roasty": 0.0,
       "sulfurous-alliaceous": 0.0,
       "minty-camphor": 0.0,
-      "fruity": 0.03305123,
-      "fatty-waxy": 0.03305123,
+      "fruity": 0.03122694,
+      "fatty-waxy": 0.03122694,
       "nutty": 0.0
     },
     "topDescriptors": [
       {
         "descriptor": "balsam",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "balsamic",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "must",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "peppery",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "plastic",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "spice",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "spicy",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "terpene",
-        "weight": 1.30341
+        "weight": 1.37487
       },
       {
         "descriptor": "odorless",
-        "weight": 0.89794
+        "weight": 0.9694
       },
       {
         "descriptor": "grassy",
-        "weight": 0.8391
+        "weight": 0.91056
       },
       {
         "descriptor": "very mild",
-        "weight": 0.8391
+        "weight": 0.91056
       },
       {
         "descriptor": "citrus",
-        "weight": 0.42416
+        "weight": 0.42286
       },
       {
         "descriptor": "floral",
-        "weight": 0.42416
+        "weight": 0.42286
       },
       {
         "descriptor": "fruity",
-        "weight": 0.42416
+        "weight": 0.42286
       },
       {
         "descriptor": "geranium",
-        "weight": 0.42416
+        "weight": 0.42286
       }
     ],
     "moleculeCount": 5,
@@ -2931,79 +3187,79 @@
   "herbal.asian.thai-basil": {
     "name": "Thai Basil",
     "vector": {
-      "woody": 0.16318903,
-      "citrus": 0.06863882,
-      "floral": 0.07372854,
-      "sweet-balsamic": 0.1817602,
-      "spicy-phenolic": 0.093945,
-      "green-herbal": 0.1292239,
-      "earthy-roasty": 0.05481342,
-      "sulfurous-alliaceous": 0.00424808,
-      "minty-camphor": 0.11085186,
-      "fruity": 0.04066012,
-      "fatty-waxy": 0.06265248,
-      "nutty": 0.01628856
+      "woody": 0.16432165,
+      "citrus": 0.06864178,
+      "floral": 0.07406806,
+      "sweet-balsamic": 0.18156003,
+      "spicy-phenolic": 0.09462657,
+      "green-herbal": 0.1287198,
+      "earthy-roasty": 0.05484589,
+      "sulfurous-alliaceous": 0.00410692,
+      "minty-camphor": 0.1096409,
+      "fruity": 0.04046219,
+      "fatty-waxy": 0.06299235,
+      "nutty": 0.01601384
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 123.43871
+        "weight": 123.10578
       },
       {
         "descriptor": "woody",
-        "weight": 110.31257
-      },
-      {
-        "descriptor": "herbal",
-        "weight": 60.38943
+        "weight": 110.77651
       },
       {
         "descriptor": "floral",
-        "weight": 59.95081
+        "weight": 60.3385
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 59.89181
       },
       {
         "descriptor": "citrus",
-        "weight": 58.91745
+        "weight": 58.8381
       },
       {
         "descriptor": "green",
-        "weight": 57.21924
+        "weight": 56.82447
       },
       {
         "descriptor": "bitter",
-        "weight": 49.04244
+        "weight": 49.07899
       },
       {
         "descriptor": "wood",
-        "weight": 48.40265
+        "weight": 48.79524
       },
       {
         "descriptor": "fresh",
-        "weight": 42.99268
+        "weight": 43.21699
       },
       {
         "descriptor": "balsam",
-        "weight": 38.27406
+        "weight": 38.41042
       },
       {
         "descriptor": "camphor",
-        "weight": 33.60807
+        "weight": 32.89982
       },
       {
         "descriptor": "spice",
-        "weight": 29.95163
-      },
-      {
-        "descriptor": "minty",
-        "weight": 27.65516
+        "weight": 30.13861
       },
       {
         "descriptor": "odorless",
-        "weight": 27.52771
+        "weight": 28.14378
+      },
+      {
+        "descriptor": "minty",
+        "weight": 27.78081
       },
       {
         "descriptor": "herb",
-        "weight": 24.50034
+        "weight": 24.37341
       }
     ],
     "moleculeCount": 249,
@@ -3049,82 +3305,174 @@
     "missingReason": "no source molecules",
     "sources": []
   },
+  "herbal.asian.curry-leaf": {
+    "name": "Curry Leaf",
+    "vector": {
+      "woody": 0.10268662,
+      "citrus": 0.07930332,
+      "floral": 0.04514909,
+      "sweet-balsamic": 0.10830588,
+      "spicy-phenolic": 0.1501315,
+      "green-herbal": 0.26842778,
+      "earthy-roasty": 0.0087862,
+      "sulfurous-alliaceous": 0.0,
+      "minty-camphor": 0.13722991,
+      "fruity": 0.03314254,
+      "fatty-waxy": 0.06683715,
+      "nutty": 0.0
+    },
+    "topDescriptors": [
+      {
+        "descriptor": "herbal",
+        "weight": 14.71884
+      },
+      {
+        "descriptor": "sweet",
+        "weight": 9.4442
+      },
+      {
+        "descriptor": "woody",
+        "weight": 8.23614
+      },
+      {
+        "descriptor": "terpene",
+        "weight": 8.14388
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 7.62289
+      },
+      {
+        "descriptor": "green",
+        "weight": 7.10488
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 6.482
+      },
+      {
+        "descriptor": "lemon",
+        "weight": 5.59059
+      },
+      {
+        "descriptor": "bitter",
+        "weight": 5.35857
+      },
+      {
+        "descriptor": "camphor",
+        "weight": 5.24351
+      },
+      {
+        "descriptor": "waxy",
+        "weight": 4.90646
+      },
+      {
+        "descriptor": "tropical",
+        "weight": 4.32665
+      },
+      {
+        "descriptor": "floral",
+        "weight": 4.21332
+      },
+      {
+        "descriptor": "peppery",
+        "weight": 3.87623
+      },
+      {
+        "descriptor": "berry",
+        "weight": 3.77276
+      }
+    ],
+    "moleculeCount": 31,
+    "annotatedMoleculeCount": 19,
+    "mappedMoleculeCount": 19,
+    "sourceQuality": "exact",
+    "missing": false,
+    "missingReason": null,
+    "sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 385,
+        "quality": "exact"
+      }
+    ]
+  },
   "herbal.leafy.basil": {
     "name": "Basil",
     "vector": {
-      "woody": 0.16246609,
-      "citrus": 0.06128663,
-      "floral": 0.08759902,
-      "sweet-balsamic": 0.18332165,
-      "spicy-phenolic": 0.08877537,
-      "green-herbal": 0.11757704,
-      "earthy-roasty": 0.06555554,
-      "sulfurous-alliaceous": 0.00518006,
-      "minty-camphor": 0.095331,
-      "fruity": 0.04603063,
-      "fatty-waxy": 0.07090426,
-      "nutty": 0.01597272
+      "woody": 0.16382972,
+      "citrus": 0.06099317,
+      "floral": 0.0884546,
+      "sweet-balsamic": 0.18307643,
+      "spicy-phenolic": 0.08930022,
+      "green-herbal": 0.11666264,
+      "earthy-roasty": 0.06593875,
+      "sulfurous-alliaceous": 0.00503882,
+      "minty-camphor": 0.09362353,
+      "fruity": 0.04599408,
+      "fatty-waxy": 0.07147313,
+      "nutty": 0.01561491
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 103.76988
+        "weight": 102.86527
       },
       {
         "descriptor": "woody",
-        "weight": 91.85113
+        "weight": 91.67194
       },
       {
         "descriptor": "floral",
-        "weight": 57.14332
+        "weight": 57.3881
       },
       {
         "descriptor": "herbal",
-        "weight": 48.6445
+        "weight": 47.78957
       },
       {
         "descriptor": "green",
-        "weight": 46.23312
+        "weight": 45.62397
       },
       {
         "descriptor": "citrus",
-        "weight": 44.36698
+        "weight": 43.85887
       },
       {
         "descriptor": "bitter",
-        "weight": 43.63569
+        "weight": 43.3864
       },
       {
         "descriptor": "fresh",
-        "weight": 37.14822
+        "weight": 37.22961
       },
       {
         "descriptor": "balsam",
-        "weight": 31.76527
+        "weight": 31.68726
       },
       {
         "descriptor": "wood",
-        "weight": 31.25426
+        "weight": 31.2181
       },
       {
         "descriptor": "camphor",
-        "weight": 26.78083
+        "weight": 25.8582
       },
       {
         "descriptor": "earthy",
-        "weight": 23.44364
+        "weight": 23.35595
       },
       {
         "descriptor": "waxy",
-        "weight": 21.20349
+        "weight": 21.22273
       },
       {
         "descriptor": "spice",
-        "weight": 21.04838
+        "weight": 20.87805
       },
       {
         "descriptor": "fruity",
-        "weight": 20.37228
+        "weight": 20.16249
       }
     ],
     "moleculeCount": 210,
@@ -3144,79 +3492,79 @@
   "herbal.leafy.parsley": {
     "name": "Parsley",
     "vector": {
-      "woody": 0.12235409,
-      "citrus": 0.05709112,
-      "floral": 0.04824147,
-      "sweet-balsamic": 0.18165816,
-      "spicy-phenolic": 0.09303835,
-      "green-herbal": 0.20212686,
-      "earthy-roasty": 0.03349354,
-      "sulfurous-alliaceous": 0.01589279,
-      "minty-camphor": 0.08295945,
-      "fruity": 0.05403735,
-      "fatty-waxy": 0.07207426,
-      "nutty": 0.03703256
+      "woody": 0.12232502,
+      "citrus": 0.05627534,
+      "floral": 0.04865004,
+      "sweet-balsamic": 0.18081255,
+      "spicy-phenolic": 0.09246389,
+      "green-herbal": 0.20454917,
+      "earthy-roasty": 0.03328402,
+      "sulfurous-alliaceous": 0.01567821,
+      "minty-camphor": 0.08188302,
+      "fruity": 0.05406258,
+      "fatty-waxy": 0.073006,
+      "nutty": 0.03701017
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 51.66858
+        "weight": 50.77106
       },
       {
         "descriptor": "herbal",
-        "weight": 39.64599
+        "weight": 39.70482
       },
       {
         "descriptor": "woody",
-        "weight": 39.15842
+        "weight": 38.78933
       },
       {
         "descriptor": "green",
-        "weight": 33.97509
+        "weight": 33.57928
       },
       {
         "descriptor": "bitter",
-        "weight": 33.47651
+        "weight": 32.67794
       },
       {
         "descriptor": "citrus",
-        "weight": 25.72052
+        "weight": 24.99662
       },
       {
         "descriptor": "fruity",
-        "weight": 24.26832
+        "weight": 24.25802
       },
       {
         "descriptor": "wood",
-        "weight": 22.90844
+        "weight": 22.83342
       },
       {
         "descriptor": "spice",
-        "weight": 21.46423
+        "weight": 21.28344
       },
       {
         "descriptor": "floral",
-        "weight": 19.69529
+        "weight": 19.43797
       },
       {
         "descriptor": "herb",
-        "weight": 16.67652
-      },
-      {
-        "descriptor": "fresh",
-        "weight": 16.03448
+        "weight": 16.52759
       },
       {
         "descriptor": "balsam",
-        "weight": 15.9041
+        "weight": 15.58488
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 15.51602
       },
       {
         "descriptor": "balsamic",
-        "weight": 13.5844
+        "weight": 13.42126
       },
       {
         "descriptor": "vegetable",
-        "weight": 12.86293
+        "weight": 12.92565
       }
     ],
     "moleculeCount": 167,
@@ -3248,79 +3596,79 @@
   "herbal.leafy.dill": {
     "name": "Dill",
     "vector": {
-      "woody": 0.07949212,
-      "citrus": 0.0423681,
-      "floral": 0.04695575,
-      "sweet-balsamic": 0.14583477,
-      "spicy-phenolic": 0.12489078,
-      "green-herbal": 0.18563019,
-      "earthy-roasty": 0.04700617,
-      "sulfurous-alliaceous": 0.03059514,
-      "minty-camphor": 0.07505123,
-      "fruity": 0.05525634,
-      "fatty-waxy": 0.14198606,
-      "nutty": 0.02493337
+      "woody": 0.07983502,
+      "citrus": 0.04218134,
+      "floral": 0.04762603,
+      "sweet-balsamic": 0.14573834,
+      "spicy-phenolic": 0.12475948,
+      "green-herbal": 0.18389367,
+      "earthy-roasty": 0.04761048,
+      "sulfurous-alliaceous": 0.03129676,
+      "minty-camphor": 0.07227439,
+      "fruity": 0.05584283,
+      "fatty-waxy": 0.14438443,
+      "nutty": 0.02455726
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 79.12624
+        "weight": 77.36139
       },
       {
         "descriptor": "herbal",
-        "weight": 64.0736
+        "weight": 61.90894
       },
       {
         "descriptor": "bitter",
-        "weight": 52.0063
+        "weight": 52.07386
       },
       {
         "descriptor": "woody",
-        "weight": 45.34841
+        "weight": 44.8229
       },
       {
         "descriptor": "green",
-        "weight": 45.23679
-      },
-      {
-        "descriptor": "citrus",
-        "weight": 36.9896
+        "weight": 44.5421
       },
       {
         "descriptor": "odorless",
-        "weight": 36.97339
+        "weight": 37.95798
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 36.36725
       },
       {
         "descriptor": "spice",
-        "weight": 35.14102
+        "weight": 34.65076
       },
       {
         "descriptor": "waxy",
-        "weight": 33.28861
+        "weight": 33.04837
       },
       {
         "descriptor": "fruity",
-        "weight": 29.43311
-      },
-      {
-        "descriptor": "herb",
-        "weight": 26.62298
+        "weight": 29.09017
       },
       {
         "descriptor": "floral",
-        "weight": 26.43738
+        "weight": 26.20028
+      },
+      {
+        "descriptor": "herb",
+        "weight": 26.08043
       },
       {
         "descriptor": "fatty",
-        "weight": 24.76472
+        "weight": 24.95446
       },
       {
         "descriptor": "mild",
-        "weight": 24.38309
+        "weight": 24.72263
       },
       {
-        "descriptor": "minty",
-        "weight": 24.03527
+        "descriptor": "balsam",
+        "weight": 22.83199
       }
     ],
     "moleculeCount": 240,
@@ -3345,79 +3693,79 @@
   "herbal.leafy.bay-leaf": {
     "name": "Bay Leaf",
     "vector": {
-      "woody": 0.14590785,
-      "citrus": 0.06936115,
-      "floral": 0.06725022,
-      "sweet-balsamic": 0.18356686,
-      "spicy-phenolic": 0.09727957,
-      "green-herbal": 0.1213751,
-      "earthy-roasty": 0.02411008,
-      "sulfurous-alliaceous": 0.00536302,
-      "minty-camphor": 0.07376838,
-      "fruity": 0.11144644,
-      "fatty-waxy": 0.08268113,
-      "nutty": 0.01789021
+      "woody": 0.14818404,
+      "citrus": 0.07026244,
+      "floral": 0.06835687,
+      "sweet-balsamic": 0.18248843,
+      "spicy-phenolic": 0.09826002,
+      "green-herbal": 0.12069163,
+      "earthy-roasty": 0.02372727,
+      "sulfurous-alliaceous": 0.00525001,
+      "minty-camphor": 0.07085008,
+      "fruity": 0.11153675,
+      "fatty-waxy": 0.08271677,
+      "nutty": 0.01767569
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 102.34723
+        "weight": 100.38452
       },
       {
         "descriptor": "bitter",
-        "weight": 70.08243
+        "weight": 70.13121
       },
       {
         "descriptor": "woody",
-        "weight": 68.25985
+        "weight": 68.33383
       },
       {
         "descriptor": "green",
-        "weight": 54.35989
+        "weight": 52.72239
       },
       {
         "descriptor": "fruity",
-        "weight": 47.09232
+        "weight": 45.71593
       },
       {
         "descriptor": "citrus",
-        "weight": 39.89976
+        "weight": 39.59638
       },
       {
         "descriptor": "floral",
-        "weight": 39.21753
+        "weight": 39.17834
       },
       {
         "descriptor": "herbal",
-        "weight": 38.46134
+        "weight": 37.75198
       },
       {
         "descriptor": "fresh",
-        "weight": 34.00904
+        "weight": 33.9908
       },
       {
         "descriptor": "spice",
-        "weight": 32.72787
+        "weight": 32.73233
       },
       {
         "descriptor": "wood",
-        "weight": 32.49437
+        "weight": 32.65359
       },
       {
         "descriptor": "balsam",
-        "weight": 31.30372
+        "weight": 31.28142
       },
       {
         "descriptor": "pine",
-        "weight": 26.14018
+        "weight": 26.15224
       },
       {
         "descriptor": "tropical",
-        "weight": 23.72991
+        "weight": 22.66266
       },
       {
         "descriptor": "terpene",
-        "weight": 21.76873
+        "weight": 21.466
       }
     ],
     "moleculeCount": 223,
@@ -3442,79 +3790,79 @@
   "herbal.leafy.tarragon": {
     "name": "Tarragon",
     "vector": {
-      "woody": 0.05216266,
-      "citrus": 0.04648435,
-      "floral": 0.08482131,
-      "sweet-balsamic": 0.23222697,
-      "spicy-phenolic": 0.16070219,
-      "green-herbal": 0.11052375,
-      "earthy-roasty": 0.05028874,
-      "sulfurous-alliaceous": 0.00970293,
-      "minty-camphor": 0.09655333,
-      "fruity": 0.0651006,
-      "fatty-waxy": 0.05246378,
-      "nutty": 0.03896939
+      "woody": 0.05233133,
+      "citrus": 0.04609967,
+      "floral": 0.08593381,
+      "sweet-balsamic": 0.2299747,
+      "spicy-phenolic": 0.16290362,
+      "green-herbal": 0.10999264,
+      "earthy-roasty": 0.05054348,
+      "sulfurous-alliaceous": 0.00943673,
+      "minty-camphor": 0.09625575,
+      "fruity": 0.06522416,
+      "fatty-waxy": 0.0526038,
+      "nutty": 0.03870032
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 73.3532
+        "weight": 72.94094
       },
       {
         "descriptor": "bitter",
-        "weight": 46.59368
+        "weight": 46.4852
       },
       {
         "descriptor": "floral",
-        "weight": 31.14013
+        "weight": 31.20646
       },
       {
         "descriptor": "herbal",
-        "weight": 31.05603
+        "weight": 30.99859
       },
       {
         "descriptor": "green",
-        "weight": 28.41326
-      },
-      {
-        "descriptor": "woody",
-        "weight": 26.94531
+        "weight": 28.01497
       },
       {
         "descriptor": "spicy",
-        "weight": 26.86669
+        "weight": 27.35276
+      },
+      {
+        "descriptor": "woody",
+        "weight": 26.91857
       },
       {
         "descriptor": "cinnamon",
-        "weight": 23.19536
+        "weight": 23.72377
       },
       {
         "descriptor": "balsam",
-        "weight": 20.72306
+        "weight": 20.53603
       },
       {
         "descriptor": "citrus",
-        "weight": 20.57012
+        "weight": 20.27535
       },
       {
         "descriptor": "minty",
-        "weight": 18.86626
+        "weight": 18.84899
       },
       {
         "descriptor": "fruity",
-        "weight": 18.3292
+        "weight": 18.25294
       },
       {
         "descriptor": "flower",
-        "weight": 16.60093
+        "weight": 16.7472
       },
       {
         "descriptor": "vanilla",
-        "weight": 16.00733
+        "weight": 16.35916
       },
       {
         "descriptor": "spice",
-        "weight": 15.94283
+        "weight": 15.98441
       }
     ],
     "moleculeCount": 158,
@@ -3536,82 +3884,278 @@
       }
     ]
   },
+  "herbal.leafy.mint": {
+    "name": "Mint",
+    "vector": {
+      "woody": 0.08717991,
+      "citrus": 0.04501075,
+      "floral": 0.04897287,
+      "sweet-balsamic": 0.13768083,
+      "spicy-phenolic": 0.07619918,
+      "green-herbal": 0.18368986,
+      "earthy-roasty": 0.03365387,
+      "sulfurous-alliaceous": 0.00958876,
+      "minty-camphor": 0.17062965,
+      "fruity": 0.11332253,
+      "fatty-waxy": 0.07309604,
+      "nutty": 0.02097574
+    },
+    "topDescriptors": [
+      {
+        "descriptor": "sweet",
+        "weight": 146.01121
+      },
+      {
+        "descriptor": "green",
+        "weight": 121.87064
+      },
+      {
+        "descriptor": "fruity",
+        "weight": 106.45381
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 98.70826
+      },
+      {
+        "descriptor": "minty",
+        "weight": 83.04169
+      },
+      {
+        "descriptor": "woody",
+        "weight": 66.38656
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 59.43089
+      },
+      {
+        "descriptor": "apple",
+        "weight": 48.29624
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 44.61916
+      },
+      {
+        "descriptor": "floral",
+        "weight": 42.53963
+      },
+      {
+        "descriptor": "rose",
+        "weight": 42.10643
+      },
+      {
+        "descriptor": "bitter",
+        "weight": 42.08727
+      },
+      {
+        "descriptor": "mint",
+        "weight": 39.88177
+      },
+      {
+        "descriptor": "spicy",
+        "weight": 39.27959
+      },
+      {
+        "descriptor": "herb",
+        "weight": 37.95346
+      }
+    ],
+    "moleculeCount": 237,
+    "annotatedMoleculeCount": 234,
+    "mappedMoleculeCount": 204,
+    "sourceQuality": "approx",
+    "missing": false,
+    "missingReason": null,
+    "sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 266,
+        "quality": "approx"
+      }
+    ]
+  },
+  "herbal.leafy.epazote": {
+    "name": "Epazote",
+    "vector": {
+      "woody": 0.01562816,
+      "citrus": 0.033102,
+      "floral": 0.06588647,
+      "sweet-balsamic": 0.23393966,
+      "spicy-phenolic": 0.10429446,
+      "green-herbal": 0.12312704,
+      "earthy-roasty": 0.0559832,
+      "sulfurous-alliaceous": 0.0322403,
+      "minty-camphor": 0.05206767,
+      "fruity": 0.10163594,
+      "fatty-waxy": 0.09780374,
+      "nutty": 0.08429136
+    },
+    "topDescriptors": [
+      {
+        "descriptor": "sweet",
+        "weight": 21.10718
+      },
+      {
+        "descriptor": "bitter",
+        "weight": 18.92842
+      },
+      {
+        "descriptor": "green",
+        "weight": 11.03322
+      },
+      {
+        "descriptor": "floral",
+        "weight": 9.39274
+      },
+      {
+        "descriptor": "fruity",
+        "weight": 8.29032
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 5.80321
+      },
+      {
+        "descriptor": "odorless",
+        "weight": 5.27397
+      },
+      {
+        "descriptor": "almond",
+        "weight": 5.23001
+      },
+      {
+        "descriptor": "fatty",
+        "weight": 5.2085
+      },
+      {
+        "descriptor": "balsam",
+        "weight": 5.07942
+      },
+      {
+        "descriptor": "waxy",
+        "weight": 4.95106
+      },
+      {
+        "descriptor": "pungent",
+        "weight": 4.57076
+      },
+      {
+        "descriptor": "ethereal",
+        "weight": 3.95547
+      },
+      {
+        "descriptor": "nutty",
+        "weight": 3.95547
+      },
+      {
+        "descriptor": "honey",
+        "weight": 3.82547
+      }
+    ],
+    "moleculeCount": 93,
+    "annotatedMoleculeCount": 93,
+    "mappedMoleculeCount": 68,
+    "sourceQuality": "exact",
+    "missing": false,
+    "missingReason": null,
+    "sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 708,
+        "quality": "exact"
+      }
+    ]
+  },
+  "herbal.leafy.huacatay": {
+    "name": "Huacatay",
+    "vector": null,
+    "topDescriptors": [],
+    "moleculeCount": 0,
+    "annotatedMoleculeCount": 0,
+    "mappedMoleculeCount": 0,
+    "sourceQuality": "none",
+    "missing": true,
+    "missingReason": "no source molecules",
+    "sources": []
+  },
   "floral.rose-family.rose-water": {
     "name": "Rose Water",
     "vector": {
-      "woody": 0.15851071,
-      "citrus": 0.0679454,
-      "floral": 0.03872781,
-      "sweet-balsamic": 0.11963063,
-      "spicy-phenolic": 0.08387972,
-      "green-herbal": 0.27020855,
-      "earthy-roasty": 0.00438433,
+      "woody": 0.15773456,
+      "citrus": 0.0694707,
+      "floral": 0.03948131,
+      "sweet-balsamic": 0.12138289,
+      "spicy-phenolic": 0.08555084,
+      "green-herbal": 0.26418253,
+      "earthy-roasty": 0.0045489,
       "sulfurous-alliaceous": 0.0,
-      "minty-camphor": 0.06933619,
-      "fruity": 0.03201649,
-      "fatty-waxy": 0.12435649,
-      "nutty": 0.03100369
+      "minty-camphor": 0.06717731,
+      "fruity": 0.032212,
+      "fatty-waxy": 0.12689014,
+      "nutty": 0.03136882
     },
     "topDescriptors": [
       {
         "descriptor": "herbal",
-        "weight": 24.89365
+        "weight": 24.78823
       },
       {
         "descriptor": "woody",
-        "weight": 23.89319
+        "weight": 24.44604
       },
       {
         "descriptor": "odorless",
-        "weight": 19.82631
+        "weight": 20.75528
       },
       {
         "descriptor": "green",
-        "weight": 19.7424
+        "weight": 20.14697
       },
       {
         "descriptor": "wood",
-        "weight": 19.66819
+        "weight": 19.74738
       },
       {
         "descriptor": "fresh",
-        "weight": 15.14627
+        "weight": 15.1431
       },
       {
         "descriptor": "spice",
-        "weight": 13.8716
+        "weight": 14.27622
       },
       {
         "descriptor": "sweet",
-        "weight": 13.56387
-      },
-      {
-        "descriptor": "herb",
-        "weight": 13.56041
+        "weight": 13.9244
       },
       {
         "descriptor": "bitter",
-        "weight": 13.31051
+        "weight": 13.84669
+      },
+      {
+        "descriptor": "herb",
+        "weight": 12.88809
       },
       {
         "descriptor": "fruity",
-        "weight": 9.88404
+        "weight": 10.07963
       },
       {
         "descriptor": "citrus",
-        "weight": 9.64743
+        "weight": 9.99427
       },
       {
         "descriptor": "balsamic",
-        "weight": 9.51694
+        "weight": 9.72273
       },
       {
         "descriptor": "waxy",
-        "weight": 8.37126
+        "weight": 8.54247
       },
       {
         "descriptor": "faint",
-        "weight": 7.68873
+        "weight": 8.04603
       }
     ],
     "moleculeCount": 70,
@@ -3631,79 +4175,79 @@
   "floral.rose-family.saffron": {
     "name": "Saffron",
     "vector": {
-      "woody": 0.07263287,
-      "citrus": 0.05960253,
-      "floral": 0.05188566,
-      "sweet-balsamic": 0.22075843,
-      "spicy-phenolic": 0.12152885,
-      "green-herbal": 0.13715342,
-      "earthy-roasty": 0.0493182,
-      "sulfurous-alliaceous": 0.01542178,
-      "minty-camphor": 0.0540666,
-      "fruity": 0.06058564,
-      "fatty-waxy": 0.11671974,
-      "nutty": 0.04032628
+      "woody": 0.07251178,
+      "citrus": 0.05953428,
+      "floral": 0.05218605,
+      "sweet-balsamic": 0.2212694,
+      "spicy-phenolic": 0.11876715,
+      "green-herbal": 0.13839916,
+      "earthy-roasty": 0.04931353,
+      "sulfurous-alliaceous": 0.01518594,
+      "minty-camphor": 0.05345896,
+      "fruity": 0.06040663,
+      "fatty-waxy": 0.11926391,
+      "nutty": 0.03970322
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 41.91459
+        "weight": 41.26364
       },
       {
         "descriptor": "bitter",
-        "weight": 35.85499
+        "weight": 35.51115
       },
       {
         "descriptor": "woody",
-        "weight": 24.23971
+        "weight": 23.90603
       },
       {
         "descriptor": "green",
-        "weight": 22.72035
+        "weight": 22.58674
       },
       {
         "descriptor": "fresh",
-        "weight": 18.26423
+        "weight": 18.13673
       },
       {
         "descriptor": "floral",
-        "weight": 16.54424
+        "weight": 16.40231
       },
       {
         "descriptor": "fatty",
-        "weight": 14.41963
+        "weight": 14.53867
       },
       {
         "descriptor": "fruity",
-        "weight": 13.83944
-      },
-      {
-        "descriptor": "citrus",
-        "weight": 12.68788
+        "weight": 13.72563
       },
       {
         "descriptor": "odorless",
-        "weight": 12.4948
+        "weight": 12.53612
       },
       {
-        "descriptor": "herbal",
-        "weight": 12.40154
+        "descriptor": "citrus",
+        "weight": 12.34623
       },
       {
         "descriptor": "tobacco",
-        "weight": 12.07247
+        "weight": 12.26521
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 12.12163
       },
       {
         "descriptor": "camphor",
-        "weight": 11.29066
+        "weight": 11.08568
       },
       {
         "descriptor": "musty",
-        "weight": 10.79516
+        "weight": 10.81111
       },
       {
         "descriptor": "balsam",
-        "weight": 10.62176
+        "weight": 10.45589
       }
     ],
     "moleculeCount": 129,
@@ -3728,79 +4272,79 @@
   "floral.rose-family.hibiscus": {
     "name": "Hibiscus",
     "vector": {
-      "woody": 0.0430677,
-      "citrus": 0.03012198,
-      "floral": 0.04714335,
-      "sweet-balsamic": 0.19605954,
-      "spicy-phenolic": 0.07984458,
-      "green-herbal": 0.15043419,
-      "earthy-roasty": 0.07655601,
-      "sulfurous-alliaceous": 0.01688189,
-      "minty-camphor": 0.09274885,
-      "fruity": 0.07529702,
-      "fatty-waxy": 0.12545581,
-      "nutty": 0.06638908
+      "woody": 0.04273496,
+      "citrus": 0.02975452,
+      "floral": 0.04686438,
+      "sweet-balsamic": 0.19338895,
+      "spicy-phenolic": 0.07987485,
+      "green-herbal": 0.15215027,
+      "earthy-roasty": 0.07615503,
+      "sulfurous-alliaceous": 0.01665704,
+      "minty-camphor": 0.0930984,
+      "fruity": 0.07558298,
+      "fatty-waxy": 0.12714199,
+      "nutty": 0.06659663
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 36.69641
+        "weight": 35.72718
       },
       {
         "descriptor": "green",
-        "weight": 27.48431
+        "weight": 27.41762
       },
       {
         "descriptor": "bitter",
-        "weight": 21.23035
+        "weight": 20.75527
       },
       {
         "descriptor": "almond",
-        "weight": 13.94063
+        "weight": 13.96234
       },
       {
         "descriptor": "fatty",
-        "weight": 13.56043
+        "weight": 13.58416
       },
       {
         "descriptor": "fat",
-        "weight": 13.29773
-      },
-      {
-        "descriptor": "floral",
-        "weight": 12.9695
-      },
-      {
-        "descriptor": "fruity",
-        "weight": 12.95393
+        "weight": 13.31876
       },
       {
         "descriptor": "fresh",
-        "weight": 12.87733
+        "weight": 12.81405
+      },
+      {
+        "descriptor": "floral",
+        "weight": 12.72486
+      },
+      {
+        "descriptor": "fruity",
+        "weight": 12.72233
       },
       {
         "descriptor": "odorless",
-        "weight": 12.24348
-      },
-      {
-        "descriptor": "herbal",
-        "weight": 11.34717
+        "weight": 12.13066
       },
       {
         "descriptor": "vegetable",
-        "weight": 11.26169
+        "weight": 11.38648
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 11.01093
       },
       {
         "descriptor": "camphor",
-        "weight": 9.36457
+        "weight": 9.31354
       },
       {
         "descriptor": "woody",
-        "weight": 9.23653
+        "weight": 8.8952
       },
       {
         "descriptor": "citrus",
-        "weight": 8.55405
+        "weight": 8.29445
       }
     ],
     "moleculeCount": 118,
@@ -3861,79 +4405,79 @@
   "citrus-bright.peel.lemon-zest": {
     "name": "Lemon Zest",
     "vector": {
-      "woody": 0.07406289,
-      "citrus": 0.09442265,
-      "floral": 0.06990339,
-      "sweet-balsamic": 0.08039713,
-      "spicy-phenolic": 0.07233981,
-      "green-herbal": 0.15515915,
-      "earthy-roasty": 0.08508936,
-      "sulfurous-alliaceous": 0.00447365,
-      "minty-camphor": 0.07680508,
-      "fruity": 0.10718494,
-      "fatty-waxy": 0.17568831,
-      "nutty": 0.00447365
+      "woody": 0.07380531,
+      "citrus": 0.09376036,
+      "floral": 0.06990431,
+      "sweet-balsamic": 0.08023218,
+      "spicy-phenolic": 0.0720063,
+      "green-herbal": 0.1555544,
+      "earthy-roasty": 0.08569509,
+      "sulfurous-alliaceous": 0.00448771,
+      "minty-camphor": 0.07612015,
+      "fruity": 0.10718685,
+      "fatty-waxy": 0.17675963,
+      "nutty": 0.00448771
     },
     "topDescriptors": [
       {
         "descriptor": "green",
-        "weight": 28.39255
+        "weight": 28.92057
       },
       {
         "descriptor": "citrus",
-        "weight": 24.11713
+        "weight": 24.45969
       },
       {
         "descriptor": "waxy",
-        "weight": 23.15227
+        "weight": 23.67743
       },
       {
         "descriptor": "fruity",
-        "weight": 23.08328
+        "weight": 23.51895
       },
       {
         "descriptor": "sweet",
-        "weight": 21.65469
+        "weight": 22.01343
       },
       {
         "descriptor": "floral",
-        "weight": 20.44422
+        "weight": 20.777
       },
       {
         "descriptor": "woody",
-        "weight": 19.88128
+        "weight": 20.16781
       },
       {
         "descriptor": "herbal",
-        "weight": 18.74208
+        "weight": 19.13147
       },
       {
         "descriptor": "fresh",
-        "weight": 17.55385
+        "weight": 17.83793
       },
       {
         "descriptor": "spicy",
-        "weight": 14.31686
+        "weight": 14.5071
       },
       {
         "descriptor": "soapy",
-        "weight": 10.37439
+        "weight": 10.59123
       },
       {
         "descriptor": "fatty",
-        "weight": 10.05594
+        "weight": 10.29525
       },
       {
         "descriptor": "rose",
-        "weight": 9.85114
+        "weight": 10.06799
       },
       {
         "descriptor": "lemon",
-        "weight": 9.67679
+        "weight": 9.8493
       },
       {
         "descriptor": "earthy",
-        "weight": 9.31215
+        "weight": 9.52652
       }
     ],
     "moleculeCount": 36,
@@ -3953,79 +4497,79 @@
   "citrus-bright.peel.orange-zest": {
     "name": "Orange Zest",
     "vector": {
-      "woody": 0.03051499,
-      "citrus": 0.10225546,
-      "floral": 0.08267197,
-      "sweet-balsamic": 0.15722064,
-      "spicy-phenolic": 0.07990099,
-      "green-herbal": 0.12041688,
-      "earthy-roasty": 0.07705042,
-      "sulfurous-alliaceous": 0.0041126,
-      "minty-camphor": 0.03621444,
-      "fruity": 0.1978722,
-      "fatty-waxy": 0.10112788,
-      "nutty": 0.01064154
+      "woody": 0.02991294,
+      "citrus": 0.10203868,
+      "floral": 0.08311503,
+      "sweet-balsamic": 0.15725299,
+      "spicy-phenolic": 0.07913081,
+      "green-herbal": 0.1204286,
+      "earthy-roasty": 0.07749733,
+      "sulfurous-alliaceous": 0.00394465,
+      "minty-camphor": 0.03584679,
+      "fruity": 0.19890043,
+      "fatty-waxy": 0.10127559,
+      "nutty": 0.01065617
     },
     "topDescriptors": [
       {
         "descriptor": "fruity",
-        "weight": 39.90339
+        "weight": 40.53529
       },
       {
         "descriptor": "sweet",
-        "weight": 33.34233
+        "weight": 33.66377
       },
       {
         "descriptor": "green",
-        "weight": 27.41456
+        "weight": 27.66089
       },
       {
         "descriptor": "herbal",
-        "weight": 19.93559
+        "weight": 20.14212
       },
       {
         "descriptor": "floral",
-        "weight": 17.98179
+        "weight": 18.30402
       },
       {
         "descriptor": "waxy",
-        "weight": 16.71475
+        "weight": 17.07205
       },
       {
         "descriptor": "grape",
-        "weight": 16.1915
+        "weight": 16.47734
       },
       {
         "descriptor": "pineapple",
-        "weight": 15.09289
+        "weight": 15.37873
       },
       {
         "descriptor": "bitter",
-        "weight": 14.58059
+        "weight": 14.7179
       },
       {
         "descriptor": "citrus",
-        "weight": 14.28392
+        "weight": 14.34502
       },
       {
         "descriptor": "honey",
-        "weight": 11.96548
+        "weight": 12.14479
       },
       {
         "descriptor": "phenolic",
-        "weight": 11.473
+        "weight": 11.72807
       },
       {
         "descriptor": "orange",
-        "weight": 11.10391
+        "weight": 11.31828
       },
       {
         "descriptor": "fruit",
-        "weight": 10.69844
+        "weight": 10.91282
       },
       {
         "descriptor": "fresh",
-        "weight": 10.41076
+        "weight": 10.62514
       }
     ],
     "moleculeCount": 34,
@@ -4045,79 +4589,79 @@
   "citrus-bright.peel.lime-zest": {
     "name": "Lime Zest",
     "vector": {
-      "woody": 0.15399355,
-      "citrus": 0.09232584,
-      "floral": 0.0799751,
-      "sweet-balsamic": 0.15359196,
-      "spicy-phenolic": 0.0804836,
-      "green-herbal": 0.1181354,
-      "earthy-roasty": 0.06438301,
-      "sulfurous-alliaceous": 0.00886645,
-      "minty-camphor": 0.06619495,
-      "fruity": 0.05604927,
-      "fatty-waxy": 0.09999079,
-      "nutty": 0.02601008
+      "woody": 0.15568091,
+      "citrus": 0.09276642,
+      "floral": 0.08058541,
+      "sweet-balsamic": 0.15265144,
+      "spicy-phenolic": 0.07948546,
+      "green-herbal": 0.11737857,
+      "earthy-roasty": 0.06516097,
+      "sulfurous-alliaceous": 0.00862315,
+      "minty-camphor": 0.06569513,
+      "fruity": 0.05591916,
+      "fatty-waxy": 0.1007202,
+      "nutty": 0.02533316
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 59.23159
+        "weight": 59.3306
       },
       {
         "descriptor": "sweet",
-        "weight": 53.62994
+        "weight": 52.78995
       },
       {
         "descriptor": "green",
-        "weight": 48.73857
+        "weight": 48.42414
       },
       {
         "descriptor": "citrus",
-        "weight": 43.28781
+        "weight": 43.13719
       },
       {
         "descriptor": "bitter",
-        "weight": 38.69205
+        "weight": 38.54948
       },
       {
         "descriptor": "herbal",
-        "weight": 31.89595
+        "weight": 31.37412
       },
       {
         "descriptor": "floral",
-        "weight": 30.34103
+        "weight": 30.33346
       },
       {
         "descriptor": "waxy",
-        "weight": 28.77087
+        "weight": 28.89855
       },
       {
         "descriptor": "fresh",
-        "weight": 25.48016
+        "weight": 25.23492
       },
       {
         "descriptor": "wood",
-        "weight": 24.35106
+        "weight": 24.50821
       },
       {
         "descriptor": "rose",
-        "weight": 21.06454
+        "weight": 21.23465
       },
       {
         "descriptor": "fatty",
-        "weight": 17.77441
+        "weight": 17.64323
       },
       {
         "descriptor": "fruity",
-        "weight": 16.64281
-      },
-      {
-        "descriptor": "spice",
-        "weight": 16.10813
+        "weight": 16.52899
       },
       {
         "descriptor": "spicy",
-        "weight": 15.96036
+        "weight": 16.0091
+      },
+      {
+        "descriptor": "fat",
+        "weight": 15.84695
       }
     ],
     "moleculeCount": 164,
@@ -4149,79 +4693,79 @@
   "citrus-bright.tart.amchur": {
     "name": "Amchur",
     "vector": {
-      "woody": 0.03722687,
-      "citrus": 0.02554257,
-      "floral": 0.04250237,
-      "sweet-balsamic": 0.18245613,
-      "spicy-phenolic": 0.06234369,
-      "green-herbal": 0.15465613,
-      "earthy-roasty": 0.04874195,
-      "sulfurous-alliaceous": 0.00593324,
-      "minty-camphor": 0.02278567,
-      "fruity": 0.21913562,
-      "fatty-waxy": 0.15693204,
-      "nutty": 0.04174371
+      "woody": 0.03679008,
+      "citrus": 0.02550441,
+      "floral": 0.04267975,
+      "sweet-balsamic": 0.18213638,
+      "spicy-phenolic": 0.06214045,
+      "green-herbal": 0.15454819,
+      "earthy-roasty": 0.04889887,
+      "sulfurous-alliaceous": 0.00575732,
+      "minty-camphor": 0.02194381,
+      "fruity": 0.21962448,
+      "fatty-waxy": 0.15830926,
+      "nutty": 0.041667
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 187.77852
+        "weight": 188.88595
       },
       {
         "descriptor": "fruity",
-        "weight": 174.94728
+        "weight": 176.28003
       },
       {
         "descriptor": "green",
-        "weight": 155.26897
+        "weight": 155.79815
       },
       {
         "descriptor": "waxy",
-        "weight": 75.33247
+        "weight": 76.22213
       },
       {
         "descriptor": "bitter",
-        "weight": 72.87944
+        "weight": 73.2723
       },
       {
         "descriptor": "fatty",
-        "weight": 67.95575
+        "weight": 68.95668
       },
       {
         "descriptor": "apple",
-        "weight": 61.96806
+        "weight": 62.40319
       },
       {
         "descriptor": "fresh",
-        "weight": 57.56229
+        "weight": 57.39728
       },
       {
         "descriptor": "fruit",
-        "weight": 51.97723
+        "weight": 52.99221
       },
       {
         "descriptor": "coconut",
-        "weight": 46.35334
+        "weight": 47.42522
       },
       {
         "descriptor": "banana",
-        "weight": 42.14061
+        "weight": 42.95486
       },
       {
         "descriptor": "woody",
-        "weight": 41.48528
+        "weight": 41.9048
       },
       {
         "descriptor": "floral",
-        "weight": 38.27818
+        "weight": 38.47168
       },
       {
         "descriptor": "vegetable",
-        "weight": 35.49195
+        "weight": 35.78275
       },
       {
         "descriptor": "pineapple",
-        "weight": 33.43298
+        "weight": 34.03497
       }
     ],
     "moleculeCount": 258,
@@ -4246,79 +4790,79 @@
   "citrus-bright.tart.tamarind": {
     "name": "Tamarind",
     "vector": {
-      "woody": 0.09383809,
-      "citrus": 0.02828176,
-      "floral": 0.08750617,
-      "sweet-balsamic": 0.15721862,
-      "spicy-phenolic": 0.11137291,
-      "green-herbal": 0.07704717,
-      "earthy-roasty": 0.09307141,
-      "sulfurous-alliaceous": 0.0074354,
-      "minty-camphor": 0.06336413,
-      "fruity": 0.09898351,
-      "fatty-waxy": 0.10479657,
-      "nutty": 0.07708424
+      "woody": 0.09423545,
+      "citrus": 0.02808754,
+      "floral": 0.08805264,
+      "sweet-balsamic": 0.1567004,
+      "spicy-phenolic": 0.11075632,
+      "green-herbal": 0.07672159,
+      "earthy-roasty": 0.09346438,
+      "sulfurous-alliaceous": 0.00718566,
+      "minty-camphor": 0.06284504,
+      "fruity": 0.09904266,
+      "fatty-waxy": 0.10593477,
+      "nutty": 0.07697356
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 79.78822
+        "weight": 80.10865
       },
       {
         "descriptor": "woody",
-        "weight": 36.22543
+        "weight": 36.22943
       },
       {
         "descriptor": "bitter",
-        "weight": 32.69152
+        "weight": 32.3449
       },
       {
         "descriptor": "fruity",
-        "weight": 29.43311
+        "weight": 29.60513
       },
       {
         "descriptor": "floral",
-        "weight": 28.18017
+        "weight": 28.18747
       },
       {
         "descriptor": "green",
-        "weight": 26.73054
+        "weight": 26.64159
       },
       {
         "descriptor": "waxy",
-        "weight": 21.54813
+        "weight": 21.72704
       },
       {
         "descriptor": "fatty",
-        "weight": 19.77283
+        "weight": 20.03588
       },
       {
         "descriptor": "rose",
-        "weight": 19.60925
+        "weight": 19.77689
       },
       {
         "descriptor": "odorless",
-        "weight": 19.47793
+        "weight": 19.73363
       },
       {
         "descriptor": "pungent",
-        "weight": 19.11769
+        "weight": 18.96866
       },
       {
         "descriptor": "fresh",
-        "weight": 17.38363
-      },
-      {
-        "descriptor": "ethereal",
-        "weight": 15.88232
+        "weight": 17.18921
       },
       {
         "descriptor": "phenolic",
-        "weight": 15.88129
+        "weight": 16.13862
+      },
+      {
+        "descriptor": "ethereal",
+        "weight": 15.9669
       },
       {
         "descriptor": "nutty",
-        "weight": 15.47685
+        "weight": 15.56144
       }
     ],
     "moleculeCount": 171,
@@ -4343,79 +4887,79 @@
   "citrus-bright.tart.dried-lime": {
     "name": "Dried Lime",
     "vector": {
-      "woody": 0.15399355,
-      "citrus": 0.09232584,
-      "floral": 0.0799751,
-      "sweet-balsamic": 0.15359196,
-      "spicy-phenolic": 0.0804836,
-      "green-herbal": 0.1181354,
-      "earthy-roasty": 0.06438301,
-      "sulfurous-alliaceous": 0.00886645,
-      "minty-camphor": 0.06619495,
-      "fruity": 0.05604927,
-      "fatty-waxy": 0.09999079,
-      "nutty": 0.02601008
+      "woody": 0.15568091,
+      "citrus": 0.09276642,
+      "floral": 0.08058541,
+      "sweet-balsamic": 0.15265144,
+      "spicy-phenolic": 0.07948546,
+      "green-herbal": 0.11737857,
+      "earthy-roasty": 0.06516097,
+      "sulfurous-alliaceous": 0.00862315,
+      "minty-camphor": 0.06569513,
+      "fruity": 0.05591916,
+      "fatty-waxy": 0.1007202,
+      "nutty": 0.02533316
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 59.23159
+        "weight": 59.3306
       },
       {
         "descriptor": "sweet",
-        "weight": 53.62994
+        "weight": 52.78995
       },
       {
         "descriptor": "green",
-        "weight": 48.73857
+        "weight": 48.42414
       },
       {
         "descriptor": "citrus",
-        "weight": 43.28781
+        "weight": 43.13719
       },
       {
         "descriptor": "bitter",
-        "weight": 38.69205
+        "weight": 38.54948
       },
       {
         "descriptor": "herbal",
-        "weight": 31.89595
+        "weight": 31.37412
       },
       {
         "descriptor": "floral",
-        "weight": 30.34103
+        "weight": 30.33346
       },
       {
         "descriptor": "waxy",
-        "weight": 28.77087
+        "weight": 28.89855
       },
       {
         "descriptor": "fresh",
-        "weight": 25.48016
+        "weight": 25.23492
       },
       {
         "descriptor": "wood",
-        "weight": 24.35106
+        "weight": 24.50821
       },
       {
         "descriptor": "rose",
-        "weight": 21.06454
+        "weight": 21.23465
       },
       {
         "descriptor": "fatty",
-        "weight": 17.77441
+        "weight": 17.64323
       },
       {
         "descriptor": "fruity",
-        "weight": 16.64281
-      },
-      {
-        "descriptor": "spice",
-        "weight": 16.10813
+        "weight": 16.52899
       },
       {
         "descriptor": "spicy",
-        "weight": 15.96036
+        "weight": 16.0091
+      },
+      {
+        "descriptor": "fat",
+        "weight": 15.84695
       }
     ],
     "moleculeCount": 164,
@@ -4435,79 +4979,79 @@
   "umami-savory.allium.garlic": {
     "name": "Garlic Powder",
     "vector": {
-      "woody": 0.01590061,
-      "citrus": 0.01552294,
-      "floral": 0.0201226,
-      "sweet-balsamic": 0.11076579,
-      "spicy-phenolic": 0.04054344,
-      "green-herbal": 0.17072187,
-      "earthy-roasty": 0.11721477,
-      "sulfurous-alliaceous": 0.30497119,
-      "minty-camphor": 0.02355599,
-      "fruity": 0.03924408,
-      "fatty-waxy": 0.06914158,
-      "nutty": 0.07229514
+      "woody": 0.01571611,
+      "citrus": 0.0152971,
+      "floral": 0.01958778,
+      "sweet-balsamic": 0.10859483,
+      "spicy-phenolic": 0.03972857,
+      "green-herbal": 0.1712773,
+      "earthy-roasty": 0.11787415,
+      "sulfurous-alliaceous": 0.30815661,
+      "minty-camphor": 0.02292079,
+      "fruity": 0.03859352,
+      "fatty-waxy": 0.07008044,
+      "nutty": 0.0721728
     },
     "topDescriptors": [
       {
         "descriptor": "onion",
-        "weight": 65.55995
+        "weight": 66.72136
       },
       {
         "descriptor": "green",
-        "weight": 61.11373
+        "weight": 61.62663
       },
       {
         "descriptor": "garlic",
-        "weight": 50.89299
+        "weight": 51.85227
       },
       {
         "descriptor": "alliaceous",
-        "weight": 35.96652
+        "weight": 36.68111
       },
       {
         "descriptor": "bitter",
-        "weight": 34.21069
+        "weight": 34.26472
       },
       {
         "descriptor": "sweet",
-        "weight": 32.27764
+        "weight": 31.68578
       },
       {
         "descriptor": "sulfurous",
-        "weight": 29.75985
+        "weight": 30.24782
       },
       {
         "descriptor": "odorless",
-        "weight": 29.14957
+        "weight": 29.8371
       },
       {
         "descriptor": "nutty",
-        "weight": 21.62669
+        "weight": 21.8542
       },
       {
         "descriptor": "roasted",
-        "weight": 20.16822
+        "weight": 20.50388
       },
       {
         "descriptor": "fruity",
-        "weight": 19.41677
+        "weight": 19.44587
       },
       {
         "descriptor": "sulfury",
-        "weight": 16.15513
+        "weight": 16.3789
       },
       {
         "descriptor": "cocoa",
-        "weight": 15.90745
+        "weight": 16.13051
       },
       {
         "descriptor": "cabbage",
-        "weight": 14.27376
+        "weight": 14.49753
       },
       {
         "descriptor": "metallic",
-        "weight": 13.98201
+        "weight": 14.24621
       }
     ],
     "moleculeCount": 171,
@@ -4532,79 +5076,79 @@
   "umami-savory.allium.onion-powder": {
     "name": "Onion Powder",
     "vector": {
-      "woody": 0.01846487,
-      "citrus": 0.00836824,
-      "floral": 0.02013028,
-      "sweet-balsamic": 0.12738625,
-      "spicy-phenolic": 0.07465086,
-      "green-herbal": 0.13081333,
-      "earthy-roasty": 0.10055923,
-      "sulfurous-alliaceous": 0.29194449,
-      "minty-camphor": 0.02052748,
-      "fruity": 0.06767753,
-      "fatty-waxy": 0.08448821,
-      "nutty": 0.05498923
+      "woody": 0.01840231,
+      "citrus": 0.0081602,
+      "floral": 0.0198925,
+      "sweet-balsamic": 0.12647265,
+      "spicy-phenolic": 0.07474257,
+      "green-herbal": 0.13118053,
+      "earthy-roasty": 0.10046875,
+      "sulfurous-alliaceous": 0.29368221,
+      "minty-camphor": 0.02032236,
+      "fruity": 0.06762667,
+      "fatty-waxy": 0.08411904,
+      "nutty": 0.05493021
     },
     "topDescriptors": [
       {
         "descriptor": "onion",
-        "weight": 81.05831
+        "weight": 82.50555
       },
       {
         "descriptor": "green",
-        "weight": 75.75919
+        "weight": 76.63222
       },
       {
         "descriptor": "sulfurous",
-        "weight": 66.13184
+        "weight": 67.26294
       },
       {
         "descriptor": "garlic",
-        "weight": 65.6982
+        "weight": 66.25017
       },
       {
         "descriptor": "sweet",
-        "weight": 65.42832
+        "weight": 65.56962
       },
       {
         "descriptor": "bitter",
-        "weight": 54.46642
+        "weight": 54.09502
       },
       {
         "descriptor": "fruity",
-        "weight": 40.57524
+        "weight": 41.03309
       },
       {
         "descriptor": "odorless",
-        "weight": 36.2296
+        "weight": 36.98858
       },
       {
         "descriptor": "nutty",
-        "weight": 29.0293
+        "weight": 29.47118
       },
       {
         "descriptor": "fatty",
-        "weight": 27.03904
+        "weight": 26.67932
       },
       {
         "descriptor": "alliaceous",
-        "weight": 23.47632
+        "weight": 23.97654
       },
       {
         "descriptor": "musty",
-        "weight": 23.21637
+        "weight": 23.58023
       },
       {
         "descriptor": "floral",
-        "weight": 20.6037
+        "weight": 20.60999
       },
       {
         "descriptor": "earthy",
-        "weight": 20.10731
+        "weight": 20.47117
       },
       {
-        "descriptor": "vegetable",
-        "weight": 18.74903
+        "descriptor": "cabbage",
+        "weight": 18.96343
       }
     ],
     "moleculeCount": 201,
@@ -4629,79 +5173,79 @@
   "umami-savory.allium.chive": {
     "name": "Chive",
     "vector": {
-      "woody": 0.01800611,
-      "citrus": 0.01628392,
-      "floral": 0.02760105,
-      "sweet-balsamic": 0.13824464,
-      "spicy-phenolic": 0.05795417,
-      "green-herbal": 0.15589814,
-      "earthy-roasty": 0.05732201,
-      "sulfurous-alliaceous": 0.29363515,
-      "minty-camphor": 0.02116323,
-      "fruity": 0.06487928,
-      "fatty-waxy": 0.10720884,
-      "nutty": 0.04180346
+      "woody": 0.01803669,
+      "citrus": 0.01608973,
+      "floral": 0.02702402,
+      "sweet-balsamic": 0.13636577,
+      "spicy-phenolic": 0.05704947,
+      "green-herbal": 0.15602962,
+      "earthy-roasty": 0.05745666,
+      "sulfurous-alliaceous": 0.29805189,
+      "minty-camphor": 0.02041996,
+      "fruity": 0.06431714,
+      "fatty-waxy": 0.10807529,
+      "nutty": 0.04108374
     },
     "topDescriptors": [
       {
         "descriptor": "onion",
-        "weight": 55.08465
+        "weight": 56.03169
       },
       {
         "descriptor": "green",
-        "weight": 45.86109
+        "weight": 46.16245
       },
       {
         "descriptor": "garlic",
-        "weight": 31.81112
+        "weight": 32.41311
       },
       {
         "descriptor": "sulfurous",
-        "weight": 31.36929
+        "weight": 31.85725
       },
       {
         "descriptor": "sweet",
-        "weight": 31.07378
+        "weight": 30.63371
       },
       {
         "descriptor": "bitter",
-        "weight": 22.21226
+        "weight": 21.83754
       },
       {
         "descriptor": "fruity",
-        "weight": 19.98929
+        "weight": 20.01839
       },
       {
         "descriptor": "alliaceous",
-        "weight": 16.47918
+        "weight": 16.83648
       },
       {
         "descriptor": "fatty",
-        "weight": 16.12438
+        "weight": 16.24342
       },
       {
         "descriptor": "waxy",
-        "weight": 15.99882
+        "weight": 16.14013
       },
       {
         "descriptor": "fresh",
-        "weight": 14.2861
+        "weight": 14.31813
       },
       {
         "descriptor": "floral",
-        "weight": 14.11738
+        "weight": 13.98075
       },
       {
         "descriptor": "nutty",
-        "weight": 12.83779
+        "weight": 12.92238
       },
       {
         "descriptor": "earthy",
-        "weight": 10.79516
+        "weight": 10.94464
       },
       {
         "descriptor": "phenolic",
-        "weight": 10.17947
+        "weight": 10.17128
       }
     ],
     "moleculeCount": 126,
@@ -4721,79 +5265,79 @@
   "umami-savory.fermented.dried-mushroom": {
     "name": "Dried Mushroom",
     "vector": {
-      "woody": 0.01870528,
-      "citrus": 0.03626108,
-      "floral": 0.061525,
-      "sweet-balsamic": 0.1352636,
-      "spicy-phenolic": 0.083529,
-      "green-herbal": 0.11479819,
-      "earthy-roasty": 0.1060421,
-      "sulfurous-alliaceous": 0.06213735,
-      "minty-camphor": 0.01589647,
-      "fruity": 0.12820286,
-      "fatty-waxy": 0.17278305,
-      "nutty": 0.06485602
+      "woody": 0.01862742,
+      "citrus": 0.03630566,
+      "floral": 0.06133453,
+      "sweet-balsamic": 0.13487019,
+      "spicy-phenolic": 0.08374289,
+      "green-herbal": 0.11424196,
+      "earthy-roasty": 0.10643721,
+      "sulfurous-alliaceous": 0.06237084,
+      "minty-camphor": 0.01543412,
+      "fruity": 0.12819983,
+      "fatty-waxy": 0.17353348,
+      "nutty": 0.06490186
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 134.07054
+        "weight": 134.86718
       },
       {
         "descriptor": "fruity",
-        "weight": 112.9118
+        "weight": 113.97932
       },
       {
         "descriptor": "green",
-        "weight": 112.31091
+        "weight": 112.6187
       },
       {
         "descriptor": "fatty",
-        "weight": 79.67987
+        "weight": 80.87004
       },
       {
         "descriptor": "waxy",
-        "weight": 58.98908
+        "weight": 59.67274
       },
       {
         "descriptor": "floral",
-        "weight": 58.71533
+        "weight": 59.34168
       },
       {
         "descriptor": "herbal",
-        "weight": 55.57543
+        "weight": 55.82963
       },
       {
         "descriptor": "fresh",
-        "weight": 49.38365
+        "weight": 49.09839
       },
       {
         "descriptor": "bitter",
-        "weight": 46.21134
+        "weight": 46.30793
       },
       {
         "descriptor": "nutty",
-        "weight": 43.31126
+        "weight": 43.88747
       },
       {
         "descriptor": "earthy",
-        "weight": 42.72471
+        "weight": 43.11789
       },
       {
         "descriptor": "spicy",
-        "weight": 36.83845
+        "weight": 37.25553
       },
       {
         "descriptor": "woody",
-        "weight": 31.97596
-      },
-      {
-        "descriptor": "mushroom",
-        "weight": 31.2662
+        "weight": 32.18349
       },
       {
         "descriptor": "fruit",
-        "weight": 31.02218
+        "weight": 31.60594
+      },
+      {
+        "descriptor": "mushroom",
+        "weight": 31.43031
       }
     ],
     "moleculeCount": 227,
@@ -4825,79 +5369,79 @@
   "umami-savory.fermented.black-garlic": {
     "name": "Black Garlic",
     "vector": {
-      "woody": 0.01859086,
-      "citrus": 0.01382501,
-      "floral": 0.02352718,
-      "sweet-balsamic": 0.11156438,
-      "spicy-phenolic": 0.04740305,
-      "green-herbal": 0.16315623,
-      "earthy-roasty": 0.11083596,
-      "sulfurous-alliaceous": 0.30414863,
-      "minty-camphor": 0.02754147,
-      "fruity": 0.04588386,
-      "fatty-waxy": 0.04899651,
-      "nutty": 0.08452688
+      "woody": 0.01843613,
+      "citrus": 0.01342831,
+      "floral": 0.02297788,
+      "sweet-balsamic": 0.10910664,
+      "spicy-phenolic": 0.04660448,
+      "green-herbal": 0.16357903,
+      "earthy-roasty": 0.11176185,
+      "sulfurous-alliaceous": 0.30846388,
+      "minty-camphor": 0.02688774,
+      "fruity": 0.04527299,
+      "fatty-waxy": 0.04881717,
+      "nutty": 0.08466391
     },
     "topDescriptors": [
       {
         "descriptor": "onion",
-        "weight": 56.77105
+        "weight": 57.78955
       },
       {
         "descriptor": "green",
-        "weight": 50.56944
+        "weight": 50.86796
       },
       {
         "descriptor": "garlic",
-        "weight": 42.10409
+        "weight": 42.92046
       },
       {
         "descriptor": "sweet",
-        "weight": 32.27764
+        "weight": 31.68578
       },
       {
         "descriptor": "alliaceous",
-        "weight": 27.17763
+        "weight": 27.7493
       },
       {
         "descriptor": "sulfurous",
-        "weight": 25.3654
-      },
-      {
-        "descriptor": "bitter",
-        "weight": 22.21226
+        "weight": 25.78191
       },
       {
         "descriptor": "nutty",
-        "weight": 21.62669
+        "weight": 21.8542
+      },
+      {
+        "descriptor": "bitter",
+        "weight": 21.83754
       },
       {
         "descriptor": "fruity",
-        "weight": 19.41677
+        "weight": 19.44587
       },
       {
         "descriptor": "sulfury",
-        "weight": 16.15513
+        "weight": 16.3789
       },
       {
         "descriptor": "cocoa",
-        "weight": 15.90745
+        "weight": 16.13051
       },
       {
         "descriptor": "roasted",
-        "weight": 15.77377
+        "weight": 16.03797
       },
       {
         "descriptor": "cabbage",
-        "weight": 14.27376
+        "weight": 14.49753
       },
       {
         "descriptor": "metallic",
-        "weight": 13.98201
+        "weight": 14.24621
       },
       {
-        "descriptor": "floral",
-        "weight": 12.56404
+        "descriptor": "ethereal",
+        "weight": 12.59102
       }
     ],
     "moleculeCount": 143,
@@ -4917,79 +5461,79 @@
   "umami-savory.salty.sesame-seed": {
     "name": "Sesame Seed",
     "vector": {
-      "woody": 0.01205496,
-      "citrus": 0.01819401,
-      "floral": 0.03105189,
-      "sweet-balsamic": 0.12640945,
-      "spicy-phenolic": 0.09321822,
-      "green-herbal": 0.10869099,
-      "earthy-roasty": 0.18174724,
-      "sulfurous-alliaceous": 0.03859364,
-      "minty-camphor": 0.01638845,
-      "fruity": 0.08457201,
-      "fatty-waxy": 0.12499636,
-      "nutty": 0.16408278
+      "woody": 0.01202254,
+      "citrus": 0.0179562,
+      "floral": 0.03061261,
+      "sweet-balsamic": 0.12573861,
+      "spicy-phenolic": 0.09328667,
+      "green-herbal": 0.10763933,
+      "earthy-roasty": 0.18380121,
+      "sulfurous-alliaceous": 0.03881056,
+      "minty-camphor": 0.01590514,
+      "fruity": 0.08357198,
+      "fatty-waxy": 0.12528235,
+      "nutty": 0.1653728
     },
     "topDescriptors": [
       {
         "descriptor": "green",
-        "weight": 47.50049
+        "weight": 47.23673
       },
       {
         "descriptor": "sweet",
-        "weight": 41.55942
+        "weight": 41.37851
       },
       {
         "descriptor": "nutty",
-        "weight": 32.76697
+        "weight": 33.12881
       },
       {
         "descriptor": "bitter",
-        "weight": 31.91696
+        "weight": 31.65626
       },
       {
         "descriptor": "fruity",
-        "weight": 30.09946
+        "weight": 29.73965
       },
       {
         "descriptor": "roasted",
-        "weight": 29.2448
+        "weight": 29.72338
       },
       {
         "descriptor": "fatty",
-        "weight": 28.70989
+        "weight": 28.49601
       },
       {
         "descriptor": "chocolate",
-        "weight": 22.23539
+        "weight": 22.54942
       },
       {
         "descriptor": "roast",
-        "weight": 20.87363
+        "weight": 21.23093
       },
       {
         "descriptor": "cocoa",
-        "weight": 20.69494
+        "weight": 20.98946
       },
       {
         "descriptor": "musty",
-        "weight": 19.51507
+        "weight": 19.80747
       },
       {
         "descriptor": "earthy",
-        "weight": 18.43893
+        "weight": 18.52653
       },
       {
         "descriptor": "peanut",
-        "weight": 18.22231
+        "weight": 18.25077
       },
       {
         "descriptor": "hazelnut",
-        "weight": 17.16006
+        "weight": 17.42427
       },
       {
         "descriptor": "potato",
-        "weight": 16.74233
+        "weight": 16.9849
       }
     ],
     "moleculeCount": 130,
@@ -5009,79 +5553,79 @@
   "umami-savory.salty.poppy-seed": {
     "name": "Poppy Seed",
     "vector": {
-      "woody": 0.04078934,
-      "citrus": 0.02813907,
-      "floral": 0.02937282,
-      "sweet-balsamic": 0.22160347,
-      "spicy-phenolic": 0.06628284,
-      "green-herbal": 0.13034151,
-      "earthy-roasty": 0.05664691,
-      "sulfurous-alliaceous": 0.02566622,
-      "minty-camphor": 0.03798318,
-      "fruity": 0.11586758,
-      "fatty-waxy": 0.17224754,
-      "nutty": 0.07505951
+      "woody": 0.03982798,
+      "citrus": 0.02710755,
+      "floral": 0.0288934,
+      "sweet-balsamic": 0.22202233,
+      "spicy-phenolic": 0.0656337,
+      "green-herbal": 0.13007876,
+      "earthy-roasty": 0.05652757,
+      "sulfurous-alliaceous": 0.02562435,
+      "minty-camphor": 0.03598173,
+      "fruity": 0.11652896,
+      "fatty-waxy": 0.17654766,
+      "nutty": 0.07522601
     },
     "topDescriptors": [
       {
         "descriptor": "sweet",
-        "weight": 54.73684
+        "weight": 54.57463
       },
       {
         "descriptor": "bitter",
-        "weight": 38.93315
+        "weight": 38.95828
       },
       {
         "descriptor": "fruity",
-        "weight": 28.59538
+        "weight": 28.64103
       },
       {
         "descriptor": "green",
-        "weight": 27.41294
+        "weight": 27.28575
       },
       {
         "descriptor": "odorless",
-        "weight": 24.00873
+        "weight": 24.70749
       },
       {
         "descriptor": "fatty",
-        "weight": 21.40094
+        "weight": 21.73436
       },
       {
         "descriptor": "herbal",
-        "weight": 18.27918
+        "weight": 18.04762
       },
       {
         "descriptor": "fresh",
-        "weight": 16.15482
+        "weight": 15.90787
       },
       {
         "descriptor": "woody",
-        "weight": 13.66223
+        "weight": 13.58442
       },
       {
         "descriptor": "ethereal",
-        "weight": 12.62422
+        "weight": 12.70881
       },
       {
         "descriptor": "creamy",
-        "weight": 11.60279
+        "weight": 11.70397
       },
       {
         "descriptor": "almond",
-        "weight": 10.6042
+        "weight": 10.49826
       },
       {
         "descriptor": "earthy",
-        "weight": 10.26029
+        "weight": 10.16203
       },
       {
         "descriptor": "pungent",
-        "weight": 9.92332
+        "weight": 9.83902
       },
       {
-        "descriptor": "floral",
-        "weight": 9.67229
+        "descriptor": "fat",
+        "weight": 9.74548
       }
     ],
     "moleculeCount": 149,
@@ -5106,79 +5650,79 @@
   "umami-savory.salty.nigella-seed": {
     "name": "Nigella Seed",
     "vector": {
-      "woody": 0.19007029,
-      "citrus": 0.05802178,
-      "floral": 0.0387561,
-      "sweet-balsamic": 0.17146264,
-      "spicy-phenolic": 0.12455907,
-      "green-herbal": 0.11116309,
-      "earthy-roasty": 0.04718674,
+      "woody": 0.19334408,
+      "citrus": 0.05749446,
+      "floral": 0.04119842,
+      "sweet-balsamic": 0.17110344,
+      "spicy-phenolic": 0.12667068,
+      "green-herbal": 0.10648139,
+      "earthy-roasty": 0.04904791,
       "sulfurous-alliaceous": 0.0,
-      "minty-camphor": 0.15060132,
-      "fruity": 0.01452867,
-      "fatty-waxy": 0.08792384,
-      "nutty": 0.00572645
+      "minty-camphor": 0.14567755,
+      "fruity": 0.01537697,
+      "fatty-waxy": 0.08741232,
+      "nutty": 0.00619278
     },
     "topDescriptors": [
       {
         "descriptor": "woody",
-        "weight": 17.93337
+        "weight": 17.60538
       },
       {
         "descriptor": "sweet",
-        "weight": 16.32811
+        "weight": 15.63875
       },
       {
         "descriptor": "herbal",
-        "weight": 14.37386
+        "weight": 13.34145
       },
       {
         "descriptor": "spice",
-        "weight": 11.88253
+        "weight": 11.56648
       },
       {
         "descriptor": "camphor",
-        "weight": 9.52936
-      },
-      {
-        "descriptor": "terpene",
-        "weight": 8.88812
+        "weight": 9.39068
       },
       {
         "descriptor": "alkane",
-        "weight": 8.75253
+        "weight": 8.74376
+      },
+      {
+        "descriptor": "terpene",
+        "weight": 8.21335
       },
       {
         "descriptor": "mint",
-        "weight": 8.27945
-      },
-      {
-        "descriptor": "minty",
-        "weight": 7.80465
+        "weight": 7.54671
       },
       {
         "descriptor": "citrus",
-        "weight": 7.60669
+        "weight": 7.26181
+      },
+      {
+        "descriptor": "minty",
+        "weight": 7.18284
       },
       {
         "descriptor": "balsam",
-        "weight": 5.96159
-      },
-      {
-        "descriptor": "turpentine",
-        "weight": 5.30054
+        "weight": 5.96878
       },
       {
         "descriptor": "earthy",
-        "weight": 5.29239
+        "weight": 5.3209
       },
       {
-        "descriptor": "pine",
-        "weight": 4.73336
+        "descriptor": "turpentine",
+        "weight": 5.06604
       },
       {
         "descriptor": "anise",
-        "weight": 4.50881
+        "weight": 4.57865
+      },
+      {
+        "descriptor": "pine",
+        "weight": 4.34823
       }
     ],
     "moleculeCount": 30,
@@ -5191,6 +5735,98 @@
       {
         "source": "FlavorDB2",
         "entityId": 392,
+        "quality": "exact"
+      }
+    ]
+  },
+  "umami-savory.resin.asafoetida": {
+    "name": "Asafoetida",
+    "vector": {
+      "woody": 0.23743147,
+      "citrus": 0.05917635,
+      "floral": 0.05525412,
+      "sweet-balsamic": 0.21600456,
+      "spicy-phenolic": 0.1105324,
+      "green-herbal": 0.13815951,
+      "earthy-roasty": 0.0300426,
+      "sulfurous-alliaceous": 0.0,
+      "minty-camphor": 0.09419941,
+      "fruity": 0.0,
+      "fatty-waxy": 0.03551975,
+      "nutty": 0.02367984
+    },
+    "topDescriptors": [
+      {
+        "descriptor": "sweet",
+        "weight": 20.64543
+      },
+      {
+        "descriptor": "woody",
+        "weight": 19.78411
+      },
+      {
+        "descriptor": "wood",
+        "weight": 14.5958
+      },
+      {
+        "descriptor": "spice",
+        "weight": 9.22247
+      },
+      {
+        "descriptor": "terpene",
+        "weight": 7.94714
+      },
+      {
+        "descriptor": "spicy",
+        "weight": 7.76293
+      },
+      {
+        "descriptor": "herbal",
+        "weight": 7.7421
+      },
+      {
+        "descriptor": "green",
+        "weight": 7.37668
+      },
+      {
+        "descriptor": "citrus",
+        "weight": 7.32635
+      },
+      {
+        "descriptor": "dry",
+        "weight": 6.15646
+      },
+      {
+        "descriptor": "floral",
+        "weight": 5.93608
+      },
+      {
+        "descriptor": "flower",
+        "weight": 5.93608
+      },
+      {
+        "descriptor": "fresh",
+        "weight": 4.61711
+      },
+      {
+        "descriptor": "guaiacwood",
+        "weight": 4.46591
+      },
+      {
+        "descriptor": "powdery",
+        "weight": 4.46591
+      }
+    ],
+    "moleculeCount": 37,
+    "annotatedMoleculeCount": 22,
+    "mappedMoleculeCount": 21,
+    "sourceQuality": "exact",
+    "missing": false,
+    "missingReason": null,
+    "sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 376,
         "quality": "exact"
       }
     ]

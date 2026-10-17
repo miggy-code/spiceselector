@@ -6,13 +6,13 @@
         "spicy-phenolic",
         "woody"
       ],
-      "n": 52,
-      "pearson": 0.2045,
-      "spearman": 0.2762,
+      "n": 58,
+      "pearson": 0.1947,
+      "spearman": 0.2544,
       "exactOnly": {
-        "n": 38,
-        "pearson": 0.1513,
-        "spearman": 0.2317
+        "n": 43,
+        "pearson": 0.1375,
+        "spearman": 0.2001
       }
     },
     "brightness": {
@@ -20,52 +20,52 @@
         "citrus",
         "green-herbal"
       ],
-      "n": 52,
-      "pearson": 0.2892,
-      "spearman": 0.3697,
+      "n": 58,
+      "pearson": 0.291,
+      "spearman": 0.3738,
       "exactOnly": {
-        "n": 38,
-        "pearson": 0.2281,
-        "spearman": 0.2947
+        "n": 43,
+        "pearson": 0.2426,
+        "spearman": 0.2989
       }
     },
     "earthiness": {
       "families": [
         "earthy-roasty"
       ],
-      "n": 52,
-      "pearson": -0.0074,
-      "spearman": -0.1056,
+      "n": 58,
+      "pearson": 0.0237,
+      "spearman": -0.0699,
       "exactOnly": {
-        "n": 38,
-        "pearson": -0.1475,
-        "spearman": -0.3151
+        "n": 43,
+        "pearson": -0.1171,
+        "spearman": -0.2624
       }
     },
     "florality": {
       "families": [
         "floral"
       ],
-      "n": 52,
-      "pearson": 0.2325,
-      "spearman": 0.4332,
+      "n": 58,
+      "pearson": 0.2257,
+      "spearman": 0.3831,
       "exactOnly": {
-        "n": 38,
-        "pearson": 0.2467,
-        "spearman": 0.405
+        "n": 43,
+        "pearson": 0.234,
+        "spearman": 0.3252
       }
     },
     "heat": {
       "families": [
         "spicy-phenolic"
       ],
-      "n": 52,
-      "pearson": 0.3558,
-      "spearman": 0.3995,
+      "n": 58,
+      "pearson": 0.3513,
+      "spearman": 0.3721,
       "exactOnly": {
-        "n": 38,
-        "pearson": 0.2999,
-        "spearman": 0.3223
+        "n": 43,
+        "pearson": 0.3002,
+        "spearman": 0.2931
       }
     }
   },
@@ -74,80 +74,80 @@
       "spice": "Rose",
       "axis": "florality",
       "llm": 95.0,
-      "fingerprintShare": 0.03873,
-      "zDifference": 4.042,
+      "fingerprintShare": 0.03948,
+      "zDifference": 4.1875,
       "sourceQuality": "approx"
     },
     {
       "spice": "Cinnamon",
       "axis": "florality",
       "llm": 25.0,
-      "fingerprintShare": 0.13705,
-      "zDifference": -3.5331,
-      "sourceQuality": "exact"
-    },
-    {
-      "spice": "Lemongrass",
-      "axis": "warmth",
-      "llm": 10.0,
-      "fingerprintShare": 0.54087,
-      "zDifference": -3.4275,
+      "fingerprintShare": 0.13794,
+      "zDifference": -3.6354,
       "sourceQuality": "exact"
     },
     {
       "spice": "Sesame seed",
       "axis": "earthiness",
       "llm": 55.0,
-      "fingerprintShare": 0.18175,
-      "zDifference": -3.413,
+      "fingerprintShare": 0.1838,
+      "zDifference": -3.5163,
       "sourceQuality": "exact"
     },
     {
       "spice": "Tamarind",
       "axis": "brightness",
       "llm": 90.0,
-      "fingerprintShare": 0.10533,
-      "zDifference": 3.3517,
-      "sourceQuality": "exact"
-    },
-    {
-      "spice": "Lemongrass",
-      "axis": "heat",
-      "llm": 2.0,
-      "fingerprintShare": 0.25391,
-      "zDifference": -3.2885,
+      "fingerprintShare": 0.10481,
+      "zDifference": 3.4151,
       "sourceQuality": "exact"
     },
     {
       "spice": "Saffron",
       "axis": "florality",
       "llm": 90.0,
-      "fingerprintShare": 0.05189,
-      "zDifference": 3.2372,
+      "fingerprintShare": 0.05219,
+      "zDifference": 3.3765,
       "sourceQuality": "exact"
     },
     {
-      "spice": "Caraway",
-      "axis": "brightness",
-      "llm": 40.0,
-      "fingerprintShare": 0.34252,
-      "zDifference": -3.2,
+      "spice": "Lemongrass",
+      "axis": "heat",
+      "llm": 2.0,
+      "fingerprintShare": 0.25383,
+      "zDifference": -3.3376,
+      "sourceQuality": "exact"
+    },
+    {
+      "spice": "Lemongrass",
+      "axis": "warmth",
+      "llm": 10.0,
+      "fingerprintShare": 0.53888,
+      "zDifference": -3.2978,
       "sourceQuality": "exact"
     },
     {
       "spice": "Ginger",
       "axis": "heat",
       "llm": 65.0,
-      "fingerprintShare": 0.11362,
-      "zDifference": 2.9004,
+      "fingerprintShare": 0.11391,
+      "zDifference": 3.09,
       "sourceQuality": "exact"
     },
     {
-      "spice": "Cumin",
-      "axis": "earthiness",
-      "llm": 95.0,
-      "fingerprintShare": 0.02978,
-      "zDifference": 2.8065,
+      "spice": "Caraway",
+      "axis": "brightness",
+      "llm": 40.0,
+      "fingerprintShare": 0.34427,
+      "zDifference": -3.0752,
+      "sourceQuality": "exact"
+    },
+    {
+      "spice": "Hibiscus",
+      "axis": "florality",
+      "llm": 75.0,
+      "fingerprintShare": 0.04686,
+      "zDifference": 2.8751,
       "sourceQuality": "exact"
     }
   ],
