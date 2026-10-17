@@ -22,3 +22,26 @@ Verified 2026-10-13 against the primary links below. Public access does not impl
 `src/data/cuisine-frequencies.json` credits **CulinaryDB, Complex Systems Laboratory, IIIT-Delhi, Ganesh Bagler**, links its download and CC BY-NC-SA 3.0 license, records retrieval date and SHA-256 for all four source CSVs, and explains the transformation. This derivative is CC BY-NC-SA 3.0. Raw recipe text is not shipped. `python3 ingestion/ingest_culinarydb.py --download` rebuilds the ignored raw cache; subsequent runs are offline. Only CulinaryDB was added as a new bulk source.
 
 Existing FlavorGraph outputs remain Apache-2.0 (Park et al. 2021); FooDB/USDA/FlavorDB2 overlap retains its existing attribution and licensing. Gemini profiles and cuisine claims remain generated estimates, with compound context supplied where available.
+
+
+## Expansion review — 2026-10-17
+
+Three Luna assignments produced the 13 new profiles and separate [SpiceRx](research/spicerx-evaluation.md)
+and [FlavorDB2/Kew](research/flavordb-kew-evaluation.md) evaluations. The collection now
+contains 86 ingredients; the [implementation report](research/spice-expansion-2026-10-17.md)
+records coverage and checks.
+
+- **FlavorDB2:** integrated six additional verified entities through the existing pipeline:
+  Asafoetida 376 (37 molecules), Ajwain/Carom Seed 381 (155), Curry Leaf 385 (31), Summer
+  savory 444 (122), Epazote 708 (93), and Spearmint 266 (237). Spearmint is approximate
+  because its alias identifies oil. Existing CC BY-NC-SA 3.0 obligations apply.
+- **CulinaryDB:** extended existing mappings to six new ingredients; total 39/86. Generic
+  mint is approximate; the spearmint-oil alias is not represented as culinary leaf data.
+- **SpiceRx:** verified live records and downloadable molecular records. Its main value
+  is biomedical literature/identity linkage, not aroma descriptors, so no bulk integration
+  or use in flavor scoring. Live site is CC BY-NC-SA 3.0; article/supplement licensing is
+  separate, as described in the evaluation.
+- **Kew POWO/WCVP:** recommended for a future botanical metadata layer, not integrated as
+  a new bulk dataset. WCVP download and live taxon records can state different CC BY
+  versions; follow the exact record/version's metadata and preserve attribution. Do not
+  infer culinary origin or cultivar-specific chemistry from botanical distribution.

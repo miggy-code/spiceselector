@@ -269,3 +269,45 @@ Unmapped spices are missing, whereas zero within a mapped cuisine means zero obs
 recipes. Approximate ingredient/part matches are flagged. This new artifact is additive;
 it does not silently replace LLM `cuisines` or change the UI filter semantics.
 See [source/license evaluation](../docs/data-sources.md) for obligations and rejected sources.
+
+
+## Ingredient expansion — 2026-10-17
+
+Current coverage: **86/86 profiles**, 86 flavor vectors and atlas points; recipe/dish
+embeddings for 73/86, compound overlap for 72/86, aroma fingerprints for 58/86, and
+CulinaryDB mappings for 39/86. Historical counts in the earlier dated section describe
+the previous 73-ingredient snapshot.
+
+`add_paprika_taxonomy.py` now generates the curated 13-ingredient expansion as well as
+sweet paprika (the legacy filename is retained). Its additions are idempotent and do
+not rebuild or rename existing taxonomy identities. Asafoetida belongs in a new Savory
+Resin subgroup, not the botanical Allium group. Mint means spearmint (*Mentha spicata*);
+Savory means summer savory (*Satureja hortensis*). Culinary terms and botanical synonyms
+remain distinct from preparation/cultivar-specific chemistry.
+
+```bash
+# From the project root, before running the existing derived pipeline:
+python3 ingestion/add_paprika_taxonomy.py
+python3 ingestion/generate_spice_profiles.py --import-profiles ingestion/expansion_profiles_luna.json --skip-existing
+python3 ingestion/complete_profile_identities.py
+npx --yes tsx --tsconfig tsconfig.json ingestion/check_profile_coverage.ts --strict
+```
+
+Then run the existing order above: FlavorGraph → FlavorDB2 → compound overlap → dish
+affinities; extract flavor vectors and generate atlas; generate aroma fingerprints →
+axis audit; generate pungency references and CulinaryDB frequencies. No Gemini request
+is needed for the authored batch. All 73 previous profile records are retained unchanged.
+
+New source mappings were checked against local/source records: FlavorGraph uses spearmint,
+asafoetida powder (approximate), annatto seeds and summer savory overrides; new direct
+matches include curry leaf, ajwain and epazote. CulinaryDB adds six mappings, treating its
+generic mint record as approximate rather than representing spearmint oil as a leaf.
+FlavorDB2 adds five exact culinary entity matches (Asafoetida 376, Carom Seed/Ajwain 381,
+Curry Leaf 385, Summer savory 444, Epazote 708) and Spearmint 266 as approximate because
+its JSON alias says `spearmint-oil`. The 13 new profiles carry source links and authorship
+provenance; six have additive `evidence_sources` with verified entity IDs, molecule counts,
+quality and retrieval dates. That evidence does not recalibrate their authored axes.
+
+The [library evaluation](../docs/research/flavordb-kew-evaluation.md) explains candidate
+coverage and Kew's dataset-specific licenses. [SpiceRx](../docs/research/spicerx-evaluation.md)
+was evaluated only: its biomedical associations are not added to aroma scoring.
