@@ -180,5 +180,124 @@
       "hot-pungent.chili.red-pepper-flakes",
       "warm.baking.cinnamon"
     ]
+  },
+  {
+    "id": "cajun-seasoning",
+    "name": "Cajun Seasoning",
+    "origin": "Louisiana, USA",
+    "description": "Peppery Louisiana blend of paprika, cayenne, garlic, onion, and dried herbs for seafood, rice, and grilled dishes.",
+    "spiceIds": [
+      "earthy.smoky.paprika",
+      "hot-pungent.chili.cayenne",
+      "hot-pungent.pepper.black-pepper",
+      "umami-savory.allium.garlic",
+      "umami-savory.allium.onion-powder",
+      "herbal.mediterranean.oregano",
+      "herbal.mediterranean.thyme"
+    ]
+  },
+  {
+    "id": "jerk-seasoning",
+    "name": "Jamaican Jerk Seasoning",
+    "origin": "Jamaica",
+    "description": "Aromatic, fiery seasoning built around allspice, thyme, and Scotch bonnet-style heat, with ginger and warm spices.",
+    "spiceIds": [
+      "warm.baking.allspice",
+      "herbal.mediterranean.thyme",
+      "hot-pungent.chili.cayenne",
+      "hot-pungent.chili.red-pepper-flakes",
+      "earthy.root.ginger",
+      "warm.baking.cinnamon",
+      "warm.woody.clove",
+      "umami-savory.allium.garlic",
+      "umami-savory.allium.onion-powder"
+    ]
+  },
+  {
+    "id": "taco-seasoning",
+    "name": "Taco Seasoning",
+    "origin": "Mexico / USA",
+    "description": "A chili-forward seasoning for tacos and beans, commonly combining cumin, paprika, garlic, and oregano.",
+    "spiceIds": [
+      "hot-pungent.chili.cayenne",
+      "earthy.seed.cumin",
+      "earthy.smoky.paprika",
+      "hot-pungent.pepper.black-pepper",
+      "umami-savory.allium.garlic",
+      "umami-savory.allium.onion-powder",
+      "herbal.mediterranean.oregano"
+    ]
+  },
+  {
+    "id": "dukkah",
+    "name": "Dukkah",
+    "origin": "Egypt",
+    "description": "A crunchy Egyptian dip seasoning of toasted sesame, coriander, and cumin, often enriched with nuts.",
+    "spiceIds": [
+      "umami-savory.salty.sesame-seed",
+      "earthy.seed.coriander",
+      "earthy.seed.cumin",
+      "hot-pungent.pepper.black-pepper",
+      "warm.baking.allspice"
+    ]
+  },
+  {
+    "id": "shichimi-togarashi",
+    "name": "Shichimi Togarashi",
+    "origin": "Japan",
+    "description": "Japanese seven-spice seasoning with chili, citrus peel, sesame, and warming aromatics, sprinkled over noodles and soups.",
+    "spiceIds": [
+      "hot-pungent.chili.red-pepper-flakes",
+      "citrus-bright.peel.orange-zest",
+      "umami-savory.salty.sesame-seed",
+      "hot-pungent.pepper.sichuan-pepper",
+      "earthy.root.ginger",
+      "hot-pungent.pepper.black-pepper"
+    ]
+  },
+  {
+    "id": "old-bay-seasoning",
+    "name": "Old Bay Seasoning",
+    "origin": "Maryland, USA",
+    "description": "A savory, celery-seed-led seafood seasoning with paprika, mustard, pepper, and a gentle chili kick.",
+    "spiceIds": [
+      "earthy.seed.celery-seed",
+      "earthy.smoky.paprika",
+      "hot-pungent.sharp.mustard-seed",
+      "hot-pungent.pepper.black-pepper",
+      "hot-pungent.chili.cayenne",
+      "warm.woody.cardamom",
+      "warm.woody.clove"
+    ]
+  },
+  {
+    "id": "curry-powder",
+    "name": "Curry Powder",
+    "origin": "South Asia / Britain",
+    "description": "A widely varying curry-house blend typically centered on coriander, cumin, turmeric, and fenugreek.",
+    "spiceIds": [
+      "earthy.seed.coriander",
+      "earthy.seed.cumin",
+      "earthy.root.turmeric",
+      "sweet.aromatic-sweet.fenugreek",
+      "hot-pungent.chili.cayenne",
+      "warm.woody.cardamom",
+      "warm.woody.clove",
+      "warm.baking.cinnamon"
+    ]
+  },
+  {
+    "id": "adobo-seasoning",
+    "name": "Adobo Seasoning",
+    "origin": "Caribbean / Latin America",
+    "description": "A versatile savory seasoning built around garlic, oregano, and black pepper, with regional variations.",
+    "spiceIds": [
+      "umami-savory.allium.garlic",
+      "umami-savory.allium.onion-powder",
+      "herbal.mediterranean.oregano",
+      "hot-pungent.pepper.black-pepper",
+      "earthy.seed.cumin",
+      "earthy.smoky.paprika"
+    ]
   }
 ]
