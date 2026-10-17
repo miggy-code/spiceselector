@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import React, { useState, useMemo, useEffect, useSyncExternalStore, useRef } from 'react';
 import { motion } from 'framer-motion';
+import KitchenPanel from '@/components/KitchenPanel';
 import NavDrawer from '@/components/NavDrawer';
 import SubstitutionView from '@/components/SubstitutionView';
 import MapPairingPanel from '@/components/pairing/MapPairingPanel';
@@ -212,8 +213,8 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
   return (
     <div className="flex h-full w-full flex-col bg-board text-chalk">
       {/* ── Top bar ─────────────────────────────────────────────── */}
-      <header className="relative z-40 flex h-14 shrink-0 items-center gap-6 border-b border-rule bg-board px-4 shadow-[0_8px_24px_rgba(0,0,0,0.18)] md:px-5">
-        <h1 className="font-display text-[23px] leading-none text-chalk">Spice Selector</h1>
+      <header className="relative z-40 flex h-14 shrink-0 items-center gap-2 md:gap-6 border-b border-rule bg-board px-4 shadow-[0_8px_24px_rgba(0,0,0,0.18)] md:px-5">
+        <h1 className="font-display text-[18px] leading-none text-chalk sm:text-[23px]">Spice Selector</h1>
 
         <nav aria-label="Views" className="hidden h-full items-stretch gap-1 md:flex">
           {VIEWS.map((v) => (
@@ -225,6 +226,7 @@ export default function MapClientLoader({ data }: MapClientLoaderProps) {
 
         <div className="ml-auto flex items-center gap-2">
           <SpiceSearch data={data} inline />
+          <KitchenPanel />
           <button
             type="button"
             onClick={() => setFiltersOpen(true)}

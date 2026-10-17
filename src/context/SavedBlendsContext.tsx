@@ -4,14 +4,13 @@ import {
   createContext,
   useContext,
   useSyncExternalStore,
-  useCallback,
   type ReactNode,
 } from "react";
+import { useCloud } from "@/context/CloudContext";
 import { createLocalStore } from "@/lib/local-store";
 
 /**
- * Saved blends, persisted in localStorage (map slug ids) — the Blend
- * Builder's retention loop without a backend.
+ * Guest blends stay in browser storage; authenticated blends come from Supabase.
  */
 
 const STORAGE_KEY = "spice-blends";
@@ -25,8 +24,8 @@ export interface SavedBlend {
 
 interface SavedBlendsState {
   blends: SavedBlend[];
-  saveBlend: (name: string, slugs: string[]) => SavedBlend;
-  deleteBlend: (id: string) => void;
+  saveBlend: (name: string, slugs: string[]) => Promise<SavedBlend | null>;
+  deleteBlend: (id: string) => Promise<void>;
 }
 
 const SavedBlendsContext = createContext<SavedBlendsState | null>(null);
@@ -60,26 +59,36 @@ const blendsStore = createLocalStore<SavedBlend[]>(
 export function SavedBlendsProvider({ children }: { children: ReactNode }) {
   // Server render + first hydration pass see no blends; stored blends swap in
   // on the client (see createLocalStore), so markup matches.
-  const blends = useSyncExternalStore(
+  const cloud = useCloud();
+  const localBlends = useSyncExternalStore(
     blendsStore.subscribe,
     blendsStore.getSnapshot,
     blendsStore.getServerSnapshot
   );
 
-  const saveBlend = useCallback((name: string, slugs: string[]) => {
-    const blend: SavedBlend = {
-      id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
-      name: name.trim() || "Untitled blend",
-      slugs,
-      createdAt: Date.now(),
-    };
+  const blends = cloud.user ? cloud.blends.map((b) => ({
+    id: b.id, name: b.name, slugs: b.slugs, createdAt: Date.parse(b.created_at),
+  })) : localBlends;
+
+  async function saveBlend(name: string, slugs: string[]) {
+    if (!cloud.authReady) return null;
+    const blend: SavedBlend = { id: crypto.randomUUID(), name: name.trim() || "Untitled blend", slugs, createdAt: Date.now() };
+    if (cloud.user) {
+      const saved = await cloud.write((client, userId) => client.from("saved_blends").insert({
+        id: blend.id, user_id: userId, name: blend.name, slugs, created_at: new Date(blend.createdAt).toISOString(),
+      }));
+      return saved ? blend : null;
+    }
     blendsStore.update((prev) => [blend, ...prev]);
     return blend;
-  }, []);
+  }
 
-  const deleteBlend = useCallback((id: string) => {
-    blendsStore.update((prev) => prev.filter((b) => b.id !== id));
-  }, []);
+  async function deleteBlend(id: string) {
+    if (!cloud.authReady) return;
+    if (cloud.user) {
+      await cloud.write((client, userId) => client.from("saved_blends").delete().eq("id", id).eq("user_id", userId));
+    } else blendsStore.update((prev) => prev.filter((b) => b.id !== id));
+  }
 
   return (
     <SavedBlendsContext.Provider value={{ blends, saveBlend, deleteBlend }}>

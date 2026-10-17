@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useSelection } from '@/context/SelectionContext';
+import { useCloud } from '@/context/CloudContext';
 import { useSavedBlends } from '@/context/SavedBlendsContext';
 import { encodeBlendUrl } from '@/lib/blend-url';
 import { spiceColor } from '@/lib/spice-colors';
@@ -14,6 +15,7 @@ interface SavedBlendsListProps {
 
 /** The user's saved blends — one click puts a blend back on the map. */
 export default function SavedBlendsList({ slugFamilies }: SavedBlendsListProps) {
+  const cloud = useCloud();
   const { blends, deleteBlend } = useSavedBlends();
   const { selectSpices } = useSelection();
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -52,7 +54,7 @@ export default function SavedBlendsList({ slugFamilies }: SavedBlendsListProps) 
               <SmallButton onClick={() => share(b.id, b.name, validSlugs)}>
                 {copiedId === b.id ? 'Copied' : 'Share'}
               </SmallButton>
-              <SmallButton onClick={() => deleteBlend(b.id)} aria-label={`Delete ${b.name}`}>
+              <SmallButton disabled={!cloud.authReady || cloud.busy || Boolean(cloud.user && !cloud.ready)} onClick={() => deleteBlend(b.id)} aria-label={`Delete ${b.name}`}>
                 Delete
               </SmallButton>
             </li>

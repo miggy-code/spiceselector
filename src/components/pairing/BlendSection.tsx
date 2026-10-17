@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useSelection } from '@/context/SelectionContext';
+import { useCloud } from '@/context/CloudContext';
 import { useSavedBlends } from '@/context/SavedBlendsContext';
 import {
   BLEND_AXES,
@@ -73,6 +74,8 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
   const { toggleSpice } = useSelection();
   const { hoverProps, setHovered } = useSpiceHover();
   const { saveBlend } = useSavedBlends();
+  const cloud = useCloud();
+  const savingDisabled = !cloud.authReady || cloud.busy || Boolean(cloud.user && !cloud.ready);
   const [naming, setNaming] = useState(false);
   const [blendName, setBlendName] = useState('');
   const [feedback, setFeedback] = useState<string | null>(null);
@@ -99,8 +102,11 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
     setTimeout(() => setFeedback(null), 2000);
   }
 
-  function handleSave() {
-    saveBlend(blendName, selectedSlugs);
+  async function handleSave() {
+    if (!await saveBlend(blendName, selectedSlugs)) {
+      flash("Could not save. Open My kitchen for details.");
+      return;
+    }
     setNaming(false);
     setBlendName('');
     flash('Saved');
@@ -241,13 +247,14 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
           >
             <input
               autoFocus
+              maxLength={200}
               value={blendName}
               onChange={(e) => setBlendName(e.target.value)}
               placeholder="Name this blend"
               aria-label="Blend name"
               className="h-8 min-w-0 flex-1 rounded-md border border-rule bg-board-high px-2.5 text-small text-chalk outline-none placeholder:text-chalk-3 focus:border-rule-strong"
             />
-            <SmallButton type="submit" pressed>
+            <SmallButton type="submit" disabled={savingDisabled} pressed>
               Save
             </SmallButton>
             <SmallButton onClick={() => setNaming(false)} aria-label="Cancel">
@@ -256,7 +263,7 @@ export default function BlendSection({ selectedTids, tidToSlug }: BlendSectionPr
           </form>
         ) : (
           <>
-            <SmallButton onClick={() => setNaming(true)} pressed>
+            <SmallButton disabled={savingDisabled} onClick={() => setNaming(true)} pressed>
               Save blend
             </SmallButton>
             <SmallButton onClick={handleShare}>Share link</SmallButton>

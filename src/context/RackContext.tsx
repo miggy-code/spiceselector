@@ -7,11 +7,12 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
+import { useCloud } from "@/context/CloudContext";
 import { createLocalStore } from "@/lib/local-store";
 
 /**
  * "My rack": which spices the user actually owns (map slug ids), persisted in
- * localStorage — no auth needed. `rackOnly` filters suggestions/substitutes
+ * browser storage for guests and Supabase for signed-in users. `rackOnly` filters suggestions/substitutes
  * down to what's in the house.
  */
 
@@ -48,7 +49,8 @@ const RackContext = createContext<RackState | null>(null);
 export function RackProvider({ children }: { children: ReactNode }) {
   // Server render + first hydration pass use the empty defaults; the stored
   // values swap in on the client (see createLocalStore), so markup matches.
-  const rackIds = useSyncExternalStore(
+  const cloud = useCloud();
+  const localRackIds = useSyncExternalStore(
     rackStore.subscribe,
     rackStore.getSnapshot,
     rackStore.getServerSnapshot
@@ -59,14 +61,19 @@ export function RackProvider({ children }: { children: ReactNode }) {
     rackOnlyStore.getServerSnapshot
   );
 
-  const toggleRack = useCallback((id: string) => {
-    rackStore.update((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  }, []);
+  const rackIds = cloud.user ? new Set(cloud.rack) : localRackIds;
+  async function toggleRack(id: string) {
+    if (!cloud.authReady) return;
+    if (cloud.user) {
+      await cloud.write((client) => client.rpc("toggle_rack_spice", { spice_slug: id }));
+    } else {
+      rackStore.update((prev) => {
+        const next = new Set(prev);
+        if (next.has(id)) next.delete(id); else next.add(id);
+        return next;
+      });
+    }
+  }
 
   const setRackOnly = useCallback((on: boolean) => {
     rackOnlyStore.update(() => on);

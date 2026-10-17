@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { familyLabel } from '@/lib/colors';
 import { spiceColor } from '@/lib/spice-colors';
 import { useSelection } from '@/context/SelectionContext';
+import { useCloud } from '@/context/CloudContext';
 import { useRack } from '@/context/RackContext';
 import { getSubstitutes, type SubstituteCandidate } from '@/lib/substitution-engine';
 import { compoundScore } from '@/lib/pairing-engine';
@@ -84,6 +85,7 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
   const [focusedId, setFocusedId] = useState<string | null>(initialFocusId ?? null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const { toggleSpice } = useSelection();
+  const cloud = useCloud();
   const { rackIds, rackOnly, toggleRack } = useRack();
 
   const spiceById = useMemo(() => {
@@ -221,6 +223,7 @@ export default function SubstitutionView({ data, initialFocusId, onViewInMap }: 
                       </button>
                       <button
                         type="button"
+                        disabled={!cloud.authReady || cloud.busy || Boolean(cloud.user && !cloud.ready)}
                         onClick={() => toggleRack(spice.id)}
                         title={owned ? 'Remove from my rack' : 'Add to my rack'}
                         aria-label={owned ? `Remove ${spice.name} from my rack` : `Add ${spice.name} to my rack`}
