@@ -582,5 +582,109 @@
     "florality": 22,
     "heat": 0,
     "intensity": 70
+  },
+  "herbal.leafy.mint": {
+    "warmth": 12,
+    "brightness": 67,
+    "earthiness": 14,
+    "florality": 24,
+    "heat": 0,
+    "intensity": 47
+  },
+  "herbal.asian.curry-leaf": {
+    "warmth": 25,
+    "brightness": 58,
+    "earthiness": 32,
+    "florality": 18,
+    "heat": 0,
+    "intensity": 58
+  },
+  "umami-savory.resin.asafoetida": {
+    "warmth": 40,
+    "brightness": 20,
+    "earthiness": 48,
+    "florality": 4,
+    "heat": 0,
+    "intensity": 85
+  },
+  "earthy.seed.ajwain": {
+    "warmth": 49,
+    "brightness": 28,
+    "earthiness": 45,
+    "florality": 7,
+    "heat": 7,
+    "intensity": 73
+  },
+  "warm.woody.black-cardamom": {
+    "warmth": 62,
+    "brightness": 25,
+    "earthiness": 54,
+    "florality": 11,
+    "heat": 4,
+    "intensity": 69
+  },
+  "earthy.seed.annatto": {
+    "warmth": 30,
+    "brightness": 27,
+    "earthiness": 39,
+    "florality": 8,
+    "heat": 0,
+    "intensity": 35
+  },
+  "herbal.leafy.epazote": {
+    "warmth": 20,
+    "brightness": 40,
+    "earthiness": 32,
+    "florality": 5,
+    "heat": 0,
+    "intensity": 68
+  },
+  "herbal.leafy.huacatay": {
+    "warmth": 20,
+    "brightness": 58,
+    "earthiness": 28,
+    "florality": 16,
+    "heat": 0,
+    "intensity": 72
+  },
+  "hot-pungent.chili.aji-amarillo": {
+    "warmth": 31,
+    "brightness": 68,
+    "earthiness": 19,
+    "florality": 9,
+    "heat": 47,
+    "intensity": 68
+  },
+  "hot-pungent.chili.aji-panca": {
+    "warmth": 39,
+    "brightness": 40,
+    "earthiness": 45,
+    "florality": 8,
+    "heat": 31,
+    "intensity": 59
+  },
+  "hot-pungent.chili.rocoto": {
+    "warmth": 35,
+    "brightness": 52,
+    "earthiness": 22,
+    "florality": 9,
+    "heat": 72,
+    "intensity": 76
+  },
+  "herbal.mediterranean.juniper-berry": {
+    "warmth": 33,
+    "brightness": 39,
+    "earthiness": 40,
+    "florality": 12,
+    "heat": 0,
+    "intensity": 62
+  },
+  "herbal.mediterranean.savory": {
+    "warmth": 43,
+    "brightness": 35,
+    "earthiness": 37,
+    "florality": 10,
+    "heat": 4,
+    "intensity": 58
   }
 }

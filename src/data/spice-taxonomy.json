@@ -27,7 +27,8 @@
             { "id": "warm.woody.clove", "name": "Clove", "level": "spice", "description": "Intense, warm aromatic flower bud" },
             { "id": "warm.woody.star-anise", "name": "Star Anise", "level": "spice", "description": "Licorice-flavored star-shaped pod" },
             { "id": "warm.woody.cardamom", "name": "Cardamom", "level": "spice", "description": "Complex, floral-citrusy warm pod" },
-            { "id": "warm.woody.cassia", "name": "Cassia", "level": "spice", "description": "Bold, spicy cousin of cinnamon" }
+            { "id": "warm.woody.cassia", "name": "Cassia", "level": "spice", "description": "Bold, spicy cousin of cinnamon" },
+            { "id": "warm.woody.black-cardamom", "name": "Black Cardamom", "level": "spice", "description": "Smoky, camphoraceous pod distinct from green cardamom" }
           ]
         }
       ]
@@ -57,7 +58,10 @@
             { "id": "hot-pungent.chili.red-pepper-flakes", "name": "Red Pepper Flakes", "level": "spice", "description": "Crushed dried chili with seeds" },
             { "id": "hot-pungent.chili.chipotle", "name": "Chipotle", "level": "spice", "description": "Smoked jalapeño with deep heat" },
             { "id": "hot-pungent.chili.gochugaru", "name": "Gochugaru", "level": "spice", "description": "Korean chili flakes, fruity and vibrant" },
-            { "id": "hot-pungent.chili.aleppo", "name": "Aleppo Pepper", "level": "spice", "description": "Mild, fruity, oily Middle Eastern chili" }
+            { "id": "hot-pungent.chili.aleppo", "name": "Aleppo Pepper", "level": "spice", "description": "Mild, fruity, oily Middle Eastern chili" },
+            { "id": "hot-pungent.chili.aji-amarillo", "name": "Ají Amarillo", "level": "spice", "description": "Fruity Peruvian yellow-orange Capsicum baccatum chili" },
+            { "id": "hot-pungent.chili.aji-panca", "name": "Ají Panca", "level": "spice", "description": "Mild dried Peruvian chili with berry-like, earthy depth" },
+            { "id": "hot-pungent.chili.rocoto", "name": "Rocoto", "level": "spice", "description": "Juicy, hot Capsicum pubescens chili with black seeds" }
           ]
         },
         {
@@ -122,7 +126,9 @@
             { "id": "earthy.seed.cumin", "name": "Cumin", "level": "spice", "description": "Warm, earthy, essential to many cuisines" },
             { "id": "earthy.seed.coriander", "name": "Coriander Seed", "level": "spice", "description": "Citrusy, floral dried seed" },
             { "id": "earthy.seed.caraway", "name": "Caraway", "level": "spice", "description": "Anise-like earthy seed" },
-            { "id": "earthy.seed.celery-seed", "name": "Celery Seed", "level": "spice", "description": "Concentrated herbal celery flavor" }
+            { "id": "earthy.seed.celery-seed", "name": "Celery Seed", "level": "spice", "description": "Concentrated herbal celery flavor" },
+            { "id": "earthy.seed.ajwain", "name": "Ajwain", "level": "spice", "description": "Thyme-like, pungent seed spice also called carom" },
+            { "id": "earthy.seed.annatto", "name": "Annatto", "level": "spice", "description": "Achiote seed with mild earthy, peppery flavor and orange-red color" }
           ]
         },
         {
@@ -151,7 +157,9 @@
             { "id": "herbal.mediterranean.thyme", "name": "Thyme", "level": "spice", "description": "Subtle, earthy, lemony herb" },
             { "id": "herbal.mediterranean.rosemary", "name": "Rosemary", "level": "spice", "description": "Pine-like, assertive woody herb" },
             { "id": "herbal.mediterranean.marjoram", "name": "Marjoram", "level": "spice", "description": "Delicate, sweet oregano cousin" },
-            { "id": "herbal.mediterranean.sage", "name": "Sage", "level": "spice", "description": "Savory, slightly peppery, musty herb" }
+            { "id": "herbal.mediterranean.sage", "name": "Sage", "level": "spice", "description": "Savory, slightly peppery, musty herb" },
+            { "id": "herbal.mediterranean.juniper-berry", "name": "Juniper Berry", "level": "spice", "description": "Piney, resinous culinary Juniperus communis cone" },
+            { "id": "herbal.mediterranean.savory", "name": "Savory", "level": "spice", "description": "Summer savory leaf with peppery, thyme-like flavor" }
           ]
         },
         {
@@ -162,7 +170,8 @@
             { "id": "herbal.asian.lemongrass", "name": "Lemongrass", "level": "spice", "description": "Bright, citrusy tropical stalk" },
             { "id": "herbal.asian.thai-basil", "name": "Thai Basil", "level": "spice", "description": "Anise-scented, sturdy basil variety" },
             { "id": "herbal.asian.kaffir-lime-leaf", "name": "Kaffir Lime Leaf", "level": "spice", "description": "Intensely citrusy, floral leaf" },
-            { "id": "herbal.asian.shiso", "name": "Shiso", "level": "spice", "description": "Minty, basil-like Japanese herb" }
+            { "id": "herbal.asian.shiso", "name": "Shiso", "level": "spice", "description": "Minty, basil-like Japanese herb" },
+            { "id": "herbal.asian.curry-leaf", "name": "Curry Leaf", "level": "spice", "description": "Citrusy, nutty aromatic leaf used in South Asian tempering" }
           ]
         },
         {
@@ -175,7 +184,10 @@
             { "id": "herbal.leafy.cilantro", "name": "Cilantro", "level": "spice", "description": "Bright, citrusy, polarizing herb" },
             { "id": "herbal.leafy.dill", "name": "Dill", "level": "spice", "description": "Feathery herb with anise and grass notes" },
             { "id": "herbal.leafy.bay-leaf", "name": "Bay Leaf", "level": "spice", "description": "Subtle, herbal background seasoning" },
-            { "id": "herbal.leafy.tarragon", "name": "Tarragon", "level": "spice", "description": "Anise-flavored French herb" }
+            { "id": "herbal.leafy.tarragon", "name": "Tarragon", "level": "spice", "description": "Anise-flavored French herb" },
+            { "id": "herbal.leafy.mint", "name": "Mint", "level": "spice", "description": "Spearmint leaf with sweet, cooling green aroma" },
+            { "id": "herbal.leafy.epazote", "name": "Epazote", "level": "spice", "description": "Pungent Mexican herb with resinous citrus notes" },
+            { "id": "herbal.leafy.huacatay", "name": "Huacatay", "level": "spice", "description": "Peruvian black mint with minty, anise-like aroma" }
           ]
         }
       ]
@@ -268,6 +280,14 @@
             { "id": "umami-savory.salty.sesame-seed", "name": "Sesame Seed", "level": "spice", "description": "Nutty, oil-rich seed" },
             { "id": "umami-savory.salty.poppy-seed", "name": "Poppy Seed", "level": "spice", "description": "Mild, nutty, crunchy seed" },
             { "id": "umami-savory.salty.nigella-seed", "name": "Nigella Seed", "level": "spice", "description": "Oniony, peppery black seed" }
+          ]
+        },
+        {
+          "id": "umami-savory.resin",
+          "name": "Savory Resin",
+          "level": "subcategory",
+          "children": [
+            { "id": "umami-savory.resin.asafoetida", "name": "Asafoetida", "level": "spice", "description": "Sulfurous Ferula resin that mellows to savory onion-like notes when cooked" }
           ]
         }
       ]

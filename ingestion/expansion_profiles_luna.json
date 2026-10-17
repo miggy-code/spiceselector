@@ -1,0 +1,1967 @@
+{
+  "Mint": {
+    "id": "mint",
+    "name": "Mint",
+    "botanical_name": "Mentha spicata",
+    "botanical_family": "Lamiaceae",
+    "common_names": [
+      "Spearmint",
+      "garden mint",
+      "Mentha spicata"
+    ],
+    "origin": "Europe and western Asia; cultivated worldwide",
+    "description": "This profile means spearmint (Mentha spicata), with a sweet, green, gently cooling aroma and less menthol-driven sharpness than peppermint. Use fresh leaves for lift in sauces, salads, legumes, tea, and grilled meats.",
+    "warmth": 12,
+    "brightness": 67,
+    "earthiness": 14,
+    "florality": 24,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "minty",
+      "green",
+      "sweet-herbal"
+    ],
+    "heat_level": "mild",
+    "intensity": 47,
+    "commonality": 91,
+    "cuisines": [
+      {
+        "cuisine": "Middle Eastern",
+        "frequency": "common",
+        "typical_quantity": "1/4-1 cup fresh leaves per 4 servings, depending on dish"
+      },
+      {
+        "cuisine": "North African",
+        "frequency": "common",
+        "typical_quantity": "1/4-1 cup fresh leaves per 4 servings"
+      },
+      {
+        "cuisine": "South Asian",
+        "frequency": "common",
+        "typical_quantity": "1/4-1 cup fresh leaves per 4 servings"
+      },
+      {
+        "cuisine": "British",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp chopped leaves per 4 servings"
+      },
+      {
+        "cuisine": "Vietnamese",
+        "frequency": "common",
+        "typical_quantity": "1/2-1 cup leaves per 4 servings, served fresh"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Coriander",
+        "affinity": "classic",
+        "note": "Citrusy seed warmth gives spearmint a rounded base in chutneys and dressings.",
+        "cuisines": [
+          "South Asian",
+          "Middle Eastern"
+        ]
+      },
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Earthy cumin balances mint's cool, sweet lift in yogurt sauces and legumes.",
+        "cuisines": [
+          "Middle Eastern",
+          "South Asian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "A dry peppery finish reins in mint's sweetness.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Sumac",
+        "affinity": "classic",
+        "note": "Tart, berry-like acidity sharpens the fresh herbal character.",
+        "cuisines": [
+          "Levantine"
+        ]
+      },
+      {
+        "spice": "Cinnamon",
+        "affinity": "complementary",
+        "note": "Soft sweet warmth links mint with fruit, rice, and braised dishes.",
+        "cuisines": [
+          "Middle Eastern",
+          "North African"
+        ]
+      },
+      {
+        "spice": "Ginger",
+        "affinity": "complementary",
+        "note": "Ginger's bright heat adds depth to mint's clean cooling impression.",
+        "cuisines": [
+          "South Asian",
+          "Southeast Asian"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Spearmint",
+        "similarity": 1.0,
+        "notes": "This profile specifically represents spearmint; use it as the direct identity."
+      },
+      {
+        "spice": "Peppermint",
+        "similarity": 0.72,
+        "notes": "More mentholated and sharper; use less, especially in savory dishes."
+      },
+      {
+        "spice": "Basil",
+        "similarity": 0.38,
+        "notes": "Can replace the fresh green lift but lacks mint's cooling aroma."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Carvone",
+        "role": "A commonly reported spearmint-oil constituent associated with its sweet, green mint aroma; no ingredient-specific local record was available."
+      },
+      {
+        "name": "Limonene",
+        "role": "A terpene reported in spearmint oils that can contribute citrus-like freshness; composition varies by sample."
+      },
+      {
+        "name": "1,8-Cineole",
+        "role": "A reported minor volatile in some spearmint oils, contributing cool herbal notes; not a local measurement."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "At authorship, no ingredient-specific local USDA/FooDB/FlavorDB2 record had been inspected; literature compound associations were used. FlavorDB2 evidence was subsequently verified separately; axes remain authored estimates.",
+        "Kew Plants of the World Online, Mentha spicata: https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:451162-1",
+        "Kew Economic Botany Collection record for Mentha spicata spearmint oil: https://records.data.kew.org/occurrences/29073a92-3bc4-4dfe-931e-f010cbf11315",
+        "Spearmint essential-oil study (oil preparation, not leaf sensory intensity): https://pmc.ncbi.nlm.nih.gov/articles/PMC6854165/"
+      ]
+    },
+    "evidence_sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 266,
+        "quality": "approx",
+        "moleculeCount": 237,
+        "url": "https://cosylab.iiitd.edu.in/flavordb2/entities_json?id=266",
+        "verified": "2026-10-17"
+      }
+    ]
+  },
+  "Curry Leaf": {
+    "id": "curry-leaf",
+    "name": "Curry Leaf",
+    "botanical_name": "Murraya koenigii",
+    "botanical_family": "Rutaceae",
+    "common_names": [
+      "Curry leaves",
+      "curry leaf tree",
+      "karipatta",
+      "kadi patta",
+      "karivepaku",
+      "karuveppilai"
+    ],
+    "origin": "Indian subcontinent",
+    "description": "Fresh curry leaves are citrusy, leafy, and warm with a distinct, lightly resinous aroma that survives a brief sizzle in oil. They are leaves of Murraya koenigii, not the unrelated dried herb sold as curry plant.",
+    "warmth": 25,
+    "brightness": 58,
+    "earthiness": 32,
+    "florality": 18,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "citrusy",
+      "leafy",
+      "aromatic"
+    ],
+    "heat_level": "mild",
+    "intensity": 58,
+    "commonality": 58,
+    "cuisines": [
+      {
+        "cuisine": "South Indian",
+        "frequency": "common",
+        "typical_quantity": "8-15 leaves per 4 servings, briefly fried in oil"
+      },
+      {
+        "cuisine": "Sri Lankan",
+        "frequency": "common",
+        "typical_quantity": "8-15 leaves per 4 servings"
+      },
+      {
+        "cuisine": "Bangladeshi",
+        "frequency": "occasional",
+        "typical_quantity": "6-12 leaves per 4 servings"
+      },
+      {
+        "cuisine": "West Indian",
+        "frequency": "occasional",
+        "typical_quantity": "6-12 leaves per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Mustard seeds",
+        "affinity": "classic",
+        "note": "A sputtering mustard-seed tempering carries the leaf aroma through oil.",
+        "cuisines": [
+          "South Indian",
+          "Sri Lankan"
+        ]
+      },
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Toasty cumin reinforces the warm, savory base of a tempering.",
+        "cuisines": [
+          "South Indian"
+        ]
+      },
+      {
+        "spice": "Turmeric",
+        "affinity": "classic",
+        "note": "Earthy turmeric provides a familiar foundation for curry-leaf aromatics.",
+        "cuisines": [
+          "South Indian",
+          "Sri Lankan"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "Chili heat makes the leaves' citrusy fragrance more vivid.",
+        "cuisines": [
+          "South Indian"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander's citrus-peel quality echoes the leaf's bright top notes.",
+        "cuisines": [
+          "South Asian"
+        ]
+      },
+      {
+        "spice": "Fenugreek",
+        "affinity": "complementary",
+        "note": "A small bitter-sweet fenugreek note deepens lentil and vegetable dishes.",
+        "cuisines": [
+          "South Indian",
+          "Sri Lankan"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Bay leaves",
+        "similarity": 0.28,
+        "notes": "Adds aromatic depth but misses curry leaf's citrusy, leafy signature."
+      },
+      {
+        "spice": "Lemongrass",
+        "similarity": 0.25,
+        "notes": "Can contribute a bright citrus-herbal note, but has a more lemon-forward profile."
+      },
+      {
+        "spice": "Basil",
+        "similarity": 0.22,
+        "notes": "Supplies fresh leafy character, but is sweeter and less resinous."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "α-Pinene",
+        "role": "A major constituent reported in one analyzed curry-leaf essential oil; its proportion varies by sample and is not a universal value."
+      },
+      {
+        "name": "Sabinene",
+        "role": "A reported volatile constituent associated with the leaf's fresh, peppery-terpenic aroma."
+      },
+      {
+        "name": "β-Caryophyllene",
+        "role": "A reported sesquiterpene in curry-leaf oil that can contribute woody, spicy depth."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "At authorship, no ingredient-specific local USDA/FooDB/FlavorDB2 record had been inspected; literature compound associations were used. FlavorDB2 evidence was subsequently verified separately; axes remain authored estimates.",
+        "Kew Plants of the World Online, Bergera koenigii (synonym Murraya koenigii): https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:771522-1/general-information",
+        "Dr. Duke's USDA Phytochemical and Ethnobotanical Databases, Murraya koenigii: https://phytochem.nal.usda.gov/plant-murraya-koenigii",
+        "Chemical constituents of the volatile oil of Murraya koenigii leaves: https://doi.org/10.1016/j.ijat.2003.12.007"
+      ]
+    },
+    "evidence_sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 385,
+        "quality": "exact",
+        "moleculeCount": 31,
+        "url": "https://cosylab.iiitd.edu.in/flavordb2/entities_json?id=385",
+        "verified": "2026-10-17"
+      }
+    ]
+  },
+  "Asafoetida": {
+    "id": "asafoetida",
+    "name": "Asafoetida",
+    "botanical_name": "Ferula assa-foetida",
+    "botanical_family": "Apiaceae",
+    "common_names": [
+      "Hing",
+      "heeng",
+      "devil's dung",
+      "asafoetida"
+    ],
+    "origin": "Iran and Afghanistan; used widely across South Asia",
+    "description": "This dried oleo-gum-resin smells forcefully sulfurous raw, then mellows when briefly bloomed in fat into an onion-garlic-like savory note. A pinch seasons lentils, vegetables, and pickles; commercial powders are often diluted with flour.",
+    "warmth": 40,
+    "brightness": 20,
+    "earthiness": 48,
+    "florality": 4,
+    "heat": 0,
+    "family": "umami-savory",
+    "subfamilies": [
+      "resin",
+      "sulfurous",
+      "allium-like"
+    ],
+    "heat_level": "mild",
+    "intensity": 85,
+    "commonality": 48,
+    "cuisines": [
+      {
+        "cuisine": "North Indian",
+        "frequency": "common",
+        "typical_quantity": "1/16-1/8 tsp per 4 servings, bloomed in fat"
+      },
+      {
+        "cuisine": "South Indian",
+        "frequency": "common",
+        "typical_quantity": "1/16-1/8 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Jain Indian",
+        "frequency": "common",
+        "typical_quantity": "A pinch per 4 servings as an allium-like seasoning"
+      },
+      {
+        "cuisine": "Afghan",
+        "frequency": "occasional",
+        "typical_quantity": "A small pinch per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin and hing form a savory aromatic base for lentils and vegetables.",
+        "cuisines": [
+          "North Indian",
+          "South Indian"
+        ]
+      },
+      {
+        "spice": "Mustard seeds",
+        "affinity": "classic",
+        "note": "Mustard's toasted pungency complements the sulfurous allium-like note.",
+        "cuisines": [
+          "South Indian"
+        ]
+      },
+      {
+        "spice": "Turmeric",
+        "affinity": "classic",
+        "note": "Earthy turmeric rounds the sharp aroma in dal and vegetable dishes.",
+        "cuisines": [
+          "North Indian",
+          "South Indian"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "Chili brings heat while asafoetida supplies deep savory aroma.",
+        "cuisines": [
+          "South Asian"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander's citrusy warmth softens the resinous edge.",
+        "cuisines": [
+          "North Indian"
+        ]
+      },
+      {
+        "spice": "Fenugreek",
+        "affinity": "complementary",
+        "note": "Fenugreek adds bittersweet depth to the same legumes and vegetables.",
+        "cuisines": [
+          "South Asian"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Garlic powder",
+        "similarity": 0.52,
+        "notes": "Closest convenient sulfurous substitute, but lacks asafoetida's resinous aroma."
+      },
+      {
+        "spice": "Onion powder",
+        "similarity": 0.45,
+        "notes": "Provides allium-like savoriness without the same sharp resin note."
+      },
+      {
+        "spice": "Chive",
+        "similarity": 0.42,
+        "notes": "Provides a mild fresh allium note without asafoetida's resinous pungency."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "2-Butyl 1-propenyl disulfide",
+        "role": "A reported volatile sulfur compound associated with asafoetida's characteristic pungent aroma."
+      },
+      {
+        "name": "Dimethyl trisulfide",
+        "role": "A reported volatile sulfur compound contributing the intense sulfurous raw-resin character."
+      },
+      {
+        "name": "Ferulic acid",
+        "role": "A reported resin constituent; it is part of the nonvolatile resin fraction rather than a measure of the cooked aroma."
+      },
+      {
+        "name": "Umbelliferone",
+        "role": "A coumarin reported in asafoetida resin; included as a documented phytochemical, not a sensory-intensity claim."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "At authorship, no ingredient-specific local USDA/FooDB/FlavorDB2 record had been inspected; literature compound associations were used. FlavorDB2 evidence was subsequently verified separately; axes remain authored estimates.",
+        "Biological activities and medicinal properties of Asafoetida: https://pmc.ncbi.nlm.nih.gov/articles/PMC5506628/",
+        "Ferula asafoetida: Traditional uses and pharmacological activity: https://pmc.ncbi.nlm.nih.gov/articles/PMC3459456/"
+      ]
+    },
+    "evidence_sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 376,
+        "quality": "exact",
+        "moleculeCount": 37,
+        "url": "https://cosylab.iiitd.edu.in/flavordb2/entities_json?id=376",
+        "verified": "2026-10-17"
+      }
+    ]
+  },
+  "Ajwain": {
+    "id": "ajwain",
+    "name": "Ajwain",
+    "botanical_name": "Trachyspermum ammi",
+    "botanical_family": "Apiaceae",
+    "common_names": [
+      "Carom seed",
+      "bishop's weed",
+      "ajowan",
+      "ajwain"
+    ],
+    "origin": "Eastern Mediterranean to South Asia; widely cultivated in India",
+    "description": "Ajwain fruits (often called seeds in kitchens) have a forceful thyme-like, bitter, and warm aroma with a lingering savory edge. Toast or fry briefly and use sparingly in breads, legumes, and fried snacks.",
+    "warmth": 49,
+    "brightness": 28,
+    "earthiness": 45,
+    "florality": 7,
+    "heat": 7,
+    "family": "earthy",
+    "subfamilies": [
+      "thyme-like",
+      "seed",
+      "pungent"
+    ],
+    "heat_level": "mild",
+    "intensity": 73,
+    "commonality": 48,
+    "cuisines": [
+      {
+        "cuisine": "North Indian",
+        "frequency": "common",
+        "typical_quantity": "1/4-1/2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Gujarati",
+        "frequency": "common",
+        "typical_quantity": "1/4-1/2 tsp per 4 servings, often tempered"
+      },
+      {
+        "cuisine": "Pakistani",
+        "frequency": "occasional",
+        "typical_quantity": "1/4-1/2 tsp per 4 servings"
+      },
+      {
+        "cuisine": "Afghan",
+        "frequency": "occasional",
+        "typical_quantity": "1/4 tsp per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin's earthy warmth makes ajwain easier to integrate in doughs and legumes.",
+        "cuisines": [
+          "North Indian",
+          "Gujarati"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander adds citrusy sweetness to ajwain's thyme-like pungency.",
+        "cuisines": [
+          "North Indian"
+        ]
+      },
+      {
+        "spice": "Turmeric",
+        "affinity": "classic",
+        "note": "Turmeric gives savory vegetables a mellow base for the sharp seed aroma.",
+        "cuisines": [
+          "North Indian",
+          "Gujarati"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "complementary",
+        "note": "A little chili emphasizes ajwain's savory, warming side.",
+        "cuisines": [
+          "South Asian"
+        ]
+      },
+      {
+        "spice": "Fenugreek",
+        "affinity": "complementary",
+        "note": "Fenugreek's bitter-sweet quality pairs well in flatbreads and legumes.",
+        "cuisines": [
+          "Gujarati",
+          "North Indian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper reinforces the pungency while adding a cleaner lingering heat.",
+        "cuisines": [
+          "South Asian"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Thyme",
+        "similarity": 0.58,
+        "notes": "Echoes the thymol-rich herbal character but is less pungent and less bitter."
+      },
+      {
+        "spice": "Cumin",
+        "similarity": 0.35,
+        "notes": "Adds warm seed savoriness but lacks ajwain's medicinal thyme-like aroma."
+      },
+      {
+        "spice": "Caraway",
+        "similarity": 0.28,
+        "notes": "Offers aromatic seed warmth, though its anise-like profile is distinct."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Thymol",
+        "role": "Frequently reported as a major constituent of ajwain fruit essential oil; proportions vary across origins and samples."
+      },
+      {
+        "name": "p-Cymene",
+        "role": "A reported volatile in ajwain oil, contributing warm, terpene-like aromatic background."
+      },
+      {
+        "name": "γ-Terpinene",
+        "role": "A reported monoterpene in ajwain oil that contributes fresh, herbal-citrus notes."
+      },
+      {
+        "name": "Carvacrol",
+        "role": "A reported minor volatile in ajwain oil associated with pungent herbal character."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "At authorship, no ingredient-specific local USDA/FooDB/FlavorDB2 record had been inspected; literature compound associations were used. FlavorDB2 evidence was subsequently verified separately; axes remain authored estimates.",
+        "Trachyspermum ammi review: https://pmc.ncbi.nlm.nih.gov/articles/PMC3358968/"
+      ]
+    },
+    "evidence_sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 381,
+        "quality": "exact",
+        "moleculeCount": 155,
+        "url": "https://cosylab.iiitd.edu.in/flavordb2/entities_json?id=381",
+        "verified": "2026-10-17"
+      }
+    ]
+  },
+  "Black Cardamom": {
+    "id": "black-cardamom",
+    "name": "Black Cardamom",
+    "botanical_name": "Amomum subulatum",
+    "botanical_family": "Zingiberaceae",
+    "common_names": [
+      "Large cardamom",
+      "greater cardamom",
+      "Nepal cardamom",
+      "badi elaichi"
+    ],
+    "origin": "Eastern Himalaya, especially Nepal, Sikkim, and Bhutan",
+    "description": "Large, smoky-dried pods carry camphoraceous, resinous, and earthy warmth, with a distinctly savory edge. Use whole pods to perfume long-cooked rice, broths, and braises, then remove them before serving.",
+    "warmth": 62,
+    "brightness": 25,
+    "earthiness": 54,
+    "florality": 11,
+    "heat": 4,
+    "family": "warm",
+    "subfamilies": [
+      "smoky",
+      "camphoraceous",
+      "resinous"
+    ],
+    "heat_level": "mild",
+    "intensity": 69,
+    "commonality": 44,
+    "cuisines": [
+      {
+        "cuisine": "North Indian",
+        "frequency": "common",
+        "typical_quantity": "1-2 pods per 4 servings"
+      },
+      {
+        "cuisine": "Nepalese",
+        "frequency": "common",
+        "typical_quantity": "1-2 pods per 4 servings"
+      },
+      {
+        "cuisine": "Bhutanese",
+        "frequency": "occasional",
+        "typical_quantity": "1 pod per 4 servings"
+      },
+      {
+        "cuisine": "Chinese Sichuan",
+        "frequency": "occasional",
+        "typical_quantity": "1 pod per 4 servings in slow-cooked dishes"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin adds earthy continuity to black cardamom's smoky base.",
+        "cuisines": [
+          "North Indian",
+          "Nepalese"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander lifts the resinous depth with a lighter citrus-seed note.",
+        "cuisines": [
+          "North Indian"
+        ]
+      },
+      {
+        "spice": "Cloves",
+        "affinity": "classic",
+        "note": "Clove's sweet pungency fits the same slow-cooked aromatic mixtures.",
+        "cuisines": [
+          "North Indian"
+        ]
+      },
+      {
+        "spice": "Cinnamon",
+        "affinity": "classic",
+        "note": "Cinnamon bridges smoky warmth and the sweetness of rice or braises.",
+        "cuisines": [
+          "North Indian",
+          "Nepalese"
+        ]
+      },
+      {
+        "spice": "Bay leaves",
+        "affinity": "complementary",
+        "note": "Bay contributes leafy herbal depth to stocks and long-cooked dishes.",
+        "cuisines": [
+          "South Asian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper sharpens the heavy, resinous aroma with clean heat.",
+        "cuisines": [
+          "South Asian",
+          "Chinese"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Cardamom",
+        "similarity": 0.45,
+        "notes": "Shares cardamom-family aromatics but is sweeter, brighter, and lacks smoke."
+      },
+      {
+        "spice": "Allspice",
+        "similarity": 0.34,
+        "notes": "Can provide warm depth, though its clove-cinnamon profile is sweeter."
+      },
+      {
+        "spice": "Cloves",
+        "similarity": 0.27,
+        "notes": "Contributes pungent depth but not the camphoraceous smoky character."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "1,8-Cineole",
+        "role": "Often reported as a major black-cardamom-oil constituent, associated with its penetrating camphoraceous aroma; abundance varies by sample."
+      },
+      {
+        "name": "α-Terpinyl acetate",
+        "role": "A reported volatile contributing aromatic, lightly sweet-spicy notes."
+      },
+      {
+        "name": "Sabinene",
+        "role": "A reported monoterpene contributing fresh, peppery, woody facets."
+      },
+      {
+        "name": "Nerolidol",
+        "role": "A reported sesquiterpene alcohol that can contribute woody, floral aroma."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; cited samples are not local measurements and composition varies.",
+        "Black cardamom essential-oil study: https://pmc.ncbi.nlm.nih.gov/articles/PMC8249550/",
+        "Cardamom phytochemical review: https://pmc.ncbi.nlm.nih.gov/articles/PMC9562589/"
+      ]
+    }
+  },
+  "Annatto": {
+    "id": "annatto",
+    "name": "Annatto",
+    "botanical_name": "Bixa orellana",
+    "botanical_family": "Bixaceae",
+    "common_names": [
+      "Achiote",
+      "urucum",
+      "onoto",
+      "annatto"
+    ],
+    "origin": "Tropical Americas",
+    "description": "Annatto seeds are valued chiefly for their vivid orange-red color and mild, earthy, peppery aroma. Infuse whole seeds in warm oil or fat and strain; the colorant's flavor is subtle, while over-toasting can turn it bitter.",
+    "warmth": 30,
+    "brightness": 27,
+    "earthiness": 39,
+    "florality": 8,
+    "heat": 0,
+    "family": "earthy",
+    "subfamilies": [
+      "earthy",
+      "peppery",
+      "coloring"
+    ],
+    "heat_level": "mild",
+    "intensity": 35,
+    "commonality": 61,
+    "cuisines": [
+      {
+        "cuisine": "Mexican",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp seeds infused in oil per 4 servings"
+      },
+      {
+        "cuisine": "Yucatecan",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp achiote paste per 4 servings"
+      },
+      {
+        "cuisine": "Caribbean",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp seeds or annatto oil per 4 servings"
+      },
+      {
+        "cuisine": "Filipino",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp annatto seeds infused in oil per 4 servings"
+      },
+      {
+        "cuisine": "Brazilian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tsp urucum-infused oil per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin adds earthy depth to annatto's gentle peppery base.",
+        "cuisines": [
+          "Mexican",
+          "Caribbean"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander adds citrusy warmth to the mild seed flavor.",
+        "cuisines": [
+          "Mexican",
+          "Caribbean"
+        ]
+      },
+      {
+        "spice": "Oregano",
+        "affinity": "classic",
+        "note": "Oregano gives annatto-seasoned marinades a savory herbal counterpoint.",
+        "cuisines": [
+          "Mexican",
+          "Caribbean"
+        ]
+      },
+      {
+        "spice": "Garlic powder",
+        "affinity": "classic",
+        "note": "Garlic supplies savory depth while annatto colors the oil or paste.",
+        "cuisines": [
+          "Caribbean",
+          "Filipino"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper contributes a lingering bite to annatto's mild earthiness.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Allspice",
+        "affinity": "complementary",
+        "note": "Allspice adds sweet warm complexity in Caribbean-style seasoning.",
+        "cuisines": [
+          "Caribbean"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Paprika",
+        "similarity": 0.44,
+        "notes": "Adds red-orange color and mild pepper flavor but not annatto's characteristic pigment."
+      },
+      {
+        "spice": "Smoked paprika",
+        "similarity": 0.31,
+        "notes": "Provides color and savory warmth, with a much stronger smoky flavor."
+      },
+      {
+        "spice": "Turmeric",
+        "similarity": 0.24,
+        "notes": "Can color oil golden but tastes earthier and yellower."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Bixin",
+        "role": "The principal fat-soluble carotenoid pigment in annatto seed coatings; chiefly responsible for orange-red color, not a claim about measured flavor."
+      },
+      {
+        "name": "Norbixin",
+        "role": "A water-soluble carotenoid pigment derived from bixin and used in annatto color preparations."
+      },
+      {
+        "name": "Geranylgeraniol",
+        "role": "A reported isoprenoid constituent of Bixa orellana; included as phytochemical context rather than a dominant seed aroma claim."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; no measured concentrations are asserted.",
+        "Kew Plants of the World Online, Bixa orellana: https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:33335-2",
+        "EFSA review of annatto extracts bixin and norbixin: https://doi.org/10.2903/j.efsa.2016.4544",
+        "Carotenoid colorants review: https://pmc.ncbi.nlm.nih.gov/articles/PMC10670565/",
+        "Annatto geranylgeraniol chemistry: https://doi.org/10.1016/0031-9422(89)80298-5"
+      ]
+    }
+  },
+  "Epazote": {
+    "id": "epazote",
+    "name": "Epazote",
+    "botanical_name": "Dysphania ambrosioides",
+    "botanical_family": "Amaranthaceae",
+    "common_names": [
+      "Mexican tea",
+      "wormseed",
+      "paico",
+      "epazote"
+    ],
+    "origin": "Mexico and Central America; naturalized widely",
+    "description": "Epazote has a pungent, resinous, green aroma with citrus and medicinal facets; use the leaves sparingly, especially dried. It is a traditional seasoning for beans and quesadillas in Mexican cooking.",
+    "warmth": 20,
+    "brightness": 40,
+    "earthiness": 32,
+    "florality": 5,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "resinous",
+      "green",
+      "pungent"
+    ],
+    "heat_level": "mild",
+    "intensity": 68,
+    "commonality": 37,
+    "cuisines": [
+      {
+        "cuisine": "Mexican",
+        "frequency": "common",
+        "typical_quantity": "1-2 fresh sprigs per 4 servings"
+      },
+      {
+        "cuisine": "Oaxacan",
+        "frequency": "common",
+        "typical_quantity": "1-2 fresh sprigs per 4 servings"
+      },
+      {
+        "cuisine": "Guatemalan",
+        "frequency": "occasional",
+        "typical_quantity": "1 small sprig per 4 servings"
+      },
+      {
+        "cuisine": "Central American",
+        "frequency": "occasional",
+        "typical_quantity": "1 small sprig per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin complements the herb's resinous savoriness in beans.",
+        "cuisines": [
+          "Mexican"
+        ]
+      },
+      {
+        "spice": "Oregano",
+        "affinity": "complementary",
+        "note": "Oregano brings a familiar savory herbal note alongside epazote's sharper edge.",
+        "cuisines": [
+          "Mexican",
+          "Central American"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander contributes citrusy warmth that lifts the pungent green aroma.",
+        "cuisines": [
+          "Mexican"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "classic",
+        "note": "Chili heat suits epazote's assertive character in beans and stews.",
+        "cuisines": [
+          "Mexican"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper adds clean warmth without masking the resinous herb.",
+        "cuisines": [
+          "Global"
+        ]
+      },
+      {
+        "spice": "Garlic powder",
+        "affinity": "classic",
+        "note": "Garlic anchors epazote in savory bean and vegetable preparations.",
+        "cuisines": [
+          "Mexican"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Oregano",
+        "similarity": 0.35,
+        "notes": "Provides savory herbal flavor but lacks epazote's pungent, resinous character."
+      },
+      {
+        "spice": "Tarragon",
+        "similarity": 0.25,
+        "notes": "Adds assertive herbal complexity, though its anise note is different."
+      },
+      {
+        "spice": "Savory",
+        "similarity": 0.23,
+        "notes": "Offers pungent green herb notes without epazote's resinous profile."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Ascaridole",
+        "role": "A volatile reported in epazote oil, sometimes abundant; included as a literature association, with no concentration or safety inference for culinary use."
+      },
+      {
+        "name": "p-Cymene",
+        "role": "A reported volatile in some epazote oils, contributing warm, terpene-like aromatic background."
+      },
+      {
+        "name": "α-Terpinene",
+        "role": "A reported monoterpene in epazote oil contributing fresh, herbal-citrus character."
+      },
+      {
+        "name": "Carvacrol",
+        "role": "Reported in some epazote oil profiles and associated with pungent herbal notes; abundance varies."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "At authorship, no ingredient-specific local USDA/FooDB/FlavorDB2 record had been inspected; literature compound associations were used. FlavorDB2 evidence was subsequently verified separately; axes remain authored estimates.",
+        "Epazote essential oils review: https://pmc.ncbi.nlm.nih.gov/articles/PMC12251798/",
+        "Dysphania ambrosioides essential-oil study: https://pmc.ncbi.nlm.nih.gov/articles/PMC3976796/"
+      ]
+    },
+    "evidence_sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 708,
+        "quality": "exact",
+        "moleculeCount": 93,
+        "url": "https://cosylab.iiitd.edu.in/flavordb2/entities_json?id=708",
+        "verified": "2026-10-17"
+      }
+    ]
+  },
+  "Huacatay": {
+    "id": "huacatay",
+    "name": "Huacatay",
+    "botanical_name": "Tagetes minuta",
+    "botanical_family": "Asteraceae",
+    "common_names": [
+      "Huacatay",
+      "huacataya",
+      "wakataya",
+      "Peruvian black mint",
+      "wild marigold"
+    ],
+    "origin": "Andean South America, especially Peru and Bolivia",
+    "description": "Huacatay is the aromatic herb Tagetes minuta, also called Peruvian black mint, and is unrelated to true mint. Its pungent green aroma mixes minty, citrus, and tarragon-like facets; fresh leaves are especially distinctive in Peruvian sauces and stews.",
+    "warmth": 20,
+    "brightness": 58,
+    "earthiness": 28,
+    "florality": 16,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "minty",
+      "citrusy",
+      "pungent"
+    ],
+    "heat_level": "mild",
+    "intensity": 72,
+    "commonality": 30,
+    "cuisines": [
+      {
+        "cuisine": "Peruvian Andean",
+        "frequency": "common",
+        "typical_quantity": "1/4-1 cup chopped fresh leaves per 4 servings"
+      },
+      {
+        "cuisine": "Peruvian coastal",
+        "frequency": "common",
+        "typical_quantity": "2-4 tbsp fresh leaves or paste per 4 servings"
+      },
+      {
+        "cuisine": "Bolivian Andean",
+        "frequency": "occasional",
+        "typical_quantity": "2-4 tbsp chopped leaves per 4 servings"
+      },
+      {
+        "cuisine": "Ecuadorian",
+        "frequency": "rare",
+        "typical_quantity": "1-2 tbsp chopped leaves per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin grounds huacatay's vivid herbal aroma in sauces and meat marinades.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander's citrus seed note connects with huacatay's bright top notes.",
+        "cuisines": [
+          "Peruvian",
+          "Andean"
+        ]
+      },
+      {
+        "spice": "Chili powder",
+        "affinity": "classic",
+        "note": "Aji heat gives huacatay's minty-herbal aroma a savory framework.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Garlic powder",
+        "affinity": "classic",
+        "note": "Garlic rounds the herb's sharp green character in blended sauces.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper supports the herb's assertive, resinous side.",
+        "cuisines": [
+          "Andean"
+        ]
+      },
+      {
+        "spice": "Oregano",
+        "affinity": "complementary",
+        "note": "Oregano adds a familiar savory herb note to the distinctive huacatay aroma.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Mint",
+        "similarity": 0.32,
+        "notes": "Can imitate a fresh minty lift but lacks huacatay's Tagetes pungency and citrus-tarragon depth."
+      },
+      {
+        "spice": "Tarragon",
+        "similarity": 0.28,
+        "notes": "Adds assertive green, slightly anise-like notes without huacatay's minty citrus quality."
+      },
+      {
+        "spice": "Oregano",
+        "similarity": 0.24,
+        "notes": "Provides savory herbal backbone but is less bright and distinctive."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "(Z)-β-Ocimene",
+        "role": "A reported volatile in Tagetes minuta oil contributing fresh, green aromatic facets; oil composition varies by origin and plant part."
+      },
+      {
+        "name": "(Z)-Tagetone",
+        "role": "A reported characteristic Tagetes minuta oil constituent associated with its pungent herbal fragrance."
+      },
+      {
+        "name": "Dihydrotagetone",
+        "role": "A reported major volatile in some T. minuta oils, contributing herbaceous aromatic character."
+      },
+      {
+        "name": "(E)-Tagetenone",
+        "role": "A reported volatile constituent in T. minuta essential oil; no local concentration is available."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; volatile compounds are reported literature associations, not local measurements.",
+        "Tagetes minuta essential-oil review: https://pmc.ncbi.nlm.nih.gov/articles/PMC6278309/",
+        "Tagetes minuta phytochemistry review: https://doi.org/10.1016/j.sajb.2024.03.004"
+      ]
+    }
+  },
+  "Ají Amarillo": {
+    "id": "aji-amarillo",
+    "name": "Ají Amarillo",
+    "botanical_name": "Capsicum baccatum",
+    "botanical_family": "Solanaceae",
+    "common_names": [
+      "Ají amarillo",
+      "ají escabeche",
+      "Peruvian yellow chile",
+      "ají mirasol (dried form)"
+    ],
+    "origin": "Peru and the Andean region of South America",
+    "description": "Peruvian ají amarillo is a fleshy golden-orange Capsicum baccatum chile with fruity, citrusy flavor and noticeable but rounded heat. Fresh, frozen, paste, and dried mirasol forms differ in brightness and intensity; it is a defining Peruvian seasoning rather than a generic yellow pepper.",
+    "warmth": 31,
+    "brightness": 68,
+    "earthiness": 19,
+    "florality": 9,
+    "heat": 47,
+    "family": "hot-pungent",
+    "subfamilies": [
+      "fruity-chili",
+      "citrusy",
+      "Peruvian"
+    ],
+    "heat_level": "medium",
+    "intensity": 68,
+    "commonality": 42,
+    "cuisines": [
+      {
+        "cuisine": "Peruvian coastal",
+        "frequency": "common",
+        "typical_quantity": "1-2 fresh chiles or 1-2 tbsp paste per 4 servings"
+      },
+      {
+        "cuisine": "Peruvian Andean",
+        "frequency": "common",
+        "typical_quantity": "1-2 chiles or 1-2 tbsp paste per 4 servings"
+      },
+      {
+        "cuisine": "Peruvian Creole",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp paste per 4 servings"
+      },
+      {
+        "cuisine": "Bolivian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 chiles per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin adds earthy warmth to the chile's fruity citrus profile.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "classic",
+        "note": "Coriander reinforces the bright, citrusy side of ají amarillo.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Garlic powder",
+        "affinity": "classic",
+        "note": "Garlic provides a savory backbone for sauces and stews.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper adds dry warmth alongside the chile's direct capsaicin heat.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Oregano",
+        "affinity": "complementary",
+        "note": "Oregano gives the fruity chile a savory herbal counterpoint.",
+        "cuisines": [
+          "Peruvian",
+          "Bolivian"
+        ]
+      },
+      {
+        "spice": "Turmeric",
+        "affinity": "surprising",
+        "note": "A small amount complements yellow sauces with earthy color and warmth.",
+        "cuisines": [
+          "Peruvian fusion"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Cayenne",
+        "similarity": 0.43,
+        "notes": "Provides heat but is much less fruity and less citrusy; use less."
+      },
+      {
+        "spice": "Aleppo pepper",
+        "similarity": 0.39,
+        "notes": "Offers mild fruity chile flavor, but less brightness and usually less heat."
+      },
+      {
+        "spice": "Gochugaru",
+        "similarity": 0.34,
+        "notes": "Adds fruity warmth and color but has a different dried-chile profile."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Capsaicin",
+        "role": "A pungency compound found in Capsicum fruit; amount varies strongly by cultivar, growing conditions, and preparation."
+      },
+      {
+        "name": "Dihydrocapsaicin",
+        "role": "A pungent capsaicinoid commonly found with capsaicin in chile fruits; not measured for this profile."
+      },
+      {
+        "name": "β-Carotene",
+        "role": "A carotenoid pigment associated with orange-red Capsicum fruit color; profile does not assert a cultivar-specific amount."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; compounds are Capsicum-level literature associations and no measured levels are claimed.",
+        "PROMPERÚ, Los ajíes o chilis (Peruvian pepper names and identities): https://repositorio.promperu.gob.pe/bitstreams/49126bf2-f866-4cec-bc99-31b750984357/download",
+        "Peruvian environmental ministry overview of cultivated ají diversity: https://www.gob.pe/institucion/minam/noticias/300616-peru-es-el-unico-pais-que-tiene-toda-la-diversidad-de-ajies-cultivadoso",
+        "Capsicum taxonomy monograph: https://pmc.ncbi.nlm.nih.gov/articles/PMC9881532/"
+      ]
+    }
+  },
+  "Ají Panca": {
+    "id": "aji-panca",
+    "name": "Ají Panca",
+    "botanical_name": "Capsicum chinense",
+    "botanical_family": "Solanaceae",
+    "common_names": [
+      "Ají panca",
+      "ají especial",
+      "Peruvian red pepper",
+      "ají seco"
+    ],
+    "origin": "Peru",
+    "description": "Ají panca is a Peruvian chile most often used dried or as a paste, with a deep burgundy color, mild-to-moderate heat, and raisiny, smoky-fruity flavor. Taxonomic attributions for panca vary across sources; this profile follows Peruvian native-ají cataloguing that identifies it as Capsicum chinense.",
+    "warmth": 39,
+    "brightness": 40,
+    "earthiness": 45,
+    "florality": 8,
+    "heat": 31,
+    "family": "hot-pungent",
+    "subfamilies": [
+      "dried-chili",
+      "fruity",
+      "smoky"
+    ],
+    "heat_level": "medium",
+    "intensity": 59,
+    "commonality": 32,
+    "cuisines": [
+      {
+        "cuisine": "Peruvian coastal",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp paste per 4 servings"
+      },
+      {
+        "cuisine": "Peruvian Creole",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp rehydrated paste per 4 servings"
+      },
+      {
+        "cuisine": "Peruvian Andean",
+        "frequency": "common",
+        "typical_quantity": "1-2 tbsp paste per 4 servings"
+      },
+      {
+        "cuisine": "Bolivian",
+        "frequency": "occasional",
+        "typical_quantity": "1-2 tbsp paste per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Cumin",
+        "affinity": "classic",
+        "note": "Cumin reinforces the earthy bass notes of dried panca chile.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Garlic powder",
+        "affinity": "classic",
+        "note": "Garlic joins panca in robust marinades, sauces, and braises.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Oregano",
+        "affinity": "classic",
+        "note": "Oregano supplies a savory herbal note that balances dried-fruit sweetness.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper sharpens panca's mellow warmth without obscuring its fruitiness.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander adds a light citrus-seed note to the deep chile flavor.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Paprika",
+        "affinity": "complementary",
+        "note": "Paprika supports the red fruit and color while panca contributes deeper dried-chile flavor.",
+        "cuisines": [
+          "Peruvian fusion"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Ancho chili",
+        "similarity": 0.64,
+        "notes": "Closest broad substitute for mild dried-fruit sweetness, though panca is more distinctive and less raisiny."
+      },
+      {
+        "spice": "Pasilla",
+        "similarity": 0.48,
+        "notes": "Provides dark, fruity dried-chile depth with a different earthy profile."
+      },
+      {
+        "spice": "Smoked paprika",
+        "similarity": 0.36,
+        "notes": "Adds red color and smoke but lacks panca's chile-fruit flavor."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Capsaicin",
+        "role": "A pungency compound in Capsicum fruits; panca heat depends on cultivar and preparation and is not quantified here."
+      },
+      {
+        "name": "Dihydrocapsaicin",
+        "role": "A capsaicinoid typically reported alongside capsaicin in chiles; not measured in this profile."
+      },
+      {
+        "name": "β-Carotene",
+        "role": "A carotenoid associated with red-orange Capsicum pigments; cultivar-specific levels are not asserted."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; compounds are Capsicum-level literature associations, not panca-specific measurements.",
+        "INIA, Ajíes nativos peruanos catalog (lists ají panca as Capsicum chinense): https://repositorio.inia.gob.pe/bitstreams/006b5660-0020-4134-a262-5062fb361f3f/download",
+        "PROMPERÚ English guide (some Peruvian-market references assign panca differently, so identity can vary by source): https://repositorio.promperu.gob.pe/bitstream/handle/20.500.14152/1503/Pimientos_rocotos_ajies_peruano_espanol_2016_keyword_principal.pdf?isAllowed=y&sequence=8",
+        "Capsicum taxonomy monograph: https://pmc.ncbi.nlm.nih.gov/articles/PMC9881532/"
+      ]
+    }
+  },
+  "Rocoto": {
+    "id": "rocoto",
+    "name": "Rocoto",
+    "botanical_name": "Capsicum pubescens",
+    "botanical_family": "Solanaceae",
+    "common_names": [
+      "Rocoto",
+      "locoto",
+      "rocoto pepper",
+      "manzano pepper"
+    ],
+    "origin": "Andean South America, especially Peru and Bolivia",
+    "description": "Rocoto is the thick-fleshed, distinctly hot Andean chile Capsicum pubescens, often recognized by its dark seeds. It has juicy, fruity flavor and substantial lingering heat; it appears fresh in sauces, relishes, and stuffed preparations.",
+    "warmth": 35,
+    "brightness": 52,
+    "earthiness": 22,
+    "florality": 9,
+    "heat": 72,
+    "family": "hot-pungent",
+    "subfamilies": [
+      "fruity-chili",
+      "juicy",
+      "Andean"
+    ],
+    "heat_level": "hot",
+    "intensity": 76,
+    "commonality": 33,
+    "cuisines": [
+      {
+        "cuisine": "Peruvian Andean",
+        "frequency": "common",
+        "typical_quantity": "1/2-1 fresh chile per 4 servings, adjusted for heat"
+      },
+      {
+        "cuisine": "Peruvian coastal",
+        "frequency": "common",
+        "typical_quantity": "1/2-1 fresh chile per 4 servings"
+      },
+      {
+        "cuisine": "Bolivian",
+        "frequency": "common",
+        "typical_quantity": "1/2-1 locoto per 4 servings"
+      },
+      {
+        "cuisine": "Ecuadorian",
+        "frequency": "occasional",
+        "typical_quantity": "1/2 fresh chile per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Coriander",
+        "affinity": "classic",
+        "note": "Coriander brightens the juicy chile in fresh sauces and relishes.",
+        "cuisines": [
+          "Peruvian",
+          "Bolivian"
+        ]
+      },
+      {
+        "spice": "Cumin",
+        "affinity": "complementary",
+        "note": "Earthy cumin supports rocoto in cooked sauces and fillings.",
+        "cuisines": [
+          "Andean"
+        ]
+      },
+      {
+        "spice": "Garlic powder",
+        "affinity": "classic",
+        "note": "Garlic rounds the fruitiness in rocoto sauces.",
+        "cuisines": [
+          "Peruvian"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "complementary",
+        "note": "Pepper adds a dry second layer of warmth to the chile's direct heat.",
+        "cuisines": [
+          "Andean"
+        ]
+      },
+      {
+        "spice": "Oregano",
+        "affinity": "complementary",
+        "note": "Oregano gives fresh rocoto a savory herbal edge.",
+        "cuisines": [
+          "Peruvian",
+          "Bolivian"
+        ]
+      },
+      {
+        "spice": "Cayenne",
+        "affinity": "surprising",
+        "note": "A small amount can reinforce heat when rocoto is used for fruity aroma rather than full pungency.",
+        "cuisines": [
+          "Global fusion"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Cayenne",
+        "similarity": 0.49,
+        "notes": "Matches substantial heat but lacks rocoto's juicy fruit character."
+      },
+      {
+        "spice": "Habanero",
+        "similarity": 0.45,
+        "notes": "Provides fruity high heat but has a more tropical, floral aroma."
+      },
+      {
+        "spice": "Scotch bonnet",
+        "similarity": 0.39,
+        "notes": "Offers fruity heat, though it is not an Andean pepper and has a distinct aroma."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Capsaicin",
+        "role": "A pungency compound in Capsicum fruit; cultivar and preparation cause large variation, so no measured level is claimed."
+      },
+      {
+        "name": "Dihydrocapsaicin",
+        "role": "A capsaicinoid commonly present in hot Capsicum fruit; not measured for this profile."
+      },
+      {
+        "name": "β-Carotene",
+        "role": "A carotenoid pigment found in many Capsicum fruits; included as genus-level context, not a rocoto-specific assay."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; compounds are genus-level literature associations, not rocoto-specific measurements.",
+        "PROMPERÚ, Los ajíes o chilis (identifies rocoto as Capsicum pubescens): https://repositorio.promperu.gob.pe/bitstreams/49126bf2-f866-4cec-bc99-31b750984357/download",
+        "Peruvian environmental ministry overview of cultivated ají diversity: https://www.gob.pe/institucion/minam/noticias/300616-peru-es-el-unico-pais-que-tiene-toda-la-diversidad-de-ajies-cultivadoso",
+        "Capsicum taxonomy monograph: https://pmc.ncbi.nlm.nih.gov/articles/PMC9881532/"
+      ]
+    }
+  },
+  "Juniper Berry": {
+    "id": "juniper-berry",
+    "name": "Juniper Berry",
+    "botanical_name": "Juniperus communis",
+    "botanical_family": "Cupressaceae",
+    "common_names": [
+      "Common juniper berry",
+      "juniper berry",
+      "gin berry"
+    ],
+    "origin": "Northern Hemisphere, including Europe, northern Asia, and North America",
+    "description": "The berry-like cones of common juniper taste resinous, piney, peppery, and faintly citrusy, with a bitter finish if used heavily. Crush lightly and use in moderation with game, cabbage, marinades, or brines.",
+    "warmth": 33,
+    "brightness": 39,
+    "earthiness": 40,
+    "florality": 12,
+    "heat": 0,
+    "family": "herbal",
+    "subfamilies": [
+      "piney",
+      "resinous",
+      "citrusy"
+    ],
+    "heat_level": "mild",
+    "intensity": 62,
+    "commonality": 42,
+    "cuisines": [
+      {
+        "cuisine": "Scandinavian",
+        "frequency": "common",
+        "typical_quantity": "3-6 lightly crushed berries per 4 servings"
+      },
+      {
+        "cuisine": "Central European",
+        "frequency": "common",
+        "typical_quantity": "3-6 berries per 4 servings"
+      },
+      {
+        "cuisine": "German",
+        "frequency": "common",
+        "typical_quantity": "3-6 berries per 4 servings in braises or brines"
+      },
+      {
+        "cuisine": "British",
+        "frequency": "occasional",
+        "typical_quantity": "2-4 berries per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Black Pepper",
+        "affinity": "classic",
+        "note": "Pepper brings a dry bite that complements juniper's piney resin.",
+        "cuisines": [
+          "European"
+        ]
+      },
+      {
+        "spice": "Bay leaves",
+        "affinity": "classic",
+        "note": "Bay adds a leafy woodsy note for brines, game, and braises.",
+        "cuisines": [
+          "Scandinavian",
+          "Central European"
+        ]
+      },
+      {
+        "spice": "Rosemary",
+        "affinity": "complementary",
+        "note": "Rosemary echoes the coniferous aroma while adding a savory herbal note.",
+        "cuisines": [
+          "European"
+        ]
+      },
+      {
+        "spice": "Caraway",
+        "affinity": "classic",
+        "note": "Caraway's warm seed aroma pairs naturally with cabbage and cured meats.",
+        "cuisines": [
+          "Central European"
+        ]
+      },
+      {
+        "spice": "Thyme",
+        "affinity": "complementary",
+        "note": "Thyme softens juniper's resinous edge with a familiar savory herb note.",
+        "cuisines": [
+          "European"
+        ]
+      },
+      {
+        "spice": "Allspice",
+        "affinity": "complementary",
+        "note": "Allspice contributes warm clove-like sweetness to juniper-seasoned braises.",
+        "cuisines": [
+          "Central European"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Rosemary",
+        "similarity": 0.38,
+        "notes": "Provides a piney herbal direction but lacks juniper's berry-like resin and citrus."
+      },
+      {
+        "spice": "Black Pepper",
+        "similarity": 0.29,
+        "notes": "Adds pungency and warmth but misses the forest-like aroma."
+      },
+      {
+        "spice": "Allspice",
+        "similarity": 0.26,
+        "notes": "Gives aromatic warmth, though it is sweeter and less resinous."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "α-Pinene",
+        "role": "Often reported as a prominent volatile in juniper berry oil, associated with pine-like aroma; proportions vary by geography and sample."
+      },
+      {
+        "name": "Sabinene",
+        "role": "A reported juniper-oil monoterpene contributing woody, peppery facets."
+      },
+      {
+        "name": "Myrcene",
+        "role": "A reported volatile in juniper berry oil contributing green, balsamic aroma."
+      },
+      {
+        "name": "Limonene",
+        "role": "A reported terpene contributing citrus-like brightness in some juniper oils."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "No ingredient-specific USDA, FooDB, or FlavorDB2 cache record in local project data; volatile profiles vary, and no measured quantities are asserted.",
+        "US Forest Service, Juniperus communis: https://research.fs.usda.gov/feis/species-reviews/juncom",
+        "Juniperus communis review: https://pmc.ncbi.nlm.nih.gov/articles/PMC4897106/",
+        "Juniper berry chemistry review: https://pmc.ncbi.nlm.nih.gov/articles/PMC8952110/"
+      ]
+    }
+  },
+  "Savory": {
+    "id": "savory",
+    "name": "Savory",
+    "botanical_name": "Satureja hortensis",
+    "botanical_family": "Lamiaceae",
+    "common_names": [
+      "Summer savory",
+      "summer savory herb",
+      "savory"
+    ],
+    "origin": "Southeastern Europe to western Asia; cultivated widely",
+    "description": "This profile means summer savory (Satureja hortensis), an assertive green herb with peppery, thyme-like warmth and a faintly bitter finish. Fresh or dried leaves season beans, vegetables, poultry, and sausages; winter savory is a separate related species.",
+    "warmth": 43,
+    "brightness": 35,
+    "earthiness": 37,
+    "florality": 10,
+    "heat": 4,
+    "family": "herbal",
+    "subfamilies": [
+      "peppery",
+      "thyme-like",
+      "savory"
+    ],
+    "heat_level": "mild",
+    "intensity": 58,
+    "commonality": 41,
+    "cuisines": [
+      {
+        "cuisine": "Balkan",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp dried or 1-2 tbsp fresh per 4 servings"
+      },
+      {
+        "cuisine": "Bulgarian",
+        "frequency": "common",
+        "typical_quantity": "1-2 tsp dried per 4 servings"
+      },
+      {
+        "cuisine": "French",
+        "frequency": "occasional",
+        "typical_quantity": "1 tsp dried or 1 tbsp fresh per 4 servings"
+      },
+      {
+        "cuisine": "German",
+        "frequency": "occasional",
+        "typical_quantity": "1 tsp dried per 4 servings"
+      }
+    ],
+    "top_pairings": [
+      {
+        "spice": "Thyme",
+        "affinity": "classic",
+        "note": "Thyme shares savory herbal notes while keeping summer savory's peppery edge in balance.",
+        "cuisines": [
+          "European"
+        ]
+      },
+      {
+        "spice": "Rosemary",
+        "affinity": "complementary",
+        "note": "Rosemary adds piney depth to savory's green, peppery character.",
+        "cuisines": [
+          "French",
+          "Balkan"
+        ]
+      },
+      {
+        "spice": "Black Pepper",
+        "affinity": "classic",
+        "note": "Pepper reinforces the herb's warming, piquant impression.",
+        "cuisines": [
+          "European"
+        ]
+      },
+      {
+        "spice": "Bay leaves",
+        "affinity": "complementary",
+        "note": "Bay creates a rounded herbal base for beans and braises.",
+        "cuisines": [
+          "Balkan",
+          "German"
+        ]
+      },
+      {
+        "spice": "Coriander",
+        "affinity": "complementary",
+        "note": "Coriander adds a mild citrus lift to summer savory's pungency.",
+        "cuisines": [
+          "Balkan"
+        ]
+      },
+      {
+        "spice": "Cumin",
+        "affinity": "surprising",
+        "note": "A little cumin deepens savory bean dishes with an earthy seed note.",
+        "cuisines": [
+          "Balkan"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "spice": "Thyme",
+        "similarity": 0.62,
+        "notes": "Closest common substitute, though less peppery and somewhat sweeter."
+      },
+      {
+        "spice": "Oregano",
+        "similarity": 0.42,
+        "notes": "Provides pungent herbal flavor but has a more floral, Mediterranean profile."
+      },
+      {
+        "spice": "Marjoram",
+        "similarity": 0.33,
+        "notes": "Offers gentle savory herb notes but is milder and sweeter."
+      }
+    ],
+    "key_compounds": [
+      {
+        "name": "Carvacrol",
+        "role": "A commonly reported summer-savory volatile associated with pungent, warm herbal aroma; proportions vary by plant and sample."
+      },
+      {
+        "name": "Thymol",
+        "role": "A reported volatile in summer savory contributing thyme-like pungency; not a local measurement."
+      },
+      {
+        "name": "γ-Terpinene",
+        "role": "A reported monoterpene in savory essential oil contributing fresh, herbal-citrus facets."
+      },
+      {
+        "name": "Rosmarinic acid",
+        "role": "A reported phenolic acid in summer savory extracts; included as phytochemical context, not a volatile aroma measurement."
+      }
+    ],
+    "generation_provenance": {
+      "method": "locally authored",
+      "model": "gpt-6-luna",
+      "axes": "estimated, not measured",
+      "compound_sources": [
+        "At authorship, no ingredient-specific local USDA/FooDB/FlavorDB2 record had been inspected; literature compound associations were used. FlavorDB2 evidence was subsequently verified separately; axes remain authored estimates.",
+        "Kew Plants of the World Online, Satureja hortensis: https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:457680-1",
+        "Aromatic herbs review including summer savory compounds: https://pmc.ncbi.nlm.nih.gov/articles/PMC11944975/"
+      ]
+    },
+    "evidence_sources": [
+      {
+        "source": "FlavorDB2",
+        "entityId": 444,
+        "quality": "exact",
+        "moleculeCount": 122,
+        "url": "https://cosylab.iiitd.edu.in/flavordb2/entities_json?id=444",
+        "verified": "2026-10-17"
+      }
+    ]
+  }
+}
