@@ -25,6 +25,9 @@ const ARC_MAX = 8; // partners drawn across the whole selection
 const R = 5.5; // half-size of the flavor box in world units
 const FLOOR = -R;
 
+type SnapView = 'overview' | 'xy' | 'xz' | 'zy';
+type SnapRequest = { view: SnapView };
+
 type FlavorDim = 'warmth' | 'brightness' | 'earthiness' | 'florality' | 'heat';
 
 const DIMS: { key: FlavorDim; label: string }[] = [
@@ -506,9 +509,11 @@ function CameraDirector({
   controls,
   focus,
   morph,
+  snap,
 }: {
   controls: React.RefObject<OrbitControlsImpl | null>;
   focus: THREE.Vector3 | null;
+  snap: SnapRequest | null;
   morph?: React.RefObject<MapMorph>;
 }) {
   const portrait = useThree((s) => s.size.width / s.size.height < 0.85);
@@ -525,6 +530,23 @@ function CameraDirector({
   const turnRotation = useMemo(() => new THREE.Quaternion(), []);
   const origin = useMemo(() => new THREE.Vector3(), []);
   const tmp = useMemo(() => new THREE.Vector3(), []);
+  const animation = useRef<{ position: THREE.Vector3; target: THREE.Vector3; offset: THREE.Vector3; elapsed: number } | null>(null);
+  const get = useThree((s) => s.get);
+  useEffect(() => {
+    animation.current = null;
+    if (!snap || !controls.current) return;
+    done.current = true;
+    const distance = endOffset.length();
+    const offsets = {
+      overview: endOffset.clone(),
+      xy: new THREE.Vector3(0, 0, distance),
+      xz: new THREE.Vector3(0, distance, 0.001),
+      zy: new THREE.Vector3(distance, 0, 0),
+    };
+    const c = controls.current;
+    c.update();
+    animation.current = { position: get().camera.position.clone(), target: c.target.clone(), offset: offsets[snap.view], elapsed: 0 };
+  }, [snap, controls, endOffset, get]);
   useFrame((frame, dt) => {
     const c = controls.current;
     if (!c) return;
@@ -553,6 +575,22 @@ function CameraDirector({
       saved.current = null;
       done.current = true;
     }
+    const move = animation.current;
+    if (move) {
+      move.elapsed += Math.min(dt, 0.1);
+      const progress = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : easeOutCubic(move.elapsed / 0.65);
+      const target = snap?.view === 'overview' ? home : origin;
+      c.target.copy(move.target).lerp(target, progress);
+      tmp.copy(move.position).sub(move.target);
+      const distance = THREE.MathUtils.lerp(tmp.length(), move.offset.length(), progress);
+      rotation.setFromUnitVectors(direction.copy(tmp).normalize(), move.offset.clone().normalize());
+      turnRotation.identity().slerp(rotation, progress);
+      frame.camera.position.copy(tmp.normalize().applyQuaternion(turnRotation).multiplyScalar(distance)).add(c.target);
+      c.update();
+      if (progress >= 1) animation.current = null;
+      return;
+    }
+    if (snap) return;
     if (!done.current) {
       const p = easeOutCubic(introTime.current / 2.2);
       frame.camera.position.copy(tmp.copy(startOffset).lerp(endOffset, p).add(c.target));
@@ -715,12 +753,15 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
   const [yDim, setYDim] = useState<FlavorDim>('brightness');
   const [zDim, setZDim] = useState<FlavorDim>('earthiness');
   const [axesOpen, setAxesOpen] = useState(false);
+  const [viewsOpen, setViewsOpen] = useState(false);
+  const [snap, setSnap] = useState<SnapRequest | null>(null);
   const [touched, setTouched] = useState(false);
   const [labelled, setLabelled] = useState<Map<string, number>>(new Map());
   const [pointer, setPointer] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
   const hoveredSpice = hovered ? data.find((s) => s.id === hovered) ?? null : null;
   const controls = useRef<OrbitControlsImpl | null>(null);
   const axesRef = useRef<HTMLDivElement>(null);
+  const viewsButton = useRef<HTMLButtonElement>(null);
   const { selectedSpiceIds, toggleSpice, hoveredSpiceId, setHovered } = useSelection();
   const onHover = useCallback(
     (id: string | null) => {
@@ -789,12 +830,12 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
   const candidateIds = useMemo(() => new Set(labelCandidates.map((c) => c.id)), [labelCandidates]);
 
   useEffect(() => {
-    if (!axesOpen) return;
+    if (!axesOpen && !viewsOpen) return;
     const onDown = (e: PointerEvent) => {
-      if (!axesRef.current?.contains(e.target as Node)) setAxesOpen(false);
+      if (!axesRef.current?.contains(e.target as Node)) { setAxesOpen(false); setViewsOpen(false); }
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setAxesOpen(false);
+      if (e.key === 'Escape') { setAxesOpen(false); setViewsOpen(false); if (viewsOpen) viewsButton.current?.focus(); }
     };
     document.addEventListener('pointerdown', onDown);
     document.addEventListener('keydown', onKey);
@@ -802,7 +843,7 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
       document.removeEventListener('pointerdown', onDown);
       document.removeEventListener('keydown', onKey);
     };
-  }, [axesOpen]);
+  }, [axesOpen, viewsOpen]);
 
   function chooseAxis(axis: 'x' | 'y' | 'z', value: FlavorDim) {
     const current = { x: xDim, y: yDim, z: zDim };
@@ -886,13 +927,13 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
           enableZoom
           minDistance={8}
           maxDistance={34}
-          enableDamping={!transitioning}
+          enableDamping={!transitioning && !snap}
           dampingFactor={0.08}
           autoRotate={active && !transitioning && !touched && !hasSelection}
           autoRotateSpeed={0.22}
-          onStart={() => setTouched(true)}
+          onStart={() => { setTouched(true); setSnap(null); }}
         />
-        <CameraDirector controls={controls} focus={focus} morph={morph} />
+        <CameraDirector controls={controls} focus={focus} morph={morph} snap={snap} />
       </Canvas>
 
       {/* Hover card follows the pointer and flips away from edges, so it is never clipped. */}
@@ -912,24 +953,58 @@ export default function FlavorMap3D({ data, panelInsets = { right: 0, bottom: 0 
         </div>
       )}
 
-      {/* Arrange-by chip: opens the three axis pickers */}
+      {/* Axis and camera controls share a compact toolbar. */}
       <div ref={axesRef} className="absolute left-4 top-4 z-50" style={{ opacity: transitioning ? 0 : 1, transition: 'opacity 120ms' }}>
-        <button
-          type="button"
-          onClick={() => setAxesOpen((v) => !v)}
-          aria-expanded={axesOpen}
-          title="Choose what the three axes show"
-          className="flex h-9 items-center gap-2 rounded-full bg-board-raised/95 pl-3.5 pr-3 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14),0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3),0_8px_24px_rgba(0,0,0,0.3)]"
-        >
-          <span style={{ color: FLAVOR_DIM_COLORS[xDim] }}>{label(xDim)}</span>
-          <span className="text-chalk-3">×</span>
-          <span style={{ color: FLAVOR_DIM_COLORS[yDim] }}>{label(yDim)}</span>
-          <span className="text-chalk-3">×</span>
-          <span style={{ color: FLAVOR_DIM_COLORS[zDim] }}>{label(zDim)}</span>
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden className={`text-chalk-2 transition-transform ${axesOpen ? 'rotate-180' : ''}`}>
-            <path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
+        <div className="flex max-w-[calc(100vw-2rem)] flex-wrap items-start gap-2">
+          <button
+            type="button"
+            onClick={() => { setAxesOpen((v) => !v); setViewsOpen(false); }}
+            aria-expanded={axesOpen}
+            title="Choose what the three axes show"
+            className="flex h-9 items-center gap-2 rounded-full bg-board-raised/95 pl-3.5 pr-3 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14),0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur transition-shadow hover:shadow-[inset_0_0_0_1px_rgba(243,239,232,0.3),0_8px_24px_rgba(0,0,0,0.3)]"
+          >
+            <span style={{ color: FLAVOR_DIM_COLORS[xDim] }}>{label(xDim)}</span>
+            <span className="text-chalk-3">×</span>
+            <span style={{ color: FLAVOR_DIM_COLORS[yDim] }}>{label(yDim)}</span>
+            <span className="text-chalk-3">×</span>
+            <span style={{ color: FLAVOR_DIM_COLORS[zDim] }}>{label(zDim)}</span>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden className={`text-chalk-2 transition-transform ${axesOpen ? 'rotate-180' : ''}`}>
+              <path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            ref={viewsButton}
+            onClick={() => { setViewsOpen((v) => !v); setAxesOpen(false); }}
+            aria-expanded={viewsOpen}
+            aria-controls="map-camera-views"
+            disabled={!active || transitioning}
+            className="flex h-9 items-center gap-2 rounded-full bg-board-raised/95 px-3.5 text-small font-medium text-chalk shadow-[inset_0_0_0_1px_rgba(243,239,232,0.14),0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur hover:bg-board-high"
+          >
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m8 1 6 3.5v7L8 15l-6-3.5v-7L8 1Zm0 7 6-3.5M8 8 2 4.5M8 8v7" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" /></svg>
+            Views
+          </button>
+        </div>
+        {viewsOpen && (
+          <div id="map-camera-views" role="group" aria-label="Camera views" className="rise-in mt-2 grid gap-1 rounded-xl bg-board-raised/95 p-2 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.12),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur">
+            {([
+              { view: 'overview', name: 'Overview', hint: 'Angled 3D view' },
+              { view: 'xy', name: `${label(xDim)} × ${label(yDim)}`, hint: 'Front' },
+              { view: 'xz', name: `${label(xDim)} × ${label(zDim)}`, hint: 'Top' },
+              { view: 'zy', name: `${label(zDim)} × ${label(yDim)}`, hint: 'Side' },
+            ] as const).map(({ view, name, hint }) => (
+              <button
+                key={view}
+                type="button"
+                aria-pressed={snap?.view === view}
+                onClick={() => { setTouched(true); setSnap({ view }); setViewsOpen(false); viewsButton.current?.focus(); }}
+                className={`flex min-h-10 items-center justify-between gap-5 rounded-lg px-3 text-left text-small transition-colors ${snap?.view === view ? 'bg-chalk text-board' : 'text-chalk hover:bg-board-high'}`}
+              >
+                <span>{name}</span><span className="text-micro opacity-70">{hint}</span>
+              </button>
+            ))}
+          </div>
+        )}
         {axesOpen && (
           <div className="rise-in mt-2 grid gap-2 rounded-xl bg-board-raised/95 p-3 shadow-[inset_0_0_0_1px_rgba(243,239,232,0.12),0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur">
             {axisRows.map(({ axis, name, value }) => (
