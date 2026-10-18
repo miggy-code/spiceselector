@@ -60,7 +60,7 @@ export default function MapPairingPanel({ data, onFindSubstitutes, onLayoutChang
   const { selectedSpiceIds, toggleSpice, clearSelection, setHovered } = useSelection();
   const { rackIds, rackOnly } = useRack();
   const panelRef = useRef<HTMLDivElement>(null);
-  const [chosenTab, setChosenTab] = useState<Tab>('ideas');
+  const [chosenTab, setChosenTab] = useState<Tab>('blend');
   const [chipsExpanded, setChipsExpanded] = useState(false);
 
   useEffect(() => {
@@ -139,19 +139,15 @@ export default function MapPairingPanel({ data, onFindSubstitutes, onLayoutChang
 
   const hasSelection = selectedSpiceIds.size > 0;
   const blendTids = Array.from(selectedTaxonomyIds);
-  const canBlend = blendTids.length >= 2;
 
-  // Selection going 0 → some jumps to Pairings, and back to Ideas at 0; otherwise the user's tab sticks.
+  // A first selection opens its pairings; clearing returns to the blend catalog.
   const [prevHasSelection, setPrevHasSelection] = useState(hasSelection);
   if (prevHasSelection !== hasSelection) {
     setPrevHasSelection(hasSelection);
-    setChosenTab(hasSelection ? 'pairings' : 'ideas');
+    setChosenTab(hasSelection ? 'pairings' : 'blend');
   }
-  // A tab that has become unavailable (e.g. Blend after removing spices) falls back.
-  const tab: Tab = chosenTab === 'blend' && !canBlend ? (hasSelection ? 'pairings' : 'ideas')
-    : chosenTab === 'pairings' && !hasSelection ? 'ideas'
-    : chosenTab;
-  const tabEnabled = (id: Tab) => (id === 'pairings' ? hasSelection : id === 'blend' ? canBlend : true);
+  const tab: Tab = chosenTab === 'pairings' && !hasSelection ? 'blend' : chosenTab;
+  const tabEnabled = (id: Tab) => id !== 'pairings' || hasSelection;
 
   const slugFamilies = useMemo(() => {
     const map = new Map<string, string>();
@@ -283,12 +279,12 @@ export default function MapPairingPanel({ data, onFindSubstitutes, onLayoutChang
                   <BlendSection selectedTids={blendTids} tidToSlug={tidToSlug} />
                   {bridge && <BridgeRow bridge={bridge} tidToSlug={tidToSlug} />}
                   <ClassicBlendHint selectedTids={blendTids} tidToSlug={tidToSlug} />
+                  <ClassicBlendStarters tidToSlug={tidToSlug} />
                 </>
               )}
 
               {tab === 'ideas' && (
                 <>
-                  <ClassicBlendStarters tidToSlug={tidToSlug} />
                   <SavedBlendsList slugFamilies={slugFamilies} />
                   <DishSection tidToSlug={tidToSlug} selectedTids={selectedTaxonomyIds} />
                   <SurpriseSection tidToSlug={tidToSlug} selectedTaxonomyIds={selectedTaxonomyIds} />
@@ -380,9 +376,6 @@ function Suggestions({
   const hiddenCount = suggestions.length - shown.length;
   return (
     <section className="px-5 pt-2" aria-label="Suggested pairings">
-      <div className="flex justify-end pb-1 pr-9 text-micro text-chalk-3" aria-hidden>
-        Recipes · Chemistry · Tradition
-      </div>
       <ul>
         {shown.map((p, i) => {
           const slug = tidToSlug.get(p.spiceId);
@@ -406,8 +399,10 @@ function Suggestions({
                   className="-ml-2 flex min-w-0 flex-1 items-center gap-2.5 rounded-lg px-2 py-1.5 text-left"
                 >
                   <Swatch tid={p.spiceId} size={20} />
-                  <span className="min-w-0 flex-1 truncate text-body font-medium text-chalk">{p.spiceName}</span>
-                  <EvidencePips pairing={p} />
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-body font-medium text-chalk">{p.spiceName}</span>
+                    <EvidencePips pairing={p} />
+                  </span>
                 </button>
                 {slug ? (
                   <AddButton label={`Add ${p.spiceName} to your blend`} onClick={() => onAdd(slug)} />
@@ -438,24 +433,27 @@ function EvidencePips({ pairing }: { pairing: RankedPairing }) {
     { label: 'Tradition', value: 1, text: TRADITION_WORDS[pairing.affinity], strong: strong.tradition },
   ];
   return (
-    <span className="flex shrink-0 items-center gap-1.5">
+    <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-micro text-chalk-2">
       {pips.map((pip) => {
         const present = pip.value !== null;
         return (
           <span
             key={pip.label}
             title={present ? `${pip.label} ${pip.text}` : `${pip.label}: no data`}
-            className="grid h-3 w-3 place-items-center"
+            className="inline-flex items-center gap-1"
           >
-            <span
-              className={`block rounded-full ${
-                !present
-                  ? 'h-[3px] w-[3px] bg-chalk-3/50'
-                  : pip.strong
-                    ? 'h-2.5 w-2.5 bg-chalk'
-                    : 'h-2.5 w-2.5 shadow-[inset_0_0_0_1.5px_rgba(243,239,232,0.4)]'
-              }`}
-            />
+            <span>{pip.label}</span>
+            <span className="grid h-3 w-3 shrink-0 place-items-center" aria-hidden="true">
+              <span
+                className={`block rounded-full ${
+                  !present
+                    ? 'h-[3px] w-[3px] bg-chalk-3/50'
+                    : pip.strong
+                      ? 'h-2.5 w-2.5 bg-chalk'
+                      : 'h-2.5 w-2.5 shadow-[inset_0_0_0_1.5px_rgba(243,239,232,0.4)]'
+                }`}
+              />
+            </span>
           </span>
         );
       })}
