@@ -1,6 +1,5 @@
 'use client';
 
-import { useMemo } from 'react';
 import { useSelection } from '@/context/SelectionContext';
 import { allClassicBlends } from '@/lib/classic-blends';
 import { Section, SwatchStack } from './ui';
@@ -10,15 +9,13 @@ interface ClassicBlendStartersProps {
   tidToSlug: Map<string, string>;
 }
 
-const FEATURED_IDS = ['garam-masala', 'chinese-five-spice', 'zaatar', 'herbes-de-provence', 'berbere'];
-
 /**
  * "Start from a blend": each classic is drawn as a stack of its spices' real
  * colors, so the list reads like jars on a shelf.
  */
 export default function ClassicBlendStarters({ tidToSlug }: ClassicBlendStartersProps) {
   const { selectSpices } = useSelection();
-  const featured = useMemo(() => allClassicBlends.filter((b) => FEATURED_IDS.includes(b.id)), []);
+  const featured = allClassicBlends();
 
   return (
     <Section title="Start from a blend">

@@ -1,7 +1,7 @@
 import type { CompoundOverlap, PairingLink } from "@/types/pairing";
-import pairingScoresData from "@/data/pairing-scores.json";
 import { compoundScore, getCompoundOverlap, getCuratedLabel } from "./pairing-engine";
 import { spiceName } from "./spice-list";
+import { catalog } from "./catalog-runtime";
 
 /**
  * Surprise pairing generator (PLAN.md Step 7).
@@ -119,7 +119,7 @@ export function rankSurprises(options: SurpriseOptions = {}): SurprisePairing[] 
   const { forSpiceId, limit = 10, perSpiceCap = 2 } = options;
 
   const scored: SurprisePairing[] = [];
-  for (const pair of pairingScoresData as PairScore[]) {
+  for (const pair of catalog().pairingScores as PairScore[]) {
     if (forSpiceId && pair.a !== forSpiceId && pair.b !== forSpiceId) continue;
     const surprise = scorePair(pair);
     if (surprise && surprise.surpriseScore > 0) scored.push(surprise);

@@ -1,57 +1,41 @@
-import MapClientLoader from '@/components/MapClientLoader';
-import { promises as fs } from 'fs';
-import path from 'path';
-import type { GeneratedProfile, SpiceProfile } from '@/types/spice';
-import { toTaxonomyId } from '@/lib/spice-id-map';
-import { spiceName, displayName } from '@/lib/spice-list';
+import CatalogShell from "@/components/CatalogShell";
+import { getCatalogSnapshot } from "@/lib/catalog-server";
+import { createTaxonomyResolver, displayName } from "@/lib/spice-resolver";
+import type { FlavorNode, GeneratedProfile, SpiceProfile } from "@/types/spice";
+
+export const dynamic = "force-dynamic";
+
+function toProfiles(raw: Record<string, unknown>, order: string[], taxonomy: FlavorNode): SpiceProfile[] {
+  const resolver = createTaxonomyResolver(taxonomy);
+  return order.map((key) => raw[key] as GeneratedProfile).filter(Boolean).map((p) => {
+    const tid = resolver.toTaxonomyId(p.id, p.name);
+    return {
+      id: p.id, name: tid ? resolver.spiceName(tid) : displayName(p.name), family: p.family, description: p.description || null,
+      warmth: p.warmth || 0, brightness: p.brightness || 0, earthiness: p.earthiness || 0, florality: p.florality || 0, heat: p.heat || 0,
+      intensity: p.intensity || 50, commonality: p.commonality || 50, origin: p.origin || null, heat_level: p.heat_level || null,
+      key_compounds: p.key_compounds || [], top_pairings: (p.top_pairings || []).slice(0, 4), cuisines: (p.cuisines || []).slice(0, 4),
+      cuisine_names: (p.cuisines || []).map((c) => c.cuisine), subfamilies: p.subfamilies || [],
+      substitutes: (p.substitutes || []).slice(0, 6).map((s) => ({ spice: s.spice, similarity: s.similarity ?? null, notes: s.notes ?? null })),
+    };
+  });
+}
 
 export default async function Home() {
-  // Load spice profiles from the committed pipeline output (no backend needed)
-  let data: SpiceProfile[] = [];
   try {
-    const rawData = await fs.readFile(path.join(process.cwd(), 'ingestion/generated_profiles.json'), 'utf8');
-    const profiles = JSON.parse(rawData) as Record<string, GeneratedProfile>;
-    
-    data = Object.values(profiles).map((p) => ({
-      id: p.id,
-      // One canonical name per spice (taxonomy name, sentence case), so every view agrees.
-      name: (() => { const tid = toTaxonomyId(p.id, p.name); return tid ? spiceName(tid) : displayName(p.name); })(),
-      family: p.family,
-      description: p.description || null,
-      warmth: p.warmth || 0,
-      brightness: p.brightness || 0,
-      earthiness: p.earthiness || 0,
-      florality: p.florality || 0,
-      heat: p.heat || 0,
-      intensity: p.intensity || 50,
-      commonality: p.commonality || 50,
-      origin: p.origin || null,
-      heat_level: p.heat_level || null,
-      key_compounds: p.key_compounds || [],
-      top_pairings: (p.top_pairings || []).slice(0, 4),
-      cuisines: (p.cuisines || []).slice(0, 4),
-      cuisine_names: (p.cuisines || []).map((c) => c.cuisine),
-      subfamilies: p.subfamilies || [],
-      substitutes: (p.substitutes || []).slice(0, 6).map((s) => ({
-        spice: s.spice,
-        similarity: s.similarity ?? null,
-        notes: s.notes ?? null,
-      })),
-    }));
+    const catalog = await getCatalogSnapshot();
+    const data = toProfiles(catalog.generatedProfiles, catalog.profileOrder, catalog.spiceTaxonomy);
+    if (!data.length) throw new Error("The catalog contains no spice profiles.");
+    return <main className="h-dvh overflow-hidden bg-board"><CatalogShell data={data} catalog={catalog} /></main>;
   } catch (error) {
-    console.error("Failed to load local spice data:", error);
+    console.error("Catalog load failed:", error);
+    return (
+      <main className="flex h-dvh w-full flex-col items-center justify-center bg-board px-6 text-center text-body text-chalk-2">
+        <p>Catalog data is temporarily unavailable.</p>
+        <p className="mt-2 max-w-lg text-small text-chalk-3">Please try again shortly.</p>
+        <form action="/" method="get">
+          <button className="mt-5 rounded-md border border-rule-strong px-3 py-2 text-small text-chalk hover:bg-board-high">Try again</button>
+        </form>
+      </main>
+    );
   }
-
-  return (
-    <main className="h-dvh overflow-hidden bg-board">
-      {data.length > 0 ? (
-        <MapClientLoader data={data} />
-      ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center bg-board text-center text-body text-chalk-2">
-          <p>Error loading spice data.</p>
-          <p className="mt-1 opacity-70">Please ensure ingestion/generated_profiles.json exists.</p>
-        </div>
-      )}
-    </main>
-  );
 }

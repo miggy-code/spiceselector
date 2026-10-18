@@ -1,6 +1,6 @@
-import flavorVectorsData from "@/data/flavor-vectors.json";
+import { catalog } from "./catalog-runtime";
 import { getPairEvidence } from "./pairing-engine";
-import { allSpices } from "./spice-list";
+import { allSpices, spiceName } from "./spice-list";
 
 /**
  * Blend Builder analysis: the combined flavor shape of the selected spices,
@@ -17,7 +17,7 @@ interface FlavorVector {
   intensity: number;
 }
 
-const flavorVectors = flavorVectorsData as Record<string, FlavorVector>;
+function flavorVectors(): Record<string, FlavorVector> { return catalog().flavorVectors; }
 
 export const BLEND_AXES = [
   "warmth",
@@ -38,7 +38,7 @@ export interface BlendProfile {
 
 /** Combined 5-axis profile of a blend, or null when no spice has a vector. */
 export function getBlendProfile(ids: string[]): BlendProfile | null {
-  const vecs = ids.map((id) => flavorVectors[id]).filter(Boolean);
+  const vecs = ids.map((id) => flavorVectors()[id]).filter(Boolean);
   if (vecs.length === 0) return null;
   const axes = {} as Record<BlendAxis, number>;
   for (const axis of BLEND_AXES) {
@@ -97,7 +97,7 @@ const DEFAULT_INTENSITY = 65;
 export function getBlendRatios(ids: string[]): BlendRatio[] {
   if (ids.length < 2) return [];
   const entries = ids.map((id) => {
-    const vec = flavorVectors[id];
+    const vec = flavorVectors()[id];
     return {
       spiceId: id,
       intensity: vec?.intensity ?? DEFAULT_INTENSITY,
@@ -119,7 +119,7 @@ export function getBlendRatios(ids: string[]): BlendRatio[] {
   const maxPart = Math.max(...parts);
   const named = entries.map((e, i) => ({
     spiceId: e.spiceId,
-    spiceName: allSpiceNames.get(e.spiceId) ?? e.spiceId,
+    spiceName: spiceName(e.spiceId),
     parts: parts[i],
     role:
       maxPart === 1
@@ -133,8 +133,6 @@ export function getBlendRatios(ids: string[]): BlendRatio[] {
   }));
   return named.sort((a, b) => b.parts - a.parts);
 }
-
-const allSpiceNames = new Map(allSpices.map((s) => [s.id, s.name]));
 
 export interface GapSuggestion {
   spiceId: string;
@@ -184,9 +182,9 @@ export function findBlendGap(
 
   const selected = new Set(ids);
   const suggestions: GapSuggestion[] = [];
-  for (const s of allSpices) {
+  for (const s of allSpices()) {
     if (selected.has(s.id)) continue;
-    const vec = flavorVectors[s.id];
+    const vec = flavorVectors()[s.id];
     if (!vec || vec[gapAxis] < CANDIDATE_AXIS_FLOOR) continue;
 
     let fitSum = 0;

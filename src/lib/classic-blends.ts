@@ -1,4 +1,4 @@
-import rawData from "@/data/classic-blends.json";
+import { catalog } from "./catalog-runtime";
 
 export interface ClassicBlend {
   id: string;
@@ -15,7 +15,7 @@ export interface BlendMatch {
   fraction: number;
 }
 
-export const allClassicBlends: ClassicBlend[] = rawData as ClassicBlend[];
+export function allClassicBlends(): ClassicBlend[] { return catalog().classicBlends as ClassicBlend[]; }
 
 /**
  * Given a set of selected taxonomy dot-ids, return the classic blends that
@@ -27,7 +27,7 @@ export function matchClassicBlends(selectedIds: string[]): BlendMatch[] {
   const selectedSet = new Set(selectedIds);
   const matches: BlendMatch[] = [];
 
-  for (const blend of allClassicBlends) {
+  for (const blend of allClassicBlends()) {
     const matchedIds = blend.spiceIds.filter((id) => selectedSet.has(id));
     const missingIds = blend.spiceIds.filter((id) => !selectedSet.has(id));
     const fraction = matchedIds.length / blend.spiceIds.length;

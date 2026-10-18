@@ -1,5 +1,5 @@
-import taxonomyData from "@/data/spice-taxonomy.json";
 import type { FlavorNode } from "@/types/spice";
+import { catalog } from "./catalog-runtime";
 
 /**
  * Bridge between the two spice-id spaces in this app:
@@ -22,10 +22,13 @@ const ALIASES: Record<string, string> = {
   rose: "floral.rose-family.rose-water",
 };
 
-const byName = new Map<string, string>();
-const bySegment = new Map<string, string>();
-
-(function indexTaxonomy() {
+const indexCache = new WeakMap<FlavorNode, { byName: Map<string, string>; bySegment: Map<string, string> }>();
+function indexes() {
+  const taxonomy = catalog().spiceTaxonomy;
+  const cached = indexCache.get(taxonomy);
+  if (cached) return cached;
+  const byName = new Map<string, string>();
+  const bySegment = new Map<string, string>();
   function walk(node: FlavorNode) {
     if (node.level === "spice") {
       byName.set(normalize(node.name), node.id);
@@ -33,20 +36,18 @@ const bySegment = new Map<string, string>();
     }
     node.children?.forEach(walk);
   }
-  walk(taxonomyData as FlavorNode);
-})();
-
-const cache = new Map<string, string | null>();
+  walk(taxonomy);
+  const result = { byName, bySegment };
+  indexCache.set(taxonomy, result);
+  return result;
+}
 
 /**
  * Resolve a Flavor Map spice (slug id, optionally with display name) to its
- * taxonomy dot-id, or null if there's no match. Results are memoized.
+ * taxonomy dot-id, or null if there's no match.
  */
 export function toTaxonomyId(slug: string, name?: string): string | null {
-  const cacheKey = `${slug}\u0000${name ?? ""}`;
-  const hit = cache.get(cacheKey);
-  if (hit !== undefined) return hit;
-
+  const { byName, bySegment } = indexes();
   const candidates = [slug, name ?? "", slug.replace(/s$/, ""), (name ?? "").replace(/s$/, "")];
   let resolved: string | null = null;
   for (const c of candidates) {
@@ -58,6 +59,5 @@ export function toTaxonomyId(slug: string, name?: string): string | null {
       break;
     }
   }
-  cache.set(cacheKey, resolved);
   return resolved;
 }

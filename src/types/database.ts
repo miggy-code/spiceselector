@@ -88,6 +88,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      catalog_snapshot: { Args: Record<PropertyKey, never>; Returns: Json }
       merge_rack_spices: { Args: { spice_slugs: string[] }; Returns: undefined }
       toggle_rack_spice: { Args: { spice_slug: string }; Returns: undefined }
     }

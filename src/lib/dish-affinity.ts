@@ -1,5 +1,5 @@
-import dishData from "@/data/dish-affinities.json";
 import { spiceName } from "./spice-list";
+import { catalog } from "./catalog-runtime";
 
 /**
  * Dish anchoring: FlavorGraph affinities between our spices and common base
@@ -16,18 +16,17 @@ export interface Dish {
   scores: Record<string, number>;
 }
 
-export const allDishes = dishData as Dish[];
-
-const byId = new Map(allDishes.map((d) => [d.id, d]));
+export function allDishes(): Dish[] { return catalog().dishAffinities as Dish[]; }
+function byId() { return new Map(allDishes().map((d) => [d.id, d])); }
 
 export function getDish(dishId: string): Dish | undefined {
-  return byId.get(dishId);
+  return byId().get(dishId);
 }
 
 /** Dishes grouped by category, in the data's category order. */
 export function dishesByCategory(): Array<[string, Dish[]]> {
   const groups = new Map<string, Dish[]>();
-  for (const d of allDishes) {
+  for (const d of allDishes()) {
     const list = groups.get(d.category) ?? [];
     list.push(d);
     groups.set(d.category, list);
@@ -50,7 +49,7 @@ export function getDishSpiceRanking(
   options: { limit?: number; excludeIds?: Iterable<string> } = {}
 ): DishSpiceScore[] {
   const { limit = 8, excludeIds } = options;
-  const dish = byId.get(dishId);
+  const dish = byId().get(dishId);
   if (!dish) return [];
   const excluded = new Set(excludeIds ?? []);
   const entries = Object.entries(dish.scores).filter(([id]) => !excluded.has(id));
@@ -68,5 +67,5 @@ export function getDishSpiceRanking(
 
 /** A single spice's affinity to a dish, null when the spice is unembedded. */
 export function getDishFit(dishId: string, spiceId: string): number | null {
-  return byId.get(dishId)?.scores[spiceId] ?? null;
+  return byId().get(dishId)?.scores[spiceId] ?? null;
 }

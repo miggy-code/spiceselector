@@ -77,7 +77,7 @@ export function findBridges(
 
   const candidates: BridgeCandidate[] = [];
 
-  for (const spice of allSpices) {
+  for (const spice of allSpices()) {
     if (excluded.has(spice.id)) continue;
 
     const evidenceA = getPairEvidence(a, spice.id);

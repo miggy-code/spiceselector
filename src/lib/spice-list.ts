@@ -1,5 +1,5 @@
-import taxonomyData from "@/data/spice-taxonomy.json";
 import type { FlavorNode } from "@/types/spice";
+import { catalog } from "./catalog-runtime";
 
 /** A spice leaf from the taxonomy: dot-id + display name. */
 export interface SpiceRef {
@@ -7,16 +7,23 @@ export interface SpiceRef {
   name: string;
 }
 
-/** All 72 taxonomy spices, in taxonomy order. */
-export const allSpices: SpiceRef[] = (() => {
+const spiceCache = new WeakMap<FlavorNode, SpiceRef[]>();
+const nameCache = new WeakMap<FlavorNode, Map<string, string>>();
+
+/** All taxonomy spices, in taxonomy order. */
+export function allSpices(): SpiceRef[] {
+  const taxonomy = catalog().spiceTaxonomy;
+  const cached = spiceCache.get(taxonomy);
+  if (cached) return cached;
   const spices: SpiceRef[] = [];
   function walk(node: FlavorNode) {
     if (node.level === "spice") spices.push({ id: node.id, name: node.name });
     node.children?.forEach(walk);
   }
-  walk(taxonomyData as FlavorNode);
+  walk(taxonomy);
+  spiceCache.set(taxonomy, spices);
   return spices;
-})();
+}
 
 const PROPER_NOUNS = ['Sichuan', 'Aleppo', 'Thai', 'Kaffir'];
 
@@ -32,10 +39,14 @@ export function displayName(name: string): string {
     .join(' ');
 }
 
-const nameById = new Map(allSpices.map((s) => [s.id, displayName(s.name)]));
-
 /** Display name for a taxonomy spice id (falls back to the last id segment). */
 export function spiceName(id: string): string {
+  const taxonomy = catalog().spiceTaxonomy;
+  let nameById = nameCache.get(taxonomy);
+  if (!nameById) {
+    nameById = new Map(allSpices().map((s) => [s.id, displayName(s.name)]));
+    nameCache.set(taxonomy, nameById);
+  }
   const known = nameById.get(id);
   if (known) return known;
   return id

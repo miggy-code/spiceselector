@@ -1,45 +1,11 @@
 import { spiceName } from "./spice-list";
 import type {
   CompoundOverlap,
-  PairingEntry,
   PairingLink,
 } from "@/types/pairing";
-import pairingsData from "@/data/spice-pairings.json";
-import pairingScoresData from "@/data/pairing-scores.json";
-import compoundOverlapData from "@/data/compound-overlap.json";
-
-// Build lookup map once
-const pairingMap = new Map<string, PairingLink[]>();
-
-for (const entry of pairingsData as PairingEntry[]) {
-  pairingMap.set(entry.spiceId, entry.pairsWith);
-}
+import { catalog, type CatalogSnapshot } from "./catalog-runtime";
 
 // FlavorGraph affinity scores, keyed by unordered spice-id pair
-interface PairScore {
-  a: string;
-  b: string;
-  score: number;
-}
-
-const affinityMap = new Map<string, number>();
-
-for (const { a, b, score } of pairingScoresData as PairScore[]) {
-  affinityMap.set(pairKey(a, b), score);
-}
-
-// Compound overlap (FooDB/USDA + FlavorDB2 layers), keyed by unordered spice-id pair
-interface CompoundPair extends CompoundOverlap {
-  a: string;
-  b: string;
-}
-
-const compoundMap = new Map<string, CompoundOverlap>();
-
-for (const { a, b, ...overlap } of compoundOverlapData as CompoundPair[]) {
-  compoundMap.set(pairKey(a, b), overlap);
-}
-
 function pairKey(a: string, b: string): string {
   return a < b ? `${a}|${b}` : `${b}|${a}`;
 }
@@ -47,19 +13,18 @@ function pairKey(a: string, b: string): string {
 // Curated labels keyed by unordered pair (strongest label wins when the two
 // directions of a curated link disagree).
 const curatedLabelRank = { classic: 0, complementary: 1, surprising: 2 };
-const curatedLabelMap = new Map<string, PairingLink["affinity"]>();
-
-for (const entry of pairingsData as PairingEntry[]) {
-  for (const link of entry.pairsWith) {
-    const key = pairKey(entry.spiceId, link.spiceId);
-    const existing = curatedLabelMap.get(key);
-    if (
-      existing === undefined ||
-      curatedLabelRank[link.affinity] < curatedLabelRank[existing]
-    ) {
-      curatedLabelMap.set(key, link.affinity);
-    }
+type Lookups = { pairings: Map<string, PairingLink[]>; affinity: Map<string, number>; compound: Map<string, CompoundOverlap>; labels: Map<string, PairingLink["affinity"]> };
+const lookupCache = new WeakMap<CatalogSnapshot, Lookups>();
+function lookups(): Lookups {
+  const source = catalog(), cached = lookupCache.get(source);
+  if (cached) return cached;
+  const labels = new Map<string, PairingLink["affinity"]>();
+  for (const entry of source.spicePairings) for (const link of entry.pairsWith) {
+    const key = pairKey(entry.spiceId, link.spiceId), existing = labels.get(key);
+    if (existing === undefined || curatedLabelRank[link.affinity] < curatedLabelRank[existing]) labels.set(key, link.affinity);
   }
+  const next = { pairings: new Map(source.spicePairings.map((entry) => [entry.spiceId, entry.pairsWith])), affinity: new Map(source.pairingScores.map(({ a, b, score }) => [pairKey(a, b), score])), compound: new Map(source.compoundOverlap.map(({ a, b, ...overlap }) => [pairKey(a, b), overlap])), labels };
+  lookupCache.set(source, next); return next;
 }
 
 /** Curated pairing label for an unordered pair, or null if uncurated. */
@@ -67,7 +32,7 @@ export function getCuratedLabel(
   a: string,
   b: string
 ): PairingLink["affinity"] | null {
-  return curatedLabelMap.get(pairKey(a, b)) ?? null;
+  return lookups().labels.get(pairKey(a, b)) ?? null;
 }
 
 /**
@@ -75,12 +40,12 @@ export function getCuratedLabel(
  * spice has no trained embedding (14 of 72 spices — see PLAN.md).
  */
 export function getAffinity(a: string, b: string): number | null {
-  return affinityMap.get(pairKey(a, b)) ?? null;
+  return lookups().affinity.get(pairKey(a, b)) ?? null;
 }
 
 /** Shared flavor-compound overlap between two spices, or null when absent. */
 export function getCompoundOverlap(a: string, b: string): CompoundOverlap | null {
-  return compoundMap.get(pairKey(a, b)) ?? null;
+  return lookups().compound.get(pairKey(a, b)) ?? null;
 }
 
 /**
@@ -252,7 +217,7 @@ export function getCuratedPairings(
   >();
 
   for (const selectedId of selectedIds) {
-    const pairings = pairingMap.get(selectedId);
+    const pairings = lookups().pairings.get(selectedId);
     if (!pairings) continue;
 
     for (const link of pairings) {

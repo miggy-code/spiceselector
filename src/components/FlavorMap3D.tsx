@@ -12,7 +12,7 @@ import { getAffinity } from '@/lib/pairing-engine';
 import { toTaxonomyId } from '@/lib/spice-id-map';
 import { THEME } from '@/lib/theme';
 import { FLAVOR_DIM_COLORS, type FlavorDimension } from '@/lib/flavor-dim-colors';
-import aromaData from '@/data/aroma-fingerprints.json';
+import { catalog } from '@/lib/catalog-runtime';
 import type { SpiceProfile } from '@/types/spice';
 
 export interface MapMorph {
@@ -55,9 +55,9 @@ const AROMA_WORDS: Record<string, string> = {
   nutty: 'nutty',
 };
 type AromaEntry = { vector: Record<string, number> | null };
-const aroma = aromaData as unknown as Record<string, AromaEntry>;
 function measuredAroma(slug: string, name: string): string[] {
   const tid = toTaxonomyId(slug, name);
+  const aroma = catalog().aromaFingerprints as Record<string, AromaEntry>;
   const vector = tid ? aroma[tid]?.vector : null;
   if (!vector) return [];
   return Object.entries(vector)

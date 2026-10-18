@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import atlas from '@/data/flavor-atlas.json';
-import aromaData from '@/data/aroma-fingerprints.json';
+import { catalog } from '@/lib/catalog-runtime';
 import { useSelection } from '@/context/SelectionContext';
 import { familyLabel } from '@/lib/colors';
 import { spiceColor, luminance } from '@/lib/spice-colors';
@@ -13,16 +12,12 @@ import type { SpiceProfile } from '@/types/spice';
 
 type Point = { spice: SpiceProfile; x: number; y: number; r: number; hidden?: boolean };
 type Edge = { source: string; target: string; score: number };
-const coordinates = atlas.points as Record<string, { x: number; y: number }>;
 // Always use the full atlas, never the current lens: cuisine/heat filters must not rearrange the map.
 // Fit to the 4th–96th percentile so a few outliers (wasabi, hibiscus) don't shrink everyone else.
-const allPoints = Object.values(coordinates);
 const spread = (values: number[]) => {
   const sorted = [...values].sort((a, b) => a - b), at = (q: number) => sorted[Math.round(q * (sorted.length - 1))];
   return [at(0.04), at(0.96)];
 };
-const xExtent = spread(allPoints.map(p => p.x));
-const yExtent = spread(allPoints.map(p => p.y));
 /** Beyond the fitted range a value keeps moving outward, only more slowly, until it meets the canvas edge. */
 const squash = (u: number) => (u < 0 ? u * 0.35 : u > 1 ? 1 + (u - 1) * 0.35 : u);
 
@@ -48,6 +43,7 @@ const QUALITIES = [
  * fixed meaning, so we read it back from the data instead of asserting one.
  */
 function describeDirections(data: SpiceProfile[]) {
+  const coordinates = catalog().flavorAtlas.points;
   const pts = data.filter(s => coordinates[s.id]);
   const corr = (xs: number[], ys: number[]) => {
     const n = xs.length, mx = xs.reduce((a, b) => a + b, 0) / n, my = ys.reduce((a, b) => a + b, 0) / n;
@@ -165,10 +161,10 @@ const AROMA_WORDS: Record<string, string> = {
   'green-herbal': 'green', 'earthy-roasty': 'roasty', 'sulfurous-alliaceous': 'oniony', 'minty-camphor': 'minty',
   fruity: 'fruity', 'fatty-waxy': 'waxy', nutty: 'nutty',
 };
-const aroma = aromaData as unknown as Record<string, { vector: Record<string, number> | null }>;
 /** Strongest measured aroma notes, for the one-line detail under the map. */
 export function aromaWords(spice: { id: string; name: string }, count = 3): string[] {
   const tid = toTaxonomyId(spice.id, spice.name);
+  const aroma = catalog().aromaFingerprints as Record<string, { vector: Record<string, number> | null }>;
   const vector = tid ? aroma[tid]?.vector : null;
   if (!vector) return [];
   return Object.entries(vector).sort((a, b) => b[1] - a[1]).slice(0, count).map(([k]) => AROMA_WORDS[k] ?? k);
@@ -206,6 +202,11 @@ function makeRing(cx: number, cy: number, rx: number, ry: number) {
 const perimeter = (a: number, b: number) => Math.PI * (3 * (a + b) - Math.sqrt((3 * a + b) * (a + 3 * b)));
 
 export default function FlavorAtlas({ data, pairingFocus }: { data: SpiceProfile[]; pairingFocus: boolean }) {
+  const coordinates = catalog().flavorAtlas.points;
+  const [xExtent, yExtent] = useMemo(() => {
+    const points = Object.values(coordinates);
+    return [spread(points.map((point) => point.x)), spread(points.map((point) => point.y))];
+  }, [coordinates]);
   const { selectedSpiceIds, toggleSpice, hoveredSpiceId, setHovered } = useSelection();
   const plotRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 800, height: 480 });
@@ -347,7 +348,7 @@ export default function FlavorAtlas({ data, pairingFocus }: { data: SpiceProfile
       }
     }
     return points;
-  }, [data, size, focused, partners, owner, selected, selectedSpiceIds]);
+  }, [data, size, focused, partners, owner, selected, selectedSpiceIds, coordinates, xExtent, yExtent]);
   const byId = new Map(nodes.map(p => [p.spice.id, p]));
   const hasSelection = selected.length > 0;
   const hovered = hoveredSpiceId ? byId.get(hoveredSpiceId) : undefined;

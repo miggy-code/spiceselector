@@ -1,7 +1,7 @@
 import type { CompoundOverlap } from "@/types/pairing";
-import flavorVectorsData from "@/data/flavor-vectors.json";
+import { catalog } from "./catalog-runtime";
 import { compoundScore, getAffinity, getCompoundOverlap } from "./pairing-engine";
-import { allSpices, displayName } from "./spice-list";
+import { allSpices, spiceName } from "./spice-list";
 
 /**
  * Data-driven substitutions (PLAN.md Step 8).
@@ -27,7 +27,7 @@ interface FlavorVector {
   intensity: number;
 }
 
-const flavorVectors = flavorVectorsData as Record<string, FlavorVector>;
+function flavorVectors(): Record<string, FlavorVector> { return catalog().flavorVectors; }
 
 const PROFILE_AXES = [
   "warmth",
@@ -47,8 +47,8 @@ const AFFINITY_WEIGHT = 0.15;
 
 /** Flavor-profile similarity (0–1), or null when either vector is missing. */
 export function getProfileSimilarity(a: string, b: string): number | null {
-  const va = flavorVectors[a];
-  const vb = flavorVectors[b];
+  const va = flavorVectors()[a];
+  const vb = flavorVectors()[b];
   if (!va || !vb) return null;
   let sumSq = 0;
   for (const axis of PROFILE_AXES) {
@@ -109,12 +109,12 @@ export function getSubstitutionScore(
   // pair with no data shouldn't read as a perfect substitute.
   if (parts.length === 1) score *= 0.75;
 
-  const targetVec = flavorVectors[target];
-  const candidateVec = flavorVectors[candidate];
+  const targetVec = flavorVectors()[target];
+  const candidateVec = flavorVectors()[candidate];
 
   return {
     spiceId: candidate,
-    spiceName: allSpiceNames.get(candidate) ?? candidate,
+    spiceName: spiceName(candidate),
     score,
     profileSimilarity,
     compoundOverlap,
@@ -126,8 +126,6 @@ export function getSubstitutionScore(
         : null,
   };
 }
-
-const allSpiceNames = new Map(allSpices.map((s) => [s.id, displayName(s.name)]));
 
 export interface SubstituteOptions {
   /** Max candidates to return (default 6, matching the curated list length). */
@@ -148,7 +146,7 @@ export function getSubstitutes(
   const excluded = new Set(excludeIds ?? []);
   excluded.add(spiceId);
 
-  return allSpices
+  return allSpices()
     .filter((s) => !excluded.has(s.id))
     .map((s) => getSubstitutionScore(spiceId, s.id))
     .sort((a, b) => b.score - a.score)
