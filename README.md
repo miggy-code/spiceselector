@@ -4,7 +4,7 @@
 
 **A visual guide to how spices relate through flavor, chemistry, and cooking.**
 
-Spice Selector turns flavor data into an interactive tool for exploring 86 spices. Move between a 3D flavor map and a 2D atlas, inspect evidence behind pairing suggestions, and compare possible substitutions. The flavor explorer runs from committed data files; optional Supabase accounts add saved recipes and sync personal blends and spice racks across devices.
+Spice Selector turns flavor data into an interactive tool for exploring 86 spices. Move between a 3D flavor map and a 2D atlas, inspect evidence behind pairing suggestions, and compare possible substitutions. The flavor explorer reads its catalog from Supabase; optional accounts add saved recipes and sync personal blends and spice racks across devices. See [catalog data and verification](docs/catalog-migration.md).
 
 ## What you can explore
 
@@ -39,7 +39,7 @@ npm ci
 npm run dev
 ```
 
-Copy `.env.example` to `.env.local` and enter your Supabase project URL and publishable key, then open [http://localhost:3000](http://localhost:3000). The flavor datasets are committed JSON files.
+Copy `.env.example` to `.env.local` and enter your Supabase project URL and publishable key, then open [http://localhost:3000](http://localhost:3000). The configured database must contain the catalog; see [catalog data and verification](docs/catalog-migration.md).
 
 Useful project checks:
 
@@ -120,10 +120,10 @@ See the [Supabase Next.js guide](https://supabase.com/docs/guides/auth/server-si
 - **D3:** 2D atlas and data visualizations
 - **Framer Motion:** interface transitions and focused feedback
 - **Python and TypeScript ingestion scripts:** source-data processing and committed static outputs
-- **Supabase Auth / Postgres:** account sessions, saved recipes, blends, and racks with per-user access policies
+- **Supabase Auth / Postgres:** public spice catalog and evidence, account sessions, saved recipes, blends, and racks with per-user access policies
 - **Browser storage:** guest blends, rack inventory, and display preferences
 
-The app is organized around small ranking and data modules in `src/lib/`, visual and interaction components in `src/components/`, and generated or curated datasets in `src/data/`. Typed Supabase client helpers live in `src/lib/supabase/`; signed-in personal data is persisted in Supabase, with browser storage for guests.
+The app is organized around small ranking and data modules in `src/lib/` and visual and interaction components in `src/components/`. Catalog data comes from the cached Supabase server layer; files in `src/data/` remain historical migration inputs. Typed Supabase client helpers live in `src/lib/supabase/`; signed-in personal data is persisted in Supabase, with browser storage for guests.
 
 ## Data and attribution
 
